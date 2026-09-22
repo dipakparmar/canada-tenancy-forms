@@ -1,0 +1,542 @@
+{
+  "form": "RTB-1",
+  "revision": "2023/06",
+  "source": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb1.pdf",
+  "pdf_sha256": "0b7c460527c694650d27dc80e03341f472cefe8f2adde3c803f69aeb07c0f5a0",
+  "fields": {
+    "form.rtb26Attached": {
+      "pdf": "RTB26 used  attached",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "landlord.businessName": {
+      "pdf": "last name",
+      "type": "text"
+    },
+    "landlord.firstName": {
+      "pdf": "first and middle names",
+      "type": "text"
+    },
+    "landlord2.businessName": {
+      "pdf": "last name_2",
+      "type": "text"
+    },
+    "landlord2.firstName": {
+      "pdf": "first and middle names_2",
+      "type": "text"
+    },
+    "tenant.lastName": {
+      "pdf": "last name_3",
+      "type": "text"
+    },
+    "tenant.firstName": {
+      "pdf": "first and middle names_3",
+      "type": "text"
+    },
+    "tenant2.lastName": {
+      "pdf": "last name_4",
+      "type": "text"
+    },
+    "tenant2.firstName": {
+      "pdf": "first and middle names_4",
+      "type": "text"
+    },
+    "tenant.phoneArea": {
+      "pdf": "undefined",
+      "type": "text"
+    },
+    "tenant.phoneNumber": {
+      "pdf": "undefined_2",
+      "type": "text"
+    },
+    "tenant.email": {
+      "pdf": "TT email 1",
+      "type": "text"
+    },
+    "tenant.otherPhoneArea": {
+      "pdf": "optional other phone number",
+      "type": "text"
+    },
+    "tenant.otherPhoneNumber": {
+      "pdf": "undefined_3",
+      "type": "text"
+    },
+    "tenant.emailAlt": {
+      "pdf": "TT email 2",
+      "type": "text"
+    },
+    "premises.unitNumber": {
+      "pdf": "unit #",
+      "type": "text"
+    },
+    "premises.street": {
+      "pdf": "street number and street name1",
+      "type": "text"
+    },
+    "premises.city": {
+      "pdf": "City1",
+      "type": "text"
+    },
+    "premises.province": {
+      "pdf": "Province1",
+      "type": "text"
+    },
+    "premises.postalCode": {
+      "pdf": "Postalcode1",
+      "type": "text"
+    },
+    "landlord.isLandlord": {
+      "pdf": "ADDRESS FOR SERVICE of the",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "landlord.isAgent": {
+      "pdf": "landlord",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "landlord.addressUnit": {
+      "pdf": "unitsite",
+      "type": "text"
+    },
+    "landlord.addressStreet": {
+      "pdf": "street number and street name_2",
+      "type": "text"
+    },
+    "landlord.addressCity": {
+      "pdf": "city2",
+      "type": "text"
+    },
+    "landlord.addressProvince": {
+      "pdf": "province2",
+      "type": "text"
+    },
+    "landlord.addressPostalCode": {
+      "pdf": "postal code2",
+      "type": "text"
+    },
+    "landlord.phoneArea": {
+      "pdf": "daytime phone number",
+      "type": "text"
+    },
+    "landlord.phoneNumber": {
+      "pdf": "undefined_4",
+      "type": "text"
+    },
+    "landlord.otherPhoneArea": {
+      "pdf": "other phone number",
+      "type": "text"
+    },
+    "landlord.otherPhoneNumber": {
+      "pdf": "undefined_5",
+      "type": "text"
+    },
+    "landlord.email": {
+      "pdf": "LL email 1",
+      "type": "text"
+    },
+    "landlord.faxArea": {
+      "pdf": "fax number for service",
+      "type": "text"
+    },
+    "landlord.faxNumber": {
+      "pdf": "undefined_6",
+      "type": "text"
+    },
+    "landlord.emailAlt": {
+      "pdf": "LL email 2",
+      "type": "text"
+    },
+    "tenancy.startDay": {
+      "pdf": "This tenancy created by this agreement starts on",
+      "type": "text"
+    },
+    "tenancy.startMonth": {
+      "pdf": "month1",
+      "type": "text"
+    },
+    "tenancy.startYear": {
+      "pdf": "year1",
+      "type": "text"
+    },
+    "tenancy.isMonthToMonth": {
+      "pdf": "A and continues on a monthtomonth basis until ended in accordance with the Act",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.isOtherPeriodic": {
+      "pdf": "B and continues on another periodic basis as specified below until ended in accordance with the Act",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.periodicIsWeekly": {
+      "pdf": "weekly",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.periodicIsBiweekly": {
+      "pdf": "biweekly",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.periodicIsOther": {
+      "pdf": "other",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.periodicOtherText": {
+      "pdf": "undefined_7",
+      "type": "text"
+    },
+    "tenancy.isFixedTerm": {
+      "pdf": "C and is for a fixed term ending on",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.endDay": {
+      "pdf": "This tenancy created by this agreement ends on",
+      "type": "text"
+    },
+    "tenancy.endMonth": {
+      "pdf": "month2",
+      "type": "text"
+    },
+    "tenancy.endYear": {
+      "pdf": "year2",
+      "type": "text"
+    },
+    "tenancy.fixedTermContinues": {
+      "pdf": "D At the end of this time the tenancy will continue on a monthtomonth basis or another fixed length of",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.fixedTermMustVacate": {
+      "pdf": "E At the end of this time the tenancy is ended and the tenant must vacate the rental unit",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "tenancy.vacateReason": {
+      "pdf": "Reason tenant must vacate required",
+      "type": "text"
+    },
+    "tenancy.vacateRegulationSection": {
+      "pdf": "Residential Tenancy Regulation section number if applicable",
+      "type": "text"
+    },
+    "tenancy.vacateLandlordInitials": {
+      "pdf": "Landlord's Initials",
+      "type": "text"
+    },
+    "tenancy.vacateTenantInitials": {
+      "pdf": "Tenant's initials",
+      "type": "text"
+    },
+    "rent.amount": {
+      "pdf": "The tenant will pay the rent of",
+      "type": "text"
+    },
+    "rent.isDaily": {
+      "pdf": "day",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.isWeekly": {
+      "pdf": "week",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.isMonthly": {
+      "pdf": "month to the landlord on",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.dueDayOfMonth": {
+      "pdf": "the first day of the rental period which falls on the due date eg 1st 2nd 3rd  31st",
+      "type": "text"
+    },
+    "rent.increasePeriodIsDay": {
+      "pdf": "day_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.increasePeriodIsWeek": {
+      "pdf": "week_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.isSubjectToIncrease": {
+      "pdf": "month subject to rent increases given in accordance with the RTA",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.includes.water": {
+      "pdf": "water",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.naturalGas": {
+      "pdf": "natural gas",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.garbageCollection": {
+      "pdf": "Garbage collection",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.fridge": {
+      "pdf": "Refrigerator",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.carpets": {
+      "pdf": "Carpets",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.cablevision": {
+      "pdf": "Cabblevision",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.sewageDisposal": {
+      "pdf": "Sewage disposal",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.recyclingServices": {
+      "pdf": "Recycling Services",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.dishwasher": {
+      "pdf": "Dishwasher",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.parking": {
+      "pdf": "Parking",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.parkingSpaces": {
+      "pdf": "Parking for",
+      "type": "text"
+    },
+    "rent.includes.electricity": {
+      "pdf": "Electricity",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.snowRemoval": {
+      "pdf": "Snow removal",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.kitchenScrapCollection": {
+      "pdf": "Kitchen Scrap collection",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.stove": {
+      "pdf": "Stove and oven",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other1": {
+      "pdf": "Other 1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other1Text": {
+      "pdf": "Other2",
+      "type": "text"
+    },
+    "rent.includes.internet": {
+      "pdf": "Internet",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.storage": {
+      "pdf": "Storage",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.laundryCoinOp": {
+      "pdf": "Laundry",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.windowCoverings": {
+      "pdf": "Window coverings",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other2": {
+      "pdf": "Other 5",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other2Text": {
+      "pdf": "Other_3",
+      "type": "text"
+    },
+    "rent.includes.heat": {
+      "pdf": "Heat",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.recreationFacilities": {
+      "pdf": "Recreational facilities",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.freeLaundry": {
+      "pdf": "Free laundry",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.furniture": {
+      "pdf": "Furniture",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other3": {
+      "pdf": "Other 6",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.other3Text": {
+      "pdf": "Other_4",
+      "type": "text"
+    },
+    "rent.includes.additionalInfo": {
+      "pdf": "Additional information 1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rent.includes.additionalInfoText": {
+      "pdf": "Additional information",
+      "type": "text"
+    },
+    "deposit.securityAmount": {
+      "pdf": "4 SECURITY DEPOSIT AND PET DAMAGE DEPOSIT",
+      "type": "text"
+    },
+    "deposit.dueDay": {
+      "pdf": "The tenant is required to pay a security deposit of",
+      "type": "text"
+    },
+    "deposit.dueMonth": {
+      "pdf": "month3",
+      "type": "text"
+    },
+    "deposit.dueYear": {
+      "pdf": "year3",
+      "type": "text"
+    },
+    "deposit.petDepositNotApplicable": {
+      "pdf": "not applicable",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "deposit.petAmount": {
+      "pdf": "undefined_8",
+      "type": "text"
+    },
+    "deposit.petDueDay": {
+      "pdf": "The tenant is required to pay a pet damage deposit of",
+      "type": "text"
+    },
+    "deposit.petDueMonth": {
+      "pdf": "month4",
+      "type": "text"
+    },
+    "deposit.petDueYear": {
+      "pdf": "year4",
+      "type": "text"
+    },
+    "addendum.isAttached": {
+      "pdf": "If there is an Addendum attached  provide the following information on the Addendum that forms part of this",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "addendum.isNotAttached": {
+      "pdf": "is not",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "addendum.pageCount": {
+      "pdf": "By signing this tenancy agreement the landlord and the tenant are bound by its terms",
+      "type": "text"
+    },
+    "addendum.additionalTermsCount": {
+      "pdf": "Number of additional terms in the Addendum",
+      "type": "text"
+    },
+    "signatures.landlord.lastName": {
+      "pdf": "last name_5",
+      "type": "text"
+    },
+    "signatures.landlord.firstName": {
+      "pdf": "Landlords first and middle name",
+      "type": "text"
+    },
+    "signatures.landlord.signature": {
+      "pdf": "Signature landlord",
+      "type": "text"
+    },
+    "signatures.landlord.date": {
+      "pdf": "Date",
+      "type": "text"
+    },
+    "signatures.landlord2.lastName": {
+      "pdf": "last name_6",
+      "type": "text"
+    },
+    "signatures.landlord2.firstName": {
+      "pdf": "last name first and middle names Signature DateRow1",
+      "type": "text"
+    },
+    "signatures.landlord2.signature": {
+      "pdf": "first and middle names_6",
+      "type": "text"
+    },
+    "signatures.landlord2.date": {
+      "pdf": "Date_2",
+      "type": "text"
+    },
+    "signatures.tenant.lastName": {
+      "pdf": "last name_7",
+      "type": "text"
+    },
+    "signatures.tenant.firstName": {
+      "pdf": "last name first and middle names Signature Date TENANTSRow1",
+      "type": "text"
+    },
+    "signatures.tenant.signature": {
+      "pdf": "first and middle names_7",
+      "type": "text"
+    },
+    "signatures.tenant.date": {
+      "pdf": "Date_3",
+      "type": "text"
+    },
+    "signatures.tenant2.lastName": {
+      "pdf": "last name_8",
+      "type": "text"
+    },
+    "signatures.tenant2.firstName": {
+      "pdf": "last name first and middle names Signature DateRow1_2",
+      "type": "text"
+    },
+    "signatures.tenant2.signature": {
+      "pdf": "first and middle names_8",
+      "type": "text"
+    },
+    "signatures.tenant2.date": {
+      "pdf": "undefined_9",
+      "type": "text"
+    }
+  }
+}
