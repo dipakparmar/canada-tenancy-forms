@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BC RTB forms catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "source", "forms"],
+  "definitions": {
+    "id": { "type": "string", "pattern": "^RTB-[0-9]+[A-Z0-9-]*$" },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "slug": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "party": { "enum": ["landlord", "tenant", "either", "rtb", "other"] }
+  },
+  "properties": {
+    "schema_version": { "const": 1 },
+    "generated_at": { "$ref": "#/definitions/date" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publisher", "index_url", "snapshot_sha256"],
+      "properties": {
+        "publisher": { "type": "string", "minLength": 1 },
+        "index_url": { "type": "string", "pattern": "^https://" },
+        "snapshot_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "form_name", "status", "category", "matter_type", "current_version", "official_url", "official_index_url", "initiating_party", "parties", "property_manager_role", "use_when", "related_forms", "last_verified"],
+        "properties": {
+          "id": { "$ref": "#/definitions/id" },
+          "form_name": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["active", "historical_or_replaced"] },
+          "category": { "$ref": "#/definitions/slug" },
+          "matter_type": { "$ref": "#/definitions/slug" },
+          "current_version": { "type": ["string", "null"] },
+          "official_url": { "type": "string", "pattern": "^https://" },
+          "official_index_url": { "type": "string", "pattern": "^https://" },
+          "initiating_party": { "$ref": "#/definitions/party" },
+          "parties": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/party" } },
+          "property_manager_role": { "$ref": "#/definitions/slug" },
+          "use_when": { "type": "string", "minLength": 1 },
+          "related_forms": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/id" } },
+          "legal_effect": { "type": "string", "minLength": 1 },
+          "last_verified": { "$ref": "#/definitions/date" }
+        }
+      }
+    }
+  }
+}

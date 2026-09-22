@@ -1,0 +1,1456 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-22",
+  "source": {
+    "publisher": "Province of British Columbia — Residential Tenancy Branch",
+    "index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+    "snapshot_sha256": "35ad874008ca6ad82f3b114524ed6ab1da742f3fcd4a056301ec630d6945c6dd"
+  },
+  "forms": [
+    {
+      "id": "RTB-1",
+      "form_name": "Residential Tenancy Agreement",
+      "status": "active",
+      "category": "general",
+      "matter_type": "agreement",
+      "current_version": "July 2026",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb1.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Starting a residential tenancy or documenting the main written tenancy agreement.",
+      "related_forms": [
+        "RTB-22",
+        "RTB-27",
+        "RTB-26"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-2",
+      "form_name": "Application for Review Consideration",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "review_consideration",
+      "current_version": "March 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb2.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party asking the RTB to review a decision or order on the limited grounds the legislation allows.",
+      "related_forms": [
+        "RTB-6",
+        "RTB-38"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-5",
+      "form_name": "Manufactured Home Site Tenancy Agreement",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "agreement",
+      "current_version": "December 2017",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb5.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Starting a manufactured home site tenancy or documenting its written tenancy agreement.",
+      "related_forms": [
+        "RTB-26"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-6",
+      "form_name": "Request for Correction",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "correction",
+      "current_version": "July 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb6.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party asking the RTB to correct a clerical, math or similar obvious error in a decision or order.",
+      "related_forms": [
+        "RTB-2",
+        "RTB-38"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-7",
+      "form_name": "Notice of Rent Increase - Residential Rental Units",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "standard_rent_increase",
+      "current_version": "August 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb7.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord notifying a tenant of a residential rental unit of a rent increase.",
+      "related_forms": [
+        "RTB-52"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-8",
+      "form_name": "Mutual Agreement to End a Tenancy",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "mutual_agreement",
+      "current_version": "July 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb8.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord and tenant agreeing in writing to end a tenancy on a set date.",
+      "related_forms": [
+        "RTB-1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-9",
+      "form_name": "Proof of Service Notice of Expedited Hearing",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "proof_of_service",
+      "current_version": "February 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb9.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Proving service of the notice of an expedited hearing on the other party.",
+      "related_forms": [
+        "RTB-12L-EXH",
+        "RTB-12T-EXH"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-11A",
+      "form_name": "Notice of Rent Increase - Manufactured Home Site - (auto-calculating version)",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "rent_increase",
+      "current_version": "August 2026",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb11a.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A manufactured home park landlord notifying a tenant of a site rent increase above the standard amount, with the amount auto-calculated.",
+      "related_forms": [
+        "RTB-45",
+        "RTB-52"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12L-CT",
+      "form_name": "Landlord's Application for Dispute Resolution (Current Tenancy)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12lct.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying for dispute resolution while the tenant still lives in the unit.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55",
+        "RTB-17",
+        "RTB-37",
+        "RTB-42L"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12L-DR",
+      "form_name": "Landlord Application for Dispute Resolution Direct Request",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "application",
+      "current_version": "March 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12ldr.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying by direct request for possession and unpaid rent after serving a 10 Day Notice for unpaid rent or utilities.",
+      "related_forms": [
+        "RTB-30",
+        "RTB-34",
+        "RTB-46"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12L-EXH",
+      "form_name": "Landlord's Application for Dispute Resolution Expedited Hearing",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "expedited_hearing",
+      "current_version": "September 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12lexh.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying for an expedited hearing on an emergency matter that needs shorter service and response times.",
+      "related_forms": [
+        "RTB-9",
+        "RTB-26"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12L-O",
+      "form_name": "Landlord Application for Dispute Resolution (Other)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "January 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12lo.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying for dispute resolution on a matter not covered by the current or past tenancy applications.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12L-PT",
+      "form_name": "Landlord Application for Dispute Resolution (Past Tenancy)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "May 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12lpt.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying for dispute resolution after the tenancy has ended.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55",
+        "RTB-37"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12T-CT",
+      "form_name": "Tenant Application for Dispute Resolution (Current Tenancy)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12tct.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant applying for dispute resolution while still living in the unit.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55",
+        "RTB-17",
+        "RTB-42T"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12T-DR",
+      "form_name": "Tenant Application for Dispute Resolution - Direct Request for Return of Security or Pet Damage Deposit",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "application",
+      "current_version": "March 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12tdr.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant applying by direct request for return of a security or pet damage deposit after giving a forwarding address.",
+      "related_forms": [
+        "RTB-40",
+        "RTB-41",
+        "RTB-47",
+        "RTB-50"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12T-EXH",
+      "form_name": "Tenant Application for Dispute Resolution Expedited Hearing",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "expedited_hearing",
+      "current_version": "September 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12texh.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant applying for an expedited hearing on an emergency matter that needs shorter service and response times.",
+      "related_forms": [
+        "RTB-9",
+        "RTB-26"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12T-O",
+      "form_name": "Tenant Application for Dispute Resolution (Other)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "January 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12to.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant applying for dispute resolution on a matter not covered by the current or past tenancy applications.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-12T-PT",
+      "form_name": "Tenant Application for Dispute Resolution (Past Tenancy)",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "application",
+      "current_version": "March 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb12tpt.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant applying for dispute resolution after the tenancy has ended.",
+      "related_forms": [
+        "RTB-26",
+        "RTB-43",
+        "RTB-55",
+        "RTB-37",
+        "RTB-47"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-13",
+      "form_name": "Application for Substituted Service",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "substituted_service",
+      "current_version": "July 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb13.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party asking an arbitrator to order that documents be served by a method other than those the Act requires.",
+      "related_forms": [
+        "RTB-55"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-17",
+      "form_name": "Application to Waive Filing Fee",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "fee_waiver",
+      "current_version": "May 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb17.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "An applicant asking to waive the fee for filing a dispute resolution application.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-12T-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-18",
+      "form_name": "Landlord's Request to Join Applications for Dispute Resolution",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "join_applications",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb18.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord asking to have multiple applications for dispute resolution joined and heard together.",
+      "related_forms": [
+        "RTB-12L-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-19",
+      "form_name": "Tenant's Request to Join Applications for Dispute Resolution",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "join_applications",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb19.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "Tenants asking to have multiple applications for dispute resolution joined and heard together.",
+      "related_forms": [
+        "RTB-12T-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-21",
+      "form_name": "Confirmation of Service of Monetary Order for Enforcement in Provincial Court",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "enforcement",
+      "current_version": "January 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb21.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Swearing that the respondent was served with a monetary order before enforcing it in Provincial Court.",
+      "related_forms": [
+        "RTB-59"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-22",
+      "form_name": "Notice of Final Opportunity to Schedule a Condition Inspection",
+      "status": "active",
+      "category": "general",
+      "matter_type": "condition_inspection",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb22.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord giving the tenant a final opportunity to schedule a move-in or move-out condition inspection.",
+      "related_forms": [
+        "RTB-27"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-24",
+      "form_name": "Notice Terminating or Restricting a Service or Facility",
+      "status": "active",
+      "category": "general",
+      "matter_type": "services_and_facilities",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb24.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord terminating or restricting a service or facility to a rental unit or manufactured home site.",
+      "related_forms": [
+        "RTB-1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-26",
+      "form_name": "Schedule of Parties",
+      "status": "active",
+      "category": "general",
+      "matter_type": "schedule_of_parties",
+      "current_version": "September 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb26.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Listing additional landlords or tenants that do not fit on an agreement, notice or application.",
+      "related_forms": [
+        "RTB-1",
+        "RTB-12L-CT",
+        "RTB-12T-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-27",
+      "form_name": "Condition Inspection Report",
+      "status": "active",
+      "category": "general",
+      "matter_type": "condition_inspection",
+      "current_version": "April 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb27.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Recording the condition of the rental unit at the move-in and move-out inspections.",
+      "related_forms": [
+        "RTB-22",
+        "RTB-1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-29",
+      "form_name": "Four Month Notice to End Tenancy for Demolition or Conversion of the Rental Unit to Another Use",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "notice_to_end",
+      "current_version": "July 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb29.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord ending a tenancy to demolish the rental unit or convert it to a use that requires it to be empty.",
+      "related_forms": [
+        "RTB-34",
+        "RTB-35"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-30",
+      "form_name": "10 Day Notice to End Tenancy for Unpaid Rent or Utilities",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "notice_to_end",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb30.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord ending a tenancy for unpaid rent or utilities.",
+      "related_forms": [
+        "RTB-34",
+        "RTB-12L-DR",
+        "RTB-46"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-31",
+      "form_name": "12 Month Notice to End Tenancy for Conversion of Manufactured Home Park",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "notice_to_end",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb31.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord ending a manufactured home site tenancy because the park is being converted to another use.",
+      "related_forms": [
+        "RTB-34"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-32Q",
+      "form_name": "Two Month Notice to End Tenancy because the Tenant does not quality for a Subsidized Rental Unit",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "notice_to_end",
+      "current_version": "July 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb32q.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord ending a tenancy of a subsidized rental unit because the tenant no longer qualifies for it.",
+      "related_forms": [
+        "RTB-34"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-33",
+      "form_name": "One Month Notice to End Tenancy",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "notice_to_end",
+      "current_version": "April 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb33.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord ending a tenancy for cause.",
+      "related_forms": [
+        "RTB-34"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-33S",
+      "form_name": "One Month Notice to End Tenancy for Cause by a Strata Corporation",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "notice_to_end",
+      "current_version": "May 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb33s.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "other",
+      "parties": [
+        "other",
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "not_applicable",
+      "use_when": "A strata corporation ending a tenancy for cause.",
+      "related_forms": [
+        "RTB-33",
+        "RTB-34"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-34",
+      "form_name": "Proof of Service Notice to End Tenancy and Written Demand to Pay Utilities",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "proof_of_service",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb34.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Proving how and when a notice to end tenancy or a written demand to pay utilities was served.",
+      "related_forms": [
+        "RTB-30",
+        "RTB-33",
+        "RTB-12L-DR"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-35",
+      "form_name": "45 Day Notice of Availability",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "right_of_first_refusal",
+      "current_version": "July 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb35.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord telling a tenant who exercised a right of first refusal that the renovated unit will be available, at least 45 days before the work is done.",
+      "related_forms": [
+        "RTB-29"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-36",
+      "form_name": "Request Alternate Dispute Resolution Hearing or Facilitated Settlement Format",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "hearing_format",
+      "current_version": "March 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb36.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party to a hearing asking for the hearing to be held in an alternate format or as a facilitated settlement.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-12T-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-37",
+      "form_name": "Monetary Order Worksheet",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "monetary_claim",
+      "current_version": "June 2011",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb37.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Itemizing the amounts claimed in an application for a monetary order.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-12L-PT",
+        "RTB-12T-PT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-38",
+      "form_name": "Request for Clarification",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "clarification",
+      "current_version": "January 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb38.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party asking the RTB to clarify a decision or order.",
+      "related_forms": [
+        "RTB-2",
+        "RTB-6"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-40",
+      "form_name": "Tenant Direct Request Worksheet",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "worksheet",
+      "current_version": "August 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb40.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant setting out the deposit amounts claimed in a direct request for return of a security or pet damage deposit.",
+      "related_forms": [
+        "RTB-12T-DR"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-41",
+      "form_name": "Tenant Proof of Service of Forwarding Address",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "proof_of_service",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb41.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant proving that the Notice of Forwarding Address was served on the landlord.",
+      "related_forms": [
+        "RTB-47",
+        "RTB-12T-DR"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-42L",
+      "form_name": "Landlord Request to Amend an Application for Dispute Resolution",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "amendment",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb42l.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord amending an application for dispute resolution that is already filed.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-42O"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-42O",
+      "form_name": "Other Request to Amend an Application for Dispute Resolution to change address, add or remove a party or remove a claim",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "amendment",
+      "current_version": "February 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb42o.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party amending an application for dispute resolution to change an address, add or remove a party, or remove a claim.",
+      "related_forms": [
+        "RTB-42L",
+        "RTB-42T"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-42T",
+      "form_name": "Tenant Request to Amend an Application for Dispute Resolution",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "amendment",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb42t.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant amending an application for dispute resolution that is already filed.",
+      "related_forms": [
+        "RTB-12T-CT",
+        "RTB-42O"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-43",
+      "form_name": "Digital Evidence Details",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "evidence",
+      "current_version": "September 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb43.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Describing digital evidence (such as photos, video or audio) submitted for a dispute resolution hearing.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-12T-CT"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-45",
+      "form_name": "Notice of Standard Rent Increase - Manufactured Home Site",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "rent_increase",
+      "current_version": "August 2026",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb45.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A manufactured home park landlord notifying a tenant of a standard site rent increase.",
+      "related_forms": [
+        "RTB-11A"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-46",
+      "form_name": "Landlord Direct Request Worksheet",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "worksheet",
+      "current_version": "October 2015",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb46.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord setting out the rent and utilities owed in a direct request for possession and a monetary order.",
+      "related_forms": [
+        "RTB-12L-DR",
+        "RTB-30"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-47",
+      "form_name": "Tenant Notice of Forwarding Address",
+      "status": "active",
+      "category": "general",
+      "matter_type": "forwarding_address",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb47.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant giving the landlord a forwarding address in writing at the end of a tenancy.",
+      "related_forms": [
+        "RTB-41",
+        "RTB-12T-DR"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-49",
+      "form_name": "Ending Fixed-Term Tenancy Confirmation Statement",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "fixed_term_early_end",
+      "current_version": "January 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb49.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant ending a fixed-term tenancy early for family violence or long-term care, with a statement completed by an eligible third-party verifier.",
+      "related_forms": [],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-50",
+      "form_name": "Tenant's Proof of Service for a Direct Request Proceeding",
+      "status": "active",
+      "category": "direct_request",
+      "matter_type": "proof_of_service",
+      "current_version": "February 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb50.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "receives_as_landlord_agent",
+      "use_when": "A tenant proving service of the documents for a direct request proceeding.",
+      "related_forms": [
+        "RTB-12T-DR"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-51",
+      "form_name": "Address for Service",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "address_for_service",
+      "current_version": "March 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb51.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party providing an email address for service of documents.",
+      "related_forms": [
+        "RTB-55"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-52",
+      "form_name": "Application for Additional Rent Increase",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "additional_rent_increase",
+      "current_version": "July 2021",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb52.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord applying for an arbitrator's approval of a rent increase above the amount the legislation allows.",
+      "related_forms": [
+        "RTB-7",
+        "RTB-53-P1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P1",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 1)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "January 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb53-p1.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord notifying tenants of an approved additional rent increase for eligible capital expenditures (phase 1).",
+      "related_forms": [
+        "RTB-53-P1D",
+        "RTB-52"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P1D",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 1 Details)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "January 2022",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb53-p1d.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Attaching the details of a phase 1 additional rent increase for eligible capital expenditures.",
+      "related_forms": [
+        "RTB-53-P1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P2",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 2)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "June 2023",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb53-p2.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord notifying tenants of an approved additional rent increase for eligible capital expenditures (phase 2).",
+      "related_forms": [
+        "RTB-53-P2D",
+        "RTB-53-P1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P2D",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 2 Details)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "July 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb53-p2d.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Attaching the details of a phase 2 additional rent increase for eligible capital expenditures.",
+      "related_forms": [
+        "RTB-53-P2"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P3",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 3)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "June 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb-53-p3.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A landlord notifying tenants of an approved additional rent increase for eligible capital expenditures (phase 3).",
+      "related_forms": [
+        "RTB-53-P3D",
+        "RTB-53-P2"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-53-P3D",
+      "form_name": "Notice of Additional Rent Increase - Eligible Capital Expenditures (Phase 3 Details)",
+      "status": "active",
+      "category": "rent_increase",
+      "matter_type": "capital_expenditure",
+      "current_version": "June 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb-53-p3d.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Attaching the details of a phase 3 additional rent increase for eligible capital expenditures.",
+      "related_forms": [
+        "RTB-53-P3"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-54",
+      "form_name": "Request for a Hearing Recording",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "hearing_recording",
+      "current_version": "March 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb54.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party requesting a recording of a dispute resolution hearing.",
+      "related_forms": [],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-55",
+      "form_name": "Proof of Service Notice of Dispute Resolution Proceeding",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "proof_of_service",
+      "current_version": "January 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb55.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Proving service of the notice of dispute resolution proceeding package on the respondent.",
+      "related_forms": [
+        "RTB-12L-CT",
+        "RTB-12T-CT",
+        "RTB-13"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-56A",
+      "form_name": "Notice of Manufactured Home Park Rule Change - No Park Committee",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "park_rules",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb56a.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A manufactured home park landlord giving notice of a park rule change where there is no park committee.",
+      "related_forms": [
+        "RTB-56B",
+        "RTB-57"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-56B",
+      "form_name": "Notice of Manufactured Home Park Rule Change - Park Committee",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "park_rules",
+      "current_version": "June 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb56b.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A manufactured home park landlord giving notice of a park rule change where there is a park committee.",
+      "related_forms": [
+        "RTB-56A",
+        "RTB-57"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-57",
+      "form_name": "Additional Manufactured Home Park Rule Changes",
+      "status": "active",
+      "category": "manufactured_home_park",
+      "matter_type": "park_rules",
+      "current_version": "April 2024",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb57.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "Listing additional park rule changes that do not fit on the rule change notice.",
+      "related_forms": [
+        "RTB-56A",
+        "RTB-56B"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-58",
+      "form_name": "Contract of Purchase and Sale Information",
+      "status": "active",
+      "category": "ending_tenancy",
+      "matter_type": "purchaser_occupancy",
+      "current_version": "January 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb58.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A selling landlord providing contract of purchase and sale information when a tenancy is ended for the purchaser's occupancy.",
+      "related_forms": [],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-59",
+      "form_name": "Application to Exempt Monetary Order from Publication",
+      "status": "active",
+      "category": "post_decision",
+      "matter_type": "publication_exemption",
+      "current_version": "July 2025",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb59.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "either",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A party applying to exempt a monetary order from publication.",
+      "related_forms": [
+        "RTB-21"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-60",
+      "form_name": "Notice of Amendment to Tenancy Agreement for Supportive Housing Rental Unit",
+      "status": "active",
+      "category": "supportive_housing",
+      "matter_type": "agreement_amendment",
+      "current_version": "July 2026",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb60.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A supportive housing landlord giving notice of an amendment to the tenancy agreement for a supportive housing rental unit.",
+      "related_forms": [
+        "RTB-61",
+        "RTB-1"
+      ],
+      "last_verified": "2026-09-22"
+    },
+    {
+      "id": "RTB-61",
+      "form_name": "Notice of Rescission (Cancellation) of Amendment to Tenancy Agreement for Supportive Housing Rental Units",
+      "status": "active",
+      "category": "supportive_housing",
+      "matter_type": "agreement_amendment",
+      "current_version": "July 2026",
+      "official_url": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb61.pdf",
+      "official_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_sign_as_authorized_agent",
+      "use_when": "A supportive housing landlord cancelling a previously noticed amendment to a supportive housing tenancy agreement.",
+      "related_forms": [
+        "RTB-60"
+      ],
+      "last_verified": "2026-09-22"
+    }
+  ]
+}
