@@ -13,7 +13,7 @@ schema/bc-rtb-forms.schema.json      JSON Schema (draft-07) for the catalog
 scripts/validate.mjs                 schema + id checks
 scripts/check-links.mjs              link health checks
 scripts/detect-source-changes.mjs    the updater
-snapshots/                           saved copies of the fetched index page
+snapshots/latest.json                hash + extracted inventory from the last fetch (no HTML)
 .github/workflows/                   CI and the weekly updater
 ```
 
@@ -61,6 +61,18 @@ The record shape is defined in
 
 This is not legal advice. A form URL that responds does not mean the form is current or
 valid for your situation. A source change always needs human review before it is merged.
+
+## Copyright and licence
+
+Form numbers, names, and PDF links in this catalog are drawn from forms published by the
+Government of British Columbia's Residential Tenancy Branch. We link to the government's
+PDFs; we never redistribute them, and we do not store a copy of the government's forms
+page (`scripts/detect-source-changes.mjs` keeps only a hash of the fetched page plus our
+own extracted inventory in `snapshots/latest.json`, for change detection). That government
+content remains copyright Government of British Columbia. This repository's own code and
+human-written metadata (categorization, `use_when`, `related_forms`, and similar fields)
+are MIT licensed, as below. The Open Government Licence - British Columbia does not apply
+here, since none of this data is published in the BC Data Catalogue.
 
 ## License
 

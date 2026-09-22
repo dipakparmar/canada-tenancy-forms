@@ -2,7 +2,7 @@
 // Usage: node scripts/detect-source-changes.mjs [--write] [--summary <path>]
 // Exit: 0 no changes (or written), 2 changes found without --write, 1 error.
 import { createHash } from 'node:crypto'
-import { readFileSync, writeFileSync, readdirSync, rmSync, appendFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
 
 const DATA = new URL('../data/bc-rtb-forms.json', import.meta.url)
 const SNAPS = new URL('../snapshots/', import.meta.url)
@@ -93,16 +93,20 @@ async function main() {
     : `## RTB forms source changes\n\nNo changes (${found.length} forms on the index page).\n${note}`
   console.log(summary)
   if (summaryPath) appendFileSync(summaryPath, summary)
-  if (!lines.length) return 0
-  if (!write) return 2
+  if (!write) return lines.length ? 2 : 0
 
-  // ponytail: the page bytes change on every fetch, so we only snapshot/write when the extracted forms changed.
-  for (const f of readdirSync(SNAPS)) if (f.endsWith('.html')) rmSync(new URL(f, SNAPS))
-  writeFileSync(new URL(`tenancy-forms.${today}.html`, SNAPS), html)
+  // ponytail: no HTML snapshot on purpose, Province copyright forbids redistributing the page; hash plus our own extracted inventory is enough for change detection
+  // latest.json always reflects the fetch just made; data/bc-rtb-forms.json (below) is only rewritten
+  // when the extracted forms actually changed, since the page bytes differ on every fetch regardless.
+  const sha256 = createHash('sha256').update(html).digest('hex')
+  const inventory = found.map((f) => ({ id: f.id, form_name: f.form_name, official_url: f.official_url })).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
+  writeFileSync(new URL('latest.json', SNAPS), JSON.stringify({ fetched_at: today, index_url: catalog.source.index_url, sha256, forms: inventory }, null, 2) + '\n')
+  if (!lines.length) return 0
+
   for (const r of catalog.forms) if (seen.has(r.id)) r.last_verified = today
   catalog.forms.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
   catalog.generated_at = today
-  catalog.source.snapshot_sha256 = createHash('sha256').update(html).digest('hex')
+  catalog.source.snapshot_sha256 = sha256
   writeFileSync(DATA, JSON.stringify(catalog, null, 2) + '\n')
   return 0
 }

@@ -42,7 +42,7 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - `data/` the catalog
 - `schema/` JSON Schema for the catalog
 - `scripts/` validate, check-links, the updater
-- `snapshots/` saved copies of the fetched index page
+- `snapshots/` `latest.json`: hash + extracted inventory from the last fetch, no HTML
 - `.github/` CI and the weekly updater workflow
 
 ## Conventions
@@ -53,6 +53,7 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - Pin GitHub Actions to `vMAJOR.MINOR.PATCH`. Minimum release age is 3 days
   (see `bunfig.toml` and `.github/dependabot.yml` cooldown).
 - No custom `User-Agent` on outbound requests.
+- Never commit a copy of any gov.bc.ca page or PDF; store only hashes and extracted facts.
 
 ## Legal caveat
 
