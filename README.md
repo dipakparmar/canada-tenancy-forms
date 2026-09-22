@@ -127,15 +127,42 @@ reviewer has to correct.
 | Form | fields | exact | section+item |
 |---|---|---|---|
 | RTB-1 | 122 | 57 (47%) | 67 (55%) |
-| RTB-27 | 468 | 12 (3%) | 291 (62%) |
+| RTB-27 | 468 | 409 (87%) | 410 (88%) |
 
 RTB-1 is the optimistic number: the label dictionary was mined from that form, and all 22 of
-its high-confidence guesses were exactly right. RTB-27 is the honest generalisation number,
-and the gap between 3% and 62% is one naming level: 456 of its fields are grid cells that
-automap names `kitchen.fridge.comment` where the verified map says
-`kitchen.fridge.moveIn.comment`. The room and the item are right; the group header above the
-column ("Condition at Beginning of Tenancy") is what `extractText()` returns broken across
-spans. Treat automap as a first draft, never as a map.
+its high-confidence guesses were exactly right. RTB-27 is the generalisation number, and
+almost all of it is the inspection grid: 437 of its 468 fields are grid cells, and automap
+names 409 of them exactly as the verified map does. What it still gets wrong there is naming
+taste, not structure - it reads `T.Garage or Parking Area` as `garageOrParkingArea` where the
+map says `garageOrParking` - plus the eleven key-issue rows, whose own column headers it
+takes literally instead of reusing the grid's. The 56 fields on the identification and
+signature pages are the weak spot: 12 come out right and the rest are the ordinary human
+corrections a render review catches. Treat automap as a first draft, never as a map.
+
+### Grid support
+
+A form that is mostly a table needs more than the nearest label, so automap looks for the
+table itself:
+
+- **Columns.** When several widgets share an x position down a page, the text above the
+  topmost one is a column header and qualifies every key in that column.
+- **Group headers.** A wider heading that sits above the column headers and covers more than
+  one of them is a level of its own, so a cell is keyed
+  `<section>.<row>.<group>.<column>` - `kitchen.fridge.moveIn.comment` under "Condition at
+  Beginning of Tenancy" over "Comment".
+- **Row labels** are matched by vertical centre against the widget's rect, not by nearest
+  text, and are read from a narrow band at the row-label indent so a section heading in the
+  margin cannot leak into them.
+- **Section headings carry down.** A numbered, capitalised or larger line in the left margin
+  sets the prefix for every row below it until the next heading, and a heading that wraps
+  onto a second line is joined back up ("N.Stairwell" / "and Hall").
+- **Page breaks.** A grid prints its headers once, at its start; a later page whose columns
+  line up with an earlier grouped page keeps the same group.
+- **Split spans.** `extractText()` breaks a printed word into several spans wherever the
+  styling changes ("L" + "ighting Fixtures/", "Condition at Begin" + "n" + "ing of Tenancy").
+  `layout.ts` joins spans that sit on one baseline, are set at one size, touch, and meet
+  inside a word. A visible gap is left alone, because that is the form putting two columns
+  side by side.
 
 ### Filling a form
 
