@@ -1,8 +1,3 @@
-```
-Status:        in-progress
-Last verified: 2026-09-22 — merged user catalog, scripts run against the live index page
-```
-
 # bc-rtb-forms
 
 A machine-readable catalog of the forms published by the British Columbia Residential
