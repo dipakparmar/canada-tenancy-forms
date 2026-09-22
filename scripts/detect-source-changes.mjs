@@ -96,12 +96,13 @@ async function main() {
   if (!write) return lines.length ? 2 : 0
 
   // ponytail: no HTML snapshot on purpose, Province copyright forbids redistributing the page; hash plus our own extracted inventory is enough for change detection
-  // latest.json always reflects the fetch just made; data/bc-rtb-forms.json (below) is only rewritten
-  // when the extracted forms actually changed, since the page bytes differ on every fetch regardless.
+  // latest.json and data/bc-rtb-forms.json (below) are only written when the extracted forms actually
+  // changed, since the page bytes differ on every fetch regardless.
   const sha256 = createHash('sha256').update(html).digest('hex')
+  if (!lines.length) return 0
+
   const inventory = found.map((f) => ({ id: f.id, form_name: f.form_name, official_url: f.official_url })).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
   writeFileSync(new URL('latest.json', SNAPS), JSON.stringify({ fetched_at: today, index_url: catalog.source.index_url, sha256, forms: inventory }, null, 2) + '\n')
-  if (!lines.length) return 0
 
   for (const r of catalog.forms) if (seen.has(r.id)) r.last_verified = today
   catalog.forms.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
