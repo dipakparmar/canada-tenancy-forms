@@ -175,17 +175,6 @@ after a save and reload.
 has nothing to set on them, so RTB-27's five signature fields are skipped (463 of 468 filled).
 Anything that needs a real signature needs a different mechanism.
 
-## GitHub setup
-
-- Protect `main`: require a pull request, at least one approving review, and the CI
-  status check.
-- Enable "Allow GitHub Actions to create pull requests" (Settings, Actions, General,
-  Workflow permissions). The updater needs this.
-- PRs opened with the built-in `GITHUB_TOKEN` do not trigger other workflows on their own,
-  so CI will not start on the updater PR by itself; close and reopen it, or push an empty
-  commit, to get the required check to run.
-- Keep the fixed updater branch unprotected so the workflow can force-push it.
-
 ## Legal and data quality
 
 This is not legal advice. A form URL that responds does not mean the form is current or
