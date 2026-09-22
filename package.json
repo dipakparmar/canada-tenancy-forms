@@ -10,7 +10,18 @@
     "validate": "bun scripts/validate.mjs",
     "check-links": "bun scripts/check-links.mjs",
     "update:check": "bun scripts/detect-source-changes.mjs",
-    "update:sources": "bun scripts/detect-source-changes.mjs --write"
+    "update:sources": "bun scripts/detect-source-changes.mjs --write",
+    "fetch-forms": "bun scripts/fetch-form.ts",
+    "inspect": "bun scripts/pdf/inspect.ts",
+    "automap": "bun scripts/pdf/automap.ts",
+    "automap:eval": "bun scripts/pdf/automap-eval.ts",
+    "markers": "bun scripts/pdf/markers.ts",
+    "fill": "bun scripts/pdf/fill.ts",
+    "serve": "bun scripts/pdf/serve.ts",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@libpdf/core": "0.4.2"
   },
   "devDependencies": {
     "ajv": "8.20.0"
