@@ -86,17 +86,17 @@ The weekly workflow (`.github/workflows/update-rtb-forms.yml`, Mondays 15:00 UTC
 
 ## Local commands
 
-Node 22 or newer. The only dependency is `ajv` for schema validation.
+Bun is the package manager, pinned in `package.json` and `.bun-version`. The only dependency is `ajv` for schema validation.
 
 ```sh
-npm ci
-npm run validate        # schema + unique ids + related_forms references
-npm run check-links     # HEAD every official_url and the index page (GET with Range if HEAD is refused)
-npm run update:check    # print the source diff; exit 2 if anything changed
-npm run update:sources  # apply source-owned changes and refresh the snapshot
+bun install
+bun run validate        # schema + unique ids + related_forms references
+bun run check-links     # HEAD every official_url and the index page (GET with Range if HEAD is refused)
+bun run update:check    # print the source diff; exit 2 if anything changed
+bun run update:sources  # apply source-owned changes and refresh the snapshot
 ```
 
-Pass `--summary <path>` to the detect script (for example `npm run update:check -- --summary out.md`) to also append the markdown summary to a file.
+Pass `--summary <path>` to the detect script (for example `bun run update:check -- --summary out.md`) to also append the markdown summary to a file.
 
 ## Known limits
 

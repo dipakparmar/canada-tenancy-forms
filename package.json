@@ -5,14 +5,12 @@
   "type": "module",
   "description": "Machine-readable catalog of British Columbia Residential Tenancy Branch forms",
   "license": "MIT",
-  "engines": {
-    "node": ">=22"
-  },
+  "packageManager": "bun@1.4.2",
   "scripts": {
-    "validate": "node scripts/validate.mjs",
-    "check-links": "node scripts/check-links.mjs",
-    "update:check": "node scripts/detect-source-changes.mjs",
-    "update:sources": "node scripts/detect-source-changes.mjs --write"
+    "validate": "bun scripts/validate.mjs",
+    "check-links": "bun scripts/check-links.mjs",
+    "update:check": "bun scripts/detect-source-changes.mjs",
+    "update:sources": "bun scripts/detect-source-changes.mjs --write"
   },
   "devDependencies": {
     "ajv": "8.20.0"

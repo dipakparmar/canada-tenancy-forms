@@ -22,13 +22,10 @@ jobs:
       TITLE: "chore(data): sync RTB forms from official source"
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-node@v7.0.0
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - run: npm run update:sources -- --summary "$RUNNER_TEMP/pr-body.md"
-      - run: npm run validate
+      - run: npm install -g bun@1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run update:sources -- --summary "$RUNNER_TEMP/pr-body.md"
+      - run: bun run validate
       - name: Open or update PR
         env:
           GH_TOKEN: ${{ github.token }}
