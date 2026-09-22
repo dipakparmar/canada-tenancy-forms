@@ -55,7 +55,44 @@ export async function loadLayout(path: string): Promise<Layout> {
         });
       }
   }
-  return { pdf, pageCount: pages.length, fields, spans };
+  return { pdf, pageCount: pages.length, fields, spans: mergeRuns(spans) };
+}
+
+// extractText() breaks one printed word into several spans wherever the styling changes:
+// a decorative first letter becomes its own span ("L" + "ighting Fixtures/"), and a
+// heading splits mid-word ("Condition at Begin" + "n" + "ing of Tenancy  Condition ...").
+// Spans on the same baseline, set at the same size, whose boxes touch and whose join
+// falls inside a word (no space on either side of the seam) are one word, so join them
+// with no separator. Anything else is left alone: a gap, or a seam at a space, is the
+// form putting two things side by side, and callers split lines on those.
+const TOUCHING = 1.5;
+
+export function mergeRuns(spans: Span[]): Span[] {
+  const lines = new Map<string, Span[]>();
+  for (const s of spans) {
+    const k = [...lines.keys()].find((key) => {
+      const [p, y, h] = key.split("|").map(Number);
+      return p === s.page && Math.abs(y! - s.y) <= 1.2 && Math.abs(h! - s.h) <= 1;
+    });
+    const key = k ?? `${s.page}|${s.y}|${s.h}`;
+    (lines.get(key) ?? lines.set(key, []).get(key)!).push(s);
+  }
+  const out: Span[] = [];
+  for (const line of lines.values()) {
+    line.sort((a, b) => a.x - b.x);
+    let cur = line[0]!;
+    for (const s of line.slice(1)) {
+      const midWord = !/\s$/.test(cur.text) && !/^\s/.test(s.text);
+      if (midWord && s.x - (cur.x + cur.w) < TOUCHING) {
+        cur = { ...cur, text: cur.text + s.text, w: r1(Math.max(cur.x + cur.w, s.x + s.w) - cur.x) };
+      } else {
+        out.push(cur);
+        cur = s;
+      }
+    }
+    out.push(cur);
+  }
+  return out;
 }
 
 export async function pdfText(pdf: any): Promise<string> {

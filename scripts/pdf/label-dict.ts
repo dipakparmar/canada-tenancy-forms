@@ -100,6 +100,10 @@ export const LABELS: Record<string, string> = {
   "rental unit": "rentalUnit",
   "condition on move in": "moveIn",
   "condition on move out": "moveOut",
+  "condition at beginning of tenancy": "moveIn",
+  "condition at the beginning of tenancy": "moveIn",
+  "condition at end of tenancy": "moveOut",
+  "condition at the end of tenancy": "moveOut",
 };
 
 // a day/month/year triple is qualified by the sentence to its left ("... starts on:")

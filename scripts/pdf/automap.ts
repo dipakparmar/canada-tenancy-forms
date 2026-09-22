@@ -114,8 +114,10 @@ function bestLabel(f: FieldPos, subs: Sub[]): Match | null {
 // A section heading sits in the left margin and is written in capitals ("the LANDLORD(S):",
 // "2.BEGINNING AND TERM OF THE AGREEMENT"). Spans on the same baseline are joined first,
 // because the number and the title are often separate spans ("3." + "RENT").
-function headings(spans: Span[]): { page: number; y: number; prefix: string; text: string }[] {
-  const out: { page: number; y: number; prefix: string; text: string }[] = [];
+type Heading = { page: number; y: number; h: number; prefix: string; text: string; span: Span };
+
+function headings(spans: Span[]): Heading[] {
+  const out: Heading[] = [];
   const left = spans.filter((s) => s.x < 42).sort((a, b) => a.page - b.page || b.y - a.y);
   for (const s of left) {
     let text = s.text;
@@ -136,7 +138,29 @@ function headings(spans: Span[]): { page: number; y: number; prefix: string; tex
       if (m && (m[1]!.match(/[A-Za-z]/g) ?? []).length >= 3) head = m[1]!.replace(/:\s*$/, "");
     }
     if (!head) continue;
-    out.push({ page: s.page, y: s.y, prefix: sectionPrefix(head), text: head.trim() });
+    out.push({ page: s.page, y: s.y, h: s.h, prefix: "", text: head.trim(), span: s });
+  }
+  // A heading too long for the margin wraps onto the next line ("N.Stairwell" / "and
+  // Hall", "T.Garage or" / "Parking Area"). A continuation is set at the same size, sits
+  // one line below, is still in the margin, and is not a heading in its own right.
+  const isHead = new Set(out.map((h) => h.span));
+  for (const h of out) {
+    let y = h.y;
+    for (;;) {
+      const next = spans.find(
+        (s) =>
+          !isHead.has(s) &&
+          s.page === h.page &&
+          s.x < 110 &&
+          Math.abs(s.h - h.h) < 1 &&
+          y - s.y > 4 &&
+          y - s.y <= h.h + 3,
+      );
+      if (!next) break;
+      h.text = `${h.text} ${next.text.trim()}`;
+      y = next.y;
+    }
+    h.prefix = sectionPrefix(h.text);
   }
   return out;
 }
@@ -169,8 +193,13 @@ type Row = {
   sub?: Sub;
   headText?: string;
   column?: string;
+  group?: string;
   grid?: boolean;
 };
+// a cell's key level(s) below its row: the column header, under its group header if the
+// table has one ("moveIn.comment")
+const qual = (r: Row) => (r.group ? `${r.group}.${r.column}` : `${r.column}`);
+
 const rows: Row[] = [];
 for (const f of fields) {
   const m = bestLabel(f, subs);
@@ -219,6 +248,9 @@ function bandKey(page: number, y: number): string {
 {
   const byPage = new Map<number, Row[]>();
   for (const r of rows) (byPage.get(r.f.page) ?? byPage.set(r.f.page, []).get(r.f.page)!).push(r);
+  // every detected column on every page, so a grid that runs over a page break can borrow
+  // the headers printed once at its start
+  const allCols: { page: number; x: number; w: number; column: string; group?: string; col: Row[] }[] = [];
   for (const rs of byPage.values()) {
     const cols: Row[][] = [];
     for (const r of rs) {
@@ -226,6 +258,7 @@ function bandKey(page: number, y: number): string {
       if (c) c.push(r); else cols.push([r]);
     }
     if (cols.length < 2) continue;
+    const headed: { col: Row[]; cx: number; header: Sub }[] = [];
     for (const col of cols) {
       if (col.length < 5) continue;
       const top = col.reduce((a, b) => (a.f.y >= b.f.y ? a : b));
@@ -237,7 +270,56 @@ function bandKey(page: number, y: number): string {
       const q = camel(header.raw);
       if (!q || q.length > 18) continue;
       for (const r of col) r.column = q;
+      headed.push({ col, cx, header });
+      allCols.push({ page: top.f.page, x: top.f.x, w: top.f.w, column: q, col });
     }
+    // Two-level column headers: a wider heading sits above the column headers and covers
+    // several of them ("Condition at Beginning of Tenancy" over "Comment" and "Code",
+    // "Condition at End of Tenancy" over the next pair). It names a group of columns, so
+    // it becomes a key level of its own between the row and the column. Only a heading
+    // that really spans more than one column counts, and only when the page has more than
+    // one such group; otherwise it says nothing the column header does not already say.
+    const groupOf = new Map<Sub, { col: Row[] }[]>();
+    for (const h of headed) {
+      const g = subs
+        .filter(
+          (s) =>
+            s.page === h.header.page &&
+            s.y > h.header.y + h.header.h / 2 &&
+            s.y - h.header.y < 45 &&
+            s.x - 2 <= h.cx &&
+            h.cx <= s.x + s.w + 2,
+        )
+        .sort((a, b) => a.y - b.y)[0];
+      if (!g) continue;
+      (groupOf.get(g) ?? groupOf.set(g, []).get(g)!).push(h);
+    }
+    const spanning = [...groupOf].filter(([, hs]) => hs.length > 1);
+    if (spanning.length > 1)
+      for (const [g, hs] of spanning) {
+        const n = norm(g.raw);
+        const q = LABELS[n] ?? camel(n.split(" ").slice(0, 5).join(" "));
+        if (!q || q.length > 24) continue;
+        for (const h of hs) {
+          for (const r of h.col) r.group = q;
+          const known = allCols.find((c) => c.col === h.col);
+          if (known) known.group = q;
+        }
+      }
+  }
+
+  // A grid that runs over a page break prints its headers once, at its start. A later
+  // page whose columns line up with those of an earlier grouped page is the same grid
+  // continuing, so its columns keep the same group.
+  allCols.sort((a, b) => a.page - b.page);
+  for (const c of allCols) {
+    if (c.group) continue;
+    const src = allCols.find(
+      (o) => o.group && o.page < c.page && o.column === c.column && Math.abs(o.x - c.x) < 12 && Math.abs(o.w - c.w) < 12,
+    );
+    if (!src) continue;
+    c.group = src.group;
+    for (const r of c.col) r.group = src.group;
   }
   // A real table (3+ columns of 5+ widgets) labels its rows in a column of text to the left
   // of the first field column. Take the label whose vertical centre falls inside the row.
@@ -251,23 +333,35 @@ function bandKey(page: number, y: number): string {
     const cells = rows.filter((r) => r.f.page === page && r.column);
     const distinctCols = new Set(cells.map((r) => Math.round(r.f.x / 10))).size;
     if (distinctCols < 3 || cells.length < 15) continue;
-    // the row-label column is the rightmost block of text left of the first field column
+    // A widget that sits on a grid row but in no detected column (a write-in row at the
+    // end of a section, too few of them to form a column of their own) is still a cell of
+    // that grid, so it takes the nearest column's headers.
+    for (const r of rows) {
+      if (r.f.page !== page || r.column) continue;
+      const band = cells.filter((c) => Math.abs(c.f.y - r.f.y) < 7);
+      if (!band.length) continue;
+      const near = band.reduce((a, b) => (Math.abs(a.f.x - r.f.x) <= Math.abs(b.f.x - r.f.x) ? a : b));
+      r.column = near.column;
+      r.group = near.group;
+      cells.push(r);
+    }
+    // The row-label column is the rightmost block of text left of the first field column.
+    // Row labels share an indent, so keep a narrow band at that indent: anything further
+    // left is the section heading in the margin, not part of a row's label.
     const left = spans.filter((s) => s.page === page && s.x + s.w < x0 + 4);
     if (!left.length) continue;
     const rightEdge = Math.max(...left.map((s) => s.x));
-    const labelCol = left.filter((s) => s.x > rightEdge - 95);
+    const labelCol = left.filter((s) => s.x > rightEdge - 40);
     for (const r of cells) {
       const text = labelCol
         .filter((s) => s.y + s.h / 2 > r.f.y - 1 && s.y + s.h / 2 < r.f.y + r.f.h + 1)
         .sort((a, b) => b.y - a.y || a.x - b.x)
         .map((s) => s.text.trim())
-        .join(" ")
-        // extractText splits a styled first letter into its own span ("L" + "ighting")
-        .replace(/\b([A-Za-z]) (?=[a-z])/g, "$1");
+        .join(" ");
       const n = norm(text);
       r.label = text;
       r.known = !!LABELS[n];
-      r.stem = `${n ? LABELS[n] ?? camel(n) : "blank"}.${r.column}`;
+      r.stem = `${n ? LABELS[n] ?? camel(n) : "blank"}.${qual(r)}`;
       r.cost = 0;
       r.grid = true;
     }
@@ -288,10 +382,10 @@ function bandKey(page: number, y: number): string {
     for (const r of inCols) {
       if (r === leader) continue;
       if (r.dir === "left" && r.cost < 60) continue; // has a label of its own
-      r.stem = `${leader.stem}.${r.column}`;
+      r.stem = `${leader.stem}.${qual(r)}`;
       r.label = leader.label;
     }
-    if (leader.column) leader.stem = `${leader.stem}.${leader.column}`;
+    if (leader.column) leader.stem = `${leader.stem}.${qual(leader)}`;
   }
 
   // only qualify where it actually resolves a collision: one printed row label serving
@@ -301,7 +395,7 @@ function bandKey(page: number, y: number): string {
     const clash = rows.some(
       (o) => o !== r && o.f.page === r.f.page && o.prefix === r.prefix && o.stem === r.stem && o.column && o.column !== r.column,
     );
-    if (clash) r.stem = `${r.stem}.${r.column}`;
+    if (clash) r.stem = `${r.stem}.${qual(r)}`;
   }
 }
 
@@ -311,6 +405,7 @@ function bandKey(page: number, y: number): string {
 {
   const byRow = new Map<string, Row[]>();
   for (const r of rows) {
+    if (r.grid) continue; // a grid cell is named by its row and column, not by a nearby span
     if (!r.sub || (r.dir !== "below" && r.dir !== "above")) continue;
     const k = `${r.sub.src}|${r.dir}|${bandKey(r.f.page, r.f.y)}`;
     (byRow.get(k) ?? byRow.set(k, []).get(k)!).push(r);
@@ -410,8 +505,18 @@ for (const r of rows) {
   used.add(key);
 
   const ambiguous = (labelUse.get(norm(r.label)) ?? 0) > 1;
-  const confidence =
-    !r.known || !r.label ? "low" : r.cost < 22 && !ambiguous ? "high" : "medium";
+  // a grid cell is placed by the table's own structure rather than by the nearest text, so
+  // a labelled one is worth more than a bare proximity guess, but its row label repeats in
+  // every section, so it is never on its own evidence a high-confidence guess
+  const confidence = r.grid
+    ? r.label
+      ? "medium"
+      : "low"
+    : !r.known || !r.label
+      ? "low"
+      : r.cost < 22 && !ambiguous
+        ? "high"
+        : "medium";
 
   fieldsOut[key] = {
     pdf: r.f.name,
