@@ -57,9 +57,12 @@ async function main() {
   if (!res.ok) throw new Error(`index fetch failed: HTTP ${res.status}`)
   const html = await res.text()
   const found = extract(html)
-  const active = catalog.forms.filter((f) => f.status === 'active')
+  // ponytail: the updater only owns records whose official_url is a PDF under the forms directory.
+  // Portal-generated and specialized records (and anything pointing elsewhere) are left alone entirely:
+  // they never appear on the index page, so diffing them would mark them historical every week.
+  const managed = catalog.forms.filter((f) => f.official_url.startsWith(PREFIX) && f.status !== 'historical_or_replaced')
   // Guard against a broken page or parser marking the whole catalog historical.
-  if (found.length < active.length / 2) throw new Error(`only ${found.length} forms found vs ${active.length} active; refusing to diff`)
+  if (found.length < managed.length / 2) throw new Error(`only ${found.length} forms found vs ${managed.length} managed; refusing to diff`)
 
   const byId = new Map(catalog.forms.map((f) => [f.id, f]))
   const seen = new Set(found.map((f) => f.id))
@@ -73,16 +76,21 @@ async function main() {
         official_url: s.official_url, official_index_url: catalog.source.index_url, ...rest, last_verified: today })
       continue
     }
-    if (r.status !== 'active') { lines.push(`- **reappeared** \`${s.id}\` set back to active`); r.status = 'active' }
+    // ponytail: only a retired record comes back; `specialized` and `portal_generated` are human calls the updater keeps.
+    if (r.status === 'historical_or_replaced') { lines.push(`- **reappeared** \`${s.id}\` set back to active`); r.status = 'active' }
     if (r.form_name !== s.form_name) { lines.push(`- **renamed** \`${s.id}\`: "${r.form_name}" -> "${s.form_name}"`); r.form_name = s.form_name }
     if (r.official_url !== s.official_url) { lines.push(`- **url changed** \`${s.id}\`: ${r.official_url} -> ${s.official_url}`); r.official_url = s.official_url }
     if (s.version && r.current_version !== s.version) { lines.push(`- **version changed** \`${s.id}\`: ${r.current_version} -> ${s.version}`); r.current_version = s.version }
   }
-  for (const r of active) if (!seen.has(r.id)) { lines.push(`- **removed** \`${r.id}\` ${r.form_name} (marked historical_or_replaced)`); r.status = 'historical_or_replaced' }
+  // ponytail: a managed record missing from the index page is reported, never auto-retired. Several
+  // catalogued forms (RTB-10, RTB-28, RTB-44) have live forms-directory PDFs but no link on the index
+  // page, so "absent" does not mean "gone"; check-links is what catches a URL that actually died.
+  const absent = managed.filter((r) => !seen.has(r.id))
+  const note = absent.length ? `\nNot linked from the index page (informational, status unchanged): ${absent.map((r) => `\`${r.id}\``).join(', ')}\n` : ''
 
   const summary = lines.length
-    ? `## RTB forms source changes\n\nSource: ${catalog.source.index_url}\n\n${lines.join('\n')}\n\nA source change needs human review before merge: check each form PDF and fix any human-maintained fields.\n`
-    : `## RTB forms source changes\n\nNo changes (${found.length} forms on the index page).\n`
+    ? `## RTB forms source changes\n\nSource: ${catalog.source.index_url}\n\n${lines.join('\n')}\n${note}\nA source change needs human review before merge: check each form PDF and fix any human-maintained fields.\n`
+    : `## RTB forms source changes\n\nNo changes (${found.length} forms on the index page).\n${note}`
   console.log(summary)
   if (summaryPath) appendFileSync(summaryPath, summary)
   if (!lines.length) return 0

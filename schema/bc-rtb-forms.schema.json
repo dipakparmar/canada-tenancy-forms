@@ -3,12 +3,12 @@
   "title": "BC RTB forms catalog",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "generated_at", "source", "forms"],
+  "required": ["schema_version", "generated_at", "source", "dataset", "enums", "forms", "operational_rules", "source_records"],
   "definitions": {
     "id": { "type": "string", "pattern": "^RTB-[0-9]+[A-Z0-9-]*$" },
     "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
     "slug": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-    "party": { "enum": ["landlord", "tenant", "either", "rtb", "other"] }
+    "strings": { "type": "array", "items": { "type": "string", "minLength": 1 } }
   },
   "properties": {
     "schema_version": { "const": 1 },
@@ -23,6 +23,54 @@
         "snapshot_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
       }
     },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "jurisdiction", "authority", "last_verified", "official_forms_index_url", "official_forms_numbered_url", "notes"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "jurisdiction": { "type": "string", "minLength": 1 },
+        "authority": { "type": "string", "minLength": 1 },
+        "last_verified": { "$ref": "#/definitions/date" },
+        "official_forms_index_url": { "type": "string", "pattern": "^https://" },
+        "official_forms_numbered_url": { "type": "string", "pattern": "^https://" },
+        "notes": { "$ref": "#/definitions/strings" }
+      }
+    },
+    "enums": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["party_roles", "matter_types", "availability"],
+      "properties": {
+        "party_roles": { "$ref": "#/definitions/strings" },
+        "matter_types": { "$ref": "#/definitions/strings" },
+        "availability": { "$ref": "#/definitions/strings" }
+      }
+    },
+    "operational_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["landlord_vs_property_manager", "document_controls"],
+      "properties": {
+        "landlord_vs_property_manager": { "type": "object", "additionalProperties": { "type": "string", "minLength": 1 } },
+        "document_controls": { "$ref": "#/definitions/strings" }
+      }
+    },
+    "source_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "title", "url", "coverage"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https://" },
+          "last_updated_as_found": { "$ref": "#/definitions/date" },
+          "coverage": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
     "forms": {
       "type": "array",
       "items": {
@@ -32,18 +80,20 @@
         "properties": {
           "id": { "$ref": "#/definitions/id" },
           "form_name": { "type": "string", "minLength": 1 },
-          "status": { "enum": ["active", "historical_or_replaced"] },
+          "status": { "enum": ["active", "portal_generated", "specialized", "historical_or_replaced"] },
           "category": { "$ref": "#/definitions/slug" },
           "matter_type": { "$ref": "#/definitions/slug" },
           "current_version": { "type": ["string", "null"] },
           "official_url": { "type": "string", "pattern": "^https://" },
           "official_index_url": { "type": "string", "pattern": "^https://" },
-          "initiating_party": { "$ref": "#/definitions/party" },
-          "parties": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/party" } },
-          "property_manager_role": { "$ref": "#/definitions/slug" },
+          "initiating_party": { "$ref": "#/definitions/slug" },
+          "parties": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/slug" } },
+          "property_manager_role": { "type": "string", "minLength": 1 },
           "use_when": { "type": "string", "minLength": 1 },
+          "do_not_use_when": { "$ref": "#/definitions/strings" },
           "related_forms": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/id" } },
           "legal_effect": { "type": "string", "minLength": 1 },
+          "source_basis": { "$ref": "#/definitions/strings" },
           "last_verified": { "$ref": "#/definitions/date" }
         }
       }
