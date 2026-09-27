@@ -17,7 +17,7 @@
     "notes": [
       "Use the current official form version. Form versions and URLs may change.",
       "The standard lease (2229E) is published by the Ministry of Municipal Affairs and Housing through the Central Forms Repository, not by the Landlord and Tenant Board; the updater does not manage it.",
-      "The Residential Tenancies Act, 2006 requires the standard lease for most private residential tenancies entered into on or after April 30, 2018. Exemptions apply (care homes, mobile home parks and land lease communities, most social housing, and others); check Part A of the form's General Information.",
+      "This version of the standard lease (2229E 2020/12) states it is required for tenancies entered into on or after March 1, 2021, and lists the exempt tenancy types in Part A of its General Information.",
       "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or law states otherwise.",
       "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; the applicable legislation and required process control."
     ]
@@ -98,13 +98,16 @@
         "tenant"
       ],
       "property_manager_role": "May prepare the lease and be named as contact in section 3, but the landlord's legal name goes in section 1 and the landlord (or an authorized signatory) signs.",
-      "use_when": "Starting a private residential tenancy in Ontario on or after April 30, 2018 that is not exempt from the standard lease requirement.",
+      "use_when": "Starting a residential tenancy in Ontario entered into on or after March 1, 2021 that is not one of the exempt tenancy types listed in Part A of the form.",
       "do_not_use_when": [
-        "The tenancy is exempt: care homes, sites in mobile home parks and land lease communities, most social and supportive housing, co-operative housing, or a tenancy where the tenant shares a kitchen or bathroom with the owner or the owner's family.",
-        "The tenancy began before April 30, 2018 and neither party has requested the standard lease."
+        "Care homes.",
+        "Sites in mobile home parks or land lease communities.",
+        "Social and supportive housing that is exempt from the rent increase guideline.",
+        "Member units in co-operative housing.",
+        "Any other accommodation that is exempt from the Residential Tenancies Act, 2006 (see section 5 of the Act)."
       ],
       "related_forms": [],
-      "legal_effect": "Sets the terms of the tenancy. Sections 1 to 17 are mandatory and cannot be changed; additional terms in an attachment cannot take away a right or responsibility under the Residential Tenancies Act, 2006.",
+      "legal_effect": "Sets the terms of the tenancy. All sections are mandatory and cannot be changed; the agreement cannot take away a right or responsibility under the Residential Tenancies Act, 2006, and neither can additional terms in an attachment. The landlord must give the tenant a copy within 21 days after the tenant signs it.",
       "source_basis": [
         "The catalogued PDF is the static variant (2229E 2020/12): 14 pages with AcroForm fields, fillable without XFA support. The default download on the dataset page is a dynamic XFA form that renders a single placeholder page in readers without XFA."
       ],
