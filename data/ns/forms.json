@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Province of Nova Scotia — Residential Tenancies Program, Service Nova Scotia",
+    "index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+    "snapshot_sha256": "23ed8ba9b4f6cd282aa4f2cbf55da9190b5114e5892686d5e01d71b68103fb1b"
+  },
+  "dataset": {
+    "id": "ns-rtp-forms-catalog",
+    "jurisdiction": "Nova Scotia, Canada",
+    "authority": "Residential Tenancies Program (Service Nova Scotia)",
+    "id_pattern": "^[A-Z]{1,2}[0-9]{0,2}$",
+    "last_verified": "2026-09-26",
+    "official_forms_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+    "official_forms_numbered_url": "https://www.novascotia.ca/residential-tenancy-forms",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "The index page links a landing page per form, never the PDF directly; the landing page links the PDF and, for one pair, one PDF serves two forms (Form G and Form H).",
+      "Two landing pages (a landlord's notice and a tenant's notice) both link the identical Form DR2 PDF, which is a single two-page document: page 1 is the landlord's notice, page 2 is the tenant's own early-termination notice on the same form.",
+      "Two forms are skipped entirely because their download link names no form letter: the Rental Unit Condition Report and the Landlord and Tenant Consent for Email.",
+      "None of the landing pages or PDFs in this dataset print a visible \"last updated\" line or a footer revision stamp, so current_version is null for every form.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or the Act states otherwise.",
+      "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; the Residential Tenancies Act and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "purchaser",
+      "physician",
+      "director",
+      "landlord_or_tenant",
+      "landlord_and_tenant",
+      "applicant"
+    ],
+    "matter_types": [
+      "agreement",
+      "rent",
+      "ending_tenancy",
+      "application",
+      "service_of_documents",
+      "security_deposit",
+      "abandoned_property",
+      "dispute_resolution",
+      "emergency_hearing"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the lease. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord under Form P section 5 or 6. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority the landlord has given.",
+      "tenant": "The person or persons named as tenant under the lease. A tenant signs tenant-originated forms and receives landlord notices.",
+      "practical_rule": "Identify the legal landlord in section 1 of the Standard Form of Lease (Form P) and put an agent's or property manager's contact details in section 5 or 6 where the form permits. Keep written proof of agency authority."
+    },
+    "document_controls": [
+      "Record the form ID, completion date, service date, serving person, recipient, service method, and proof of service for every notice or application.",
+      "Use the official Residential Tenancies Program form rather than reproducing a private form when the Act or Regulations require a prescribed form.",
+      "Give the tenant a copy of the signed Standard Form of Lease (Form P) within 10 days of signing.",
+      "Keep the signed lease, any attached schedule, every notice served, proof of service (Form L or L1), and the rent ledger together for any later Application to Director."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:ns-1",
+      "title": "Residential tenancy forms - Government of Nova Scotia",
+      "url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "Index of landing pages for every numbered residential tenancy form; no PDF links or version dates on the index page itself."
+    },
+    {
+      "source_id": "web:ns-2",
+      "title": "Standard Form of Lease Regulations",
+      "url": "https://novascotia.ca/just/regulations/regs/rtsflease.htm",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "Regulation prescribing the Standard Form of Lease (Form P) and its amendment history."
+    }
+  ],
+  "forms": [
+    {
+      "id": "A",
+      "form_name": "Inventory of Tenant's Abandoned Personal Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-433/form-inventory-tenants-abandoned-personal-property-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A tenant has left personal property behind after the tenancy ends and the landlord needs to record what was left and where it is being stored.",
+      "related_forms": [
+        "B"
+      ],
+      "legal_effect": "Creates the inventory record of abandoned property; a copy must be sent to the tenant or, if the tenant cannot be reached, to the next of kin named on the lease, before the property may be dealt with further.",
+      "source_basis": [
+        "\"Use these forms if tenants leave personal property at the end of the tenancy.\" (Form A guide)",
+        "\"Send a copy to the tenant by 1 of the following methods... if unknown, by registered mail... to the address for contact of next of kin.\" (Form A guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "B",
+      "form_name": "Accounting of Sale of Abandoned Personal Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-434/form-b-accounting-sale-abandoned-personal-property-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The landlord has sold a tenant's abandoned personal property and must account for what it was sold for and any net proceeds owed.",
+      "related_forms": [
+        "A"
+      ],
+      "legal_effect": "Calculates net proceeds of the sale after expenses and any amount awarded to the landlord by the Director or Small Claims Court; net proceeds are payable to the Public Trustee and the form is filed with the Residential Tenancies Program.",
+      "source_basis": [
+        "\"Use these forms to calculate the proceeds from selling a tenant's abandoned personal property at the end of a tenancy.\" (Form B guide)",
+        "\"Make a cheque payable to the Public Trustee if net proceeds are shown.\" (Form B guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "C",
+      "form_name": "Tenant’s Notice to Quit",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-431/form-c-tenants-notice-quit-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_receive_service_as_authorized_agent",
+      "use_when": "A tenant wants to leave at the end of a year-to-year, month-to-month, week-to-week, or manufactured home space tenancy.",
+      "do_not_use_when": [
+        "Ending a fixed-term lease before its stated end date.",
+        "Ending a year-to-year lease early because of a rent increase (use Form C1)."
+      ],
+      "related_forms": [
+        "C1"
+      ],
+      "legal_effect": "Ends the lease for all tenants named in it if given with the required notice: at least 3 months before the end of the year for year-to-year, 1 month for month-to-month, 1 week for week-to-week, or 1 month for a manufactured home space.",
+      "source_basis": [
+        "\"Use this form to give a landlord notice that you are leaving at the end of a lease term. This will end the lease for all tenants.\" (Form C guide)",
+        "\"Year-to-year: This form must be given to your landlord at least 3 months before the end of your lease.\" (Form C guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "C1",
+      "form_name": "Tenant's Notice to Quit - Where Tenant Has Received Notice of Rent Increase",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-3256/form-c1-tenants-notice-quit-where-tenant-has-received-notice-rent-increase-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_receive_service_as_authorized_agent",
+      "use_when": "A tenant in a year-to-year lease has received the landlord's written notice of a rent increase, it has been at least 12 months since the last increase, and the tenant wants to end the tenancy early because of it.",
+      "do_not_use_when": [
+        "The tenant is not in a year-to-year lease.",
+        "It has been less than 12 months since the last rent increase."
+      ],
+      "related_forms": [
+        "C"
+      ],
+      "legal_effect": "Ends the lease early for everyone in the unit if given to the landlord at least 3 months before the rent increase takes effect and before the day of the month rent is due.",
+      "source_basis": [
+        "\"You can end your lease early only if... You are in a year-to-year lease... It has been at least 12 months since the last rent increase.\" (Form C1 guide)",
+        "\"You must give this form to your landlord at least 3 months before the rent is going to increase.\" (Form C1 guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "D",
+      "form_name": "Landlord’s Notice to Quit for Rental Arrears",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-425/form-d-landlords-notice-quit-rental-arrears-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "Rent remains unpaid 3 days after it was due and the landlord wants to start the process of ending the tenancy for the arrears.",
+      "related_forms": [
+        "K"
+      ],
+      "legal_effect": "Sets a termination date no sooner than 10 days after the notice is successfully served; the tenant can keep the tenancy by paying everything owed within that time. The notice does not by itself end the tenancy: if the tenant does not pay or leave, the landlord must file a Form K (or Form J) to obtain an order.",
+      "source_basis": [
+        "\"Landlords can only serve a Form D after rent is 3 days overdue.\" (Form D guide)",
+        "\"This date can be no sooner than 10 days after Form D is successfully served.\" (Form D guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR1",
+      "form_name": "Changing Year-to-Year Lease to Month-to-Month Lease",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-1317/form-dr1-changing-year-year-lease-month-month-lease-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_receive_service_as_authorized_agent",
+      "use_when": "A tenant wants to change a year-to-year lease into a month-to-month lease effective on the lease anniversary date.",
+      "related_forms": [],
+      "legal_effect": "Changes the tenancy from year-to-year to month-to-month as of the anniversary date, if served on the landlord at least 3 months before that date.",
+      "source_basis": [
+        "\"I am providing notice that I am changing the term of my lease from a year-to-year lease to a month-to-month lease.\" (Form DR1)",
+        "\"You must serve this notice on the landlord at least 3 months prior to the anniversary date.\" (Form DR1)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR2",
+      "form_name": "Notice to Quit - Purchaser to Occupy Residential Premises (Sale of Residential Premises)",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-1315/form-dr2-notice-quit-purchaser-occupy-residential-premises-sale-residential-premises-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord_or_tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "purchaser"
+      ],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The residential premises are being purchased and the purchaser or a family member of the purchaser intends in good faith to occupy them (landlord serves this notice on page 1), or a tenant who received this notice wants to end the tenancy earlier than the date given (tenant completes page 2).",
+      "related_forms": [],
+      "legal_effect": "The landlord's page sets a termination date at least 2 months after the tenant receives the notice, given on or before the day before rent is due, accompanied by the purchaser's sworn affidavit of intended occupancy; the tenant's page ends the tenancy at least 10 days after the tenant gives it to the landlord.",
+      "source_basis": [
+        "\"The residential premises noted above will be purchased by (name of purchaser)... A copy of the sworn affidavit of the purchaser... must be provided to the tenant with this form.\" (Form DR2, page 1)",
+        "\"The date of termination must be not earlier than two months after the date you receive this notice.\" (Form DR2, page 1)",
+        "\"I give notice that I am terminating my tenancy... The early termination date must be at least ten days after the date you give notice to the landlord.\" (Form DR2, page 2)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR3",
+      "form_name": "Convert Mediated Settlement into Order of the Director",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-1318/form-dr3-convert-mediated-settlement-order-director-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A party to a mediated settlement believes the other party has not complied with it and wants the settlement converted into an enforceable Order of the Director.",
+      "related_forms": [],
+      "legal_effect": "Converts a mediated settlement into an Order of the Director based on the other party's non-compliance; a completed copy must be sent to the other party.",
+      "source_basis": [
+        "\"I am requesting the mediated settlement issued on ... be converted into an Order of the Director.\" (Form DR3)",
+        "\"The person filing this form is required to send a completed copy of this form to the forwarding address or last known address of the other party.\" (Form DR3)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR4",
+      "form_name": "Waive Residential Tenancies Application to Director Fee",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "application",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-432/form-dr4-waive-residential-tenancies-application-director-fee-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "An applicant to the Director receives the Guaranteed Income Supplement or Income Assistance, or believes their financial circumstances make paying the application fee difficult, and wants the fee waived.",
+      "related_forms": [
+        "S"
+      ],
+      "legal_effect": "Requests the Director waive an application fee such as the Form S filing fee; must be accompanied by proof of the assistance received or a letter explaining the applicant's financial circumstances.",
+      "source_basis": [
+        "\"Please provide a letter outlining the reasons for the fee waiver (i.e. personal income, other personal circumstance).\" (Form DR4)",
+        "\"You may be eligible to have the fee waived if: you receive the Guaranteed Income Supplement, Income Assistance, or Family Benefits.\" (Form S guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR5",
+      "form_name": "Agreement to Terminate for Demolition, Repairs or Renovations",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-2895/form-dr5-agreement-terminate-demolition-repairs-or-renovations-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord_and_tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_sign_only_with_written_authority_from_the_landlord",
+      "use_when": "The landlord and tenant mutually agree to end the tenancy because the landlord will demolish the premises or make repairs or renovations so extensive that a building permit and vacant possession are required.",
+      "related_forms": [],
+      "legal_effect": "Sets a 3-month notice period starting when the mutual agreement is reached, and the tenant's compensation: rent for the last three months if the residential complex has more than four residential premises, or the last month if it has four or fewer. Without mutual agreement, the landlord may instead apply to the Director for an order granting vacant possession between 3 and 12 months out.",
+      "source_basis": [
+        "\"Use this form when the parties have agreed to termination of the lease for the purpose of demolition or making repairs or renovations... so as to require a building permit and vacant possession.\" (Form DR5 guide)",
+        "\"If the residential complex contains more than four residential premises, the tenant... is entitled to compensation equivalent to the rent payable for the last three months.\" (Form DR5 guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "DR9",
+      "form_name": "Request for Emergency Hearing",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "emergency_hearing",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-4314/form-dr9-request-emergency-hearing-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A party who has already filed a Form J and has not yet served it on the other party has an immediate issue, such as being locked out or having heat or water shut off, that cannot wait for a regularly scheduled hearing.",
+      "do_not_use_when": [
+        "No Form J: Application to Director has been filed yet."
+      ],
+      "related_forms": [
+        "J"
+      ],
+      "legal_effect": "Requests an urgent hearing date; the Residential Tenancies Program returns a decision by email or phone, and any new Notice of Hearing issued as a result must still be served on the other party.",
+      "source_basis": [
+        "\"Use this form to request an urgent or emergency hearing. After filing a Form J: Application to Director and before serving the other party, a request can be made for an emergency hearing.\" (Form DR9 guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "E",
+      "form_name": "Landlord’s Notice to Quit - Breach of Statutory Condition or Subsection 9B(1) of the Act",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-438/form-e-landlords-notice-quit-breach-statutory-condition-or-subsection-9b1-act-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The tenant has breached Statutory Condition 3 or 4, breached Condition 5 in a land-lease community, or breached subsection 9B(1) (assigning, subletting, or parting with possession without the landlord's consent).",
+      "related_forms": [],
+      "legal_effect": "Sets a termination date no sooner than 15 days after the notice is successfully served (30 days in a land-lease community).",
+      "source_basis": [
+        "\"Use this form to give a Notice to Quit if the tenant has breached Statutory Condition 3 or 4... or breached Subsection 9B(1) of the Act.\" (Form E guide)",
+        "\"This date can be no sooner than 15 days after the notice is successfully served (30 days in a land-lease community).\" (Form E guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "F",
+      "form_name": "Landlord's Notice to Quit - Additional Circumstances",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-429/form-f-landlords-notice-quit-additional-circumstances-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord wants to end the tenancy for a reason under subsection 10(7), clause 10(8)(a), (b) or (c), or clause 10(9)(c) of the Act, other than rental arrears or breach of a statutory condition.",
+      "related_forms": [],
+      "legal_effect": "Sets a termination date the landlord chooses as reasonable for the stated ground; for subsection 10(7), the date can be as early as 7 days after the notice is served.",
+      "source_basis": [
+        "\"Use these forms to give a tenant Notice to Quit for reasons other than Rental Arrears and Breach of Statutory Conditions.\" (Form F guide)",
+        "\"For 10(7), this can be 7 days after the notice is served.\" (Form F guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "G",
+      "form_name": "Tenant's Notice to Quit - Early Termination of Tenancy",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-440/form-g-tenants-notice-quit-early-termination-tenancy-and-form-h-physicians-certificate-termination-tenancy-health-reasons-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_receive_service_as_authorized_agent",
+      "use_when": "A significant decline in the tenant's health means they can no longer afford rent, or can no longer continue the lease, or the tenant has been permanently accepted into a nursing home or home for special care.",
+      "related_forms": [
+        "H"
+      ],
+      "legal_effect": "Gives one month's notice ending the tenancy for the stated health-related reason; must be accompanied by a Form H physician's certificate (for the two health-decline grounds) or a nursing/care home acceptance letter, plus, if there are co-tenants, an Acknowledgement or Certificate of Service proving they were told.",
+      "source_basis": [
+        "\"A significant deterioration of my health has reduced my income so that I can no longer pay my rent... I am attaching a Physician's Certificate in Form H.\" (Form G, F1)",
+        "\"I have been accepted into a nursing home or home for special care on a permanent basis... I am attaching a letter from the nursing home.\" (Form G, F1)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "H",
+      "form_name": "Physician’s Certificate - Termination of Tenancy for Health Reasons",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-440/form-g-tenants-notice-quit-early-termination-tenancy-and-form-h-physicians-certificate-termination-tenancy-health-reasons-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "physician"
+      ],
+      "property_manager_role": "not_applicable",
+      "use_when": "A tenant is using Form G to end a tenancy early because of a significant decline in health and needs a physician to certify the health-related grounds.",
+      "related_forms": [
+        "G"
+      ],
+      "legal_effect": "The physician's certification supports a Form G notice; without it (or a nursing/care home letter for the third ground), Form G's health-based grounds are not supported.",
+      "source_basis": [
+        "\"Form H  Physician's Certificate Termination of Tenancy for Health Reasons  see pages F5–F6\" (Form G/H guide)",
+        "\"How to complete Form H - Physician's Certificate: Complete tenant section only... Have your doctor complete the rest of the form.\" (Form G/H guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "J",
+      "form_name": "Application to Director",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-419/form-j-application-director-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A landlord or tenant needs the Director to resolve a dispute such as termination of tenancy, compliance with the lease or Act, repairs, or setting aside a Notice to Quit, and none of the more specific forms apply.",
+      "do_not_use_when": [
+        "A landlord seeking only rental arrears without mediation or a hearing (use Form K).",
+        "A land-lease community landlord seeking a rent increase above the guideline amount (use Form M with Form N).",
+        "A landlord seeking to retain a security deposit (use Form R).",
+        "A tenant seeking the return of a security deposit (use Form S)."
+      ],
+      "related_forms": [
+        "K",
+        "M",
+        "N",
+        "R",
+        "S",
+        "DR9"
+      ],
+      "legal_effect": "Starts mediation and, if unresolved, a hearing before a Residential Tenancy Officer limited to the issues stated in the application (or a counter-application).",
+      "source_basis": [
+        "\"Use this form if you are a landlord or tenant trying to resolve a dispute.\" (Form J guide)",
+        "\"At a hearing, only issues that are explained on the application (or in the other party's counter-application) can be discussed.\" (Form J guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "K",
+      "form_name": "Application to Director - Rental Arrears",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-427/form-k-application-director-rental-arrears-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The landlord has served a Form D for rental arrears and wants vacant possession and/or payment of the rent shown on that notice, without mediation or a hearing.",
+      "do_not_use_when": [
+        "No Form D has been served on the tenant.",
+        "The tenant paid the rent within 10 days of receiving the Form D.",
+        "The tenant has applied to set aside the Form D.",
+        "Claiming arrears not shown on the Form D, or claiming damages (use Form J)."
+      ],
+      "related_forms": [
+        "D",
+        "J"
+      ],
+      "legal_effect": "May order vacant possession, payment of the rent owing shown on the Form D, and/or retention of the security deposit toward that rent.",
+      "source_basis": [
+        "\"You may only use this form after your tenant(s) have been served with a Form D: Notice to Quit for Rental Arrears.\" (Form K guide)",
+        "\"You cannot claim for additional rental arrears not included on the Form D: Notice to Quit that was served on the tenant(s).\" (Form K guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "L",
+      "form_name": "Affidavit of Service",
+      "status": "active",
+      "category": "service_of_documents",
+      "matter_type": "service_of_documents",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-426/form-l-affidavit-service-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord_or_tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_be_completed_by_the_person_who_served_the_document",
+      "use_when": "Proof of service of an Application to Director or a Notice of Hearing is required, and the person who served it wants to swear to that service before a lawyer or commissioner of oaths.",
+      "related_forms": [
+        "L1"
+      ],
+      "legal_effect": "Sworn proof of service; the Residential Tenancies Program requires it (or a Form L1) before investigation and mediation begin.",
+      "source_basis": [
+        "\"This affidavit must be received by Service Nova Scotia before investigation and mediation will begin.\" (Form L)",
+        "\"Sign in the presence of a lawyer or commissioner of oaths.\" (Form L)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "L1",
+      "form_name": "Certificate of Service",
+      "status": "active",
+      "category": "service_of_documents",
+      "matter_type": "service_of_documents",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-1298/form-l1-certificate-service-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord_or_tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_be_completed_by_the_person_who_served_the_document",
+      "use_when": "Proof of service of an Application to Director or a Notice of Hearing is required, and the person who served it wants to certify service without swearing before a commissioner of oaths.",
+      "related_forms": [
+        "L"
+      ],
+      "legal_effect": "Certified (non-sworn) proof of service; the Residential Tenancies Program requires it (or a Form L) before investigation and mediation begin.",
+      "source_basis": [
+        "\"This certificate must be received by Service Nova Scotia before investigation and mediation will begin.\" (Form L1)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "M",
+      "form_name": "Notice of Rent Increase for Manufactured Home Space",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-430/form-m-notice-rent-increase-manufactured-home-space-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "A land-lease community landlord wants to increase rent for one or more manufactured home spaces, either at or below the Annual Allowable Rent Increase Amount (AARIA), or, together with Form N, above it.",
+      "related_forms": [
+        "N"
+      ],
+      "legal_effect": "Takes effect on the stated date if served on the affected tenants at least 7 months before the anniversary or common rent-increase date and before the day of the month rent is payable; an increase above the AARIA additionally requires the Director's authorization on Form N.",
+      "source_basis": [
+        "\"Use this form to give tenants notice of a rent increase in a land-lease community. You must serve tenants with this form at least 7 months before the anniversary date.\" (Form M guide)",
+        "\"If you are proposing a rent increase greater than the AARIA, use check box 2. You must also complete Form N.\" (Form M guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "N",
+      "form_name": "Application to Director - Rent Increase Greater Than Annual Allowable Rent Increase Amount",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-428/form-n-application-director-rent-increase-greater-annual-allowable-rent-increase-amount-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A land-lease community landlord wants the Director's authorization to increase rent above the Annual Allowable Rent Increase Amount for one or more manufactured home spaces.",
+      "related_forms": [
+        "M",
+        "O"
+      ],
+      "legal_effect": "The Director's authorization is a precondition to serving tenants with a Form M notice for the above-AARIA portion of the increase; must be filed together with Form O.",
+      "source_basis": [
+        "\"Use these forms to seek authorization from the Director to give a rent increase greater than the Annual Allowable Rent Increase Amount (AARIA).\" (Form N guide)",
+        "\"Form O–Financial Information In Support of a Rent Increase Greater Than Annual Allowable Rent Increase Amount MUST accompany these forms.\" (Form N guide)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "O",
+      "form_name": "Financial Information In Support of a Rent Increase Greater Than Annual Allowable Rent Increase Amount",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-422/form-o-financial-information-support-rent-increase-greater-annual-allowable-rent-increase-amount-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "Supporting a Form N application, to give a Residential Tenancy Officer the income, vacancy, and expense information needed to review a proposed rent increase above the AARIA.",
+      "related_forms": [
+        "N"
+      ],
+      "legal_effect": "Supplies the financial evidence the Director relies on in deciding a Form N application; must accompany Form N.",
+      "source_basis": [
+        "\"Use this form to provide information to allow a Residential Tenancy Officer to review the application for a rent increase greater than the Annual Allowable Rent Increase Amount.\" (Form O)",
+        "\"This form must accompany Form N - Application to Director—Rent Increase Greater Than Annual Allowable Rent Increase Amount.\" (Form O)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "P",
+      "form_name": "Standard Form of Lease",
+      "status": "active",
+      "category": "lease",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-439/form-p-standard-form-lease-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as the agent, property manager, or building superintendent in sections 5 through 7 and complete or sign those sections, but the landlord's legal name goes in section 1 and the landlord signs the lease.",
+      "use_when": "Starting a residential tenancy in Nova Scotia; every lease used in the province must contain all the items shown on this form even if the landlord's own document looks different.",
+      "related_forms": [
+        "D"
+      ],
+      "legal_effect": "Sets the terms of the tenancy; any item shown on this form applies to a tenant's lease even if the landlord's own lease omits it. The landlord must give the tenant a copy of the signed lease within 10 days of signing.",
+      "source_basis": [
+        "\"Use these forms to show the terms that must be part of any lease signed in Nova Scotia... If any of the items are not part of the lease a tenant signs, they apply anyway.\" (Form P guide)",
+        "\"Both the tenant and the landlord must have a copy of the signed lease. The landlord must give the tenant a copy within 10 days of signing.\" (Form P guide)",
+        "\"The landlord may formally serve the tenant with a Notice to Quit using Form D.\" (Form P guide, Rental arrears)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "R",
+      "form_name": "Security Deposit Claim Form",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-418/security-deposit-claim-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The landlord wants to keep all or part of the tenant's security deposit at the end of the tenancy because of unpaid rent or damage the tenant is responsible for, and the tenant has not consented in writing.",
+      "do_not_use_when": [
+        "Unpaid rent or damages exceed the value of the security deposit (also file a Form J: Application to Director for the balance)."
+      ],
+      "related_forms": [
+        "J",
+        "S"
+      ],
+      "legal_effect": "Must be filed with the Director and a copy sent to the tenant within 10 days of the end of the tenancy, or the landlord loses the right to retain any part of the deposit and must return it.",
+      "source_basis": [
+        "\"If the landlord wishes to keep all or part of the security deposit, the landlord must: Submit this form to the Director... within 10 days of the termination of the tenancy.\" (Form R guide)",
+        "\"If the landlord does not file this form with the Director and send a copy of it to the tenant within 10 days... the landlord is not permitted to make an application to the Director to retain the security deposit and must return the security deposit to the tenant.\" (Form R guide)"
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "S",
+      "form_name": "Application to Director",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-3719/form-s-application-director-return-security-deposit-en.pdf",
+      "official_index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "director"
+      ],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "More than 10 days have passed since the tenancy ended, and either the tenant did not consent to the landlord keeping the deposit and received neither the deposit nor a Form R, or the landlord filed a Form R the tenant wants to dispute.",
+      "related_forms": [
+        "R",
+        "L",
+        "L1",
+        "J",
+        "DR4"
+      ],
+      "legal_effect": "Must be served on the landlord, with proof of service on a Form L affidavit or Form L1 certificate, before a Residential Tenancy Officer will review the application; an application fee applies unless waived with Form DR4.",
+      "source_basis": [
+        "\"You may apply to have your security deposit returned if more than 10 days have passed since the termination of the tenancy.\" (Form S guide)",
+        "\"The applicant must serve the landlord with a copy of this application and return... an Affidavit of Service in Form L or a Certificate of Service in Form L1 before the application will be reviewed.\" (Form S guide)"
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}

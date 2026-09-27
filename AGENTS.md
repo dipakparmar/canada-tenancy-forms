@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Machine-readable catalog of Canadian residential tenancy forms, one directory
-per jurisdiction (`data/<code>/forms.json`: `bc`, `on`), plus a scheduled
+per jurisdiction (`data/<code>/forms.json`: `bc`, `on`, `ns`), plus a scheduled
 updater that opens a PR per jurisdiction when an official forms page changes.
 
 **The one rule:** never edit human-maintained fields (`category`, `matter_type`,
@@ -65,6 +65,11 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - A form the updater cannot see (Ontario's 2229E lives on a different site) is
   catalogued by hand with an `official_url` outside the source `prefix`; the
   updater then never touches it.
+- A source module's `extract(html)` is normally synchronous, but a source
+  whose index page links a landing page per form rather than the PDF directly
+  (Nova Scotia) may make it `async` and fetch each landing page itself, with a
+  short delay between requests; `detect-source-changes.mjs` always `await`s
+  the call, so a synchronous module still works unchanged.
 - A map entry may carry `readonly: true` for a field the PDF flags read-only at
   rest (2229E unlocks those with its own scripts); `fillFromMap` clears the flag
   when asked to write one.
@@ -74,7 +79,10 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   (`bun run markers`), never because a name looks wrong.
 - A map's `revision` and `pdf_sha256` describe the one government PDF the map
   was verified against, so they are updated together, never one without the
-  other, and only after re-verifying the form.
+  other, and only after re-verifying the form. A form whose PDF prints no
+  revision anywhere may set `"revision_printed": false`: `revision` and
+  `pdf_sha256` are still required, but the guard test skips searching the
+  PDF's extracted text for the revision string.
 
 ## Where things live
 
@@ -97,7 +105,7 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - Pin GitHub Actions to `vMAJOR.MINOR.PATCH`. Minimum release age is 3 days
   (see `bunfig.toml` and `.github/dependabot.yml` cooldown).
 - No custom `User-Agent` on outbound requests.
-- Never commit a copy of any gov.bc.ca page or PDF; store only hashes and extracted facts.
+- Never commit a copy of any government page or PDF; store only hashes and extracted facts.
 
 ## Legal caveat
 

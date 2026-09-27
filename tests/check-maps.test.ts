@@ -41,13 +41,20 @@ for (const { code, mapsDir, formsDir, mapFile } of maps) {
     expect(createHash("sha256").update(bytes).digest("hex")).toBe(map.pdf_sha256);
   });
 
-  test(`${id}: PDF revision matches map.revision`, async () => {
-    let text = "";
-    for (const p of pdf.getPages()) text += (await p.extractText()).text;
-    // the revision is printed in the page footer as "#RTB-1 (2023/06)"; the extractor
-    // sometimes splits it across spans, so whitespace is stripped before matching
-    expect(text.replace(/\s+/g, "")).toContain(map.revision);
-  });
+  // A map may set `revision_printed: false` when the government PDF itself prints no dated
+  // stamp anywhere (seen on NS Form P): `revision` and `pdf_sha256` are still required, but
+  // this test skips the text search rather than failing on a date that was never on the page.
+  if (map.revision_printed === false) {
+    test.skip(`${id}: PDF revision matches map.revision (revision_printed: false, not checked)`, () => {});
+  } else {
+    test(`${id}: PDF revision matches map.revision`, async () => {
+      let text = "";
+      for (const p of pdf.getPages()) text += (await p.extractText()).text;
+      // the revision is printed in the page footer as "#RTB-1 (2023/06)"; the extractor
+      // sometimes splits it across spans, so whitespace is stripped before matching
+      expect(text.replace(/\s+/g, "")).toContain(map.revision);
+    });
+  }
 
   test(`${id}: every mapped pdf field exists`, () => {
     for (const [, entry] of entries) expect(fieldsByName.has(entry.pdf)).toBe(true);

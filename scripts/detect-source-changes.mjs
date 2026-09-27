@@ -22,7 +22,7 @@ async function update({ code, catalog, dataPath, snapshotPath, sourceModule }) {
   const res = await fetch(catalog.source.index_url)
   if (!res.ok) throw new Error(`index fetch failed: HTTP ${res.status}`)
   const html = await res.text()
-  const found = extract(html)
+  const found = await extract(html)
   // ponytail: the updater only owns records whose official_url is a PDF under the forms directory.
   // Portal-generated and specialized records (and anything pointing elsewhere) are left alone entirely:
   // they never appear on the index page, so diffing them would mark them historical every week.

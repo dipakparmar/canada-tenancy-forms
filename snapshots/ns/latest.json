@@ -1,0 +1,127 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.novascotia.ca/residential-tenancy-forms",
+  "sha256": "23ed8ba9b4f6cd282aa4f2cbf55da9190b5114e5892686d5e01d71b68103fb1b",
+  "forms": [
+    {
+      "id": "A",
+      "form_name": "Inventory of Tenant's Abandoned Personal Property",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-433/form-inventory-tenants-abandoned-personal-property-en.pdf"
+    },
+    {
+      "id": "B",
+      "form_name": "Accounting of Sale of Abandoned Personal Property",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-434/form-b-accounting-sale-abandoned-personal-property-en.pdf"
+    },
+    {
+      "id": "C",
+      "form_name": "Tenant’s Notice to Quit",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-431/form-c-tenants-notice-quit-en.pdf"
+    },
+    {
+      "id": "C1",
+      "form_name": "Tenant's Notice to Quit - Where Tenant Has Received Notice of Rent Increase",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-3256/form-c1-tenants-notice-quit-where-tenant-has-received-notice-rent-increase-en.pdf"
+    },
+    {
+      "id": "D",
+      "form_name": "Landlord’s Notice to Quit for Rental Arrears",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-425/form-d-landlords-notice-quit-rental-arrears-en.pdf"
+    },
+    {
+      "id": "DR1",
+      "form_name": "Changing Year-to-Year Lease to Month-to-Month Lease",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-1317/form-dr1-changing-year-year-lease-month-month-lease-en.pdf"
+    },
+    {
+      "id": "DR2",
+      "form_name": "Notice to Quit - Purchaser to Occupy Residential Premises (Sale of Residential Premises)",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-1315/form-dr2-notice-quit-purchaser-occupy-residential-premises-sale-residential-premises-en.pdf"
+    },
+    {
+      "id": "DR3",
+      "form_name": "Convert Mediated Settlement into Order of the Director",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-1318/form-dr3-convert-mediated-settlement-order-director-en.pdf"
+    },
+    {
+      "id": "DR4",
+      "form_name": "Waive Residential Tenancies Application to Director Fee",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-432/form-dr4-waive-residential-tenancies-application-director-fee-en.pdf"
+    },
+    {
+      "id": "DR5",
+      "form_name": "Agreement to Terminate for Demolition, Repairs or Renovations",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-2895/form-dr5-agreement-terminate-demolition-repairs-or-renovations-en.pdf"
+    },
+    {
+      "id": "DR9",
+      "form_name": "Request for Emergency Hearing",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-4314/form-dr9-request-emergency-hearing-en.pdf"
+    },
+    {
+      "id": "E",
+      "form_name": "Landlord’s Notice to Quit - Breach of Statutory Condition or Subsection 9B(1) of the Act",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-438/form-e-landlords-notice-quit-breach-statutory-condition-or-subsection-9b1-act-en.pdf"
+    },
+    {
+      "id": "F",
+      "form_name": "Landlord's Notice to Quit - Additional Circumstances",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-429/form-f-landlords-notice-quit-additional-circumstances-en.pdf"
+    },
+    {
+      "id": "G",
+      "form_name": "Tenant's Notice to Quit - Early Termination of Tenancy",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-440/form-g-tenants-notice-quit-early-termination-tenancy-and-form-h-physicians-certificate-termination-tenancy-health-reasons-en.pdf"
+    },
+    {
+      "id": "H",
+      "form_name": "Physician’s Certificate - Termination of Tenancy for Health Reasons",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-440/form-g-tenants-notice-quit-early-termination-tenancy-and-form-h-physicians-certificate-termination-tenancy-health-reasons-en.pdf"
+    },
+    {
+      "id": "J",
+      "form_name": "Application to Director",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-419/form-j-application-director-en.pdf"
+    },
+    {
+      "id": "K",
+      "form_name": "Application to Director - Rental Arrears",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-427/form-k-application-director-rental-arrears-en.pdf"
+    },
+    {
+      "id": "L",
+      "form_name": "Affidavit of Service",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-426/form-l-affidavit-service-en.pdf"
+    },
+    {
+      "id": "L1",
+      "form_name": "Certificate of Service",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-1298/form-l1-certificate-service-en.pdf"
+    },
+    {
+      "id": "M",
+      "form_name": "Notice of Rent Increase for Manufactured Home Space",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-430/form-m-notice-rent-increase-manufactured-home-space-en.pdf"
+    },
+    {
+      "id": "N",
+      "form_name": "Application to Director - Rent Increase Greater Than Annual Allowable Rent Increase Amount",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-428/form-n-application-director-rent-increase-greater-annual-allowable-rent-increase-amount-en.pdf"
+    },
+    {
+      "id": "O",
+      "form_name": "Financial Information In Support of a Rent Increase Greater Than Annual Allowable Rent Increase Amount",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/5-422/form-o-financial-information-support-rent-increase-greater-annual-allowable-rent-increase-amount-en.pdf"
+    },
+    {
+      "id": "P",
+      "form_name": "Standard Form of Lease",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/4-439/form-p-standard-form-lease-en.pdf"
+    },
+    {
+      "id": "S",
+      "form_name": "Application to Director",
+      "official_url": "https://www.novascotia.ca/sites/default/files/documents/2-3719/form-s-application-director-return-security-deposit-en.pdf"
+    }
+  ]
+}
