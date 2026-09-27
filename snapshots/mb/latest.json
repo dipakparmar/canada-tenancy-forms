@@ -1,0 +1,177 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+  "sha256": "49f27e6d6b688ed7e8cd695d12ad40e4a06b3af28df6ff8f9866608ff200014e",
+  "forms": [
+    {
+      "id": "1",
+      "form_name": "Standard Residential Tenancy Agreement",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form1.doc"
+    },
+    {
+      "id": "1.1",
+      "form_name": "Standard Residential Tenancy Agreement (For tenancies that include tenant services)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form1.1.doc"
+    },
+    {
+      "id": "2",
+      "form_name": "Standard Residential Tenancy Agreement (Mobile Homes and Sites)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form2.doc"
+    },
+    {
+      "id": "3",
+      "form_name": "Assignment or Subletting of Tenancy Agreement",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form3.doc"
+    },
+    {
+      "id": "4",
+      "form_name": "Renewal of Tenancy Agreement",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form4.doc"
+    },
+    {
+      "id": "5",
+      "form_name": "Rental Unit Condition Report",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form5.doc"
+    },
+    {
+      "id": "6",
+      "form_name": "Notice to Tenant - Change of Landlord",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form6.doc"
+    },
+    {
+      "id": "8",
+      "form_name": "Notice of Termination by Landlord for Non-Payment of Rent (for all residential tenancies, other than tenancies respecting a mobile home, mobile home site or both",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form8.doc"
+    },
+    {
+      "id": "8.1",
+      "form_name": "Notice of Termination by Landlord for Non-Payment of Rent or Tenant Services Charge (for residential tenancies that include tenant services",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form8.1.doc"
+    },
+    {
+      "id": "9",
+      "form_name": "Notice of Termination for Non-Payment (for tenancies of a mobile home, mobile home site or both)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form9.doc"
+    },
+    {
+      "id": "10",
+      "form_name": "Notice of Termination by Landlord (for cause other than non-payment of rent",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form10.docx"
+    },
+    {
+      "id": "11A",
+      "form_name": "Notice of Termination by Landlord (Purchaser or landlord intends to move into rental unit)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11a.doc"
+    },
+    {
+      "id": "11B",
+      "form_name": "Notice of Termination by Landlord (For demolition or conversion)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11b.doc"
+    },
+    {
+      "id": "11C",
+      "form_name": "Notice of Termination by Landlord (For extensive renovations)",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11c.doc"
+    },
+    {
+      "id": "12",
+      "form_name": "Inventory of Tenant's Abandoned Property",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form12.doc"
+    },
+    {
+      "id": "13",
+      "form_name": "Accounting of Sale of Abandoned Property",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form13.doc"
+    },
+    {
+      "id": "CORRECT-ORDER",
+      "form_name": "Request to Correct or Amend an Order",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/requesttocorrectoramendanorder.doc"
+    },
+    {
+      "id": "HABLATE",
+      "form_name": "Habitually Late Letter",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/hablate.doc"
+    },
+    {
+      "id": "P9-1A",
+      "form_name": "Notice of Rent Increase",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form1a.doc"
+    },
+    {
+      "id": "P9-1B",
+      "form_name": "Notice of Rent Increase for Life Lease Rental Unit Owned by Non-Profit Landlord",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form1b.doc"
+    },
+    {
+      "id": "P9-2",
+      "form_name": "Notice to New Tenant",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form2.doc"
+    },
+    {
+      "id": "P9-3",
+      "form_name": "Application for Rent Increase Above Amount Permitted by Regulation",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form3.doc"
+    },
+    {
+      "id": "P9-4",
+      "form_name": "Application for Increase in Charge for Laundry Facilities",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form4.doc"
+    },
+    {
+      "id": "P9-5A",
+      "form_name": "Application for Approval of Rehabilitation Scheme for All or Part of a Residential Complex",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form5a.docx"
+    },
+    {
+      "id": "P9-5B",
+      "form_name": "Application for Approval of Rehabilitation Scheme for Specified Unit",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form5b.doc"
+    },
+    {
+      "id": "P9-6",
+      "form_name": "Notice to Tenant - Rehabilitation Scheme for All or Part of a Residential Complex",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form6.doc"
+    },
+    {
+      "id": "P9-7",
+      "form_name": "Application to Fix Value of Improvement Requested by Tenant",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form7.doc"
+    },
+    {
+      "id": "P9-8",
+      "form_name": "Notice to Tenant - Reduction/Withdrawal of Service",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form8.doc"
+    },
+    {
+      "id": "P9-9",
+      "form_name": "Application to Fix Value of Reduction/Withdrawal of Service",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form9.doc"
+    },
+    {
+      "id": "P9-14",
+      "form_name": "Notice to New Tenant - Where Tenant Services are Provided",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form14.doc"
+    },
+    {
+      "id": "P9-15",
+      "form_name": "Notice of Tenant Services Charge Increase",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form15.doc"
+    },
+    {
+      "id": "P9-16",
+      "form_name": "Notice to Tenant - Reduction or Withdrawal of Tenant Services",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form16.doc"
+    },
+    {
+      "id": "P9-17",
+      "form_name": "Application to Fix Value of Reduction or Withdrawal of Tenant Services Before End of Fixed-Term Tenancy Agreement",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form17.doc"
+    },
+    {
+      "id": "SUBSVC",
+      "form_name": "Application for Substitutional Services",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/appforsub_svc_wpg.doc"
+    }
+  ]
+}
