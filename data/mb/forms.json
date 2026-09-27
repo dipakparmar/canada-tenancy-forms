@@ -1,0 +1,1141 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Province of Manitoba — Residential Tenancies Branch",
+    "index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+    "snapshot_sha256": "49f27e6d6b688ed7e8cd695d12ad40e4a06b3af28df6ff8f9866608ff200014e"
+  },
+  "dataset": {
+    "id": "mb-rtb-forms-catalog",
+    "jurisdiction": "Manitoba, Canada",
+    "authority": "Residential Tenancies Branch",
+    "id_pattern": "^(P9-)?[0-9]{1,2}(\\.[0-9])?[A-Z]?$|^(HABLATE|SUBSVC|CORRECT-ORDER|MIL-CERT|DEPOSIT-INFO)$",
+    "last_verified": "2026-09-26",
+    "official_forms_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+    "official_forms_numbered_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "Two schedules to the Residential Tenancies Regulation each number their own forms: Parts 1 to 8 (the general schedule) and Part 9 (the rent regulation schedule). Both schedules have a Form 2, 3, 4, 8 and 9, so a Part 9 form keeps a `P9-` prefix on its catalog id (for example `P9-2`); a Parts 1-8 form keeps the bare official number. A form number with a decimal (Form 1.1, Form 8.1) is stored with a hyphen instead of a dot (`1.1`, `8.1`) because a dot is not a valid catalog id character.",
+      "The landlord forms page links more forms than the tenant forms page (https://www.gov.mb.ca/cca/rtb/tenant/forms.html) and is the page the updater reads. Three documents live only on the tenant page: Form 7 (Notice of Termination by Tenant, Parts 1-8 schedule), the Canadian Forces relocation certificate, and the Deposit Information Sheet. Their official_url still sits under the forms directory the updater manages, so it reports them as not linked from the index page rather than retiring them; this mirrors the BC catalog's handling of RTB-10, RTB-28 and RTB-44.",
+      "A handful of documents carry no official form number (the habitually late letter, the substitutional service application, the request to correct or amend an order, the relocation certificate, the deposit information sheet); each is catalogued with a short uppercase slug id instead.",
+      "The Residential Tenancies Branch is a provincial branch of the Consumer Protection Office, not a tribunal; most notices take effect on service and are not filed with the Branch unless disputed. The Branch's director issues orders and the Residential Tenancies Commission hears appeals.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or law states otherwise.",
+      "A form does not itself create authority to end a tenancy, increase rent, or reduce a service; the applicable sections of The Residential Tenancies Act (Manitoba) and its regulations control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "property_manager_or_authorized_agent",
+      "purchaser",
+      "landlord_and_tenant",
+      "applicant",
+      "branch",
+      "canadian_forces_official"
+    ],
+    "matter_types": [
+      "agreement",
+      "condition_inspection",
+      "rent",
+      "service_or_facility",
+      "ending_tenancy",
+      "abandoned_property",
+      "landlord_change",
+      "application",
+      "service_of_documents",
+      "review_or_correction"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the tenancy agreement. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority granted by the landlord and the applicable form or process.",
+      "tenant": "The person or persons named as tenant(s) under the tenancy agreement. A tenant signs tenant-originated forms and receives landlord notices.",
+      "practical_rule": "Identify the legal landlord by their legal name in section 1 of the standard tenancy agreement. Keep written proof of any agent's authority to act for the landlord."
+    },
+    "document_controls": [
+      "Record the form ID, version date, completion date, service date, serving person, recipient, service method, and proof of service.",
+      "Use the official Branch form rather than reproducing a private form when the Act or its regulations require a prescribed form.",
+      "Give the tenant a copy of the signed tenancy agreement within 21 days of signing, as Form 1 itself requires.",
+      "Keep the signed agreement, the move-in and move-out condition reports (Form 5), any notice served, proof of service, and the rent ledger together for any later application to the Branch."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:mb-1",
+      "title": "Landlord Forms - Residential Tenancies Branch",
+      "url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "Numbered notice, agreement and application forms for landlords under Parts 1 to 8 and Part 9 of the Residential Tenancies Regulation, plus unnumbered branch documents."
+    },
+    {
+      "source_id": "web:mb-2",
+      "title": "Tenant Forms - Residential Tenancies Branch",
+      "url": "https://www.gov.mb.ca/cca/rtb/tenant/forms.html",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "The same forms directory from the tenant's side; the source of Form 7 (Notice of Termination by Tenant), the Canadian Forces relocation certificate, and the Deposit Information Sheet, none of which are linked from the landlord page."
+    }
+  ],
+  "forms": [
+    {
+      "id": "1",
+      "form_name": "Standard Residential Tenancy Agreement",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form1.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as the contact for rent and notices, but the form calls for the landlord's own legal name, address and telephone number, and a landlord signature; the form does not provide for an agent to sign in the landlord's place.",
+      "use_when": "Starting a residential tenancy in Manitoba that does not include tenant services and does not involve a mobile home or mobile home site.",
+      "do_not_use_when": [
+        "Tenancies that include tenant services (use Form 1.1).",
+        "Tenancies of a mobile home, mobile home site, or both (use Form 2)."
+      ],
+      "related_forms": [
+        "1.1",
+        "2",
+        "4",
+        "5"
+      ],
+      "legal_effect": "Prescribed under The Residential Tenancies Act for all Manitoba residential tenancies other than tenancies that include tenant services or a mobile home/site; two copies must be signed and one given to the tenant within 21 days.",
+      "source_basis": [
+        "\"This form of Tenancy Agreement is prescribed under The Residential Tenancies Act (the Act) and applies to all residential tenancies in Manitoba, other than tenancies that include tenant services or tenancies respecting a mobile home, mobile home site, or both.\"",
+        "\"Two copies must be signed by both landlord and tenant. One copy must be given to the tenant within 21 days after it is signed.\"",
+        "Deposit clause on the form: \"maximum = 1/2 month's Rent Payable for security deposit, 1 month's Rent Payable for pet damage deposit.\"",
+        "A fillable-looking rendition of this form is also published with the regulation at https://web2.gov.mb.ca/laws/regs/current/forms/071_2010/form_1e.pdf (Man. Reg. 71/2010, Schedule); confirmed with `bun run inspect` that this PDF is flattened, with no AcroForm fields, so no field map was built for it."
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "1.1",
+      "form_name": "Standard Residential Tenancy Agreement (For tenancies that include tenant services)",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form1.1.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as contact for rent and notices; the landlord's own legal name and signature are required on the agreement itself.",
+      "use_when": "Starting a residential tenancy in Manitoba where the landlord provides tenant services as defined in The Residential Tenancies Act.",
+      "do_not_use_when": [
+        "Tenancies that do not include tenant services (use Form 1).",
+        "Tenancies of a mobile home, mobile home site, or both (use Form 2)."
+      ],
+      "related_forms": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
+      "legal_effect": "Prescribed under The Residential Tenancies Act for tenancies with tenant services; must be printed in not less than 12-point type; includes a Tenant's Right to Cancel notice (section 7.1) giving the tenant 48 hours (excluding weekends and holidays) to cancel by written notice unless the tenant has already taken possession.",
+      "source_basis": [
+        "\"This form of Tenancy Agreement is prescribed under The Residential Tenancies Act (the Act) and applies to all residential tenancies in Manitoba where the landlord provides tenant services as defined in the Act.\"",
+        "\"Under section 7.1 of The Residential Tenancies Act, you may cancel a tenancy agreement that includes the provision of tenant services within 48 hours of signing the agreement.\"",
+        "\"NOTE: This page must be given to the tenant when the tenant signs any tenancy agreement that includes the provision of tenant services.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "2",
+      "form_name": "Standard Residential Tenancy Agreement (Mobile Homes and Sites)",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form2.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as contact for rent and notices; the landlord's own name and signature are required on the agreement.",
+      "use_when": "Starting a tenancy of a mobile home, a mobile home site, or both, in Manitoba.",
+      "do_not_use_when": [
+        "Tenancies that are not for a mobile home or mobile home site (use Form 1 or Form 1.1)."
+      ],
+      "related_forms": [
+        "1",
+        "1.1",
+        "4",
+        "5"
+      ],
+      "legal_effect": "Prescribed under The Residential Tenancies Act for tenancies respecting mobile homes and mobile home sites; two copies must be signed and one given to the tenant within 21 days.",
+      "source_basis": [
+        "\"This form of Agreement is prescribed under The Residential Tenancies Act (the Act) and applies to all residential tenancies in Manitoba respecting mobile homes and mobile home sites.\"",
+        "\"The landlord agrees to rent to the tenant: a mobile home / a mobile home site / a mobile home and mobile home site.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "3",
+      "form_name": "Assignment or Subletting of Tenancy Agreement",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form3.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "property_manager_or_authorized_agent"
+      ],
+      "property_manager_role": "May receive and sign the landlord's consent on the landlord's behalf if authorized to do so; the form's consent block is signed as \"landlord\".",
+      "use_when": "A tenant wants to assign the tenancy to a new tenant who will not move back in, or sublet it while planning to move back in, and needs the landlord's written consent.",
+      "related_forms": [
+        "1",
+        "1.1",
+        "2"
+      ],
+      "legal_effect": "Records the tenant's request to assign or sublet and the landlord's consent, with or without conditions; the landlord may charge a maximum of $75.00 for processing an assignment or sublet.",
+      "source_basis": [
+        "\"A tenancy agreement may only be assigned or sublet with the landlord's prior written consent.\"",
+        "\"The landlord may charge a maximum of $75.00 for an assignment or sublet.\"",
+        "\"When there is an assignment, the tenant does not plan to move back into the rental unit. A tenant who sublets, moves out of the rental unit for a while and then moves back in.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "4",
+      "form_name": "Renewal of Tenancy Agreement",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form4.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as contact for rent; the landlord's legal name is required in the renewal block.",
+      "use_when": "Renewing a fixed-term tenancy agreement for a further fixed term, including where a rent increase is scheduled or being applied for during the new term.",
+      "related_forms": [
+        "1",
+        "1.1",
+        "2",
+        "P9-1A"
+      ],
+      "legal_effect": "Renews the tenancy agreement for a further fixed term at the rent stated; if the landlord has applied or plans to apply for a rent increase above the guideline, the tenant may still sign and retains the right to end the tenancy on two rental payment periods' notice until 14 days after a decision on that application.",
+      "source_basis": [
+        "\"If the landlord has applied for, or plans to apply for, a rent increase above the guideline, you may sign this agreement and still have the right to end your tenancy with notice of two rental payment periods.\"",
+        "\"The landlord must provide the tenant with a Notice of Rent Increase at least 3 months before the rent is increased.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "5",
+      "form_name": "Rental Unit Condition Report",
+      "status": "active",
+      "category": "condition_reports",
+      "matter_type": "condition_inspection",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form5.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord_and_tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May complete and sign the report as the landlord's representative if authorized; the form calls for the landlord's and tenant's names and signatures at move-in and move-out.",
+      "use_when": "Recording the condition of a rental unit and its smoke alarm at the beginning and end of a tenancy.",
+      "related_forms": [
+        "1",
+        "1.1",
+        "2"
+      ],
+      "legal_effect": "Documents room-by-room condition at move-in and move-out and the smoke alarm checks the Act requires; the tenant is to receive the original and the landlord keeps a signed copy.",
+      "source_basis": [
+        "\"Complete at beginning and end of tenancy. The tenant is to receive the original and landlord is to keep a signed copy.\"",
+        "\"The landlord may enter the rental unit at least once a year to test the smoke alarm. The landlord is required to give the tenant at least 24 hours and not more than 2 weeks' notice before entering.\"",
+        "\"The tenant understands that it is against the law to tamper with a smoke alarm.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "6",
+      "form_name": "Notice to Tenant - Change of Landlord",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "landlord_change",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form6.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "The form is signed by \"landlord or agent\", so an authorized agent may sign it, but the deposits and rent information given must be accurate as of the change.",
+      "use_when": "A rental unit has a new landlord and the new landlord must tell the tenant where to pay rent and confirm the deposits transferred from the former landlord.",
+      "related_forms": [],
+      "legal_effect": "Tells the tenant the new landlord's contact information, confirms the security and pet damage deposits (plus interest) received from the former landlord, and states where and to whom rent is now to be paid.",
+      "source_basis": [
+        "\"Effective ___ your new landlord is ___.\"",
+        "\"Deposits Received from Former Landlord: Security Deposit $ + Interest $ = Total $.\"",
+        "\"Note to Tenant: If the amount(s) shown for your deposit(s) is incorrect, you should contact the new landlord as soon as possible.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "7",
+      "form_name": "Notice of Termination by Tenant",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form7.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/tenant/forms.html",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"tenant\".",
+      "use_when": "A tenant is ending a periodic tenancy with notice of one rental payment period, or ending a fixed-term tenancy early for one of the statutory reasons listed on the form (rent increase above the permitted maximum, rehabilitation scheme, health-related inability to pay rent, military relocation, domestic or sexual violence or stalking, accessibility, move to a personal care home or incapacity, or the tenant's death).",
+      "related_forms": [
+        "MIL-CERT"
+      ],
+      "legal_effect": "Ends the tenancy on the date given. For a periodic tenancy, notice of one full rental payment period is required, given on the last day of a payment period to take effect on the last day of the next one. A fixed-term tenancy can only be ended early for one of the listed reasons, and the tenant is directed to contact the Branch to find out the required notice and any supporting information needed (such as the Canadian Forces certificate for a military relocation termination).",
+      "source_basis": [
+        "\"Periodic tenancy: To end a periodic tenancy, you must give the landlord notice of one rental payment period. The notice must be given on the last day of a rental payment period to take effect the last day of the next rental payment period.\"",
+        "\"Fixed-term tenancy: You may only terminate a fixed term tenancy agreement before the end date of the agreement for one of the reasons shown below.\"",
+        "\"Termination for military relocation (s. 92.1 of the Act)\" (one of the checkbox reasons listed on the form)."
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "8",
+      "form_name": "Notice of Termination by Landlord for Non-Payment of Rent (for all residential tenancies, other than tenancies respecting a mobile home, mobile home site or both",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form8.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as the landlord contact for disputing the notice, but the form is signed by \"landlord\".",
+      "use_when": "The tenant of a residential tenancy other than a mobile home or mobile home site tenancy owes rent and the landlord is terminating the tenancy for non-payment.",
+      "do_not_use_when": [
+        "Tenancies of a mobile home, mobile home site, or both (use Form 9).",
+        "Tenancies that include a tenant services charge (use Form 8.1)."
+      ],
+      "related_forms": [
+        "HABLATE",
+        "9",
+        "10"
+      ],
+      "legal_effect": "A legal notice that can lead to eviction; states the rent owed and the date the tenant must move out. If the tenant pays the full amount owing before the move-out date, the tenant does not have to move unless told otherwise in writing; if the tenant does not pay or move, the landlord may apply to the Branch for an Order of Possession.",
+      "source_basis": [
+        "\"THIS IS A LEGAL NOTICE THAT COULD LEAD TO YOU BEING EVICTED.\"",
+        "\"If you pay the landlord the total amount shown on this notice and any other amount that is owing on the date you pay, you will not have to move unless the landlord tells you otherwise in writing.\"",
+        "\"If you do not pay and you do not move out, your landlord may apply to the Residential Tenancies Branch for an Order of Possession.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "8.1",
+      "form_name": "Notice of Termination by Landlord for Non-Payment of Rent or Tenant Services Charge (for residential tenancies that include tenant services",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form8.1.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as the landlord contact for disputing the notice, but the form is signed by \"landlord\".",
+      "use_when": "A tenant in a tenancy that includes tenant services owes rent, a tenant services charge, or both, and the landlord is terminating for non-payment.",
+      "do_not_use_when": [
+        "Tenancies that do not include tenant services (use Form 8)."
+      ],
+      "related_forms": [
+        "HABLATE",
+        "8",
+        "10"
+      ],
+      "legal_effect": "A legal notice that can lead to eviction, stating separately the rent owed and the tenant services charge owed and the date the tenant must move out; paying the total owing before that date stops the eviction unless the landlord says otherwise in writing.",
+      "source_basis": [
+        "\"(For residential tenancies that include tenant services)\"",
+        "\"You owe $ for rent for the month(s) of ___ and $ for tenant services charge for the month(s) of ___.\"",
+        "\"THIS IS A LEGAL NOTICE THAT COULD LEAD TO YOU BEING EVICTED.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "9",
+      "form_name": "Notice of Termination for Non-Payment (for tenancies of a mobile home, mobile home site or both)",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form9.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May be named as the landlord contact for disputing the notice, but the form is signed by \"landlord\".",
+      "use_when": "A tenant of a mobile home, mobile home site, or both owes rent, mobile home property taxes, or a mobile home licence fee, and the landlord is terminating for non-payment.",
+      "do_not_use_when": [
+        "Tenancies that are not for a mobile home or mobile home site (use Form 8 or Form 8.1)."
+      ],
+      "related_forms": [
+        "HABLATE",
+        "8"
+      ],
+      "legal_effect": "A legal notice that can lead to eviction; lets the landlord check which of rent, mobile home property taxes, or a mobile home licence fee is owed, and states the move-out date. Paying the total owing before that date stops the eviction unless the landlord says otherwise in writing.",
+      "source_basis": [
+        "\"(For tenancies of a mobile home, mobile home site or both)\"",
+        "\"You owe rent of $ for the month(s) of ___. / You owe mobile home property taxes of $. / You owe a mobile home license fee of $.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "10",
+      "form_name": "Notice of Termination by Landlord (for cause other than non-payment of rent",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form10.docx",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "The form is signed by \"landlord\"; no separate agent line is provided.",
+      "use_when": "Ending a tenancy for cause other than non-payment of rent or tenant services charge: a breach of a statutory duty (disturbing others, safety, unlawful activity, care and repair, pet damage deposit) or a breach of a material term of the tenancy agreement.",
+      "do_not_use_when": [
+        "Terminating for non-payment of rent or a tenant services charge (use Form 8, Form 8.1 or Form 9)."
+      ],
+      "related_forms": [
+        "8",
+        "8.1",
+        "9"
+      ],
+      "legal_effect": "A legal notice that can lead to eviction for a listed statutory breach or a material breach of the tenancy agreement (with details of the breach to be provided); states the move-out date. If the tenant does not move out, the landlord may apply to the Branch for an Order of Possession.",
+      "source_basis": [
+        "\"Notice of Termination by Landlord (For cause other than non-payment of rent or tenant services charge)\"",
+        "\"you did not comply with the following obligations: duty not to disturb others (s. 73 of the Act) ... obligation to pay a pet damage deposit (s. 29.1 of the Act)\"",
+        "\"you breached a material term of your tenancy agreement by: (provide details of breach)\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "11A",
+      "form_name": "Notice of Termination by Landlord (Purchaser or landlord intends to move into rental unit)",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11a.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "purchaser"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\" and names the purchaser or landlord (or a listed family member) who intends to move in.",
+      "use_when": "A purchaser who has accepted an offer on the residential complex, the landlord, or a listed close family member of either, intends to move into the tenant's rental unit.",
+      "do_not_use_when": [
+        "Terminating for demolition, conversion, or renovation (use Form 11B or Form 11C)."
+      ],
+      "related_forms": [
+        "11B",
+        "11C"
+      ],
+      "legal_effect": "A notice of termination on the ground of a purchaser's or landlord's (or specified family member's) intended occupancy; states the move-out date. The required length of notice varies with the tenancy type and location, so the landlord is directed to contact the Branch.",
+      "source_basis": [
+        "\"The landlord has accepted an offer to purchase the residential complex in which your rental unit is located, and the following person wants to move into your rental unit: the purchaser / the purchaser's parent / the purchaser's adult child / the purchaser's spouse ...\"",
+        "\"Note to landlord: The length of notice you are required to give the tenant may vary, depending on the type of tenancy agreement and the location of the rental unit.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "11B",
+      "form_name": "Notice of Termination by Landlord (For demolition or conversion)",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11b.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "The landlord intends to demolish the rental unit, convert a life lease unit to a non-rental use, convert the unit to a non-residential use, or convert it into a housing co-operative unit, within six months of the tenant moving.",
+      "related_forms": [
+        "11A",
+        "11C"
+      ],
+      "legal_effect": "A notice of termination for demolition or conversion; states the move-out date. A tenant with children attending a nearby school cannot be forced to move during the school year, and a condominium unit may not qualify for this type of notice.",
+      "source_basis": [
+        "\"the landlord: intends to demolish your rental unit within six months after you move / intends to convert your rental unit within six months to a non-residential use / intends to convert your rental unit into a cooperative housing unit ...\"",
+        "\"If you have children attending a school that is close to your rental unit, the landlord cannot force you to move during the school year.\"",
+        "\"If your unit is a condominium, the landlord may not be able to give you this type of notice to move.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "11C",
+      "form_name": "Notice of Termination by Landlord (For extensive renovations)",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form11c.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "The landlord intends to renovate the rental unit and the tenant cannot live there while the work is done.",
+      "related_forms": [
+        "11A",
+        "11B"
+      ],
+      "legal_effect": "A notice of termination for extensive renovations; a separate page with details of the planned renovations must be attached. The tenant has the right of first refusal to rent the unit at the lowest rent charged to any other tenant once renovations are complete, if the tenant gives the landlord written notice before moving out and keeps the landlord informed of a mailing address.",
+      "source_basis": [
+        "\"the landlord intends to renovate your rental unit and you cannot live in the unit while the work is being done. (Attach a separate page with detailed information about the planned renovations.)\"",
+        "\"You have the right of first refusal to rent your rental unit at the lowest rent that would be charged to any other tenant once the renovations are complete.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "12",
+      "form_name": "Inventory of Tenant's Abandoned Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form12.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed by the landlord.",
+      "use_when": "A tenant has moved out leaving behind valuable property, personal documents, or photographs, and the landlord must inventory it before storing or disposing of it.",
+      "related_forms": [
+        "13"
+      ],
+      "legal_effect": "Records the abandoned property, the landlord's attempt to contact the tenant, and where the property will be stored; a copy goes to the tenant and to the director of the Residential Tenancies Branch. Personal documents and photographs of little value must be stored at least 60 days before disposal; other listed property for at least 60 days until the Branch authorizes disposal.",
+      "source_basis": [
+        "\"If the tenant has abandoned property (other than personal documents or photographs) that is of no value or is unsanitary or unsafe to store, the landlord may take it to an appropriate disposal facility without completing this form.\"",
+        "\"store personal documents and photographs that are impossible or difficult to replace and are of little or no monetary value for at least 60 days before disposing of them\"",
+        "\"store the remaining property for at least 60 days until the Residential Tenancies Branch authorizes disposal of it.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "13",
+      "form_name": "Accounting of Sale of Abandoned Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/form13.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is certified and signed by the landlord.",
+      "use_when": "The landlord has sold a tenant's abandoned property and must account for the proceeds and expenses to the Residential Tenancies Branch.",
+      "related_forms": [
+        "12"
+      ],
+      "legal_effect": "Itemizes the sale proceeds, expenses (removal, storage, advertising, auctioneer's costs), and amounts awarded by the director's orders, arriving at net proceeds; net proceeds are sent to the Residential Tenancies Trust Account.",
+      "source_basis": [
+        "\"Total proceeds of sale (from page 2) ... Total expenses ... Less Amount awarded by Orders of the Director ... Net Proceeds\"",
+        "\"Please make cheque payable to: The Residential Tenancies Trust Account.\"",
+        "\"I certify all information given to be true, correct and complete to the best of my knowledge.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "CORRECT-ORDER",
+      "form_name": "Request to Correct or Amend an Order",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "review_or_correction",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/requesttocorrectoramendanorder.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord_and_tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form.",
+      "use_when": "A party disagrees with a clerical error in an order or decision of the Residential Tenancies Branch and wants it corrected or amended, and is applying before the appeal date. This is not the form to use to dispute the substance of an order.",
+      "do_not_use_when": [
+        "Disagreeing with the substance of an order or decision (appeal to the Residential Tenancies Commission instead)."
+      ],
+      "related_forms": [],
+      "legal_effect": "Asks the Branch to correct or amend an order for a clerical error; must be made before the appeal date. The Branch may request submissions from other parties, and amending the order may also change other parts of it, such as the termination date or amounts owing; a new appeal date is set when an amended order issues.",
+      "source_basis": [
+        "\"Do not use this form if you disagree with the Branch's order or decision. To appeal the order or decision, contact the Residential Tenancies Commission by the appeal date.\"",
+        "\"You must make a request to correct or amend an order before the appeal date.\"",
+        "\"Where an order is amended to correct a clerical error, amendments may also have to be made to other parts of the order, such as the termination date and/or any amounts owing.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "DEPOSIT-INFO",
+      "form_name": "Deposit Information Sheet",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "application",
+      "current_version": "2013-10",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/deposit_information_sheet.pdf",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/tenant/forms.html",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form.",
+      "use_when": "A former tenant wants to claim a security, pet damage, or tenant services security deposit that the landlord has not returned, and is preparing to submit a claim through the Branch's landlord's-claim-or-less online tool or in person.",
+      "related_forms": [
+        "5"
+      ],
+      "legal_effect": "Gathers the tenant's, landlord's, and rental unit's information, the deposit amounts and dates paid, whether a move-in/move-out condition report was done, and whether the deposit was requested back and any amount returned, to support a deposit claim; the tenant is asked to attach deposit receipts, the condition report, the tenancy agreement, and any other relevant information.",
+      "source_basis": [
+        "\"Include copies of your: security deposit and/or pet damage deposit receipt / move-in/move-out rental unit condition report / tenancy agreement / any other information that may be relevant.\"",
+        "\"Send or bring your application to the Branch closest to you: ... Winnipeg ... Brandon ... Thompson.\"",
+        "Footer text reads \"Deposit Information Sheet Oct2013 - Page 1 of 2\", the only printed date on the document."
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "HABLATE",
+      "form_name": "Habitually Late Letter",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2011-12",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/hablate.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"Landlord\".",
+      "use_when": "The landlord has already served a Notice of Termination for non-payment of rent, the tenant has now paid late, and the landlord wants to accept the late payment while keeping the termination notice in effect because the tenant has been habitually late.",
+      "related_forms": [
+        "8",
+        "8.1"
+      ],
+      "legal_effect": "Confirms the landlord accepted a late rent payment but that a previously served Notice of Termination remains in effect and the landlord intends to treat the tenancy as terminated on the date in that notice. Must be given to the tenant at the same time the late rent is accepted.",
+      "source_basis": [
+        "\"THE LANDLORD MUST GIVE THIS LETTER TO THE TENANT AT THE SAME TIME THE LATE RENT IS PAID.\"",
+        "\"However, because you have been habitually late paying your rent, this letter confirms that the Notice of Termination you received on ___ is still in effect. I intend to treat the tenancy agreement as terminated on the day specified in the Notice of Termination.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "MIL-CERT",
+      "form_name": "Certificate from Canadian Forces Official",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/military_termination_certificate.pdf",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/tenant/forms.html",
+      "initiating_party": "canadian_forces_official",
+      "parties": [
+        "tenant",
+        "landlord",
+        "canadian_forces_official"
+      ],
+      "property_manager_role": "Not addressed on the form.",
+      "use_when": "A tenant is ending a fixed-term tenancy under section 92.1 of The Residential Tenancies Act because a Canadian Forces member (or a member of another country's armed forces training with the Canadian Forces) has been posted at least 50 km away or is no longer assigned to those duties, and must give the landlord this certificate along with the notice of termination.",
+      "related_forms": [
+        "7"
+      ],
+      "legal_effect": "A Canadian Forces official's certificate confirming the posting, assignment, or completion of training that the tenant relies on to terminate a fixed-term tenancy early; the tenant must give the landlord a notice of termination of not less than one rental payment period together with this certificate.",
+      "source_basis": [
+        "\"The Residential Tenancies Act allows a tenant of a rental unit to terminate a tenancy if the tenant is a Canadian Forces member who is posted or assigned to a location that is at least 50 kilometres from the rental unit ...\"",
+        "\"To terminate a tenancy under these circumstances, the tenant must give the landlord a notice of termination that is not less than one rental payment period. The tenant must also give the landlord a certificate from an official with the Canadian Forces ...\"",
+        "Document is a flattened PDF with no AcroForm fields (built with pdfMachine); confirmed with `bun run inspect`, which reported \"no AcroForm fields, flattened form\"."
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-1A",
+      "form_name": "Notice of Rent Increase",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form1a.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord is increasing the rent of a non-exempt rental unit and must give the tenant the prescribed notice at least 3 months before the increase.",
+      "related_forms": [
+        "P9-3",
+        "4"
+      ],
+      "legal_effect": "A prescribed notice: if it is not completed and given as required by The Residential Tenancies Act, the rent increase may be void. Sets out present and proposed rent by component and the percentage increase, and the maximum increase permitted without a Branch application.",
+      "source_basis": [
+        "\"If this notice is not completed and given to the tenant as required by The Residential Tenancies Act, any increase in rent may be void.\"",
+        "\"The rent cannot be increased unless written notice of at least 3 months is given to the tenant.\"",
+        "\"For non-exempt rental units, the maximum increase permitted by the regulations without making an application to the Residential Tenancies Branch is ___%.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-1B",
+      "form_name": "Notice of Rent Increase for Life Lease Rental Unit Owned by Non-Profit Landlord",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form1b.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A non-profit landlord of a life lease rental unit is increasing rent based on proportionate share of carrying charges, debt service costs, and any revenue shortfall or surplus.",
+      "do_not_use_when": [
+        "Rent increases for units that are not a non-profit-owned life lease unit (use Form 1A)."
+      ],
+      "related_forms": [],
+      "legal_effect": "Sets out the life-lease-specific rent components (proportionate share of carrying charges and taxes, debt service costs, investment fund credit, and prior-year revenue shortfall/surplus) comparing present and new rent.",
+      "source_basis": [
+        "\"Notice of Rent Increase for Life Lease Rental Unit Owned by Non-Profit Landlord\"",
+        "\"Proportionate share carrying charges & taxes ... Proportionate share debt service costs ... Add 1/12 of tenant's share of Revenue Shortfall, if any, for previous year ... Subtract 1/12 of tenant's share of Revenue Surplus\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-2",
+      "form_name": "Notice to New Tenant",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form2.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A new tenant is moving in and the landlord must disclose the rental unit's rent history, services included, and information about the residential complex, as required by The Residential Tenancies Act.",
+      "related_forms": [
+        "P9-14"
+      ],
+      "legal_effect": "A prescribed notice: if it is not completed and given as required by the Act, any rent increase may be void. Discloses the residential complex's construction year and unit counts, services included in basic rent, and the previous, present, and any already-proposed rent for the unit.",
+      "source_basis": [
+        "\"If this notice is not completed and given to the tenant as required by The Residential Tenancies Act, any increase in rent may be void.\"",
+        "\"D. Rent History Previous Rent / Present Rent (Date rent took effect) / *Proposed Rent (Date rent will take effect)\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-3",
+      "form_name": "Application for Rent Increase Above Amount Permitted by Regulation",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form3.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "May be named as the landlord/agent contact for the application.",
+      "use_when": "A landlord wants to increase rent above the guideline amount permitted by regulation and must apply to the Residential Tenancies Branch for approval.",
+      "related_forms": [
+        "P9-1A"
+      ],
+      "legal_effect": "An application to the Branch giving contact, complex, unit-count and services information in support of a rent increase above the regulatory guideline; the Branch's decision governs whether and how much the rent may be increased.",
+      "source_basis": [
+        "\"Application for Rent Increase Above Amount Permitted by Regulation\"",
+        "\"Step 2 - Information on Residential Complex ... Step 3 - Number of Rental Units ... Step 4 - Services included in Rent\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-4",
+      "form_name": "Application for Increase in Charge for Laundry Facilities",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form4.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord wants to increase the per-load charge for coin-operated laundry facilities and must apply to the Branch within 14 days after the start of the required notice period.",
+      "related_forms": [],
+      "legal_effect": "An application to the director of the Branch to increase washer/dryer charges or drying time; tenants affected must receive three months' written notice before the increase takes effect, and the application must be received within 14 days after the notice period begins.",
+      "source_basis": [
+        "\"Tenants who are affected by the increase must receive three months' written notice before the increase takes effect.\"",
+        "\"Application must be received by the director of the Residential Tenancies Branch within 14 days after the beginning of the three-month notice period.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-5A",
+      "form_name": "Application for Approval of Rehabilitation Scheme for All or Part of a Residential Complex",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form5a.docx",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord plans a rehabilitation scheme affecting all or part of a residential complex and wants Branch approval before starting the improvements or giving a renovation-related notice of termination.",
+      "related_forms": [
+        "11C",
+        "P9-5B",
+        "P9-6"
+      ],
+      "legal_effect": "If approved, the Branch registers a notice on the title of the complex indicating a rehabilitation exemption and barring a condominium declaration for four years. A landlord who applies must not start any improvement or give a renovation notice of termination before receiving the first approving order.",
+      "source_basis": [
+        "\"If the Residential Tenancies Branch approves your rehabilitation scheme for this residential complex, the Branch will register a notice on the title of complex.\"",
+        "\"A landlord who applies for an order approving a rehabilitation scheme must not commence any improvement or give a notice of termination for renovations to a tenant in the residential complex before receiving the first order approving the scheme.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-5B",
+      "form_name": "Application for Approval of Rehabilitation Scheme for Specified Unit",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form5b.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord plans a rehabilitation scheme for one specified rental unit that the tenant has voluntarily vacated, covering at least 4 of the listed categories of improvement.",
+      "related_forms": [
+        "P9-5A",
+        "P9-6"
+      ],
+      "legal_effect": "Requires confirming the tenant voluntarily vacated (or will vacate) the unit and checking at least 4 of the listed improvement categories (kitchen cabinets, countertops and sink, electrical wiring, appliances, windows and patio doors, flooring, bathroom fixtures, or director-acceptable other improvements).",
+      "source_basis": [
+        "\"Description of proposed rehabilitation scheme (you must check at least 4 of the following items)\"",
+        "\"Confirmation that Rental Unit Voluntarily Vacated ... vacated or will be vacating the rental unit on ___.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-6",
+      "form_name": "Notice to Tenant - Rehabilitation Scheme for All or Part of a Residential Complex",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form6.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A landlord has applied to the Branch for an order approving a rehabilitation scheme affecting the tenant's rental unit and must notify the tenant within 14 days of applying.",
+      "related_forms": [
+        "P9-5A",
+        "11C"
+      ],
+      "legal_effect": "Tells the tenant of the pending application, where and when the tenant may view the application and supporting material, and the expected rent for the unit once the scheme is completed.",
+      "source_basis": [
+        "\"The landlord has applied to the Residential Tenancies Branch for an order approving a rehabilitation scheme that affects your rental unit.\"",
+        "\"Note: This notice must be given to the tenant within 14 days after the landlord applies to the Branch.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-7",
+      "form_name": "Application to Fix Value of Improvement Requested by Tenant",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form7.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord in response to a tenant's request.",
+      "use_when": "One or more tenants have requested an improvement, alteration, service, facility, privilege, accommodation, or thing not usually provided, and the landlord wants the Branch to fix the value (rent charge) for providing it.",
+      "related_forms": [],
+      "legal_effect": "Asks the director to fix the charge for a tenant-requested improvement, listing estimated costs, how it differs from what is usually provided, how many other units already have it, and the rent roll of affected tenants and proposed charges.",
+      "source_basis": [
+        "\"Provide details and estimated costs of the improvement, alteration, service, facility, privilege, accommodation or thing requested by the tenant or tenants.\"",
+        "\"D. Rent Roll Information (List all tenants to whom this application relates.)\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-8",
+      "form_name": "Notice to Tenant - Reduction/Withdrawal of Service",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form8.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A landlord intends to permanently reduce or withdraw a service, facility, privilege, accommodation, or thing (other than a tenant services reduction) and will apply to the Branch to fix its value.",
+      "do_not_use_when": [
+        "A reduction or withdrawal of a tenant service (use Form 16)."
+      ],
+      "related_forms": [
+        "P9-9"
+      ],
+      "legal_effect": "Must be given at least three months before the reduction or withdrawal takes effect; states the proposed rent reduction (or that there will be none) pending the director fixing the value on the landlord's application.",
+      "source_basis": [
+        "\"The landlord must give you notice of a permanent reduction or withdrawal of service at least three months before permanently reducing or withdrawing the service.\"",
+        "\"An application will be made to the director of the Residential Tenancies Branch to fix the value of the permanent reduction or withdrawal.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-9",
+      "form_name": "Application to Fix Value of Reduction/Withdrawal of Service",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form9.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord has given notice of a permanent reduction or withdrawal of a service (other than a tenant service) and must apply to the Branch, within 14 days after the three-month notice period begins, to fix its value.",
+      "related_forms": [
+        "P9-8"
+      ],
+      "legal_effect": "Describes and gives reasons for the reduction or withdrawal and its effective date; applies only to a permanent reduction or withdrawal, not a temporary one, and must attach the affected tenants and proposed rent reduction.",
+      "source_basis": [
+        "\"This application relates to a permanent reduction or withdrawal of service only. It cannot be used for a temporary reduction or withdrawal.\"",
+        "\"Unless the reduction or withdrawal is beyond the control of the landlord, the application must be received by the Residential Tenancies Branch within 14 days after the beginning of the three-month notice period.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-14",
+      "form_name": "Notice to New Tenant - Where Tenant Services are Provided",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form14.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May sign as \"landlord/agent\".",
+      "use_when": "A new tenant is moving into a unit where tenant services are provided, and the landlord must disclose the current tenant services charge and any increase scheduled within 3 months of the start of the tenancy.",
+      "related_forms": [
+        "P9-2",
+        "P9-15"
+      ],
+      "legal_effect": "Discloses the current tenant services charge, when it took effect, when it was last increased, and, if applicable, the amount and date of an increase scheduled within 3 months of the tenancy's start.",
+      "source_basis": [
+        "\"Notice to New Tenant - Where Tenant Services are Provided\"",
+        "\"(Complete the following if the tenant services charge will be increased within 3 months of the start of the tenancy:) The tenant services charge will be increased by $ ... on ___.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-15",
+      "form_name": "Notice of Tenant Services Charge Increase",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form15.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "May sign as \"landlord/agent\".",
+      "use_when": "A landlord is increasing the tenant services charge for a tenancy that includes tenant services (not the basic rent).",
+      "related_forms": [
+        "P9-1A",
+        "P9-14"
+      ],
+      "legal_effect": "A prescribed notice: if not completed and given as required, the increase may be void. The tenant services charge can only be increased once every 12 months, requires at least 3 months' notice, and the annual rent increase guideline does not apply to it; increasing rent itself requires a separate Notice of Rent Increase (Form 1A).",
+      "source_basis": [
+        "\"If this notice is not completed and given to the tenant as required by The Residential Tenancies Act, any increase may be void.\"",
+        "\"Note: This notice applies only to an increase in the tenant services charge. To increase rent, a landlord must give a tenant a Notice of Rent Increase. (Form 1A - Residential Rent Regulation)\"",
+        "\"The tenant services charge can only be increased once every 12 months. The annual rent increase guideline does not apply to tenant services charge increases.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-16",
+      "form_name": "Notice to Tenant - Reduction or Withdrawal of Tenant Services",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form16.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A landlord intends to reduce or withdraw a tenant service, including where this happens before the end of a fixed-term tenancy agreement that included the service.",
+      "do_not_use_when": [
+        "A permanent reduction or withdrawal of a service other than a tenant service (use Form 8)."
+      ],
+      "related_forms": [
+        "P9-17"
+      ],
+      "legal_effect": "Must be given at least 3 months before the reduction or withdrawal; if it occurs before the end of a fixed-term agreement, the landlord must apply to the Branch to fix a tenant services charge reduction for the remainder of that term.",
+      "source_basis": [
+        "\"The landlord must give you notice of a reduction or withdrawal of a tenant service at least 3 months before reducing or withdrawing the service.\"",
+        "\"Since the reduction or withdrawal is occuring before the end of a fixed-term tenancy agreement, an application will be made to the director of the Residential Tenancies Branch to fix the value of the reduction or withdrawal.\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "P9-17",
+      "form_name": "Application to Fix Value of Reduction or Withdrawal of Tenant Services Before End of Fixed-Term Tenancy Agreement",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_or_facility",
+      "current_version": null,
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part9/form17.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; it is completed for the landlord.",
+      "use_when": "A landlord has reduced or withdrawn a tenant service before the end of a fixed-term tenancy agreement and must apply to the Branch to fix the tenant services charge reduction for the affected tenants.",
+      "related_forms": [
+        "P9-16"
+      ],
+      "legal_effect": "Describes and gives reasons for the reduction or withdrawal, its effective date, and lists the affected tenants with the proposed reduction in tenant services charge for each.",
+      "source_basis": [
+        "\"Application to Fix Value of Reduction or Withdrawal of Tenant Services Before End of Fixed-Term Tenancy Agreement\"",
+        "\"List the following information for the affected tenants: Unit Number / Tenant's Name / Proposed Reduction in Tenant Services Charge\""
+      ],
+      "last_verified": "2026-09-26"
+    },
+    {
+      "id": "SUBSVC",
+      "form_name": "Application for Substitutional Services",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "service_of_documents",
+      "current_version": "2017-12",
+      "official_url": "https://www.gov.mb.ca/cca/rtb/forms/part1to8/appforsub_svc_wpg.doc",
+      "official_index_url": "https://www.gov.mb.ca/cca/rtb/landlord/forms.html",
+      "initiating_party": "landlord_and_tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "branch"
+      ],
+      "property_manager_role": "Not addressed on the form; the applicant is described only as \"landlord or tenant\".",
+      "use_when": "A landlord or tenant has tried and failed to personally give a Claim, an Application for an Order of Possession, or a Notice of Termination to the other party, and is asking the Branch to approve an alternative method of service.",
+      "related_forms": [],
+      "legal_effect": "Asks the director to approve substitutional service (an alternative way of giving a document) and, if a hearing was already scheduled, sets a new hearing date if necessary. A $20.00 fee is required, payable to the Minister of Finance.",
+      "source_basis": [
+        "\"If you are applying for substitutional service of a Claim or an Application for an Order of Possession, you must submit a fee of $20.00 with this application.\"",
+        "\"I request approval of substitutional service and suggest the following alternative methods by which the document could be given.\"",
+        "\"If a hearing was previously scheduled on this matter and the Branch approves this Application for Substitutional Service, it will: issue a written approval to the applicant; and set a new hearing date, if necessary.\""
+      ],
+      "last_verified": "2026-09-26"
+    }
+  ]
+}

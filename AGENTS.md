@@ -53,6 +53,10 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   date. Uniform format, never invented precision. A source whose page prints no
   version reads it from the PDF footer through the module's `version(bytes)`.
 - Never delete a record. Retire it by setting `status: "historical_or_replaced"`.
+- Manitoba numbers forms against two schedules that both start over at Form 2, 3, 4, 8
+  and 9 (Parts 1 to 8 of the Residential Tenancies Regulation, and Part 9); a Part 9
+  form's id keeps a `P9-` prefix (`P9-2`) to stay unique, while a Parts 1-8 form keeps
+  its bare number.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
   in `schema/forms.schema.json` first.

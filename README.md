@@ -10,6 +10,7 @@ a pull request for a human to review. The repo is standalone: consume
 | `bc` | British Columbia | Residential Tenancy Branch | 72, classified | RTB-1, RTB-27 |
 | `on` | Ontario | Landlord and Tenant Board, plus the Ministry's standard lease | 35, classified | 2229E |
 | `ns` | Nova Scotia | Residential Tenancies Program, Service Nova Scotia | 25, classified | P |
+| `mb` | Manitoba | Residential Tenancies Branch | 37, classified | none (Word documents; Form 1's PDF is flattened) |
 
 One directory code selects a jurisdiction's catalog, field maps, snapshot and page
 extractor. Scripts take jurisdiction codes as arguments and default to all of them.
@@ -17,7 +18,7 @@ extractor. Scripts take jurisdiction codes as arguments and default to all of th
 ## Layout
 
 ```
-data/<code>/forms.json               the catalog, one per jurisdiction (bc, on, ns)
+data/<code>/forms.json               the catalog, one per jurisdiction (bc, on, ns, mb)
 schema/forms.schema.json             JSON Schema (draft-07) shared by every catalog
 maps/<code>/<ID>.map.json            field maps: semantic key -> AcroForm field
 scripts/jurisdictions.mjs            lists the jurisdiction directories for the other scripts
