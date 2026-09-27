@@ -3,3 +3,4 @@ node_modules/
 snapshots/*.html
 forms/
 out/
+sample/

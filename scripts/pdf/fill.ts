@@ -1,18 +1,25 @@
+// Usage: bun run fill [data.json] [out.pdf]
+// Fills forms/bc/RTB-1.pdf from a JSON object keyed by semantic name (default: the built-in
+// sample), writes the result, then reloads it and checks every value round-tripped.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { PDF } from "@libpdf/core";
 import { fillFromMap, type FormMap } from "./fill-core";
-import { sample as data } from "./sample";
+import { sample } from "./sample";
 
-const map: FormMap = JSON.parse(await readFile("maps/RTB-1.map.json", "utf8"));
+const [dataPath, outPath = "out/RTB-1-filled.pdf"] = process.argv.slice(2);
+const data: Record<string, string | boolean> = dataPath ? JSON.parse(await readFile(dataPath, "utf8")) : sample;
+for (const k of Object.keys(data)) if (k.startsWith("_")) delete data[k]; // "_note" and friends
 
-const pdf = await PDF.load(new Uint8Array(await readFile("forms/RTB-1.pdf")));
+const map: FormMap = JSON.parse(await readFile("maps/bc/RTB-1.map.json", "utf8"));
+
+const pdf = await PDF.load(new Uint8Array(await readFile("forms/bc/RTB-1.pdf")));
 const { filled, skipped } = fillFromMap(pdf.getForm()!, map, data);
 console.log(`filled ${filled.length}, skipped ${skipped.length}`, skipped);
-await mkdir("out", { recursive: true });
-await writeFile("out/RTB-1-filled.pdf", await pdf.save());
+await mkdir(outPath.replace(/\/[^/]*$/, "") || ".", { recursive: true });
+await writeFile(outPath, await pdf.save());
 
 // round trip: reload and compare, keyed by semantic name
-const back = (await PDF.load(new Uint8Array(await readFile("out/RTB-1-filled.pdf")))).getForm()!;
+const back = (await PDF.load(new Uint8Array(await readFile(outPath)))).getForm()!;
 let bad = 0;
 for (const [key, want] of Object.entries(data)) {
   const entry = map.fields[key]!;
@@ -22,5 +29,5 @@ for (const [key, want] of Object.entries(data)) {
   if (!ok) bad++;
   console.log(ok ? "ok  " : "FAIL", key.padEnd(35), JSON.stringify(got));
 }
-console.log(bad ? `${bad} mismatches` : "all values round-tripped");
+console.log(bad ? `${bad} mismatches` : `all values round-tripped -> ${outPath}`);
 if (bad) process.exit(1);
