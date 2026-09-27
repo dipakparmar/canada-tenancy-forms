@@ -119,7 +119,7 @@
       "current_version": null,
       "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A1.pdf",
       "official_index_url": "https://tribunalsontario.ca/ltb/forms-filing-and-fees/",
-      "initiating_party": "landlord_or_tenant",
+      "initiating_party": "applicant",
       "parties": [
         "landlord",
         "tenant",
@@ -144,7 +144,7 @@
       "current_version": null,
       "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A2.pdf",
       "official_index_url": "https://tribunalsontario.ca/ltb/forms-filing-and-fees/",
-      "initiating_party": "landlord_or_tenant",
+      "initiating_party": "applicant",
       "parties": [
         "landlord",
         "tenant",
@@ -169,7 +169,7 @@
       "current_version": null,
       "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A4.pdf",
       "official_index_url": "https://tribunalsontario.ca/ltb/forms-filing-and-fees/",
-      "initiating_party": "landlord_or_tenant",
+      "initiating_party": "applicant",
       "parties": [
         "landlord",
         "tenant",
@@ -177,9 +177,7 @@
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
       "use_when": "Either party wants the Board to vary an automatic rent reduction that followed a decrease in the property's municipal taxes.",
-      "related_forms": [
-        "T3"
-      ],
+      "related_forms": [],
       "legal_effect": "Board order sets the rent reduction amount that replaces the automatic calculation.",
       "source_basis": [
         "Official LTB forms page",
@@ -208,7 +206,7 @@
         "N4",
         "L9"
       ],
-      "legal_effect": "Asks the Board to terminate the tenancy, evict, and order payment of arrears; the tenant can still stop the eviction by paying everything owed before the order is enforced.",
+      "legal_effect": "Asks the Board to terminate the tenancy, evict, and order payment of arrears; the tenant can still stop the eviction by paying everything owed before the LTB issues an order on the application.",
       "source_basis": [
         "Official LTB forms page",
         "L1 official PDF"
@@ -291,7 +289,7 @@
         "board"
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
-      "use_when": "The tenant breached a condition of a Board mediated settlement or order that allowed the landlord to apply without notice.",
+      "use_when": "The tenant did not meet a condition of a Board mediated settlement or order that allows the landlord to file this application.",
       "related_forms": [
         "L1",
         "L2"
@@ -319,12 +317,11 @@
         "board"
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
-      "use_when": "The landlord seeks a rent increase above the guideline for eligible capital expenditures, extraordinary municipal tax or utility increases, or security services.",
+      "use_when": "The landlord seeks a Board order for a rent increase above the guideline based on an extraordinary increase in municipal taxes and charges, new or increased security services, or eligible capital expenditure work.",
       "related_forms": [
-        "N1",
-        "N10"
+        "N1"
       ],
-      "legal_effect": "Board order sets the permitted increase and its timing; the N1 must still be served, and the increase is capped at the guideline plus 3 percent per year for capital work.",
+      "legal_effect": "Board order sets the permitted rent increase above the guideline and its timing; the landlord must still give tenants a Notice of Rent Increase (N1).",
       "source_basis": [
         "Official LTB forms page",
         "L5 official PDF"
@@ -347,10 +344,11 @@
         "board"
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
-      "use_when": "The landlord wants the Board to review a municipal or provincial work order issued under the provincial maintenance standards.",
-      "related_forms": [
-        "T6"
+      "use_when": "The landlord wants the Board to review a municipal work order that enforces the province's maintenance standards.",
+      "do_not_use_when": [
+        "The work order enforces the municipality's own property standards by-law rather than the provincial maintenance standards."
       ],
+      "related_forms": [],
       "legal_effect": "The Board may confirm, vary or quash the work order.",
       "source_basis": [
         "Official LTB forms page",
@@ -375,9 +373,7 @@
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
       "use_when": "The landlord wants to transfer a care home tenant who no longer requires the level of care provided, or requires care the home does not provide.",
-      "related_forms": [
-        "N3"
-      ],
+      "related_forms": [],
       "legal_effect": "Board order may end the tenancy and require the tenant to move to appropriate accommodation.",
       "source_basis": [
         "Official LTB forms page",
@@ -402,10 +398,8 @@
       ],
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
       "use_when": "The tenant changed the locking system without the landlord's consent and did not provide keys.",
-      "related_forms": [
-        "T2"
-      ],
-      "legal_effect": "Board may order the tenant to provide keys, pay costs, or in some cases end the tenancy.",
+      "related_forms": [],
+      "legal_effect": "Board may order the tenant to give the landlord a key to the new locking system or pay the cost of changing it.",
       "source_basis": [
         "Official LTB forms page",
         "L8 official PDF"
@@ -430,7 +424,6 @@
       "property_manager_role": "may_prepare_and_file_as_authorized_agent",
       "use_when": "The landlord wants to collect rent arrears from a current tenant without ending the tenancy.",
       "related_forms": [
-        "N4",
         "L1",
         "L10"
       ],
@@ -516,14 +509,14 @@
         "tenant"
       ],
       "property_manager_role": "may_complete_and_serve_as_authorized_agent",
-      "use_when": "Raising the rent of a unit that is exempt from the annual guideline, such as one first occupied for residential purposes after November 15, 2018.",
+      "use_when": "Raising the rent of a unit that is exempt from the annual rent increase guideline under the Residential Tenancies Act, 2006.",
       "do_not_use_when": [
         "The unit is subject to the guideline (use N1)."
       ],
       "related_forms": [
         "N1"
       ],
-      "legal_effect": "Still requires 90 days' written notice and 12 months since the last increase; the guideline cap does not apply.",
+      "legal_effect": "Still requires 90 days' written notice; the guideline cap does not apply, so the landlord can raise the rent by any amount.",
       "source_basis": [
         "Official LTB forms page",
         "N2 official PDF"
@@ -547,10 +540,9 @@
       "property_manager_role": "may_complete_and_serve_as_authorized_agent",
       "use_when": "Raising the rent, or the charges for care services and meals, in a care home.",
       "related_forms": [
-        "N1",
-        "L7"
+        "N1"
       ],
-      "legal_effect": "Rent portion follows the same 90-day and 12-month rules as N1; care service and meal charges follow the care home provisions of the Act.",
+      "legal_effect": "Rent portion follows the same 90-day and 12-month rules as N1; the 90-day notice also applies to charges for care services and meals, but the 12-month rule does not.",
       "source_basis": [
         "Official LTB forms page",
         "N3 official PDF"
@@ -574,10 +566,9 @@
       "property_manager_role": "may_complete_and_serve_as_authorized_agent",
       "use_when": "Rent is unpaid after the due date and the landlord wants to start the eviction process.",
       "related_forms": [
-        "L1",
-        "L9"
+        "L1"
       ],
-      "legal_effect": "Gives the tenant a termination date at least 14 days out (7 days for daily or weekly tenancies); the notice is void if the tenant pays everything owed before the termination date. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
+      "legal_effect": "Gives the tenant a termination date at least 7 days after the landlord gives the notice; the notice is void if the tenant pays everything owed before the termination date. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
       "source_basis": [
         "Official LTB forms page",
         "N4 official PDF"
@@ -602,7 +593,7 @@
       "use_when": "The tenant or a guest substantially interferes with others' reasonable enjoyment or the landlord's lawful rights, causes undue damage, or overcrowds the unit.",
       "related_forms": [
         "L2",
-        "N7"
+        "N6"
       ],
       "legal_effect": "A first N5 gives the tenant seven days to correct the problem, which voids the notice; a second N5 within six months cannot be voided. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
       "source_basis": [
@@ -628,9 +619,10 @@
       "property_manager_role": "may_complete_and_serve_as_authorized_agent",
       "use_when": "The tenant or a guest commits an illegal act or carries on an illegal business in the residential complex, or the tenant misrepresented income in a rent-geared-to-income unit.",
       "related_forms": [
-        "L2"
+        "L2",
+        "N5"
       ],
-      "legal_effect": "No opportunity to void; the termination period depends on the ground (10 days for illegal drug activity, otherwise 20 days). A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
+      "legal_effect": "No opportunity to void; the termination date must be at least 10 days after the notice for illegal drug-related conduct, at least 20 days for other reasons, or at least 14 days if it follows a voidable N5 notice within the past 6 months. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
       "source_basis": [
         "Official LTB forms page",
         "N6 official PDF"
@@ -652,7 +644,7 @@
         "tenant"
       ],
       "property_manager_role": "may_complete_and_serve_as_authorized_agent",
-      "use_when": "The tenant or a guest seriously impairs safety, wilfully causes undue damage, or, where the landlord lives in the same building, substantially interferes with the landlord's enjoyment.",
+      "use_when": "The tenant or a guest seriously impairs safety, wilfully damages the rental unit, uses the unit in a way inconsistent with residential use that causes or is likely to cause serious damage, or, where the landlord lives in the same building, substantially interferes with the landlord's enjoyment or lawful rights.",
       "do_not_use_when": [
         "The problem is one the tenant should be given a chance to correct (use N5)."
       ],
@@ -710,8 +702,8 @@
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
       "use_when": "The tenant wants to end the tenancy.",
       "related_forms": [
-        "N11",
-        "N15",
+        "N12",
+        "N13",
         "L3"
       ],
       "legal_effect": "At least 60 days' notice ending on the last day of a rental period (28 days for daily or weekly tenancies); a fixed-term tenant cannot end before the term expires except as the Act allows.",
@@ -739,7 +731,6 @@
       "use_when": "The landlord and tenant agree in writing to a rent increase above the guideline in exchange for capital work or a new or added service.",
       "related_forms": [
         "N1",
-        "L5",
         "T4"
       ],
       "legal_effect": "Binding written agreement capped at the guideline plus 3 percent; the tenant may cancel within five days of signing, and may apply to the Board if the landlord does not deliver the work or service.",
@@ -766,7 +757,6 @@
       "property_manager_role": "may_sign_only_with_written_authority_from_the_landlord",
       "use_when": "The landlord and tenant both agree to end the tenancy on a chosen date.",
       "related_forms": [
-        "N9",
         "L3"
       ],
       "legal_effect": "Binding once signed by both; a landlord cannot require it as a condition of entering the tenancy, and an agreement signed at that time is void.",
@@ -799,7 +789,7 @@
         "L2",
         "T5"
       ],
-      "legal_effect": "At least 60 days' notice ending on the last day of a rental period, plus compensation of one month's rent or an equivalent unit; bad-faith use exposes the landlord to a T5 application and administrative fines. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
+      "legal_effect": "At least 60 days' notice ending on the last day of a rental period. For a purchaser's own use, or for landlord's own use given less than 120 days before the termination date, the landlord must pay compensation of one month's rent or offer another acceptable unit; bad-faith use exposes the landlord to a T5 application and possible administrative fines. A notice of termination does not end the tenancy by itself; if the tenant does not move out the landlord must apply to the Board for an eviction order.",
       "source_basis": [
         "Official LTB forms page",
         "N12 official PDF"
@@ -849,10 +839,8 @@
       ],
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
       "use_when": "A tenant or a child living with them is at risk of sexual or domestic violence and the tenant needs to leave early.",
-      "related_forms": [
-        "N9"
-      ],
-      "legal_effect": "Allows 28 days' notice regardless of the term, filed with the tenant statement or a court order; the landlord must keep the notice confidential.",
+      "related_forms": [],
+      "legal_effect": "Allows 28 days' notice regardless of the tenancy term, given together with the required tenant statement or a qualifying court order; the landlord must keep the notice and its supporting document confidential.",
       "source_basis": [
         "Official LTB forms page",
         "N15 official PDF"
@@ -875,11 +863,9 @@
         "board"
       ],
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
-      "use_when": "The tenant seeks a refund of money the landlord collected illegally, such as an unlawful deposit, key charge, or rent above the lawful amount.",
-      "related_forms": [
-        "T2"
-      ],
-      "legal_effect": "Board order for repayment; must generally be filed within one year of the payment.",
+      "use_when": "The tenant seeks repayment of money the landlord collected illegally, such as unlawful rent or another prohibited charge, an unreturned deposit or its interest, unpaid proceeds from a sale of the tenant's property, or compensation owed after an N12 or N13 notice.",
+      "related_forms": [],
+      "legal_effect": "Board order for repayment of the amount found to be owed.",
       "source_basis": [
         "Official LTB forms page",
         "T1 official PDF"
@@ -904,9 +890,7 @@
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
       "use_when": "The landlord entered illegally, changed locks, withheld vital services, harassed or substantially interfered with the tenant, or the tenant seeks a remedy for other rights breaches.",
       "related_forms": [
-        "T1",
-        "T6",
-        "L8"
+        "T6"
       ],
       "legal_effect": "Board may order a rent abatement, compensation, an administrative fine, or that the landlord stop the conduct.",
       "source_basis": [
@@ -932,11 +916,8 @@
       ],
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
       "use_when": "Services or facilities were reduced or removed, or the property's municipal taxes decreased, and the tenant seeks a lower rent.",
-      "related_forms": [
-        "A4",
-        "T6"
-      ],
-      "legal_effect": "Board order reducing the lawful rent, in some cases retroactively.",
+      "related_forms": [],
+      "legal_effect": "Board order reducing the lawful rent for the affected rental unit.",
       "source_basis": [
         "Official LTB forms page",
         "T3 official PDF"
@@ -963,7 +944,7 @@
       "related_forms": [
         "N10"
       ],
-      "legal_effect": "Board may order the rent reduced to what it would have been and repayment of the excess.",
+      "legal_effect": "Board may order the landlord to repay all or part of the rent increase that was above the guideline.",
       "source_basis": [
         "Official LTB forms page",
         "T4 official PDF"
@@ -991,7 +972,7 @@
         "N12",
         "N13"
       ],
-      "legal_effect": "Board may award rent differential, moving costs, other compensation, and an administrative fine; must be filed within one year of moving out.",
+      "legal_effect": "Board may award rent differential, moving costs, general compensation, and a fine payable to the Board; must generally be filed within one year of moving out, except a claim based on the right to reoccupy after N13 repairs, which may be filed within two years of moving out or six months after the repairs are completed, whichever is later.",
       "source_basis": [
         "Official LTB forms page",
         "T5 official PDF"
@@ -1016,9 +997,7 @@
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
       "use_when": "The landlord has not kept the unit or complex in good repair or complied with health, safety, housing or maintenance standards.",
       "related_forms": [
-        "L6",
-        "T2",
-        "T3"
+        "T2"
       ],
       "legal_effect": "Board may order repairs, rent abatement, compensation, or authorize the tenant to do the work and deduct the cost.",
       "source_basis": [
@@ -1043,10 +1022,8 @@
         "board"
       ],
       "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
-      "use_when": "The landlord did not comply with the suite meter rules when making the tenant responsible for electricity.",
-      "related_forms": [
-        "T6"
-      ],
+      "use_when": "The landlord did not comply with the suite meter rules when transferring responsibility for electricity to the tenant, or did not follow the required process when charging the tenant a portion of utility costs in a small building.",
+      "related_forms": [],
       "legal_effect": "Board may order rent abatement, compensation, or that the landlord resume providing electricity.",
       "source_basis": [
         "Official LTB forms page",
