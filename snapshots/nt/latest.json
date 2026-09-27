@@ -1,0 +1,57 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+  "sha256": "0ec94f3b061137856b050ad875b816c3502cde4747d73c549821e3a82acd2ad1",
+  "forms": [
+    {
+      "id": "2",
+      "form_name": "Report of Sale of Abandoned Personal Property",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Report%20of%20Sale%20of%20Abandoned%20Personal%20Property.pdf"
+    },
+    {
+      "id": "3",
+      "form_name": "Inventory - Abandoned Property",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Inventory%20-%20Abandoned%20Property%20EN.pdf"
+    },
+    {
+      "id": "4",
+      "form_name": "Assignment Agreement",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Assignment%20%26%20Subletting/Assignment%20Agreement%20-%20June%202019.pdf"
+    },
+    {
+      "id": "5",
+      "form_name": "Subletting Agreement",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Assignment%20%26%20Subletting/Subletting%20Agreement%20EN.pdf"
+    },
+    {
+      "id": "6",
+      "form_name": "Inspection Form",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Inspections/Inspection%20Form%20EN.pdf"
+    },
+    {
+      "id": "ABANDONED-PERSONAL-PROPERTY",
+      "form_name": "Abandoned Personal Property",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Abandoned%20Personal%20Property%20EN.pdf"
+    },
+    {
+      "id": "ABANDONED-PROPERTY-RETURN-OR-DISPOSE",
+      "form_name": "Report of Return or Request to Dispose",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Report%20of%20Return%20or%20Request%20to%20Dispose.pdf"
+    },
+    {
+      "id": "APPLICATION-LANDLORD",
+      "form_name": "Application to a Rental Officer - Landlord",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Form%20-%20Application%20to%20a%20Rental%20Officer%20-%20Landlord.pdf"
+    },
+    {
+      "id": "APPLICATION-TENANT",
+      "form_name": "Application to a Rental Officer - Tenant",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Form%20-%20Application%20to%20a%20Rental%20Officer%20-%20Tenant.pdf"
+    },
+    {
+      "id": "TENANCY-AGREEMENT",
+      "form_name": "Tenancy Agreement - Residential Tenancies Act",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Agreements/Tenancy%20Agreement%20-%20Residential%20Tenancies%20Act.pdf"
+    }
+  ]
+}
