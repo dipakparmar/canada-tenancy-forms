@@ -1,0 +1,92 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+  "sha256": "1573e28b8d3ff738fae6f198ceb35efd3cb290e6b3a8a2f6fe2b7b3ac528c1ed",
+  "forms": [
+    {
+      "id": "CTS3884",
+      "form_name": "Notice of Default (for residential tenancy matters)",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/CTS3884"
+    },
+    {
+      "id": "CTS3885",
+      "form_name": "Notice of Default (for mobile home site matters)",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/CTS3885"
+    },
+    {
+      "id": "RTDR0001",
+      "form_name": "Declaration in Support of Abridgement of Service",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0001"
+    },
+    {
+      "id": "RTDR0002",
+      "form_name": "Declaration of Service by Landlord",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0002"
+    },
+    {
+      "id": "RTDR0003",
+      "form_name": "Declaration of Service by Tenant",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0003"
+    },
+    {
+      "id": "RTDR0004",
+      "form_name": "Declaration in Support of a Notice to Attend",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0004"
+    },
+    {
+      "id": "RTDR0005",
+      "form_name": "Declaration in Support of Substitutional Service",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0005"
+    },
+    {
+      "id": "RTDR0006",
+      "form_name": "Landlord's Application for Damages",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0006"
+    },
+    {
+      "id": "RTDR0007",
+      "form_name": "Landlord's Application for Termination of Tenancy and Unpaid Rent",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0007"
+    },
+    {
+      "id": "RTDR0008",
+      "form_name": "Tenant's Application",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0008"
+    },
+    {
+      "id": "RTDR11148",
+      "form_name": "Notice of Withdrawal",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11148"
+    },
+    {
+      "id": "RTDR11149",
+      "form_name": "RTDRS Audio Recording Request Form",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11149"
+    },
+    {
+      "id": "RTDR11229",
+      "form_name": "RTDRS Request Form",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11229"
+    },
+    {
+      "id": "RTDR12006",
+      "form_name": "Evidence Table of Contents",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12006"
+    },
+    {
+      "id": "RTDR12112",
+      "form_name": "Updating Application Information/Adding a Claim",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12112"
+    },
+    {
+      "id": "RTDR13290",
+      "form_name": "Add/Change a Hearing Representative",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR13290"
+    },
+    {
+      "id": "RTDRS12875",
+      "form_name": "RTDRS Fee Waiver Form",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDRS12875"
+    }
+  ]
+}
