@@ -1,0 +1,261 @@
+{
+  "form": "ADJ-LOGEMENT",
+  "revision": null,
+  "revision_printed": false,
+  "source": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-logement.pdf",
+  "pdf_sha256": "8e206973e30f029e9d6e871ae157f2ed1f91b077911f43b624eef4cb2d0039e7",
+  "fields": {
+    "administrative.sequentialNumber": {
+      "pdf": "Numero_sequentiel",
+      "type": "text"
+    },
+    "sectionF.builtFiveYearsOrLess": {
+      "pdf": "Case-1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionF.builtFiveYearsOrLess.readyForHabitationDate": {
+      "pdf": "Date-1",
+      "type": "text"
+    },
+    "sectionF.changeOfDestinationFiveYearsOrLess": {
+      "pdf": "Case-2",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionF.changeOfDestinationFiveYearsOrLess.readyForHabitationDate": {
+      "pdf": "Date-2",
+      "type": "text"
+    },
+    "sectionF.maximumRentFollowingConversion": {
+      "pdf": "Montant-1",
+      "type": "text"
+    },
+    "sectionG.situation1LowestRentNotice": {
+      "pdf": "Case-3",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation1.lowestRentAmount": {
+      "pdf": "Montant-2",
+      "type": "text"
+    },
+    "sectionG.situation1.rentPeriodPerMonth": {
+      "pdf": "Par mois-1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation1.rentPeriodPerWeek": {
+      "pdf": "Par semaine-1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation1.rentPeriodOther": {
+      "pdf": "Autre-1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation1.rentPeriodOtherText": {
+      "pdf": "Texte-1",
+      "type": "text"
+    },
+    "sectionG.situation2NoRentPaidNotice": {
+      "pdf": "Case-4",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation2.lastRentPaidDate": {
+      "pdf": "Date-3",
+      "type": "text"
+    },
+    "sectionG.situation2.lastRentAmount": {
+      "pdf": "Montant-3",
+      "type": "text"
+    },
+    "sectionG.situation2.rentPeriodPerMonth": {
+      "pdf": "Par mois-2",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation2.rentPeriodPerWeek": {
+      "pdf": "Par semaine-2",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation2.rentPeriodOther": {
+      "pdf": "Autre-2",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation2.rentPeriodOtherText": {
+      "pdf": "Texte-2",
+      "type": "text"
+    },
+    "sectionG.situation3SeniorResidenceChangeOfDestination": {
+      "pdf": "Case-5",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation3.previousRentAmount": {
+      "pdf": "Montant-4",
+      "type": "text"
+    },
+    "sectionG.situation3.rentPeriodPerMonth": {
+      "pdf": "Par mois-3",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation3.rentPeriodPerWeek": {
+      "pdf": "Par semaine-3",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation3.rentPeriodOther": {
+      "pdf": "Autre-3",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.situation3.rentPeriodOtherText": {
+      "pdf": "Texte-3",
+      "type": "text"
+    },
+    "sectionG.servicesSameAsPreviousLease.yes": {
+      "pdf": "OUI",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.servicesSameAsPreviousLease.no": {
+      "pdf": "NON",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "sectionG.modificationsIfServicesDiffer": {
+      "pdf": "Texte-4",
+      "type": "text"
+    },
+    "signatures.lessor1": {
+      "pdf": "Signature_locateur-1",
+      "type": "signature"
+    },
+    "signatures.lessor1.date": {
+      "pdf": "Date_signature_locateur-1",
+      "type": "text"
+    },
+    "signatures.lessee1": {
+      "pdf": "Signature_locataire-1",
+      "type": "signature"
+    },
+    "signatures.lessee1.date": {
+      "pdf": "Date_signature_locataire-1",
+      "type": "text"
+    },
+    "signatures.lessor2": {
+      "pdf": "Signature_locateur-2",
+      "type": "signature"
+    },
+    "signatures.lessor2.date": {
+      "pdf": "Date_signature_locateur-2",
+      "type": "text"
+    },
+    "signatures.lessee2": {
+      "pdf": "Signature_locataire-2",
+      "type": "signature"
+    },
+    "signatures.lessee2.date": {
+      "pdf": "Date_signature_locataire-2",
+      "type": "text"
+    },
+    "signatures.lessor3": {
+      "pdf": "Signature_locateur-3",
+      "type": "signature"
+    },
+    "signatures.lessor3.date": {
+      "pdf": "Date_signature_locateur-3",
+      "type": "text"
+    },
+    "signatures.lessee3": {
+      "pdf": "Signature_locataire-3",
+      "type": "signature"
+    },
+    "signatures.lessee3.date": {
+      "pdf": "Date_signature_locataire-3",
+      "type": "text"
+    },
+    "signatures.hidden1": {
+      "pdf": "Signature_2",
+      "type": "signature"
+    },
+    "signatures.lessor4": {
+      "pdf": "Signature_locateur-4",
+      "type": "signature"
+    },
+    "signatures.lessor4.date": {
+      "pdf": "Date_signature_locateur-4",
+      "type": "text"
+    },
+    "signatures.lessee4.date": {
+      "pdf": "Date_signature_locataire-4",
+      "type": "text"
+    },
+    "signatures.lessee4": {
+      "pdf": "Signature_locataire-4",
+      "type": "signature"
+    },
+    "otherSigner1.name": {
+      "pdf": "Nom-1",
+      "type": "text"
+    },
+    "otherSigner1.signature": {
+      "pdf": "Signature-1",
+      "type": "signature"
+    },
+    "otherSigner1.capacity": {
+      "pdf": "Qualité-1",
+      "type": "text"
+    },
+    "otherSigner1.address": {
+      "pdf": "Adresse-1",
+      "type": "text"
+    },
+    "otherSigner1.date": {
+      "pdf": "Date_signature-1",
+      "type": "text"
+    },
+    "otherSigner2.name": {
+      "pdf": "Nom-2",
+      "type": "text"
+    },
+    "otherSigner2.signature": {
+      "pdf": "Signature-2",
+      "type": "signature"
+    },
+    "otherSigner2.capacity": {
+      "pdf": "Qualité-2",
+      "type": "text"
+    },
+    "otherSigner2.address": {
+      "pdf": "Adresse-2",
+      "type": "text"
+    },
+    "otherSigner2.date": {
+      "pdf": "Date_signature-2",
+      "type": "text"
+    },
+    "familyResidence.spouseName": {
+      "pdf": "Nom_du_conjoint-1",
+      "type": "text"
+    },
+    "familyResidence.lesseeSignature": {
+      "pdf": "Signature_locataire-5",
+      "type": "signature"
+    },
+    "familyResidence.lesseeSignature.date": {
+      "pdf": "Date_signature_locataire-5",
+      "type": "text"
+    },
+    "familyResidence.hidden1": {
+      "pdf": "Signature_0",
+      "type": "signature"
+    }
+  }
+}

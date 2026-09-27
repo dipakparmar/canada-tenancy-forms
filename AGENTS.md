@@ -76,6 +76,11 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   lists one form (the Report of Sale of Abandoned Personal Property) under two different
   filenames that resolve to the byte-identical PDF; `scripts/sources/nt.mjs` catalogues it
   once, keeping the more descriptive filename's URL.
+- Quebec ids most forms from their own printed footer stamp (`TAL-072A`, `AV-041`),
+  which also matches the PDF filename with underscores turned to hyphens; the
+  lease-adjustment appendices print no stamp and keep a short slug id instead
+  (`ADJ-LOGEMENT`). The mandatory lease itself is never published as a PDF and is
+  catalogued by hand as `BAIL`, with an `official_url` outside the source `prefix`.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
   in `schema/forms.schema.json` first.

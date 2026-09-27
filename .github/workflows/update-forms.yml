@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        jurisdiction: [bc, on, ns, mb, nb, nl, sk, nt, ab] # one directory under data/ each; add a code here when adding a jurisdiction
+        jurisdiction: [bc, on, ns, mb, nb, nl, sk, nt, ab, qc] # one directory under data/ each; add a code here when adding a jurisdiction
     concurrency:
       group: update-forms-${{ matrix.jurisdiction }}
       cancel-in-progress: false

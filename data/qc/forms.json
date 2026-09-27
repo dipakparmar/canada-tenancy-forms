@@ -1,0 +1,1531 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Tribunal administratif du logement, Gouvernement du Québec",
+    "index_url": "https://www.tal.gouv.qc.ca/en/forms",
+    "snapshot_sha256": "fb6222126dfd488214b22a70f23cea9c200a057b8a64f54f33eb9db61f2d3056"
+  },
+  "dataset": {
+    "id": "qc-tal-forms-catalog",
+    "jurisdiction": "Quebec, Canada",
+    "authority": "Tribunal administratif du logement (TAL)",
+    "id_pattern": "^(TAL|AV)-[0-9]{3}A?$|^ADJ-[A-Z-]+$|^BAIL$",
+    "last_verified": "2026-09-27",
+    "official_forms_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+    "official_forms_numbered_url": "https://www.tal.gouv.qc.ca/en/forms",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "Every TAL application and notice PDF prints a footer stamp reading \"TAL-NNNA-E (YYYY-MM) / DAJ\" (a co-ownership notice reads \"AV-NNN (YYYY-MM) / DAJ\" instead); the id is that stamp with its language/variant letter dropped (TAL-072A, AV-041), which also matches the PDF filename with underscores turned to hyphens. The stamp's parenthesised date is current_version at month precision.",
+      "The lease-adjustment appendices (Adjustment to Legal Requirements) print no footer stamp anywhere; each is given a short slug id instead (ADJ-LOGEMENT, ADJ-COOP, ADJ-ETUDES, ADJ-LOYER-MODIQUE, ADJ-MAISON-MOBILE, ADJ-VERBAL) and current_version is null.",
+      "TAL-004A (\"Necessary information regarding the fixing of rent\", the RN form) is published as a year-versioned pair of PDFs each rent-fixing period, one for notices of lease modification given before January 1, 2026 and one for notices given on or after that date; this catalog keeps only the on-or-after variant, the one that applies to notices from here on, under its own printed footer id and version. The updater's extractor does not attempt to parse the RN page's year-by-year archive, so this record is informational-absent on every run, the same treatment New Brunswick gives forms its index page does not link.",
+      "The mandatory lease itself (the \"bail\") is sold through TAL offices and stationers, not published as a downloadable PDF, and is catalogued by hand as BAIL with status specialized and an official_url outside this dataset's source prefix so the updater never touches it.",
+      "Two application-forms-to-court landing pages point at the same Application PDF (TAL-001A): the general \"Application\" page and the appendix's own cross-reference; only the former is catalogued as TAL-001A, the latter is the related_forms link on ADJ's appendix ids TAL-072A and TAL-100A.",
+      "An objection-to-eviction landing page and link are commented out of the live site in favour of \"Application to evict the lessee for subdivision, enlargement or change of destination of the dwelling - Eviction notice sent as of February 21, 2024\" (TAL-145A), which is the only one of the pair still live and is what this catalog carries.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the lessor or lessee unless the form or law states otherwise.",
+      "A form does not itself create authority to end a lease, increase rent, enter a dwelling, or recover money; the Civil Code of Québec, the Act respecting the Administrative Housing Tribunal, and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "lessor",
+      "lessee",
+      "lessor_or_lessee",
+      "lessor_and_lessee",
+      "applicant",
+      "respondent",
+      "tribunal",
+      "third_party"
+    ],
+    "matter_types": [
+      "agreement",
+      "rent",
+      "ending_tenancy",
+      "assignment_or_sublease",
+      "application",
+      "conciliation",
+      "co_ownership_conversion",
+      "administrative"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "lessor": "The owner or legal entity that is the lessor under the lease. The lessor remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "lessee": "The person or persons named as lessee under the lease. A lessee signs lessee-originated forms and notices and receives lessor notices.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the lessor. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority the lessor has given.",
+      "practical_rule": "Identify the legal lessor by name on the lease and keep written proof of any agent's authority to act for the lessor before that agent signs or serves a TAL form."
+    },
+    "document_controls": [
+      "Record the form id, print-run date, completion date, service date, serving person, recipient, service method, and proof of service.",
+      "Use the official Tribunal administratif du logement form rather than reproducing a private form when the Civil Code of Québec or the Act respecting the Administrative Housing Tribunal requires a prescribed form or notice.",
+      "A notice given under the Civil Code must be sent to every named party individually with a method that gives the sender proof of receipt.",
+      "Keep the signed lease, every notice served, proof of service, and the record and application numbers together for any later application to the Tribunal."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:qc-1",
+      "title": "Forms - Tribunal administratif du logement",
+      "url": "https://www.tal.gouv.qc.ca/en/forms",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Index page linking one landing page per application form under /en/application-forms-to-court/ and, through the site's \"File a notice\" navigation, the models-of-notices pages; no version dates on the index page itself."
+    },
+    {
+      "source_id": "web:qc-2",
+      "title": "Find all models of notices - Tribunal administratif du logement",
+      "url": "https://www.tal.gouv.qc.ca/en/models-of-notices/find-a-notice-model",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Direct PDF links for every notice model, grouped under headings by who gives the notice and why."
+    },
+    {
+      "source_id": "web:qc-3",
+      "title": "What is a lease - Tribunal administratif du logement",
+      "url": "https://www.tal.gouv.qc.ca/en/signing-a-lease/what-is-a-lease",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Describes the mandatory lease form (the bail), which is sold in print rather than published as a PDF."
+    }
+  ],
+  "forms": [
+    {
+      "id": "ADJ-COOP",
+      "form_name": "Adjustment to Legal Requirements – Lease of a Dwelling in a Cooperative",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-coop.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a lease of a dwelling in a cooperative in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ADJ-ETUDES",
+      "form_name": "Adjustment to Legal Requirements - Lease of a Dwelling Intended for a Person Pursuing Studies",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-études.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a lease of a dwelling intended for a person pursuing studies in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ADJ-LOGEMENT",
+      "form_name": "Adjustment to Legal Requirements – Lease of a Dwelling",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-logement.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a lease of a dwelling in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ADJ-LOYER-MODIQUE",
+      "form_name": "Adjustment to Legal Requirements – Lease for a Dwelling in Low-Rental Housing",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-loyer-modique.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a lease for a dwelling in low-rental housing in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ADJ-MAISON-MOBILE",
+      "form_name": "Adjustment to Legal Requirements – Lease of Land Intended for the Installation of a Mobile Home",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-maison-mobile.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a lease of land intended for the installation of a mobile home in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ADJ-VERBAL",
+      "form_name": "Adjustment to Legal Requirements – Mandatory Writing in the Case of an Oral Lease",
+      "status": "active",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-verbal.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Signing or renewing a mandatory writing in the case of an oral lease in Quebec, to attach to the mandatory lease so its clauses reflect the legal requirements specific to this lease type.",
+      "related_forms": [
+        "BAIL"
+      ],
+      "legal_effect": "Restates the mandatory particulars the lessor and lessee are deemed to have agreed to for this lease type, replacing any conflicting clause in the paper lease form in circulation.",
+      "source_basis": [
+        "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
+        "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "AV-041",
+      "form_name": "Notice of intent to convert a rental property to divided co-ownership",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "co_ownership_conversion",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/AV_041.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "An owner intends to convert an immovable to divided co-ownership and wants to notify each lessee, and the Tribunal, before applying for authorization to convert.",
+      "related_forms": [
+        "TAL-105A"
+      ],
+      "legal_effect": "Notifies each lessee of intent to convert to divided co-ownership under section 52 of the Act respecting the Administrative Housing Tribunal, and must be sent to the Tribunal too.",
+      "source_basis": [
+        "\"This notice is given in accordance with section 52 of the Act respecting the Administrative Housing Tribunal. It must be sent individually to each lessee and to the Tribunal administratif du logement, with proof of receipt.\" (AV-041)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "AV-051",
+      "form_name": "Offer to sell",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "co_ownership_conversion",
+      "current_version": "2020-08",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/AV_051.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "An owner has a lessee with a right of first refusal on the dwelling (typically after a co-ownership conversion) and wants to offer that lessee the same price and conditions agreed with a third-party buyer.",
+      "related_forms": [
+        "AV-041"
+      ],
+      "legal_effect": "Offers the lessee the option to purchase the dwelling on the stated terms under section 54.7 of the Act respecting the Administrative Housing Tribunal; a lack of response is a refusal.",
+      "source_basis": [
+        "\"This offer to sell is made in accordance with section 54.7 of the Act respecting the Administrative Housing Tribunal.\" (AV-051)",
+        "\"You have one month after receiving this offer to inform me in writing of your decision to purchase or not purchase the dwelling. A lack of response on your part shall be considered as a refusal to purchase.\" (AV-051)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "BAIL",
+      "form_name": "Lease of a Dwelling (mandatory lease / bail)",
+      "status": "specialized",
+      "category": "lease_and_appendices",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.tal.gouv.qc.ca/en/signing-a-lease/what-is-a-lease",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/signing-a-lease/what-is-a-lease",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "Starting any residential tenancy in Quebec; a lessor must use the mandatory lease form for every dwelling lease.",
+      "related_forms": [],
+      "legal_effect": "Sets the terms of the tenancy; the mandatory lease is a prescribed form, not a template the lessor may reproduce privately.",
+      "source_basis": [
+        "Not a downloadable form: the mandatory lease form is sold through Tribunal administratif du logement offices and through office-supply and stationery retailers, not published as a PDF; see dataset.notes."
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-001A",
+      "form_name": "Application",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "application",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_001A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "Starting any recourse at the Tribunal administratif du logement that has no more specific application form of its own (for example a dispute over the condition of the dwelling, harassment, or a claim for damages).",
+      "related_forms": [
+        "TAL-072A",
+        "TAL-100A"
+      ],
+      "legal_effect": "Opens a Tribunal record; the plaintiff sets out the object and grounds of the application, and may request a conciliation session.",
+      "source_basis": [
+        "\"OBJECT OF THE APPLICATION (conclusion sought)\" / \"GROUNDS FOR THE APPLICATION\" (TAL-001A)",
+        "\"I understand that my application is deemed to have been made under oath.\" (TAL-001A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-002A",
+      "form_name": "Application to modify the lease",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "rent",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_002A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A lessor or lessee wants the Tribunal to modify a condition of the lease, most often to have the rent fixed after a notice of rent increase is contested; recourse codes on the form (1947 F, 1947 FF, 1947 FM, 1947 M, 1950 LF) tie it to renewal and rent-fixing articles of the Civil Code.",
+      "related_forms": [
+        "TAL-004A",
+        "TAL-810A",
+        "TAL-806A"
+      ],
+      "legal_effect": "Opens a Tribunal record asking for the lease, most often the rent, to be fixed or otherwise modified for the coming period.",
+      "source_basis": [
+        "\"1947 F 1947 FF 1947 FM 1947 M 1950 LF  Other\" recourse codes (TAL-002A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-003A",
+      "form_name": "Rent deposit",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_003A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor",
+        "tribunal"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee already authorized by a Tribunal decision to deposit rent with the Tribunal (rather than pay the lessor directly) wants to file that month's deposit.",
+      "related_forms": [
+        "TAL-805A"
+      ],
+      "legal_effect": "Records the amount deposited with the Tribunal under the authority of a prior decision, for the month stated.",
+      "source_basis": [
+        "\"Pursuant to the provisions of the decision authorizing me to deposit my rent, I am depositing $\" (TAL-003A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-004A",
+      "form_name": "Necessary information regarding the fixing of rent",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "rent",
+      "current_version": "2026-01",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/RN_2026_A_N.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor filed an Application to modify the lease to have the rent fixed and, for a notice of lease modification given on or after January 1, 2026, must complete this form once per immovable and notify it to every affected lessee.",
+      "do_not_use_when": [
+        "A notice of lease modification given before January 1, 2026, which uses the RN_2026_A variant of this form instead (not separately catalogued here)."
+      ],
+      "related_forms": [
+        "TAL-002A",
+        "TAL-806A"
+      ],
+      "legal_effect": "Sets out the building's income and expenditures for the Tribunal to calculate the fixed rent; must be filed with proof of notification within 90 days or the application is dismissed.",
+      "source_basis": [
+        "\"After filing an Application to modify the lease to have the Tribunal fix the rent, the lessor must complete a single copy of the form per immovable\" (necessary-information-regarding-the-fixing-of-rent page)",
+        "\"If you do not fulfill those obligations within 90 days of sending the form, your application will be dismissed.\" (necessary-information-regarding-the-fixing-of-rent page)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-005A",
+      "form_name": "Application to evict the lessee after the end of the lease",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_005A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor wants the Tribunal to order the eviction of a lessee who has remained in the dwelling after the lease ended without a new lease being agreed.",
+      "related_forms": [],
+      "legal_effect": "Opens a Tribunal record seeking an order evicting the lessee from the dwelling after the end of the lease.",
+      "source_basis": [
+        "\"Application to evict the lessee after the end of the lease\" title and plaintiff/defendant lessor-lessee fields (TAL-005A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-013A",
+      "form_name": "Discontinuance or agreement",
+      "status": "active",
+      "category": "tribunal_administration",
+      "matter_type": "administrative",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_013A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor_or_lessee",
+      "parties": [
+        "lessor_or_lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A plaintiff wants to close their own Tribunal record (discontinuance), or the parties have reached an agreement and want it filed with the Tribunal, optionally asking the Tribunal to ratify it.",
+      "related_forms": [
+        "TAL-001A"
+      ],
+      "legal_effect": "A discontinuance closes the record with the Tribunal; a filed agreement, if ratified, has the same effect as a decision.",
+      "source_basis": [
+        "\"A discontinuance closes the record with the Tribunal.\" (TAL-013A)",
+        "\"The Tribunal may ratify it, provided it is in accordance with law, in which case it has the same effects as a decision.\" (TAL-013A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-046A",
+      "form_name": "Order form – Hearing recording",
+      "status": "active",
+      "category": "tribunal_administration",
+      "matter_type": "administrative",
+      "current_version": "2025-11",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_046A_I.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor_or_lessee",
+      "parties": [
+        "lessor_or_lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A party to a Tribunal record wants to order a copy of a hearing recording or a reproduction of documents from the record, and pay the regulated fees.",
+      "related_forms": [],
+      "legal_effect": "Orders a copy of a hearing recording or document reproduction; playing it in public or broadcasting it is forbidden.",
+      "source_basis": [
+        "\"I agree to pay on delivery the actual costs incurred by the Tribunal administratif du logement for the reproduction and transmission of documents.\" (TAL-046A)",
+        "\"The playing of a recording of a hearing in a public place or for the purposes of a public broadcast is forbidden.\" (TAL-046A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-047A",
+      "form_name": "Notice of change of address",
+      "status": "active",
+      "category": "tribunal_administration",
+      "matter_type": "administrative",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_047A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor_or_lessee",
+      "parties": [
+        "lessor_or_lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A party to one or more open Tribunal records needs to correct or update the contact information the Tribunal has on file for them.",
+      "related_forms": [],
+      "legal_effect": "Updates the contact information the Tribunal holds for the named party on the listed record numbers.",
+      "source_basis": [
+        "\"Correction of contact information for: Lessor Lessee Other (specify)\" (TAL-047A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-048A",
+      "form_name": "Application for reinstatement on the roll",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "administrative",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_048A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A case was struck from the roll because all parties were absent at the hearing, and a party wants it placed back on the roll.",
+      "related_forms": [],
+      "legal_effect": "Requests that the Tribunal reinstate the application on the roll for a new hearing date.",
+      "source_basis": [
+        "\"Fill in this form if your case has been stricken from the roll by the administrative judge due to the absence of all of the parties at the hearing and you wish that it be replaced on the roll.\" (TAL-048A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-049A",
+      "form_name": "Amendment",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "application",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_049A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A plaintiff on an existing Tribunal application wants to add or change the object or grounds of that application; the general amendment form is used when no more specific amendment form (unpaid rent, abandonment) applies.",
+      "related_forms": [
+        "TAL-001A",
+        "TAL-103A",
+        "TAL-104A"
+      ],
+      "legal_effect": "Adds a recourse code and amends the object and grounds of the originally filed application.",
+      "source_basis": [
+        "\"OBJECT OF THE AMENDMENT\" / \"GROUNDS FOR THE AMENDMENT\" / \"Filing date of original application\" (TAL-049A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-065A",
+      "form_name": "Application regarding unpaid rent",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "rent",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_065A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor wants to recover unpaid rent from a lessee and, where the non-payment is serious enough, obtain the resiliation of the lease and eviction of the lessee.",
+      "related_forms": [
+        "TAL-103A"
+      ],
+      "legal_effect": "Opens a Tribunal record to recover the rent owed and, if granted, resiliate the lease and evict the lessee.",
+      "source_basis": [
+        "\"Your application pertains to non-payment of rent by a lessee, and you want to recuperate the amount of rent ant to obtain the resiliation of the lease and eviction of the lessee.\" (TAL-065A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-066A",
+      "form_name": "Application relating to abandonment",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_066A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor believes a lessee has abandoned the dwelling and wants the Tribunal to declare the abandonment, or to rule on the deposit or disposal of property the lessee left behind.",
+      "related_forms": [
+        "TAL-104A",
+        "TAL-801A"
+      ],
+      "legal_effect": "Seeks a Tribunal declaration of abandonment of the dwelling and a ruling on property the lessee left in it.",
+      "source_basis": [
+        "\"Application relating to abandonment\" recourse codes \"1863 RA 1863 DD 1863 D\" (TAL-066A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-072A",
+      "form_name": "Appendix for additional information",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "administrative",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_072A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "There is not enough space on the Application form to name every party or to fully describe the object or grounds of the application.",
+      "related_forms": [
+        "TAL-001A"
+      ],
+      "legal_effect": "Extends the Application; it cannot be filed on its own and has no effect apart from the application it is attached to.",
+      "source_basis": [
+        "\"So, this appendix cannot be used alone. It must be attached to this form: Application\" (TAL-072A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-100A",
+      "form_name": "List of exhibits",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "administrative",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_100A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A plaintiff needs to notify the other parties of the exhibits supporting an application without sending copies of every exhibit itself.",
+      "related_forms": [
+        "TAL-001A"
+      ],
+      "legal_effect": "Lists exhibits available on request in place of serving copies with the application, subject to the record still needing proof of notification.",
+      "source_basis": [
+        "\"For an application to set the rent, the plaintiff does not have to notify exhibits or a list of exh[ibits]\" (TAL-100A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-101A",
+      "form_name": "Application for revocation",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "administrative",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_101A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A party wants the Tribunal to revoke a decision already rendered against them, typically because they were not present or not properly notified of the hearing.",
+      "related_forms": [],
+      "legal_effect": "Asks the Tribunal to set aside a decision it has already rendered.",
+      "source_basis": [
+        "\"Application for revocation\" plaintiff/defendant fields against a prior decision (TAL-101A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-102A",
+      "form_name": "Application to repossess a dwelling",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_102A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor served a notice of repossession that the lessee refused or did not answer, and wants the Tribunal to authorize repossessing the dwelling to live in it or house a relative.",
+      "related_forms": [
+        "TAL-809A",
+        "TAL-811A"
+      ],
+      "legal_effect": "Asks the Tribunal to authorize the lessor's repossession of the dwelling under Civil Code articles 1960-1963.",
+      "source_basis": [
+        "\"Application to repossess a dwelling\" recourse code \"1963REP\" (TAL-102A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-103A",
+      "form_name": "Amendment regarding unpaid rent",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_103A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor who already filed an Application regarding unpaid rent needs to amend it, most often to update the amount now owed.",
+      "related_forms": [
+        "TAL-065A"
+      ],
+      "legal_effect": "Amends an existing unpaid-rent application with a new recourse code and updated grounds.",
+      "source_basis": [
+        "\"Amendment regarding unpaid rent\" / \"Filing date of original application\" (TAL-103A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-104A",
+      "form_name": "Amendment regarding abandonment",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_104A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "applicant",
+      "parties": [
+        "applicant",
+        "respondent",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor who already filed an Application relating to abandonment needs to amend the object or grounds of that application.",
+      "related_forms": [
+        "TAL-066A"
+      ],
+      "legal_effect": "Amends an existing abandonment application with updated grounds or object.",
+      "source_basis": [
+        "\"Amendment regarding abandonment\" / \"Filing date of original application\" (TAL-104A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-105A",
+      "form_name": "Application to convert a rental property to divided co-ownership",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "co_ownership_conversion",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_105A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "An owner who has given lessees notice of intent to convert a rental property to divided co-ownership wants the Tribunal's authorization to proceed with the conversion.",
+      "related_forms": [
+        "AV-041"
+      ],
+      "legal_effect": "Asks the Tribunal to authorize converting the immovable to divided co-ownership.",
+      "source_basis": [
+        "\"Application to convert a rental property to divided co-ownership\" plaintiff/defendant fields (TAL-105A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-126A",
+      "form_name": "Unavailability",
+      "status": "active",
+      "category": "tribunal_administration",
+      "matter_type": "administrative",
+      "current_version": "2024-10",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_126A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor_or_lessee",
+      "parties": [
+        "lessor_or_lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A party or witness in a pending Tribunal record has dates on which they cannot attend a hearing and wants the Tribunal to take that into account when scheduling.",
+      "related_forms": [],
+      "legal_effect": "Advises the Tribunal of dates of unavailability so it can try to schedule the hearing around them.",
+      "source_basis": [
+        "\"Please indicate the dates on which you are unavailable for the hearing of the above-mentioned file(s) and explain the reasons.\" (TAL-126A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-129A",
+      "form_name": "Translation of a decision",
+      "status": "active",
+      "category": "tribunal_administration",
+      "matter_type": "administrative",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_129A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor_or_lessee",
+      "parties": [
+        "lessor_or_lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "Either party's authorized representative may prepare and file it, but the signing party remains the lessor or lessee named on it.",
+      "use_when": "A party wants a Tribunal decision rendered in one official language translated into the other.",
+      "related_forms": [],
+      "legal_effect": "Requests translation of the named decision from French to English or English to French.",
+      "source_basis": [
+        "\"DECISION TO BE TRANSLATED French to English ... English to French\" (TAL-129A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-145A",
+      "form_name": "Application to evict the lessee for subdivision, enlargement or change of destination of the dwelling – Eviction notice sent as of February 21, 2024",
+      "status": "active",
+      "category": "applications_to_tribunal",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-06",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_145A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee",
+        "tribunal"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor served an eviction notice for subdivision, enlargement, or change of destination of the dwelling on or after February 21, 2024, the lessee refused or did not answer, and the lessor wants the Tribunal's authorization to evict.",
+      "related_forms": [
+        "TAL-815A",
+        "TAL-826A"
+      ],
+      "legal_effect": "Asks the Tribunal to authorize eviction for subdivision, enlargement or change of destination of the dwelling.",
+      "source_basis": [
+        "\"Application to evict the lessee for subdivision, enlargement or change of destination of the dwelling – eviction notice sent as of February 21, 2024\" (TAL-145A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-801A",
+      "form_name": "Notice of abandonment of a dwelling",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_801A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee is abandoning the dwelling, most often because it has become unfit for habitation, and wants to notify the lessor before leaving.",
+      "related_forms": [
+        "TAL-066A"
+      ],
+      "legal_effect": "Notifies the lessor of the lessee's abandonment of the dwelling under article 1915 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1915 of the Civil Code of Québec.\" (TAL-801A)",
+        "\"I hereby notify you that the dwelling is unfit for habitation because:\" (TAL-801A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-802A",
+      "form_name": "Notice of lease assignment",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "assignment_or_sublease",
+      "current_version": "2024-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_802A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee wants to notify the lessor that they are assigning their lease to another person.",
+      "related_forms": [
+        "TAL-817A",
+        "TAL-828A"
+      ],
+      "legal_effect": "Notifies the lessor of the lease assignment under articles 1871 and 1978.2 C.C.Q.; the lessor may only refuse the assignee for serious cause.",
+      "source_basis": [
+        "\"This notice is given in accordance with article1871 and 1978.2 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-802A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-803A",
+      "form_name": "Notice of cessation of cohabitation",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_803A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee who was cohabiting with the lessee of record has stopped cohabiting and, within two months, wants to notify the lessor to be released from the lease.",
+      "related_forms": [],
+      "legal_effect": "Notifies the lessor of the end of cohabitation under article 1938 C.C.Q., within two months of the cessation.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1938 of the Civil Code of Québec. It must be sent to the lessor(s) within two months of the cessation of cohabitation.\" (TAL-803A)",
+        "\"I hereby notify you that the lessee left the dwelling on\" (TAL-803A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-804A",
+      "form_name": "Notice of lessee’s death",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_804A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A surviving lessee, heir, or liquidator of a deceased lessee's succession wants to notify the lessor(s) of the lessee's death.",
+      "related_forms": [],
+      "legal_effect": "Notifies the lessor of the lessee's death under articles 1938 and 1939 C.C.Q., which can end the obligations of any surviving co-lessee.",
+      "source_basis": [
+        "\"This notice is given in accordance with articles 1938 and 1939 of the Civil Code of Québec.\" (TAL-804A)",
+        "\"I hereby notify you that the lessee passed away on\" (TAL-804A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-805A",
+      "form_name": "Notice of rent deposit",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_805A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor",
+        "tribunal"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee wants to notify the lessor that they intend to apply to the Tribunal for authorization to deposit their rent instead of paying the lessor directly, typically over a dispute about the dwelling.",
+      "related_forms": [
+        "TAL-003A"
+      ],
+      "legal_effect": "Notifies the lessor of an intended rent-deposit application under article 1907 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1907 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-805A)",
+        "\"You are hereby notified that I will apply for authorization to deposit my rent with the\" (TAL-805A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-806A",
+      "form_name": "Notice of rent increase and modification of another condition of the lease",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2026-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_806A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor wants to notify a lessee of a rent increase or another proposed change to a condition of the lease before its renewal, for a lease not covered by the personal-services variant of this notice.",
+      "do_not_use_when": [
+        "A lease that includes services of a personal nature provided to the lessee, which uses TAL-819A instead."
+      ],
+      "related_forms": [
+        "TAL-810A",
+        "TAL-002A",
+        "TAL-004A"
+      ],
+      "legal_effect": "Notifies the lessee of the proposed rent increase or lease modification under articles 1942 and 1943 C.C.Q. and the Regulation respecting the mandatory content of a notice of modification of the lease of a dwelling; the lessee's silence is deemed acceptance.",
+      "source_basis": [
+        "\"This notice is given in accordance with articles 1942 and 1943 of the Civil Code of Québec, as well as with the Regulation respecting the mandatory content of a notice of modification of the lease of a dwelling.\" (TAL-806A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-807A",
+      "form_name": "Notice of non-renewal of the lease by the lessee",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_807A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee whose rent has not been increased and no other condition of the lease modified wants to notify the lessor that they will not renew the lease.",
+      "do_not_use_when": [
+        "The lessee has received a notice of rent increase or other lease modification, which uses TAL-810A instead."
+      ],
+      "related_forms": [],
+      "legal_effect": "Notifies the lessor of non-renewal under article 1946 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1946 of the Civil Code of Québec.\" (TAL-807A)",
+        "\"You are hereby notified that the lease will not be renewed.\" (TAL-807A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-808A",
+      "form_name": "Notice of major improvements or repairs",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_808A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor plans major improvements or repairs to the building or dwelling and wants to notify each lessee individually before the work, ahead of any related rent increase.",
+      "related_forms": [
+        "TAL-806A"
+      ],
+      "legal_effect": "Notifies lessees of planned major improvements or repairs under articles 1922 and 1923 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with articles 1922 and 1923 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-808A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-809A",
+      "form_name": "Notice of repossession",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-07",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_809A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "An owner-lessor intends to repossess a dwelling to live in it or house a relative and wants to notify the lessee before applying to the Tribunal.",
+      "related_forms": [
+        "TAL-811A",
+        "TAL-102A"
+      ],
+      "legal_effect": "Notifies the lessee of intended repossession under article 1960 C.C.Q.; a lessee who does not respond within the deadline is deemed to have refused.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1960 of the Civil Code of Québec.\" (TAL-809A)",
+        "\"You are hereby notified that, as the owner/lessor, I intend to repossess your dwelling:\" (TAL-809A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-810A",
+      "form_name": "Lessee’s response to a notice of rent increase and modification of another condition of the lease",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "rent",
+      "current_version": "2026-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_810A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee received a notice of rent increase or another lease modification and wants to respond, accepting, refusing, or vacating.",
+      "related_forms": [
+        "TAL-806A",
+        "TAL-819A",
+        "TAL-002A"
+      ],
+      "legal_effect": "Records the lessee's response under article 1945 C.C.Q.; if the lessee refuses and does not vacate, the lessor may apply to the Tribunal to fix the rent.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1945 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-810A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-811A",
+      "form_name": "Response to a notice of repossession",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-07",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_811A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee received a notice of repossession and wants to respond, refusing it or otherwise, before the lessor can apply to the Tribunal.",
+      "related_forms": [
+        "TAL-809A",
+        "TAL-102A"
+      ],
+      "legal_effect": "Records the lessee's response under article 1962 C.C.Q.; silence is deemed a refusal to vacate.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1962 of the Civil Code of Québec.\" (TAL-811A)",
+        "\"In response to your notice of repossession, you are hereby informed that:\" (TAL-811A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-812A",
+      "form_name": "Notice of termination of a lease due to allocation of a dwelling in low-rental housing",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_812A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee has been allocated a dwelling in low-rental housing and wants to terminate their current lease early, with the required attestation attached.",
+      "related_forms": [],
+      "legal_effect": "Terminates the current lease under article 1974 C.C.Q. on allocation of low-rental housing.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-812A)",
+        "\"The lessee has been allocated a dwelling in low-rental housing. The attestation required by law is enclosed.\" (TAL-812A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-813A",
+      "form_name": "Notice of termination of a lease due to admission of the lessee to a residential and long-term care centre or to a private seniors' residence",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_813A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "An elderly or dependent lessee is being admitted permanently into a residential and long-term care centre, or a private seniors' residence with the required services, and wants to terminate the lease.",
+      "related_forms": [],
+      "legal_effect": "Terminates the current lease under article 1974 C.C.Q. on admission to long-term care or a private seniors' residence.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-813A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-814A",
+      "form_name": "Notice of subletting of dwelling",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "assignment_or_sublease",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_814A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee intends to sublet all or part of the dwelling and wants to notify the lessor before doing so.",
+      "related_forms": [],
+      "legal_effect": "Notifies the lessor of the intended sublease under article 1870 C.C.Q.; the lessor may only refuse the subtenant for serious cause.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1870 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-814A)",
+        "\"You are hereby notified that I intend to sublet my dwelling to:\" (TAL-814A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-815A",
+      "form_name": "Notice of eviction for subdivision, enlargement or change of destination of a dwelling",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-07",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_815A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor plans to subdivide, enlarge or change the destination of a dwelling and wants to notify the lessee before applying to the Tribunal to evict.",
+      "related_forms": [
+        "TAL-826A",
+        "TAL-145A"
+      ],
+      "legal_effect": "Notifies the lessee of intended eviction under article 1960 C.C.Q.; as of June 6, 2024, no lessee may be evicted for these reasons for a stated moratorium period.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1960 of the Civil Code of Québec.\" (TAL-815A)",
+        "\"As of June 6, 2024, no lessee may be evicted for the enlargement, subdivision or change of destination of a dwelling for a period of thr[ee years]\" (TAL-815A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-816A",
+      "form_name": "Written notice of modifications to a lease upon renewal",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "agreement",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_816A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor whose lease includes services of a personal nature provided to the lessee (a category with its own renewal rules) wants to notify the lessee in writing of modifications to the lease upon renewal.",
+      "related_forms": [
+        "TAL-806A"
+      ],
+      "legal_effect": "Notifies the lessee of lease modifications on renewal under article 1895 C.C.Q.",
+      "source_basis": [
+        "\"This written notice is given in accordance with article 1895 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-816A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-817A",
+      "form_name": "Assignment of lease agreement",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "assignment_or_sublease",
+      "current_version": "2024-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_817A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "third_party"
+      ],
+      "property_manager_role": "Not applicable; the form runs between the two lessees named on it (assignor and prospective lessee).",
+      "use_when": "A current lessee (the assignor) and a prospective lessee (the assignee) have agreed the lease will be assigned, and want to record the terms of that assignment.",
+      "related_forms": [
+        "TAL-802A",
+        "TAL-828A"
+      ],
+      "legal_effect": "Assigns the lease from the current lessee to the assignee, who accepts it on the stated terms; effective when the lessor accepts the assignment.",
+      "source_basis": [
+        "\"The assignor assigns the lease for the dwelling, a copy of which is attached to the Agreement, to the assignee, who accepts.\" (TAL-817A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-818A",
+      "form_name": "Notice of termination of a lease because of spousal violence, sexual violence or violence towards a child",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-01",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_818A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee, or a lessee acting for a child living with them, needs to terminate the lease early because of spousal violence, sexual violence, or violence towards a child.",
+      "related_forms": [],
+      "legal_effect": "Terminates the current lease under article 1974.1 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1974.1 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-818A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-819A",
+      "form_name": "Notice of rent increase and modification of another condition of the lease - Lease including services of personal nature",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2026-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_819A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor wants to notify a lessee of a rent increase or another proposed lease change where the lease includes services of a personal nature provided to the lessee.",
+      "do_not_use_when": [
+        "A lease without services of a personal nature, which uses TAL-806A instead."
+      ],
+      "related_forms": [
+        "TAL-810A",
+        "TAL-816A"
+      ],
+      "legal_effect": "Notifies the lessee of the proposed rent increase or lease modification under articles 1942 and 1943 C.C.Q. for a lease with personal-nature services.",
+      "source_basis": [
+        "\"This notice is given in accordance with articles 1942 and 1943 of the Civil Code of Québec, as well as with the Regulation respecting the mandatory content of a notice of modification of the lease of a dwelling.\" (TAL-819A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-821A",
+      "form_name": "Notice of termination of a lease due to a disability",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_821A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee with a disability needs to terminate the lease early because the dwelling no longer meets their needs.",
+      "related_forms": [],
+      "legal_effect": "Terminates the current lease under article 1974 C.C.Q. on grounds of disability.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-821A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-823A",
+      "form_name": "Notice to a new lessee (last rent paid)",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_823A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "No rent has been paid on the dwelling during the twelve months before a new lease begins, and the lessor must inform the incoming lessee of the date and amount of the last rent paid.",
+      "related_forms": [],
+      "legal_effect": "Discloses the date and amount of the last rent paid, given at the time the lease is entered into, under article 1896 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given pursuant to article 1896 of the Civil Code of Québec. When no rent has been paid during the twelve months prior to the beginning of the new lease, the lessor must notify the lessee(s) of the date and amount of the last rent paid.\" (TAL-823A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-824A",
+      "form_name": "Notice to new lessee (change of destination of a dwelling for seniors)",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_824A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A dwelling's destination has changed from a seniors' residence and continues to be offered for ordinary dwelling purposes, and the lessor must notify the first new lessee after the change.",
+      "related_forms": [],
+      "legal_effect": "Notifies the incoming lessee of the change of destination under article 1955.1 C.C.Q., given when the first lease following the change is entered into.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1955.1 of the Civil Code of Québec. It must be given to the lessee(s) concerned at the time the first lease following the change of destination is entered into.\" (TAL-824A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-826A",
+      "form_name": "Response to a notice of eviction",
+      "status": "active",
+      "category": "notices_to_lessor",
+      "matter_type": "ending_tenancy",
+      "current_version": "2024-07",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_826A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessee",
+      "parties": [
+        "lessee",
+        "lessor"
+      ],
+      "property_manager_role": "A lessee normally completes and signs this personally; a person assisting a lessee may help prepare it but does not sign or serve it as the lessee's agent of record.",
+      "use_when": "A lessee received a notice of eviction for subdivision, enlargement or change of destination given after February 20, 2024, and wants to respond before the lessor can apply to the Tribunal.",
+      "related_forms": [
+        "TAL-815A",
+        "TAL-145A"
+      ],
+      "legal_effect": "Records the lessee's response under article 1962 C.C.Q.; a stated moratorium on or after June 6, 2024 bars eviction for these reasons for a period of years.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1962 of the Civil Code of Québec. It must be sent to each of the lessors individually applies to notices given after February 20, 2024.\" (TAL-826A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-827A",
+      "form_name": "Notice to a new lessee (maximum rent)",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "rent",
+      "current_version": "2024-02",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_827A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lease entered into on or after February 21, 2024 for an immovable ready for its intended use as of that date restricts the new lessee's right to have the rent fixed, and the lessor must invoke that restriction by notice.",
+      "related_forms": [],
+      "legal_effect": "Notifies the incoming lessee of the restriction on the right to have the rent fixed or another condition modified, under article 1955 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1955 of the Civil Code of Québec (See section F of your lease).\" (TAL-827A)",
+        "\"If the lease was entered into on or after February 21, 2024, AND the immovable was ready for its intended use as of that date, the lessor must, in order to invoke the restriction on the right to have the rent fix[ed]\" (TAL-827A)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TAL-828A",
+      "form_name": "Response to a notice of assignment of lease - Notice given as fron February 21, 2024",
+      "status": "active",
+      "category": "notices_to_lessee",
+      "matter_type": "assignment_or_sublease",
+      "current_version": "2024-05",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_828A_E.pdf",
+      "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
+      "initiating_party": "lessor",
+      "parties": [
+        "lessor",
+        "lessee"
+      ],
+      "property_manager_role": "May prepare, sign and serve the form as the lessor's authorized agent within the authority the lessor has given, but the legal party remains the lessor.",
+      "use_when": "A lessor received a lessee's notice of lease assignment given on or after February 21, 2024 and wants to respond, accepting or refusing the assignee for serious cause.",
+      "related_forms": [
+        "TAL-802A",
+        "TAL-817A"
+      ],
+      "legal_effect": "Records the lessor's response to the notice of assignment under articles 1871 and 1978.2 C.C.Q.",
+      "source_basis": [
+        "\"This notice is given in accordance with article 1871 and 1978.2 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-828A)"
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}

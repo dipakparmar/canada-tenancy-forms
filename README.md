@@ -16,6 +16,7 @@ a pull request for a human to review. The repo is standalone: consume
 | `sk` | Saskatchewan | Office of Residential Tenancies | 18, classified | none (no lease or agreement PDF; Schedule 1 is unfillable statutory text) |
 | `nt` | Northwest Territories | NWT Rental Office, Department of Justice | 9, classified | none (Tenancy Agreement's PDF is flattened) |
 | `ab` | Alberta | Residential Tenancy Dispute Resolution Service | 17, classified | none (no standard tenancy agreement form; RTDRS forms are XFA or non-agreement AcroForm PDFs) |
+| `qc` | Quebec | Tribunal administratif du logement (TAL) | 56, classified | ADJ-LOGEMENT |
 
 One directory code selects a jurisdiction's catalog, field maps, snapshot and page
 extractor. Scripts take jurisdiction codes as arguments and default to all of them.
@@ -23,7 +24,7 @@ extractor. Scripts take jurisdiction codes as arguments and default to all of th
 ## Layout
 
 ```
-data/<code>/forms.json               the catalog, one per jurisdiction (bc, on, ns, mb, nb, nl, sk, nt, ab)
+data/<code>/forms.json               the catalog, one per jurisdiction (bc, on, ns, mb, nb, nl, sk, nt, ab, qc)
 schema/forms.schema.json             JSON Schema (draft-07) shared by every catalog
 maps/<code>/<ID>.map.json            field maps: semantic key -> AcroForm field
 scripts/jurisdictions.mjs            lists the jurisdiction directories for the other scripts
