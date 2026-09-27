@@ -1,4 +1,4 @@
-name: Update RTB forms
+name: Update forms
 
 on:
   schedule:
@@ -7,31 +7,35 @@ on:
 
 permissions: {}
 
-concurrency:
-  group: update-rtb-forms
-  cancel-in-progress: false
-
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
+    strategy:
+      fail-fast: false
+      matrix:
+        jurisdiction: [bc, on] # one directory under data/ each; add a code here when adding a jurisdiction
+    concurrency:
+      group: update-forms-${{ matrix.jurisdiction }}
+      cancel-in-progress: false
     env:
-      BRANCH: chore/rtb-forms-update
-      TITLE: "chore(data): sync RTB forms from official source"
+      CODE: ${{ matrix.jurisdiction }}
+      BRANCH: chore/forms-update-${{ matrix.jurisdiction }}
+      TITLE: "chore(data): sync ${{ matrix.jurisdiction }} forms from official source"
     steps:
       - uses: actions/checkout@v7.0.1
       - run: npm install -g bun@1.4.2
       - run: bun install --frozen-lockfile
-      - run: bun run update:sources -- --summary "$RUNNER_TEMP/pr-body.md"
-      - run: bun run validate
+      - run: bun run update:sources "$CODE" -- --summary "$RUNNER_TEMP/pr-body.md"
+      - run: bun run validate "$CODE"
       - name: Open or update PR
         env:
           GH_TOKEN: ${{ github.token }}
           BASE: ${{ github.event.repository.default_branch }}
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
+          if [ -z "$(git status --porcelain -- "data/$CODE" "snapshots/$CODE")" ]; then
             echo "No source changes."
             exit 0
           fi
@@ -39,7 +43,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C "$BRANCH"
-          git add -A data snapshots
+          git add -A -- "data/$CODE" "snapshots/$CODE"
           git commit -m "$TITLE"
           git push --force origin "$BRANCH"
           if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
