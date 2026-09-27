@@ -1,0 +1,277 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.tal.gouv.qc.ca/en/forms",
+  "sha256": "fb6222126dfd488214b22a70f23cea9c200a057b8a64f54f33eb9db61f2d3056",
+  "forms": [
+    {
+      "id": "ADJ-COOP",
+      "form_name": "Adjustment to Legal Requirements – Lease of a Dwelling in a Cooperative",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-coop.pdf"
+    },
+    {
+      "id": "ADJ-ETUDES",
+      "form_name": "Adjustment to Legal Requirements - Lease of a Dwelling Intended for a Person Pursuing Studies",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-études.pdf"
+    },
+    {
+      "id": "ADJ-LOGEMENT",
+      "form_name": "Adjustment to Legal Requirements – Lease of a Dwelling",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-logement.pdf"
+    },
+    {
+      "id": "ADJ-LOYER-MODIQUE",
+      "form_name": "Adjustment to Legal Requirements – Lease for a Dwelling in Low-Rental Housing",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-loyer-modique.pdf"
+    },
+    {
+      "id": "ADJ-MAISON-MOBILE",
+      "form_name": "Adjustment to Legal Requirements – Lease of Land Intended for the Installation of a Mobile Home",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-maison-mobile.pdf"
+    },
+    {
+      "id": "ADJ-VERBAL",
+      "form_name": "Adjustment to Legal Requirements – Mandatory Writing in the Case of an Oral Lease",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/adjustment-lease-verbal.pdf"
+    },
+    {
+      "id": "AV-041",
+      "form_name": "Notice of intent to convert a rental property to divided co-ownership",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/AV_041.pdf"
+    },
+    {
+      "id": "AV-051",
+      "form_name": "Offer to sell",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/AV_051.pdf"
+    },
+    {
+      "id": "TAL-001A",
+      "form_name": "Application",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_001A_E.pdf"
+    },
+    {
+      "id": "TAL-002A",
+      "form_name": "Application to modify the lease",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_002A_E.pdf"
+    },
+    {
+      "id": "TAL-003A",
+      "form_name": "Rent deposit",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_003A_E.pdf"
+    },
+    {
+      "id": "TAL-005A",
+      "form_name": "Application to evict the lessee after the end of the lease",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_005A_E.pdf"
+    },
+    {
+      "id": "TAL-013A",
+      "form_name": "Discontinuance or agreement",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_013A_E.pdf"
+    },
+    {
+      "id": "TAL-046A",
+      "form_name": "Order form – Hearing recording",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_046A_I.pdf"
+    },
+    {
+      "id": "TAL-047A",
+      "form_name": "Notice of change of address",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_047A_E.pdf"
+    },
+    {
+      "id": "TAL-048A",
+      "form_name": "Application for reinstatement on the roll",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_048A_E.pdf"
+    },
+    {
+      "id": "TAL-049A",
+      "form_name": "Amendment",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_049A_E.pdf"
+    },
+    {
+      "id": "TAL-065A",
+      "form_name": "Application regarding unpaid rent",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_065A_E.pdf"
+    },
+    {
+      "id": "TAL-066A",
+      "form_name": "Application relating to abandonment",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_066A_E.pdf"
+    },
+    {
+      "id": "TAL-072A",
+      "form_name": "Appendix for additional information",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_072A_E.pdf"
+    },
+    {
+      "id": "TAL-100A",
+      "form_name": "List of exhibits",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_100A_E.pdf"
+    },
+    {
+      "id": "TAL-101A",
+      "form_name": "Application for revocation",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_101A_E.pdf"
+    },
+    {
+      "id": "TAL-102A",
+      "form_name": "Application to repossess a dwelling",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_102A_E.pdf"
+    },
+    {
+      "id": "TAL-103A",
+      "form_name": "Amendment regarding unpaid rent",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_103A_E.pdf"
+    },
+    {
+      "id": "TAL-104A",
+      "form_name": "Amendment regarding abandonment",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_104A_E.pdf"
+    },
+    {
+      "id": "TAL-105A",
+      "form_name": "Application to convert a rental property to divided co-ownership",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_105A_E.pdf"
+    },
+    {
+      "id": "TAL-126A",
+      "form_name": "Unavailability",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_126A_E.pdf"
+    },
+    {
+      "id": "TAL-129A",
+      "form_name": "Translation of a decision",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_129A_E.pdf"
+    },
+    {
+      "id": "TAL-145A",
+      "form_name": "Application to evict the lessee for subdivision, enlargement or change of destination of the dwelling – Eviction notice sent as of February 21, 2024",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_145A_E.pdf"
+    },
+    {
+      "id": "TAL-801A",
+      "form_name": "Notice of abandonment of a dwelling",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_801A_E.pdf"
+    },
+    {
+      "id": "TAL-802A",
+      "form_name": "Notice of lease assignment",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_802A_E.pdf"
+    },
+    {
+      "id": "TAL-803A",
+      "form_name": "Notice of cessation of cohabitation",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_803A_E.pdf"
+    },
+    {
+      "id": "TAL-804A",
+      "form_name": "Notice of lessee’s death",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_804A_E.pdf"
+    },
+    {
+      "id": "TAL-805A",
+      "form_name": "Notice of rent deposit",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_805A_E.pdf"
+    },
+    {
+      "id": "TAL-806A",
+      "form_name": "Notice of rent increase and modification of another condition of the lease",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_806A_E.pdf"
+    },
+    {
+      "id": "TAL-807A",
+      "form_name": "Notice of non-renewal of the lease by the lessee",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_807A_E.pdf"
+    },
+    {
+      "id": "TAL-808A",
+      "form_name": "Notice of major improvements or repairs",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_808A_E.pdf"
+    },
+    {
+      "id": "TAL-809A",
+      "form_name": "Notice of repossession",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_809A_E.pdf"
+    },
+    {
+      "id": "TAL-810A",
+      "form_name": "Lessee’s response to a notice of rent increase and modification of another condition of the lease",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_810A_E.pdf"
+    },
+    {
+      "id": "TAL-811A",
+      "form_name": "Response to a notice of repossession",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_811A_E.pdf"
+    },
+    {
+      "id": "TAL-812A",
+      "form_name": "Notice of termination of a lease due to allocation of a dwelling in low-rental housing",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_812A_E.pdf"
+    },
+    {
+      "id": "TAL-813A",
+      "form_name": "Notice of termination of a lease due to admission of the lessee to a residential and long-term care centre or to a private seniors' residence",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_813A_E.pdf"
+    },
+    {
+      "id": "TAL-814A",
+      "form_name": "Notice of subletting of dwelling",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_814A_E.pdf"
+    },
+    {
+      "id": "TAL-815A",
+      "form_name": "Notice of eviction for subdivision, enlargement or change of destination of a dwelling",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_815A_E.pdf"
+    },
+    {
+      "id": "TAL-816A",
+      "form_name": "Written notice of modifications to a lease upon renewal",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_816A_E.pdf"
+    },
+    {
+      "id": "TAL-817A",
+      "form_name": "Assignment of lease agreement",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_817A_E.pdf"
+    },
+    {
+      "id": "TAL-818A",
+      "form_name": "Notice of termination of a lease because of spousal violence, sexual violence or violence towards a child",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_818A_E.pdf"
+    },
+    {
+      "id": "TAL-819A",
+      "form_name": "Notice of rent increase and modification of another condition of the lease - Lease including services of personal nature",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_819A_E.pdf"
+    },
+    {
+      "id": "TAL-821A",
+      "form_name": "Notice of termination of a lease due to a disability",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_821A_E.pdf"
+    },
+    {
+      "id": "TAL-823A",
+      "form_name": "Notice to a new lessee (last rent paid)",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_823A_E.pdf"
+    },
+    {
+      "id": "TAL-824A",
+      "form_name": "Notice to new lessee (change of destination of a dwelling for seniors)",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_824A_E.pdf"
+    },
+    {
+      "id": "TAL-826A",
+      "form_name": "Response to a notice of eviction",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_826A_E.pdf"
+    },
+    {
+      "id": "TAL-827A",
+      "form_name": "Notice to a new lessee (maximum rent)",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_827A_E.pdf"
+    },
+    {
+      "id": "TAL-828A",
+      "form_name": "Response to a notice of assignment of lease - Notice given as fron February 21, 2024",
+      "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/notices/TAL_828A_E.pdf"
+    }
+  ]
+}
