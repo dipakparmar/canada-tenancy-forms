@@ -84,7 +84,7 @@
           "status": { "enum": ["active", "portal_generated", "specialized", "historical_or_replaced"] },
           "category": { "$ref": "#/definitions/slug" },
           "matter_type": { "$ref": "#/definitions/slug" },
-          "current_version": { "type": ["string", "null"] },
+          "current_version": { "type": ["string", "null"], "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$" },
           "official_url": { "type": "string", "pattern": "^https://" },
           "official_index_url": { "type": "string", "pattern": "^https://" },
           "initiating_party": { "$ref": "#/definitions/slug" },

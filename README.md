@@ -59,6 +59,12 @@ The record shape is defined in
 | Owner | Fields |
 |---|---|
 | Source (the updater may overwrite) | `form_name`, `official_url`, `current_version`, `last_verified`, and `status` only to bring a `historical_or_replaced` record back |
+
+`current_version` is ISO 8601 at whatever precision the source prints: `2026-07` for BC's
+"July 2026", `2026-09` for an Ontario footer reading "N4 (2026/09)", `2022-04-01` for one
+reading "v. 01/04/2022". The format is uniform so versions sort and compare; the precision
+is never more than the source gave. Ontario's page prints no dates, so its updater run
+downloads each PDF and reads the footer.
 | Humans (the updater never touches) | `category`, `matter_type`, `initiating_party`, `parties`, `property_manager_role`, `use_when`, `do_not_use_when`, `related_forms`, `legal_effect`, `source_basis`, and every top-level block except `source` |
 
 ## Updater behaviour

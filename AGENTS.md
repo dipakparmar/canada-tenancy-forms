@@ -48,6 +48,10 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - `id` is the stable official form number (`RTB-1`, `RTB-12L-DR`), uppercase,
   never a PDF filename. Each catalog's `dataset.id_pattern` says what its ids
   look like and `validate` enforces it.
+- `current_version` is ISO 8601 at the precision the source prints: `2026-07`
+  when a page or footer gives month and year, `2022-04-01` when it gives a full
+  date. Uniform format, never invented precision. A source whose page prints no
+  version reads it from the PDF footer through the module's `version(bytes)`.
 - Never delete a record. Retire it by setting `status: "historical_or_replaced"`.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change

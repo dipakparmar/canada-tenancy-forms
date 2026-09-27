@@ -18,7 +18,7 @@ const summaryPath = args.includes('--summary') ? args[args.indexOf('--summary') 
 const today = new Date().toISOString().slice(0, 10)
 
 async function update({ code, catalog, dataPath, snapshotPath, sourceModule }) {
-  const { prefix: PREFIX, extract } = await import(sourceModule)
+  const { prefix: PREFIX, extract, version } = await import(sourceModule)
   const res = await fetch(catalog.source.index_url)
   if (!res.ok) throw new Error(`index fetch failed: HTTP ${res.status}`)
   const html = await res.text()
@@ -29,6 +29,13 @@ async function update({ code, catalog, dataPath, snapshotPath, sourceModule }) {
   const managed = catalog.forms.filter((f) => f.official_url.startsWith(PREFIX) && f.status !== 'historical_or_replaced')
   // Guard against a broken page or parser marking the whole catalog historical.
   if (found.length < managed.length / 2) throw new Error(`only ${found.length} forms found vs ${managed.length} managed; refusing to diff`)
+
+  // A source whose page prints no version reads it from each PDF instead (Ontario). One
+  // download per managed form per run; a PDF that will not load leaves the version alone.
+  if (version) for (const s of found) if (!s.version) {
+    const r = await fetch(s.official_url)
+    if (r.ok) s.version = await version(new Uint8Array(await r.arrayBuffer())).catch(() => null)
+  }
 
   const byId = new Map(catalog.forms.map((f) => [f.id, f]))
   const seen = new Set(found.map((f) => f.id))

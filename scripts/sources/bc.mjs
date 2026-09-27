@@ -1,6 +1,11 @@
 // British Columbia: the RTB forms index page on gov.bc.ca. Exports the shape every
 // jurisdiction's source module must provide: `prefix` (the URL prefix of PDFs the updater
-// may manage) and `extract(html)` -> [{ id, form_name, official_url, version }].
+// may manage) and `extract(html)` -> [{ id, form_name, official_url, version }]. A module
+// may also export `version(pdfBytes)` for a source whose page prints no version; BC's
+// page does, as "Month YYYY", stored as YYYY-MM.
+//
+// `version` everywhere is ISO 8601 at the precision the source gives: YYYY, YYYY-MM or
+// YYYY-MM-DD. Format is uniform, precision is whatever was printed.
 export const prefix = 'https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/'
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -32,7 +37,7 @@ export function extract(html) {
     // The named listing link wins: inline mentions sometimes point at a dead variant filename (seen: rtb53-p3d vs rtb-53-p3d).
     if (!f.form_name) Object.assign(f, { form_name: name, official_url: href })
     const d = text(tail.split('</p>')[0]).match(new RegExp(`(${MONTHS.join('|')})\\s+(\\d{4})`))
-    if (d && (!f.version || +d[2] * 12 + MONTHS.indexOf(d[1]) > f.version.n)) f.version = { s: `${d[1]} ${d[2]}`, n: +d[2] * 12 + MONTHS.indexOf(d[1]) }
+    if (d && (!f.version || +d[2] * 12 + MONTHS.indexOf(d[1]) > f.version.n)) f.version = { s: `${d[2]}-${String(MONTHS.indexOf(d[1]) + 1).padStart(2, '0')}`, n: +d[2] * 12 + MONTHS.indexOf(d[1]) }
   }
   return [...forms.values()].map((f) => ({ ...f, form_name: f.form_name ?? f.id, version: f.version?.s ?? null }))
 }
