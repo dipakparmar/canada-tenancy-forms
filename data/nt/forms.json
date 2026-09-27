@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Government of the Northwest Territories — Department of Justice, NWT Rental Office",
+    "index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+    "snapshot_sha256": "0ec94f3b061137856b050ad875b816c3502cde4747d73c549821e3a82acd2ad1"
+  },
+  "dataset": {
+    "id": "nt-rental-office-forms-catalog",
+    "jurisdiction": "Northwest Territories, Canada",
+    "authority": "NWT Rental Office, Department of Justice, Government of the Northwest Territories",
+    "id_pattern": "^([0-9]{1,2}|[A-Z][A-Z-]*)$",
+    "last_verified": "2026-09-26",
+    "official_forms_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+    "official_forms_numbered_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "The page's own \"Documents and Forms\" file browser links every PDF directly under files/rental-agreements/; a sibling files/rental-office/ path holds only annual reports, which are not forms and are never in `prefix`.",
+      "id rule: five PDFs print \"RTA Approved Form N\" in their own text (confirmed by reading each PDF): Report of Sale of Abandoned Personal Property (2), Inventory - Abandoned Property (3), Assignment Agreement (4), Subletting Agreement (5), Inspection Form (6); those keep that bare number as id. No other form here prints a number anywhere (including the Tenancy Agreement, which is the Schedule to section 1 of the Residential Tenancies Regulations but is not itself stamped \"RTA Approved Form 1\" or any other number), so the rest take a short uppercase slug from the filename instead.",
+      "Excluded from this catalog: the three Policy PDFs (Affidavit of Service, Expedited Hearing, Useful Life), the Interest Rate Schedule, and the plain-language information booklet; none of them are forms a landlord or tenant fills out and signs. The Annual Reports section (files/rental-office/) is excluded entirely.",
+      "The Abandoned Property folder lists Form 2 (Report of Sale of Abandoned Personal Property) twice, under \"Abandoned Personal Property EN.pdf\" and \"Report of Sale of Abandoned Personal Property.pdf\"; both hrefs resolve to the byte-identical PDF (same sha256), catalogued once as id 2 under the more descriptive filename.",
+      "No English/French pair of any of these nine forms was found on the index page; the file browser's only EN/FR pairs are on old Annual Reports, which are excluded.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or law states otherwise.",
+      "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; the Residential Tenancies Act (Northwest Territories) and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "subtenant",
+      "assignee",
+      "office"
+    ],
+    "matter_types": [
+      "agreement",
+      "assignment",
+      "subletting",
+      "condition_inspection",
+      "abandoned_property",
+      "dispute_resolution"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the tenancy agreement. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority the landlord has given.",
+      "tenant": "The person or persons named as tenant under the tenancy agreement. A tenant signs tenant-originated forms and receives landlord notices.",
+      "practical_rule": "Identify the legal landlord in section 1 of the Tenancy Agreement. Keep written proof of any agent's authority to act for the landlord."
+    },
+    "document_controls": [
+      "Record the form id, completion date, service date, serving person, recipient, service method, and proof of service.",
+      "Use the Rental Office's approved form rather than reproducing a private form when the Act requires a prescribed one.",
+      "Keep the signed tenancy agreement, any entry and exit inspection report, and proof of service together for any later application to a rental officer."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:nt-1",
+      "title": "NWT Rental Office - Justice",
+      "url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "Index page whose own \"Documents and Forms\" file browser links every residential tenancy PDF directly, grouped into folders (Abandoned Property, Agreements, Assignment & Subletting, Inspections, Policies) plus two ungrouped Application to a Rental Officer forms; each file's browser-reported \"Modified Date\" is a server timestamp, not a printed version."
+    }
+  ],
+  "forms": [
+    {
+      "id": "2",
+      "form_name": "Report of Sale of Abandoned Personal Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Report%20of%20Sale%20of%20Abandoned%20Personal%20Property.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "office"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A landlord has sold abandoned personal property a tenant left behind and must report the sale and distribution of the proceeds to the rental officer.",
+      "related_forms": [],
+      "legal_effect": "Reports the sale of the property and the distribution of its proceeds, showing the balance owed to the Rental Office after deducting removal, storage and selling costs and any unsatisfied judgment for the landlord.",
+      "source_basis": [
+        "approval to sell or dispose of abandoned personal property must be obtained from a rental officer (Report of Sale of Abandoned Personal Property)",
+        "the landlord needs to provide the rental officer with a written report on the sale and distribution of the proceeds of the sale (Report of Sale of Abandoned Personal Property)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "3",
+      "form_name": "Inventory - Abandoned Property",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Inventory%20-%20Abandoned%20Property%20EN.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "office"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A landlord has removed a former tenant's abandoned personal property from the rental premises and must give the rental officer (and the tenant, if their address is known) an itemized inventory of it.",
+      "related_forms": [
+        "ABANDONED-PROPERTY-RETURN-OR-DISPOSE"
+      ],
+      "legal_effect": "Creates the official record of the personal property the landlord removed and stored, which the tenant may later use to claim the property back and which the landlord needs before requesting permission to dispose of anything unclaimed.",
+      "source_basis": [
+        "the landlord is required to give the rental officer an inventory of the property in the approved form (Inventory - Abandoned Property)",
+        "the landlord must obtain the permission of a rental officer before disposing of the personal property (Inventory - Abandoned Property)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "4",
+      "form_name": "Assignment Agreement",
+      "status": "active",
+      "category": "assignment",
+      "matter_type": "assignment",
+      "current_version": "2019-06",
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Assignment%20%26%20Subletting/Assignment%20Agreement%20-%20June%202019.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "assignee",
+        "landlord"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A tenant with a fixed term agreement of six months or more, or who has been in the unit at least six months and does not plan to return, wants to transfer their right to occupy the unit to a new tenant.",
+      "related_forms": [
+        "TENANCY-AGREEMENT"
+      ],
+      "legal_effect": "Once signed by the tenant, the assignee and the landlord, all rights and obligations under the tenancy agreement pass to the new tenant as of the effective date, and the old tenant has no further obligations after that date.",
+      "source_basis": [
+        "An assignment is not valid unless the landlord gives written consent. Consent must not be unreasonably withheld (Assignment Agreement)",
+        "the old tenant does not have any further obligations beyond that date (Assignment Agreement)",
+        "Where there is a written tenancy agreement it must be attached to the assignment agreement (Assignment Agreement)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "5",
+      "form_name": "Subletting Agreement",
+      "status": "active",
+      "category": "subletting",
+      "matter_type": "subletting",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Assignment%20%26%20Subletting/Subletting%20Agreement%20EN.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "subtenant",
+        "landlord"
+      ],
+      "property_manager_role": "Not addressed on the form; it is signed by \"landlord\".",
+      "use_when": "A tenant who plans to move back into the unit wants someone else (a subtenant) to live there for a stated period while the tenant keeps all of their own obligations to the landlord.",
+      "related_forms": [
+        "TENANCY-AGREEMENT"
+      ],
+      "legal_effect": "Lets the subtenant occupy the unit for the agreed period, on the subtenant's promise to return possession to the tenant when the agreement expires, but is not valid unless the landlord consents in writing.",
+      "source_basis": [
+        "A subletting is not valid unless the landlord gives written consent. Consent must not be unreasonably withheld (Subletting Agreement)",
+        "to return possession of the rental unit to the tenant on the expiry of this agreement (Subletting Agreement)",
+        "If a written tenancy agreement exists it must be attached to the subletting agreement (Subletting Agreement)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "6",
+      "form_name": "Inspection Form",
+      "status": "active",
+      "category": "condition_inspection",
+      "matter_type": "condition_inspection",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Inspections/Inspection%20Form%20EN.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; it calls for the landlord's and tenant's own signatures at entry and at exit.",
+      "use_when": "Recording the condition and contents of the rental premises at the start and end of a tenancy, room by room, so both parties have a shared record for later comparison.",
+      "related_forms": [],
+      "legal_effect": "A landlord who fails to complete an entry or exit inspection report, or fails without reasonable excuse to give the tenant a copy of each report, may not retain any part of the security deposit or pet security deposit for repairs.",
+      "source_basis": [
+        "The tenant must be offered reasonable opportunities to participate and then to include comments in the inspection report and sign it (Entry and Exit Inspection Report)",
+        "A landlord may not retain any amount of a security deposit or pet security deposit for repairs of damage to the premises (Entry and Exit Inspection Report)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "ABANDONED-PROPERTY-RETURN-OR-DISPOSE",
+      "form_name": "Report of Return or Request to Dispose",
+      "status": "active",
+      "category": "abandoned_property",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Abandoned%20Property/Report%20of%20Return%20or%20Request%20to%20Dispose.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "office"
+      ],
+      "property_manager_role": "Not addressed on the form; it calls for the landlord's own signature in both sections.",
+      "use_when": "A tenant or owner picks up stored abandoned property during the 60-day storage period (Report of Return), or the landlord wants permission to dispose of property no one has claimed after storing it at least 60 days (Request to Dispose).",
+      "do_not_use_when": [
+        "The Request to Dispose section: before the 60-day storage period has expired."
+      ],
+      "related_forms": [
+        "3"
+      ],
+      "legal_effect": "Notifies the rental office that stored property was returned to its owner, or asks the rental officer for permission to dispose of property that remains unclaimed after the 60-day storage period.",
+      "source_basis": [
+        "If the tenant or owner picks up the property during the 60-day storage period, complete this section (Report of Return / Request to Dispose)",
+        "Do not return this section until the 60-day period expires (Report of Return / Request to Dispose)",
+        "Was tenant provided a copy of the inventory? (Report of Return / Request to Dispose)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "APPLICATION-LANDLORD",
+      "form_name": "Application to a Rental Officer - Landlord",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Form%20-%20Application%20to%20a%20Rental%20Officer%20-%20Landlord.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "office"
+      ],
+      "property_manager_role": "Landlord's Agent may be named in the Applicant Information section, and the form is signed \"Signature of Landlord/Agent\".",
+      "use_when": "A landlord wants a rental officer's order against a tenant, for example over unpaid rent or a security deposit, damage to the premises, disturbances, an illegal act, or termination and eviction.",
+      "related_forms": [],
+      "legal_effect": "Files a $100 application that, once processed, is issued a file number and scheduled for a hearing before a rental officer, whose resulting orders are binding and may be filed in the Supreme Court of the Northwest Territories.",
+      "source_basis": [
+        "empowers a Rental Officer to receive and investigate complaints, mediate disputes between Landlord and Tenants, and hold hearings (Application to a Rental Officer - Landlord)",
+        "Your application will not be processed until the $100 filing fee is paid (Application to a Rental Officer - Landlord)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "APPLICATION-TENANT",
+      "form_name": "Application to a Rental Officer - Tenant",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Form%20-%20Application%20to%20a%20Rental%20Officer%20-%20Tenant.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord",
+        "office"
+      ],
+      "property_manager_role": "Not addressed for the tenant applicant; the Respondent Information section has a \"Name of Landlord's Agent (if applicable)\" line.",
+      "use_when": "A tenant wants a rental officer's order against a landlord, for example over an improperly kept security deposit, an unlawful lock change or entry, failure to repair, cut-off utilities, or an improper rent increase.",
+      "related_forms": [],
+      "legal_effect": "Files a $20 application (waived for subsidized public housing tenants) that, once processed, is issued a file number and scheduled for a hearing before a rental officer, whose resulting orders are binding and may be filed in the Supreme Court of the Northwest Territories.",
+      "source_basis": [
+        "empowers a Rental Officer to receive and investigate complaints, mediate disputes between Landlord and Tenants, and hold hearings (Application to a Rental Officer - Tenant)",
+        "Your application will not be processed until the $20 filing fee is paid (Application to a Rental Officer - Tenant)",
+        "Subsidized Public Housing Tenants do not have to pay the filing fee (Application to a Rental Officer - Tenant)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TENANCY-AGREEMENT",
+      "form_name": "Tenancy Agreement - Residential Tenancies Act",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.justice.gov.nt.ca/en/files/rental-agreements/Agreements/Tenancy%20Agreement%20-%20Residential%20Tenancies%20Act.pdf",
+      "official_index_url": "https://www.justice.gov.nt.ca/en/boards-agencies/rental-office/",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "Not addressed on the form; the agreement is signed by \"Landlord\" and \"Tenant\" only, with no agent line.",
+      "use_when": "Starting a residential tenancy in the Northwest Territories; the Landlord agrees to rent the premises to the Tenant and the agreement sets out the term, rent, services, security deposit and each party's obligations.",
+      "related_forms": [
+        "4",
+        "5"
+      ],
+      "legal_effect": "Sets the binding terms of the tenancy under the Residential Tenancies Act; a fixed term agreement renews automatically as a monthly periodic agreement unless the tenancy ends, the parties sign a new agreement, or the tenant's rental premises are an employment benefit that ends.",
+      "source_basis": [
+        "A term tenancy agreement is automatically renewed as a monthly periodic agreement unless the tenancy has ended in accordance with the Residential Tenancies Act (Tenancy Agreement - Residential Tenancies Act)",
+        "the appropriate subletting or assignment agreement must be completed and signed. These agreements are approved forms and can be obtained from the Rental Office (Tenancy Agreement - Residential Tenancies Act)",
+        "Document has an AcroForm dictionary but zero fields; confirmed with `bun run inspect`, which reported \"no AcroForm fields, flattened form\". No field map was built."
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}

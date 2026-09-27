@@ -63,6 +63,12 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   Brunswick catalogue number pulled from its filename. Its `prefix` is an array of
   the two hosts its PDFs are split across (`pxw1.snb.ca` and `www2.snb.ca`);
   `detect-source-changes.mjs` accepts either a string or an array there.
+- Northwest Territories ids the five PDFs that print "RTA Approved Form N" in their own
+  text by that bare number; every other form there takes a short uppercase slug from its
+  filename instead, since it prints no number anywhere. Its index page's file browser
+  lists one form (the Report of Sale of Abandoned Personal Property) under two different
+  filenames that resolve to the byte-identical PDF; `scripts/sources/nt.mjs` catalogues it
+  once, keeping the more descriptive filename's URL.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
   in `schema/forms.schema.json` first.
