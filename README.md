@@ -8,7 +8,7 @@ a pull request for a human to review. The repo is standalone: consume
 | Code | Jurisdiction | Authority | Forms | Field maps |
 |---|---|---|---|---|
 | `bc` | British Columbia | Residential Tenancy Branch | 72, classified | RTB-1, RTB-27 |
-| `on` | Ontario | Landlord and Tenant Board, plus the Ministry's standard lease | 35, only 2229E classified | 2229E |
+| `on` | Ontario | Landlord and Tenant Board, plus the Ministry's standard lease | 35, classified | 2229E |
 
 One directory code selects a jurisdiction's catalog, field maps, snapshot and page
 extractor. Scripts take jurisdiction codes as arguments and default to all of them.
