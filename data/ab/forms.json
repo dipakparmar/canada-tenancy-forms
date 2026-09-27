@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Government of Alberta — Residential Tenancy Dispute Resolution Service (RTDRS)",
+    "index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+    "snapshot_sha256": "1573e28b8d3ff738fae6f198ceb35efd3cb290e6b3a8a2f6fe2b7b3ac528c1ed"
+  },
+  "dataset": {
+    "id": "ab-rtdrs-forms-catalog",
+    "jurisdiction": "Alberta, Canada",
+    "authority": "Residential Tenancy Dispute Resolution Service",
+    "id_pattern": "^(RTDR|RTDRS|CTS)[0-9]{4,5}$",
+    "last_verified": "2026-09-27",
+    "official_forms_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+    "official_forms_numbered_url": "https://www.alberta.ca/rtdrs-forms-documents",
+    "notes": [
+      "Alberta prescribes no standard tenancy agreement or standard lease form; every form in this catalog is a Residential Tenancy Dispute Resolution Service (RTDRS) application, declaration, notice, or other procedural form used to bring or manage a dispute, not to create a tenancy.",
+      "The RTDRS is a tribunal under the Residential Tenancies Act and the Mobile Home Sites Tenancies Act; it hears disputes as an alternative to the Court of Justice or the Court of King's Bench.",
+      "Every catalogued PDF is hosted on the Central Forms Repository (cfr.forms.gov.ab.ca) and prints its own \"<ID>  Rev. YYYY-MM\" stamp; current_version is read from that stamp.",
+      "Most of these PDFs are XFA dynamic forms built with Adobe LiveCycle/AEM Forms: the PDF carries an AcroForm dictionary for compatibility but zero static AcroForm fields, so a plain PDF text extractor (including this catalog's own inspect/fetch tooling) sees only a placeholder page telling the reader to open the form in Adobe Acrobat Reader. The real captions, instructions and the revision stamp live in the PDF's embedded XFA template packet. current_version for these was read by hand from that packet (see maps and per-record source_basis); the source module's version() only re-derives it automatically for the one form with real AcroForm fields (RTDR11149).",
+      "One catalogued link (RTDR12112, Updating Application Information/Adding a Claim) is not a static PDF at all: cfr.forms.gov.ab.ca serves it as an in-browser LC Forms (Adobe AEM Forms) viewer page that renders the XFA form live; there is no fixed PDF byte stream to download or check-links against as a file. It is catalogued with status \"portal_generated\" and its official_url is the live viewer page.",
+      "No form in this catalog has real AcroForm fields suitable for this repository's map/fill tooling except RTDR11149 (RTDRS Audio Recording Request Form), which is an administrative request form, not a tenancy agreement; per AGENTS.md a map is only built for a fillable agreement, so no maps/ab/ entries exist.",
+      "A property manager or other authorized agent may prepare, file, serve or receive RTDRS documents on a landlord's or tenant's behalf, but the named landlord or tenant remains the legal party unless a form or the Act states otherwise.",
+      "A form does not itself create authority to end a tenancy, evict, or recover money; the Residential Tenancies Act, the Mobile Home Sites Tenancies Act and the RTDRS Rules of Practice and Procedure control the process."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "applicant",
+      "respondent",
+      "property_manager_or_authorized_agent",
+      "rtdrs"
+    ],
+    "matter_types": [
+      "application",
+      "review_or_correction",
+      "service_of_documents",
+      "evidence",
+      "hearing_administration",
+      "ending_tenancy"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the tenancy agreement or mobile home site agreement. The landlord remains responsible for statutory obligations even when an agent completes or files RTDRS documents.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord or tenant. RTDRS applications and declarations let the declarant identify as \"Agent\" or \"Lawyer\" in addition to landlord or tenant.",
+      "tenant": "The person or persons named as tenant under the tenancy agreement or mobile home site agreement. A tenant may apply to the RTDRS and receives landlord applications and notices.",
+      "practical_rule": "Identify the actual landlord or tenant as the applicant or respondent on the RTDRS application; a representative's own contact details go on the Add/Change a Hearing Representative form (RTDR13290), not in place of the party's name."
+    },
+    "document_controls": [
+      "Record the RTDRS case number, the form ID and revision date, the date the application package was served, and the method and date of service on every declaration of service.",
+      "Serve the application package (Notice of Telephone Hearing, application form and evidence) on the respondent(s) at least 3 clear business days before the hearing date.",
+      "File a Declaration of Service (RTDR0002 landlord, RTDR0003 tenant) confirming how and when the application package was served.",
+      "Keep the tenancy agreement, the rent ledger, move-in/move-out inspection reports, and all evidence organized and page-numbered together for the hearing; a form's own Evidence Table of Contents (RTDR12006) is required when submitting more than 30 pages of evidence."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:ab-1",
+      "title": "RTDRS – Forms and documents",
+      "url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Index page for every RTDRS form, grouped under Application forms, Audio recording request, Other forms, Declarations, and Notices; each entry links a Central Forms Repository URL."
+    }
+  ],
+  "forms": [
+    {
+      "id": "CTS3884",
+      "form_name": "Notice of Default (for residential tenancy matters)",
+      "status": "active",
+      "category": "notices_of_default",
+      "matter_type": "ending_tenancy",
+      "current_version": "2023-03",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/CTS3884",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "The form has a separate \"Landlord/Agent Name\" field, so an authorized agent may be named as the person giving notice on the landlord's behalf.",
+      "use_when": "Served on a tenant after the Court of King's Bench has ordered termination of the tenancy and possession, under sections 34.1 and 35 of the Residential Tenancies Act, to notify them of the order and the deadline to vacate.",
+      "do_not_use_when": [
+        "The tenancy is a mobile home site tenancy; use CTS3885 instead."
+      ],
+      "related_forms": [
+        "CTS3885"
+      ],
+      "legal_effect": "States that the tenancy is terminated per the attached court order and that if the occupants do not vacate by the ordered deadline, a civil enforcement agency has the authority to immediately evict all occupants.",
+      "source_basis": [
+        "CTS3884 XFA template text (Rev. 2023-03): \"Residential Tenancies Act Sections 34.1 and 35 - Your residential tenancy is terminated as per the attached Order, filed at the Court of King's Bench.\"",
+        "CTS3884: \"If you do not vacate the rental premises as ordered, a civil enforcement agency has the authority to immediately evict all occupants.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "CTS3885",
+      "form_name": "Notice of Default (for mobile home site matters)",
+      "status": "active",
+      "category": "notices_of_default",
+      "matter_type": "ending_tenancy",
+      "current_version": "2023-04",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/CTS3885",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "The form has a separate \"Landlord/Agent Name\" field, so an authorized agent may be named as the person giving notice on the landlord's behalf.",
+      "use_when": "Served on a mobile home site tenant after the Court of King's Bench has ordered termination of the tenancy and possession, under sections 37.1 and 38 of the Mobile Home Sites Tenancies Act, to notify them of the order and the deadline to vacate.",
+      "do_not_use_when": [
+        "The tenancy is a residential (non mobile-home-site) tenancy; use CTS3884 instead."
+      ],
+      "related_forms": [
+        "CTS3884"
+      ],
+      "legal_effect": "States that the tenancy is terminated per the attached court order and that if the occupants do not vacate by the ordered deadline, a civil enforcement agency has the authority to immediately evict all occupants.",
+      "source_basis": [
+        "CTS3885 XFA template text (Rev. 2023-04): \"Mobile Home Sites Tenancies Act Sections 37.1 and 38 - Your tenancy is terminated as per the attached Order.\"",
+        "CTS3885: \"If you do not vacate the mobile home site as ordered, a civil enforcement agency has the authority to immediately evict all occupants.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0001",
+      "form_name": "Declaration in Support of Abridgement of Service",
+      "status": "active",
+      "category": "service_declarations",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0001",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "The declarant may identify as \"Agent\" or \"Lawyer\" acting for the landlord rather than the landlord personally.",
+      "use_when": "Filed by a landlord with RTDR0007 to ask the RTDRS to shorten the period of notice given to the respondent, restricted to imminent-harm situations such as significant property damage or a physical assault or threat.",
+      "do_not_use_when": [
+        "The situation does not involve significant property damage already done or a physical assault/threat by the tenant, the two grounds the form lists as eligible."
+      ],
+      "related_forms": [
+        "RTDR0007"
+      ],
+      "legal_effect": "If granted, has the Landlord's Application for Termination of the Tenancy and Unpaid Rent heard on a priority basis, typically in fewer than 7 days, instead of the standard notice period.",
+      "source_basis": [
+        "RTDR0001 XFA template text (Rev. 2025-08): \"Eligibility to shorten the period of notice required to be provided to the Respondent... is restricted to these limited situations... where the threat of harm or further damage is imminent.\"",
+        "RTDR0001: \"(a) where the tenant has done or permitted significant damage... (b) where the tenant has physically assaulted or threatened to physically assault the landlord or another tenant.\"",
+        "RTDR0001: \"If eligible, submit this form and supporting records at the same time as the Landlord's Application for Termination of Tenancy and Unpaid Rent.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0002",
+      "form_name": "Declaration of Service by Landlord",
+      "status": "active",
+      "category": "service_declarations",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0002",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "The declarant may identify as \"Agent\" or \"Lawyer\" acting for the landlord rather than the landlord personally.",
+      "use_when": "Completed by a landlord (or their agent/lawyer) to declare how and when the application form, Notice of Telephone Hearing, and evidence package were served on the respondent(s).",
+      "related_forms": [
+        "RTDR0007",
+        "RTDR0006"
+      ],
+      "legal_effect": "Provides the RTDRS with the declarant's sworn account of service, supporting the tenancy dispute officer's finding that the respondent was properly served before the hearing proceeds.",
+      "source_basis": [
+        "RTDR0002 XFA template text (Rev. 2025-08): \"THAT I served the respondent(s)... with these documents... a copy of the application form filed with RTDRS on... a copy of the Notice of Telephone Hearing...\"",
+        "RTDR0002: lists service methods including personally, by leaving copies at the premises, by posting, by email, and by registered mail.",
+        "RTDR0007 instructions: \"Complete a Declaration of Service by Landlord form stating how and when you served the application package(s) on the respondent(s).\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0003",
+      "form_name": "Declaration of Service by Tenant",
+      "status": "active",
+      "category": "service_declarations",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0003",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "The declarant may identify as \"Agent\" or \"Lawyer\" acting for the tenant rather than the tenant personally.",
+      "use_when": "Completed by a tenant (or their agent/lawyer) to declare how and when the application form, Notice of Telephone Hearing, and evidence package were served on the respondent landlord(s).",
+      "related_forms": [
+        "RTDR0008"
+      ],
+      "legal_effect": "Provides the RTDRS with the declarant's sworn account of service, supporting the tenancy dispute officer's finding that the respondent was properly served before the hearing proceeds.",
+      "source_basis": [
+        "RTDR0003 XFA template text (Rev. 2025-08): \"THAT I served the respondent(s)... with these documents... a copy of the application form filed with RTDRS on... a copy of the Notice of Telephone Hearing...\"",
+        "RTDR0003: lists service methods including personally, at a corporation's registered office, on a director/manager/officer, by email, and by registered mail.",
+        "RTDR0008 instructions: \"Complete a Declaration of Service by Tenant form stating how and when you served the application package(s) on the respondent(s).\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0004",
+      "form_name": "Declaration in Support of a Notice to Attend",
+      "status": "active",
+      "category": "service_declarations",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0004",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "The declarant may identify as \"Agent\" or \"Lawyer\" acting for the landlord or tenant rather than that party personally.",
+      "use_when": "Filed by a party (landlord or tenant) to apply to have the RTDRS issue a Notice to Attend requiring a named person to attend the hearing.",
+      "related_forms": [],
+      "legal_effect": "Supports the tenancy dispute officer's decision on whether to issue a Notice to Attend compelling a named person to appear at the hearing.",
+      "source_basis": [
+        "RTDR0004 XFA template text (Rev. 2025-08): \"THAT I am applying to issue a Notice to Attend to [Full name] for the following reasons:\"",
+        "RTDR0004: \"The personal information collected through the online Declaration in Support of a Notice to Attend form is for the purpose of establishing the identity of the person or entity applying for a Notice to Attend.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0005",
+      "form_name": "Declaration in Support of Substitutional Service",
+      "status": "active",
+      "category": "service_declarations",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0005",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "The declarant may identify as \"Agent\" or \"Lawyer\" acting for the landlord or tenant rather than that party personally.",
+      "use_when": "Filed by a party who has been unable to serve the respondent(s) by the usual methods, to ask the RTDRS to approve an alternate (substitutional) method of service.",
+      "related_forms": [
+        "RTDR0001"
+      ],
+      "legal_effect": "If granted, allows the applicant to serve the respondent by the alternate method the tenancy dispute officer approves instead of ordinary personal service.",
+      "source_basis": [
+        "RTDR0005 XFA template text (Rev. 2025-08): \"THAT I have attempted to serve the Application Package on the Respondent(s), without success, by these methods... THAT I make this application to serve the Application Package by this method...\"",
+        "RTDR0005: \"THAT I believe that the Respondent(s) will receive the Application Package if served by this method because:\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0006",
+      "form_name": "Landlord's Application for Damages",
+      "status": "active",
+      "category": "landlord_applications",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-12",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0006",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "An agent or representative may be named as the applicant's representative, but the landlord is named as the applicant.",
+      "use_when": "Used by landlords when their tenant no longer resides in the rental premises and the landlord seeks unpaid rent/utilities, damage, loss of rental income, over-holding compensation, or breach damages.",
+      "do_not_use_when": [
+        "The tenant is still residing in the rental premises and the landlord also needs an order for termination or possession; use RTDR0007 instead."
+      ],
+      "related_forms": [
+        "RTDR0002",
+        "RTDR11148",
+        "RTDR0007"
+      ],
+      "legal_effect": "Asks the RTDRS for a money judgment covering unpaid rent/utilities, property damage, loss of rental income, over-holding compensation and/or breach damages; the applicant's total claim is capped at under $100,000, with any excess abandoned.",
+      "source_basis": [
+        "Alberta.ca RTDRS forms page: \"Used by landlords when their tenant no longer resides in the rental premises.\"",
+        "RTDR0006 XFA template text (Rev. 2025-12): \"This is an application to the Residential Tenancy Dispute Resolution Service (RTDRS) for a judgment for the following damages: Unpaid rent and/or utilities...\"",
+        "RTDR0006: \"By filing this application I confirm that my claim is less than $100,000.\"",
+        "RTDR0006 instructions: \"The RTDRS filing fee is $75.00, and is payable at the time of filing.\"",
+        "RTDR0006: \"Applications can be made to the RTDRS within 2 years from the date the claim is discovered.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0007",
+      "form_name": "Landlord's Application for Termination of Tenancy and Unpaid Rent",
+      "status": "active",
+      "category": "landlord_applications",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-03",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0007",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "An agent or representative may be named as the applicant's representative, but the landlord is named as the applicant.",
+      "use_when": "Used by landlords when their tenant is still residing in the rental premises and the landlord seeks termination, possession, over-holding compensation, unpaid rent/utilities, or breach damages.",
+      "do_not_use_when": [
+        "The tenant no longer resides in the rental premises; use the Landlord's Application for Damages (RTDR0006) instead."
+      ],
+      "related_forms": [
+        "RTDR0002",
+        "RTDR11148",
+        "RTDR0006"
+      ],
+      "legal_effect": "Asks the RTDRS for termination of the tenancy and/or recovery of possession, over-holding compensation, unpaid rent/utilities, and breach damages; the applicant's total claim is capped, since \"by filing this application I confirm that my claim is less than $100,000\" and any excess is abandoned.",
+      "source_basis": [
+        "Alberta.ca RTDRS forms page: \"Used by landlords when their tenant is still residing in the rental premises.\"",
+        "RTDR0007 XFA template text (Rev. 2026-03): \"By filing this application I confirm that my claim is less than $100,000.\"",
+        "RTDR0007 instructions: \"The RTDRS filing fee is: $75 – for claims or counterclaims of $7,500 or less, $150 – for claims over $7,500...\"",
+        "RTDR0007 instructions: \"You must serve the application package on the respondent(s) at least 3 clear business days before the hearing date.\"",
+        "RTDR0007 note: \"After the tenant has vacated, the landlord may apply for damages using the Landlord's Application for Damages form.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR0008",
+      "form_name": "Tenant's Application",
+      "status": "active",
+      "category": "tenant_applications",
+      "matter_type": "application",
+      "current_version": "2026-03",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR0008",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "An agent or representative may be named as the applicant's representative, but the tenant is named as the applicant.",
+      "use_when": "Used by tenants applying to the RTDRS for termination of the tenancy, abatement of rent, breach damages, compensation for performing the landlord's obligation, or recovery of the security deposit.",
+      "related_forms": [
+        "RTDR0003",
+        "RTDR11148"
+      ],
+      "legal_effect": "Asks the RTDRS for termination of the tenancy, rent abatement, breach damages, compensation for performing the landlord's obligation, and/or return of the security deposit; the applicant's total claim is capped at under $100,000, with any excess abandoned.",
+      "source_basis": [
+        "Alberta.ca RTDRS forms page: \"Used by tenants.\"",
+        "RTDR0008 XFA template text (Rev. 2026-03): \"This is an application to the Residential Tenancy Dispute Resolution Service (RTDRS) for the following remedies... Termination of the tenancy... Abatement (reduction) of rent... Recovery of the security deposit\".",
+        "RTDR0008 instructions: \"The RTDRS filing fee is: $75 – for claims or counterclaims of $7,500 or less...*Fees may be waived for low-income Albertans.\"",
+        "RTDR0008: \"Applications can be made to the RTDRS within 2 years from the date the claim is discovered.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR11148",
+      "form_name": "Notice of Withdrawal",
+      "status": "active",
+      "category": "application_management",
+      "matter_type": "application",
+      "current_version": "2025-10",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11148",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Completed by the applicant to withdraw their RTDRS application, whether because it has been fully satisfied or the applicant no longer wants to proceed.",
+      "related_forms": [
+        "RTDR0007",
+        "RTDR0006",
+        "RTDR0008"
+      ],
+      "legal_effect": "Removes the application from the RTDRS hearing list; filing fees are not refunded for a withdrawn application.",
+      "source_basis": [
+        "Alberta.ca RTDRS forms page: \"Completed by the applicant if they wish to cancel their application.\"",
+        "RTDR11148 XFA template text (Rev. 2025-10): \"I withdraw my application against the respondent... My application has been completely satisfied.\"",
+        "RTDR0007 instructions: \"If you settle your dispute before the hearing, or decide not to proceed, file a Notice of Withdrawal with the RTDRS and notify the respondents. Filing fees are not refunded for withdrawn applications.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR11149",
+      "form_name": "RTDRS Audio Recording Request Form",
+      "status": "active",
+      "category": "hearing_administration",
+      "matter_type": "hearing_administration",
+      "current_version": "2025-12",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11149",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Completed by a party to the RTDRS action to request the audio recording of their hearing, including when needed to obtain a transcript for an appeal.",
+      "do_not_use_when": [
+        "The requester was not a party to the RTDRS action; the form states such requests must be made under the Access to Information Act instead.",
+        "The hearing has not yet concluded; audio requests are only provided once the final hearing has concluded."
+      ],
+      "related_forms": [],
+      "legal_effect": "Directs the RTDRS to provide the audio recording of the hearing by email or on a USB/thumb drive; for an appeal, the requester must still hire a transcription company to convert the recording into an official transcript.",
+      "source_basis": [
+        "RTDR11149 (a genuine AcroForm PDF, Rev. 2025-12): \"ONLY PARTIES TO THE ACTION MAY REQUEST THE AUDIO RECORDING OF THEIR HEARING. Requests for audio recordings from anyone who is not a party to the action must be made under the Access to Information Act.\"",
+        "RTDR11149: \"Audio requests will only be provided to the requestor once the final hearing has been concluded.\"",
+        "RTDR11149: \"An appellant must hire a transcription company to convert the RTDRS audio recording into an official transcript.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR11229",
+      "form_name": "RTDRS Request Form",
+      "status": "active",
+      "category": "post_order_review",
+      "matter_type": "review_or_correction",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR11229",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Filed by a party after an RTDRS order is granted to request that a tenancy dispute officer set aside or vary the order, correct a clerical error, clarify the order's wording, or to ask the RTDRS Administrator to review the conduct of a tenancy dispute officer or RTDRS service, policy or procedure.",
+      "do_not_use_when": [
+        "The party wants to appeal an order on a question of law or jurisdiction; the form itself states that is done separately, within 30 days after the order is filed with the Court of King's Bench, not through this request."
+      ],
+      "related_forms": [],
+      "legal_effect": "A set-aside-or-vary request must be made within 20 days after the order came to the requesting party's attention or was provided to them; amendment and clarification requests must be made within 30 days after the order is received. An order remains final and binding unless set aside or varied by a tenancy dispute officer or varied on appeal.",
+      "source_basis": [
+        "RTDR11229 XFA template text (Rev. 2025-08): \"Authority - A Tenancy Dispute Officer may only set aside or vary an order granted if the order was made without notice to one or more of the parties...\"",
+        "RTDR11229: \"Time Limit - A request to set aside or vary an order granted must be made within 20 days after the earlier of the date the order came to the requesting party's attention... or the date the requesting party was provided a copy of the order.\"",
+        "RTDR11229: \"Time Limit - A request for an amendment to correct an error in an order must be made within 30 days after the order is received by the party making the request.\"",
+        "RTDR11229: \"an order of a Tenancy Dispute Officer is final and binding unless it is set aside or varied by the Tenancy Dispute Officer, or varied on appeal.\"",
+        "RTDR11229: \"A party who is subject to an order of a Tenancy Dispute Officer may appeal the order on a question of law or of jurisdiction within 30 days after the order is filed with the Court of King's Bench.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR12006",
+      "form_name": "Evidence Table of Contents",
+      "status": "active",
+      "category": "evidence",
+      "matter_type": "evidence",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12006",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Completed by a party submitting more than 30 pages of evidence in total (even within one PDF) to describe the evidence submitted and its corresponding page numbers.",
+      "related_forms": [],
+      "legal_effect": "Organizes the evidence package for the hearing; it does not itself create or waive any right.",
+      "source_basis": [
+        "RTDR12006 XFA template text (Rev. 2025-08): \"When submitting more than 30 pages of evidence in total, even if in one PDF, complete and submit this Table of Contents form to describe the evidence submitted and the corresponding page numbers.\"",
+        "RTDR12006: \"When submitting additional evidence, use this same Table of Contents form as an extension on what was submitted previously.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR12112",
+      "form_name": "Updating Application Information/Adding a Claim",
+      "status": "portal_generated",
+      "category": "application_management",
+      "matter_type": "application",
+      "current_version": "2025-08",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12112",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Completed by an applicant who has already served the initial application on the respondent and needs to amend that application, such as adding a claim, before the hearing.",
+      "do_not_use_when": [
+        "The change is needed after the RTDRS has already issued its order; use the RTDRS Request Form (RTDR11229) instead."
+      ],
+      "related_forms": [],
+      "legal_effect": "Notifies the RTDRS and the respondent of the amendment; the form must reach both the RTDRS and the respondent at least 24 hours (including one business day) before the hearing, or the tenancy dispute officer may refuse the amendment or adjourn the hearing.",
+      "source_basis": [
+        "cfr.forms.gov.ab.ca/Form/RTDR12112 XFA template text (Rev. 2025-08): \"If you are amending your application and have served the respondent with the initial application form, you are required to complete this form.\"",
+        "RTDR12112: \"This Amended Application form must be completed then provided to the RTDRS and the respondent at least 24 hours (must include one business day) prior to the hearing date.\"",
+        "This form is served by the government's cfr.forms.gov.ab.ca/Form/RTDR12112 URL as an in-browser LC Forms (Adobe AEM Forms) viewer, not a downloadable static PDF; there is no fixed PDF file to fetch or hash."
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDR13290",
+      "form_name": "Add/Change a Hearing Representative",
+      "status": "active",
+      "category": "hearing_administration",
+      "matter_type": "hearing_administration",
+      "current_version": "2025-12",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR13290",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "property_manager_or_authorized_agent",
+        "rtdrs"
+      ],
+      "property_manager_role": "This form is how a party formally adds or changes the representative (who may be a property manager or other agent) who will attend the hearing on their behalf, or who will be granted access to their RTDRS eFiling Service account.",
+      "use_when": "Completed by a party to add or change the person who will represent them at their RTDRS hearing, or to give a representative access to their RTDRS eFiling Service account.",
+      "do_not_use_when": [
+        "Updating the representative fewer than 2 days before the hearing; the form instructs the party to also call the RTDRS instead of relying on the written update alone."
+      ],
+      "related_forms": [],
+      "legal_effect": "Authorizes the named representative to represent the party at the hearing and/or access their RTDRS eFiling Service account; access to a case file is not granted without this prior authorization.",
+      "source_basis": [
+        "RTDR13290 XFA template text (Rev. 2025-12): \"Would you like your hearing representative to: Represent you at your RTDRS hearing... Be granted access to your RTDRS eFiling Service account...\"",
+        "RTDR13290: \"When updating/changing the representative details fewer than 2 days prior to the hearing, leave a message at 403-297-8550 at least 24 hours before the hearing and include all of the details required below.\"",
+        "RTDR0007 instructions: \"Access to your case file will not be granted without your prior authorization.\""
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RTDRS12875",
+      "form_name": "RTDRS Fee Waiver Form",
+      "status": "active",
+      "category": "application_management",
+      "matter_type": "application",
+      "current_version": "2026-03",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDRS12875",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "applicant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "rtdrs"
+      ],
+      "property_manager_role": "unreviewed",
+      "use_when": "Completed by an applicant seeking a waiver of the RTDRS filing fee based on low gross family income, submitted at the same time as the application form.",
+      "do_not_use_when": [
+        "The applicant's gross family income exceeds the published monthly/yearly thresholds for their family size."
+      ],
+      "related_forms": [],
+      "legal_effect": "If granted, waives the RTDRS filing fee that would otherwise be payable when filing the application.",
+      "source_basis": [
+        "RTDRS12875 XFA template text (Rev. 2026-03): \"The following information is needed to determine if you are eligible for a waiver of the Residential Tenancy Dispute Resolution Service (RTDRS) filing fee.\"",
+        "RTDRS12875 income table: \"Number of Persons in Family... 1 $2,230 $26,760... 4 $4,144 $49,727...\"",
+        "RTDR0008 instructions: \"*Fees may be waived for low-income Albertans.\"",
+        "RTDRS12875: \"Once you have completed this form, you must submit it at the same time that you submit your application form.\""
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}

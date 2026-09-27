@@ -88,6 +88,15 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - A form the updater cannot see (Ontario's 2229E lives on a different site) is
   catalogued by hand with an `official_url` outside the source `prefix`; the
   updater then never touches it.
+- Alberta has no standard tenancy agreement form; its catalog is entirely RTDRS
+  tribunal forms. Most of its PDFs are XFA dynamic forms (an AcroForm dictionary
+  present but zero static fields, so `inspect`/`fetch-form` extract only an
+  Adobe Reader placeholder page); `scripts/sources/ab.mjs`'s `version()` reads
+  the printed revision stamp only from the one form with real AcroForm fields
+  and otherwise returns null, leaving `current_version` at what was read by
+  hand from the PDF's embedded XFA template. One catalogued form (RTDR12112)
+  has no static PDF at all, only an in-browser LC Forms viewer page, and is
+  marked `portal_generated`.
 - A source module's `extract(html)` is normally synchronous, but a source
   whose index page links a landing page per form rather than the PDF directly
   (Nova Scotia) may make it `async` and fetch each landing page itself, with a
