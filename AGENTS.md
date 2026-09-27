@@ -87,6 +87,10 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   (Nova Scotia) may make it `async` and fetch each landing page itself, with a
   short delay between requests; `detect-source-changes.mjs` always `await`s
   the call, so a synchronous module still works unchanged.
+- Saskatchewan's index page renders client-side and links nothing directly, so its
+  `catalog.source.index_url` is the publications catalogue's own JSON API and
+  `extract(json)` parses that JSON instead of scraping HTML; every other jurisdiction's
+  `extract` still receives an HTML string.
 - A map entry may carry `readonly: true` for a field the PDF flags read-only at
   rest (2229E unlocks those with its own scripts); `fillFromMap` clears the flag
   when asked to write one.
