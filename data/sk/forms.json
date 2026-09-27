@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Government of Saskatchewan — Office of Residential Tenancies, Ministry of Justice and Attorney General",
+    "index_url": "https://publications.saskatchewan.ca/api/v1/categories/5415/products?limit=100",
+    "snapshot_sha256": "6977619708d6466fe31f77f65b3f914685933e33762b00500e1e4aad7a356c2f"
+  },
+  "dataset": {
+    "id": "sk-ort-forms-catalog",
+    "jurisdiction": "Saskatchewan, Canada",
+    "authority": "Office of Residential Tenancies (ORT), Ministry of Justice and Attorney General",
+    "id_pattern": "^([0-9]{1,2}|[A-Z][A-Z0-9-]*)$",
+    "last_verified": "2026-09-27",
+    "official_forms_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+    "official_forms_numbered_url": "https://publications.saskatchewan.ca/#/categories/5415",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "The human category page (\"Office of Residential Tenancies - Rental Forms and Documents\") renders client-side and links nothing directly, so the updater's index_url is the publications catalogue's own JSON API instead: https://publications.saskatchewan.ca/api/v1/categories/5415/products?limit=100. Each record's official_index_url points at the human category page.",
+      "id rule: where a product's name carries the ORT's own regulation form number (\"Form 11 - Request to Correct or Clarify Order or Obvious Error\"), the id is that bare number and the \"Form N - \" prefix is stripped from form_name. Every other product gets a short uppercase slug hand-derived from its name (for example NOTICE-VACATE-CAUSE), since none of the other seventeen names carries a second, machine-parseable form number.",
+      "Download URLs follow the pattern https://publications.saskatchewan.ca/api/v1/products/<productId>/formats/<formatId>/download; every one of the 18 products in this category has a downloadable English PDF format, confirmed by fetching each and checking for a %PDF- header, so none needed a portal_generated fallback despite several descriptions saying the notice is \"available on ORT's online portal\" (that online portal is a separate submission workflow; the catalogued PDF is the static, official version of the same form).",
+      "Most PDFs print a \"<Month> <Year> <Form name>\" stamp as the last line of their last page, read by the module's version(bytes) into current_version at YYYY-MM precision. Schedule 1 - Standard Conditions of a Tenancy Agreement prints no such stamp anywhere in its nine pages; its current_version instead comes from the catalogue's own productPublicationDate field, at day precision, since that field is presented as the publication date of the document.",
+      "Saskatchewan prescribes no standard lease form. Schedule 1 - Standard Conditions of a Tenancy Agreement is the statutory conditions text that forms part of every tenancy agreement by operation of law (The Residential Tenancies Regulations, 2007), not a fillable lease; it has no AcroForm fields and no map applies. No other document in this category is a lease or tenancy agreement PDF, so no jurisdiction map exists.",
+      "Form 11's own PDF bundles a second page, a generic ORT Credit Card Payment Form; that second page is not itself a numbered form and is not catalogued separately.",
+      "A property manager may prepare, serve, or receive a form as the landlord's authorized agent, but the legal party remains the landlord or tenant unless the form or the Act states otherwise.",
+      "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; The Residential Tenancies Act, 2006 (Saskatchewan) and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "landlord_or_tenant",
+      "landlord_and_tenant",
+      "office"
+    ],
+    "matter_types": [
+      "agreement",
+      "rent",
+      "utility_arrears",
+      "security_deposit",
+      "ending_tenancy",
+      "entry",
+      "service_of_documents",
+      "dispute_resolution"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the tenancy. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord. Several ORT notice PDFs print a \"Landlord/Agent\" signature line, letting an authorized agent sign, serve, or receive on the landlord's behalf.",
+      "tenant": "The person or persons named as tenant under the tenancy. A tenant signs tenant-originated notices and receives landlord notices.",
+      "practical_rule": "Keep written proof of an agent's authority to act for the landlord; the ORT notice forms accept an agent's signature but the landlord named on the form remains the legally responsible party."
+    },
+    "document_controls": [
+      "Record the form id, the printed revision date, the completion date, the service date, the serving person, the recipient, the service method, and proof of service.",
+      "Serve documents by one of the methods described in section 82 of The Residential Tenancies Act, 2006 (personal service, posting plus ordinary mail, or electronic form) and complete a Certificate of Service where required.",
+      "Most notices in this catalogue must be served under subsection 82(2)(a) before a related application can be submitted through the ORT's online portal.",
+      "Keep the served notice, proof of service, and any related application together for the ORT hearing process."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:sk-1",
+      "title": "Office of Residential Tenancies - Rental Forms and Documents",
+      "url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Human-facing category page on the Saskatchewan Queen's Printer publications site, listing 18 Office of Residential Tenancies products; renders client-side, links nothing directly."
+    },
+    {
+      "source_id": "api:sk-1",
+      "title": "publications.saskatchewan.ca category 5415 products API",
+      "url": "https://publications.saskatchewan.ca/api/v1/categories/5415/products?limit=100",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "JSON API backing the category page; returns the 18 products with their download formats. Used as the updater's index_url since the page itself is not scrapeable."
+    }
+  ],
+  "forms": [
+    {
+      "id": "11",
+      "form_name": "Request to Correct or Clarify Order or Obvious Error",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": "2021-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23744/formats/30555/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord_or_tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "office"
+      ],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "Either the landlord or the tenant wants the Office of Residential Tenancies to clarify a hearing officer's decision or order, or to correct an obvious error or inadvertent omission in it, within 15 days of the decision or order.",
+      "do_not_use_when": [
+        "More than 15 days have passed since the decision or order was made; the Act sets no other route to reopen the time limit on this form."
+      ],
+      "related_forms": [],
+      "legal_effect": "Asks the Office of Residential Tenancies to clarify sections of a decision or order, or to correct an obvious error or inadvertent omission in it, under section 76 of the Act.",
+      "source_basis": [
+        "\"hereby requests that the Office of Residential Tenancies\" ... \"Clarify the Decision or Order\" / \"Correct an obvious error or inadvertent omission\" (Form 11)",
+        "\"The Residential Tenancies Act, 2006 [section 76]\" (Form 11)",
+        "\"A request must be made within 15 days of the date of the decision or order.\" (Form 11)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "CERTIFICATE-OF-SERVICE",
+      "form_name": "Certificate of Service",
+      "status": "active",
+      "category": "service_of_documents",
+      "matter_type": "service_of_documents",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/119951/formats/138419/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord_or_tenant",
+      "parties": [
+        "landlord",
+        "tenant",
+        "office"
+      ],
+      "property_manager_role": "may_complete_and_sign_as_authorized_agent",
+      "use_when": "A landlord or tenant needs to certify, for the Office of Residential Tenancies, how and when they served a document on the other party under section 82 of the Act.",
+      "related_forms": [],
+      "legal_effect": "Certifies the service method, address, and date used to serve a named document on a current tenant, former tenant, or landlord under subsections 82(2)(a), (b), or (c) of the Act.",
+      "source_basis": [
+        "\"CERTIFY that I SERVED\" ... \"with a true copy of the following document(s)\" (Certificate of Service)",
+        "\"The Residential Tenancies Act, 2006 (sections 82(2)(a), (b), (c))\" (Certificate of Service)",
+        "\"It is an offence contrary to section 79(1)(b) of The Residential Tenancies Act, 2006 to knowingly make an untrue statement of fact\" (Certificate of Service)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "IMMEDIATE-NOTICE-VACATE-ARREARS",
+      "form_name": "Immediate Notice to Vacate and Notice of Arrears",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2026-03",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23732/formats/107290/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A tenant is more than 15 days in rent arrears and the landlord wants to give immediate notice to deliver up possession of the rental unit.",
+      "do_not_use_when": [
+        "The rent arrears are 15 days or less; the Act requires the arrears to exceed 15 days before this immediate notice applies."
+      ],
+      "related_forms": [],
+      "legal_effect": "Gives the tenant immediate notice to deliver up possession for rent arrears exceeding 15 days, letting the landlord apply to the ORT for possession if the tenant does not vacate.",
+      "source_basis": [
+        "\"I hereby give you notice to immediately deliver up possession of the premises\" (Immediate Notice to Vacate and Notice of Arrears)",
+        "\"The amount of rent over 15 days in arrears at the date of sending this notice\" (Immediate Notice to Vacate and Notice of Arrears)",
+        "\"The Residential Tenancies Act, 2006 [Sections 57 & 70(6)(c)]\" (Immediate Notice to Vacate and Notice of Arrears)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-CLAIM-SECURITY-DEPOSIT",
+      "form_name": "Notice of Landlord's Claim for Security Deposit",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": "2026-02",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/120571/formats/139442/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant",
+        "office"
+      ],
+      "property_manager_role": "may_complete_and_sign_as_authorized_agent",
+      "use_when": "A tenancy has ended and the landlord wants to claim against the tenant's security deposit for rent arrears, damages, or cleaning, or must account for the deposit after an ORT accommodation.",
+      "do_not_use_when": [
+        "More than 7 business days have passed since the landlord had actual knowledge the tenant vacated, when the form is being used under an ORT accommodation; the Act sets that delivery deadline."
+      ],
+      "related_forms": [],
+      "legal_effect": "Notifies the tenant of the landlord's claim against the security deposit and its estimated value under section 32 of the Act, and lets the tenant dispute the claim and apply for the deposit's return within 60 days of the tenancy ending.",
+      "source_basis": [
+        "\"you may use this form and serve it on the tenant(s)\" ... \"delivered to the tenant(s) within 7 business days after the day on which a landlord has actual knowledge\" (Notice of Landlord's Claim for Security Deposit)",
+        "\"The Residential Tenancies Act, 2006 [s. 32]\" (Notice of Landlord's Claim for Security Deposit)",
+        "\"submit both pages 1 and 2 to the Office of Residential Tenancies (ORT) ... within 60 days of the tenancy end date\" (Notice of Landlord's Claim for Security Deposit)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-OF-ENTRY",
+      "form_name": "Notice of Entry",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "entry",
+      "current_version": "2022-11",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/24003/formats/30901/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord or agent plans to enter a tenant's rental unit and must give the tenant written notice of the date, time window, and purpose of entry.",
+      "do_not_use_when": [
+        "The tenant has given permission at the time of entry, the tenant appears to have abandoned the unit, or an emergency requires immediate entry to protect life or property; the Act does not require this notice in those cases."
+      ],
+      "related_forms": [],
+      "legal_effect": "Gives the tenant the required written notice of a landlord's entry, stating the date, a maximum four-hour entry window between 8 a.m. and 8 p.m., and the purpose, under section 45 of the Act and section 7 of the Regulations.",
+      "source_basis": [
+        "\"you are hereby given notice that your landlord/agent will be entering your rental unit\" (Notice of Entry)",
+        "\"A landlord may only provide a maximum four-hour period between 8 a.m. and 8 p.m. to enter the unit.\" (Notice of Entry)",
+        "\"The Residential Tenancies Act, 2006 [Section 45], The Residential Tenancies Regulations, 2007 [Section 7]\" (Notice of Entry)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-RENT-INCREASE",
+      "form_name": "Notice of Rent Increase",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": "2022-11",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23730/formats/30534/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord who is not a member of a prescribed landlord association wants to increase rent in a periodic tenancy and must give one year's advance written notice.",
+      "do_not_use_when": [
+        "The landlord is a member in good standing of the Saskatchewan Landlord Association Inc. or the Network of Non-Profit Housing Providers of Saskatchewan Incorporated; use the Notice of Rent Increase for Prescribed Landlord Association Members instead, which allows six months' notice."
+      ],
+      "related_forms": [
+        "NOTICE-RENT-INCREASE-ASSOCIATION"
+      ],
+      "legal_effect": "Gives the tenant the required advance written notice of a rent increase and the new rent amount and effective date, under section 54 of the Act.",
+      "source_basis": [
+        "\"Take Notice that on ... the rent for the premises will increase from $ per month to $ per month.\" (Notice of Rent Increase)",
+        "\"Landlords must give one year notice of any rent increase.\" (Notice of Rent Increase)",
+        "\"The Residential Tenancies Act, 2006 [Section 54]\" (Notice of Rent Increase)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-RENT-INCREASE-ASSOCIATION",
+      "form_name": "Notice of Rent Increase for Prescribed Landlord Association Members",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": "2026-06",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73472/formats/82256/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord who is a member in good standing of a prescribed landlord association wants to increase rent in a periodic tenancy and can give the shorter six-month advance notice.",
+      "do_not_use_when": [
+        "The landlord is not a member of a prescribed landlord association; use the Notice of Rent Increase instead, which requires one year's notice."
+      ],
+      "related_forms": [
+        "NOTICE-RENT-INCREASE"
+      ],
+      "legal_effect": "Gives the tenant six months' advance written notice of a rent increase and confirms the landlord's membership in a prescribed landlord association, under section 54 of the Act.",
+      "source_basis": [
+        "\"I confirm that the landlord is a member in good standing of\" ... the Network of Non-Profit Housing Providers of Saskatchewan or the Saskatchewan Landlord Association Inc. (Notice of Rent Increase for Prescribed Landlord Association Members)",
+        "\"Landlords who are members in good standing of a prescribed landlord association ... may give six months' notice\" (Notice of Rent Increase for Prescribed Landlord Association Members)",
+        "\"The Residential Tenancies Act, 2006 [Section 54]\" (Notice of Rent Increase for Prescribed Landlord Association Members)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-TERMINATE-PERIODIC-TENANCY",
+      "form_name": "Notice to Landlord to Terminate a Periodic Tenancy",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2022-11",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23731/formats/30535/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "may_receive_on_the_landlord_s_behalf_as_authorized_agent",
+      "use_when": "A tenant in a periodic (month-to-month or week-to-week) tenancy wants to end the tenancy and give up possession on a stated date.",
+      "related_forms": [],
+      "legal_effect": "Gives the landlord the tenant's notice terminating the periodic tenancy effective a stated date, under section 56 of the Act.",
+      "source_basis": [
+        "\"I hereby give you notice that I am terminating my tenancy and giving up possession of the premises\" (Notice to Landlord to Terminate a Periodic Tenancy)",
+        "\"The Residential Tenancies Act, 2006 [Section 56]\" (Notice to Landlord to Terminate a Periodic Tenancy)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-UTILITY-ARREARS",
+      "form_name": "Notice of Utility Arrears",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "utility_arrears",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/24004/formats/30902/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A tenant who is responsible for utility charges under the tenancy agreement has failed to pay them, and the landlord wants to give notice of the unpaid amount before treating it as unpaid rent.",
+      "related_forms": [
+        "IMMEDIATE-NOTICE-VACATE-ARREARS"
+      ],
+      "legal_effect": "Notifies the tenant of unpaid utility charges by utility type and amount, warning that unpaid charges 15 days after service may lead to an Immediate Notice to Vacate and Notice of Arrears, under subsection 57(5)(b) of the Act.",
+      "source_basis": [
+        "\"you are hereby given notice that the tenancy agreement requires you to pay utility charges and you have failed to pay the utility charges\" (Notice of Utility Arrears)",
+        "\"If any utility charges are still unpaid 15 days after the serving of this notice, you will be served with an Immediate Notice to Vacate and Notice of Arrears\" (Notice of Utility Arrears)",
+        "\"The Residential Tenancies Act, 2006 [Sections 57(5)(b)]\" (Notice of Utility Arrears)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-CAUSE",
+      "form_name": "Notice to Vacate: Cause",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23733/formats/30537/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord wants to end a tenancy for cause, such as a tenant's breach of the tenancy agreement or disturbance of other tenants, giving one month's notice.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant one month's notice to terminate the tenancy for a stated cause, and lets the tenant dispute the notice in writing within 15 days, under section 58 of the Act.",
+      "source_basis": [
+        "\"This is one month's notice to terminate your tenancy of the above property\" (Notice to Vacate: Cause)",
+        "\"To dispute this notice, complete the dispute notice below and return it to the landlord within 15 days of receiving this notice.\" (Notice to Vacate: Cause)",
+        "\"The Residential Tenancies Act, 2006 [Section 58]\" (Notice to Vacate: Cause)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-EARLY-CAUSE",
+      "form_name": "Notice to Landlord to Vacate Early for Cause",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2022-11",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73766/formats/82644/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "tenant",
+      "parties": [
+        "tenant",
+        "landlord"
+      ],
+      "property_manager_role": "may_receive_on_the_landlord_s_behalf_as_authorized_agent",
+      "use_when": "A tenant wants to end a tenancy early because the landlord has materially breached the tenancy agreement.",
+      "related_forms": [],
+      "legal_effect": "Gives the landlord the tenant's notice terminating the tenancy early for a stated material breach, effective a stated date, under subsection 56(2) of the Act.",
+      "source_basis": [
+        "\"I am/We are terminating the tenancy agreement early by reason of the following material breach of the tenancy agreement\" (Notice to Landlord to Vacate Early for Cause)",
+        "\"The Residential Tenancies Act, 2006 [Subsection 56(2)]\" (Notice to Landlord to Vacate Early for Cause)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-EMPLOYEE",
+      "form_name": "Notice to Vacate: Employee",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/24005/formats/30904/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord wants to end the tenancy of an employee whose rental unit was tied to their employment, after that employment has ended.",
+      "do_not_use_when": [
+        "The rental unit was not provided as a condition of the tenant's employment with the landlord; the Act ties this ground to that employment relationship."
+      ],
+      "related_forms": [],
+      "legal_effect": "Gives the tenant one month's notice to terminate the tenancy because the rental unit was rented or provided for the term of employment and that employment has ended, under section 59 of the Act.",
+      "source_basis": [
+        "\"This notice is given because the rental unit was rented or provided to you for the term of your employment, and your employment has ended.\" (Notice to Vacate: Employee)",
+        "\"The Residential Tenancies Act, 2006 [Section 59]\" (Notice to Vacate: Employee)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-HOUSING-PROGRAM",
+      "form_name": "Notice to Vacate: Housing Program Purposes",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73763/formats/82640/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord wants to end a periodic tenancy to convert the rental unit for use in a housing program, or because a tenant no longer meets housing program eligibility or occupies a unit that exceeds the household's needs.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant one month's notice to terminate the tenancy for a stated housing-program reason, under subsection 60(7.1) of the Act.",
+      "source_basis": [
+        "\"the landlord intends to convert the rental unit for use in a housing program\" (Notice to Vacate: Housing Program Purposes)",
+        "\"The Residential Tenancies Act, 2006 [Subsection 60(7.1)]\" (Notice to Vacate: Housing Program Purposes)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-OWNER-OCCUPY",
+      "form_name": "Notice to Vacate: Owner Occupy",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23734/formats/30538/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord who is an individual, or a close family member or friend of the landlord (or, for a family corporation, a shareholder or their close family member or friend), intends in good faith to occupy the rental unit.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant two months' notice to terminate the periodic tenancy for owner occupancy, and allows the tenant to end the tenancy earlier on 10 days' notice after receiving it, under subsections 60(4) and (5) of the Act.",
+      "source_basis": [
+        "\"the landlord or a close family member or friend of the landlord intends in good faith to occupy the rental unit\" (Notice to Vacate: Owner Occupy)",
+        "\"you may end the tenancy earlier by giving 10 days notice and by paying the portion of rent due\" (Notice to Vacate: Owner Occupy)",
+        "\"The Residential Tenancies Act, 2006 [Subsections 60(4) & (5)]\" (Notice to Vacate: Owner Occupy)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-PURCHASER-OCCUPY",
+      "form_name": "Notice to Vacate: Purchaser Occupy",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73761/formats/82638/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord has sold the rental unit, all conditions of sale are satisfied, and the purchaser has asked in writing for notice to end the tenancy so the purchaser (or their close family member or friend) can occupy it.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant one month's notice to terminate the periodic tenancy because the purchaser intends to occupy the rental unit, and allows the tenant to end the tenancy earlier on 10 days' notice, under subsection 60(6) of the Act.",
+      "source_basis": [
+        "\"the landlord has, in good faith, sold the rental unit\" ... \"the purchaser has asked the landlord, in writing, to give notice to end the tenancy\" (Notice to Vacate: Purchaser Occupy)",
+        "\"The Residential Tenancies Act, 2006 [Subsection 60(6)]\" (Notice to Vacate: Purchaser Occupy)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "NOTICE-VACATE-SPECIFIED-USES",
+      "form_name": "Notice to Vacate: Specified Uses",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2025-09",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73762/formats/82639/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A landlord has all necessary permits and approvals and intends in good faith to demolish, renovate, convert, or repurpose the rental unit or the residential property.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant two months' notice to terminate the periodic tenancy for a stated specified use such as demolition, renovation, or conversion, under subsection 60(7) of the Act.",
+      "source_basis": [
+        "\"A landlord may end a periodic tenancy respecting a rental unit if the landlord has all the necessary permits and approvals required by law\" (Notice to Vacate: Specified Uses)",
+        "\"The Residential Tenancies Act, 2006 [Subsections 60(7)]\" (Notice to Vacate: Specified Uses)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SCHEDULE-1",
+      "form_name": "Schedule 1 - Standard Conditions of a Tenancy Agreement",
+      "status": "active",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": "2007-10-04",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/23727/formats/30531/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord_and_tenant",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "not_applicable_incorporated_by_operation_of_law",
+      "use_when": "Every residential tenancy in Saskatchewan, written or not; these standard conditions form part of every tenancy agreement automatically and are not filled out or served by either party.",
+      "do_not_use_when": [
+        "It is not a fillable form: it is the statutory text of the standard conditions and cannot be used to record tenancy-specific terms."
+      ],
+      "related_forms": [],
+      "legal_effect": "Sets the standard conditions that form part of every tenancy agreement under The Residential Tenancies Regulations, 2007; a tenancy agreement term that contradicts a standard condition, the Act, or the regulations is void.",
+      "source_basis": [
+        "\"These standard conditions form part of every tenancy agreement.\" (Schedule 1 - Standard Conditions of a Tenancy Agreement)",
+        "\"A term or condition of a tenancy agreement that contradicts or changes such a right, obligation or standard condition is void and cannot be enforced.\" (Schedule 1 - Standard Conditions of a Tenancy Agreement)",
+        "\"PART 2 Schedule 1 [Section 4] Standard Conditions of a Tenancy Agreement\" (Schedule 1 - Standard Conditions of a Tenancy Agreement)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "TERM-LEASE-NOTICE-INTENTION",
+      "form_name": "Term Lease - Two Month Notice of Intention Form",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "agreement",
+      "current_version": "2022-11",
+      "official_url": "https://publications.saskatchewan.ca/api/v1/products/73221/formats/81804/download",
+      "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
+      "initiating_party": "landlord",
+      "parties": [
+        "landlord",
+        "tenant"
+      ],
+      "property_manager_role": "may_prepare_and_serve_as_authorized_agent",
+      "use_when": "A fixed-term tenancy is within two months of its end date and the landlord must tell the tenant whether the landlord will offer a new lease, renew as a periodic tenancy, or require the tenant to vacate.",
+      "related_forms": [],
+      "legal_effect": "Gives the tenant the landlord's required two-month notice of intention at the end of a fixed term, stating whether the landlord offers a new periodic or fixed-term lease or requires the tenant to vacate, under subsection 55(2) of the Act and section 8.2 of the Regulations.",
+      "source_basis": [
+        "\"I offer to renew the lease as a periodic tenancy\" / \"A new lease will not be offered. You are to vacate at the end of the term\" (Term Lease - Two Month Notice of Intention Form)",
+        "\"The Residential Tenancies Act, 2006 [Subsection 55(2)] and The Residential Tenancies Regulations, 2007 [Section 8.2]\" (Term Lease - Two Month Notice of Intention Form)"
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}
