@@ -1,0 +1,177 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://tribunalsontario.ca/ltb/forms-filing-and-fees/",
+  "sha256": "bf60ef6cf18604fa86f6436efc6bde3a6dfc045614c5d33e76f50b388d2e0e9c",
+  "forms": [
+    {
+      "id": "A1",
+      "form_name": "Application about Whether the Act Applies",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A1.pdf"
+    },
+    {
+      "id": "A2",
+      "form_name": "Application about a Sublet or an Assignment",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A2.pdf"
+    },
+    {
+      "id": "A4",
+      "form_name": "Application to Vary the Amount of a Rent Reduction",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/A4.pdf"
+    },
+    {
+      "id": "L1",
+      "form_name": "Application to evict a tenant for non-payment of rent and to collect rent the tenant owes",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L1.pdf"
+    },
+    {
+      "id": "L2",
+      "form_name": "Application to End a Tenancy and Evict a Tenant or Collect Money",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L2.pdf"
+    },
+    {
+      "id": "L3",
+      "form_name": "Application to End a Tenancy – Tenant Gave Notice or Agreed to Terminate the Tenancy",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L3.pdf"
+    },
+    {
+      "id": "L4",
+      "form_name": "Application to End a Tenancy and Evict a Tenant – Tenant Failed to Meet Conditions of a Settlement or Order",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L4.pdf"
+    },
+    {
+      "id": "L5",
+      "form_name": "Application for a Rent Increase Above the Guideline",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L5.pdf"
+    },
+    {
+      "id": "L6",
+      "form_name": "Application for Review of a Work Order about Provincial Maintenance Standards",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L6.pdf"
+    },
+    {
+      "id": "L7",
+      "form_name": "Application to Transfer a Care Home Tenant",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L7.pdf"
+    },
+    {
+      "id": "L8",
+      "form_name": "Application Because the Tenant Changed the Locks",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L8.pdf"
+    },
+    {
+      "id": "L9",
+      "form_name": "Application to Collect Rent the Tenant Owes",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L9.pdf"
+    },
+    {
+      "id": "L10",
+      "form_name": "Application to Collect Money a Former Tenant Owes",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Landlord%20Applications%20&%20Instructions/L10.pdf"
+    },
+    {
+      "id": "N1",
+      "form_name": "Notice of Rent Increase",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Rent%20Increase%20&%20Instructions/N1.pdf"
+    },
+    {
+      "id": "N2",
+      "form_name": "Notice of Rent Increase (Unit Partially Exempt)",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Rent%20Increase%20&%20Instructions/N2.pdf"
+    },
+    {
+      "id": "N3",
+      "form_name": "Notice to Increase the Rent and/or Charges for Care Services and Meals",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Rent%20Increase%20&%20Instructions/N3.pdf"
+    },
+    {
+      "id": "N4",
+      "form_name": "Notice to End your Tenancy Early for Non-payment of Rent",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N4.pdf"
+    },
+    {
+      "id": "N5",
+      "form_name": "Notice to End your Tenancy for Interfering with Others, Damage or Overcrowding",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N5.pdf"
+    },
+    {
+      "id": "N6",
+      "form_name": "Notice to End your Tenancy for Illegal Acts or Misrepresenting Income in a Rent-Geared-to-Income Rental Unit",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N6.pdf"
+    },
+    {
+      "id": "N7",
+      "form_name": "Notice to End your Tenancy for Causing Serious Problems in the Rental Unit or Residential Complex",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N7.pdf"
+    },
+    {
+      "id": "N8",
+      "form_name": "Notice to End your Tenancy at the End of the Term",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N8.pdf"
+    },
+    {
+      "id": "N9",
+      "form_name": "Tenant's Notice to End the Tenancy",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N9.pdf"
+    },
+    {
+      "id": "N10",
+      "form_name": "Agreement to Increase the Rent Above the Guideline",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Rent%20Increase%20&%20Instructions/N10.pdf"
+    },
+    {
+      "id": "N11",
+      "form_name": "Agreement to End the Tenancy",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Other%20Forms/N11.pdf"
+    },
+    {
+      "id": "N12",
+      "form_name": "Notice to End your Tenancy Because the Landlord, a Purchaser or a Family Member Requires the Rental Unit",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N12.pdf"
+    },
+    {
+      "id": "N13",
+      "form_name": "Notice to End your Tenancy Because the Landlord Wants to Demolish the Rental Unit, Repair it or Convert it to Another Use",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N13.pdf"
+    },
+    {
+      "id": "N15",
+      "form_name": "Tenant's Notice to End my Tenancy Because of Fear of Sexual or Domestic Violence and Abuse",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Notices%20of%20Termination%20&%20Instructions/N15.pdf"
+    },
+    {
+      "id": "T1",
+      "form_name": "Tenant Application for a Rebate",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T1.pdf"
+    },
+    {
+      "id": "T2",
+      "form_name": "Application about Tenant Rights",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T2.pdf"
+    },
+    {
+      "id": "T3",
+      "form_name": "Tenant Application for a Rent Reduction",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T3.pdf"
+    },
+    {
+      "id": "T4",
+      "form_name": "Tenant Application – Landlord did not Comply with an Agreement to Increase Rent Above the Guideline",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T4.pdf"
+    },
+    {
+      "id": "T5",
+      "form_name": "Tenant Application – Landlord Gave a Notice of Termination in Bad Faith",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T5.pdf"
+    },
+    {
+      "id": "T6",
+      "form_name": "Tenant Application about Maintenance",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T6.pdf"
+    },
+    {
+      "id": "T7",
+      "form_name": "Tenant Application about Suite Meters",
+      "official_url": "https://tribunalsontario.ca/documents/ltb/Tenant%20Applications%20&%20Instructions/T7.pdf"
+    }
+  ]
+}

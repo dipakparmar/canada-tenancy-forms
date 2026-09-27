@@ -8,11 +8,12 @@ import { sample } from "./sample";
 
 const [dataPath, outPath = "out/RTB-1-filled.pdf"] = process.argv.slice(2);
 const data: Record<string, string | boolean> = dataPath ? JSON.parse(await readFile(dataPath, "utf8")) : sample;
-for (const k of Object.keys(data)) if (k.startsWith("_")) delete data[k]; // "_note" and friends
+const ref = String(data._form ?? "bc/RTB-1");
+for (const k of Object.keys(data)) if (k.startsWith("_")) delete data[k]; // "_form", "_note" and friends
 
-const map: FormMap = JSON.parse(await readFile("maps/bc/RTB-1.map.json", "utf8"));
+const map: FormMap = JSON.parse(await readFile(`maps/${ref}.map.json`, "utf8"));
 
-const pdf = await PDF.load(new Uint8Array(await readFile("forms/bc/RTB-1.pdf")));
+const pdf = await PDF.load(new Uint8Array(await readFile(`forms/${ref}.pdf`)));
 const { filled, skipped } = fillFromMap(pdf.getForm()!, map, data);
 console.log(`filled ${filled.length}, skipped ${skipped.length}`, skipped);
 await mkdir(outPath.replace(/\/[^/]*$/, "") || ".", { recursive: true });

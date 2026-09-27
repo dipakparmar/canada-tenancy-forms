@@ -1,0 +1,701 @@
+{
+  "form": "2229E",
+  "revision": "2020/12",
+  "source": "https://forms.mgcs.gov.on.ca/dataset/edff7620-980b-455f-9666-643196d8312f/resource/05677ea2-3173-4c0e-9a14-7a06cbcb41b9/download/2229e_standard-lease_static.pdf",
+  "pdf_sha256": "bb5df10cd31bd614329a3f4c18b1129191a7f7e85ec0390f529f4bbb4cf74f90",
+  "fields": {
+    "landlord.rowNumber": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].landlord[0].idNium[0].idNumber[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "landlord.legalName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].landlord[0].instructorInfo[0].instructorName[0].instrName[0]",
+      "type": "text"
+    },
+    "form.addLandlordButton": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].navigationBtns2[0].add[0]",
+      "type": "button"
+    },
+    "tenant.rowNumber": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[0].idNium[0].idNumber[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenant.lastName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[0].instructorInfo[0].instructorName[0].instrName[0]",
+      "type": "text"
+    },
+    "tenant.firstName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[0].instructorInfo[0].instructorName[0].evalName[0]",
+      "type": "text"
+    },
+    "tenant2.rowNumber": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[1].idNium[0].idNumber[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenant2.lastName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[1].instructorInfo[0].instructorName[0].instrName[0]",
+      "type": "text"
+    },
+    "tenant2.firstName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[1].instructorInfo[0].instructorName[0].evalName[0]",
+      "type": "text"
+    },
+    "tenant3.rowNumber": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[2].idNium[0].idNumber[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenant3.lastName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[2].instructorInfo[0].instructorName[0].instrName[0]",
+      "type": "text"
+    },
+    "tenant3.firstName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[2].instructorInfo[0].instructorName[0].evalName[0]",
+      "type": "text"
+    },
+    "tenant4.rowNumber": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[3].idNium[0].idNumber[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenant4.lastName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[3].instructorInfo[0].instructorName[0].instrName[0]",
+      "type": "text"
+    },
+    "tenant4.firstName": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].tenant[3].instructorInfo[0].instructorName[0].evalName[0]",
+      "type": "text"
+    },
+    "form.addTenantButton": {
+      "pdf": "form1[0].page1[0].body[0].section1[0].tenantsnames[0].navigationBtns2[0].add[0]",
+      "type": "button"
+    },
+    "premises.unit": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].busUnitNo[0]",
+      "type": "text"
+    },
+    "premises.streetNumber": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].busStreetNo[0]",
+      "type": "text"
+    },
+    "premises.streetName": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].busStreetName[0]",
+      "type": "text"
+    },
+    "premises.city": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].busCity[0]",
+      "type": "text"
+    },
+    "premises.province": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].province[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "premises.postalCode": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].busPostalCode[0]",
+      "type": "text"
+    },
+    "premises.parkingDescription": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].vehicle[0]",
+      "type": "text"
+    },
+    "premises.isCondominium": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].#subform[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "premises.isNotCondominium": {
+      "pdf": "form1[0].page1[0].body[0].section2[0].#subform[0].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "landlord.address.unit": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].unitNo[0]",
+      "type": "text"
+    },
+    "landlord.address.streetNumber": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].streetNo[0]",
+      "type": "text"
+    },
+    "landlord.address.streetName": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].streetName[0]",
+      "type": "text"
+    },
+    "landlord.address.poBox": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].unitNo[1]",
+      "type": "text"
+    },
+    "landlord.address.city": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].city[0]",
+      "type": "text"
+    },
+    "landlord.address.province": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].province[0]",
+      "type": "text"
+    },
+    "landlord.address.postalCode": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].postalCode[0]",
+      "type": "text"
+    },
+    "notices.byEmailAgreed": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question1[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "notices.byEmailNotAgreed": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question1[0].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "notices.emailAddresses": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question1[0].email[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "landlord.contactProvided": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question2[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "landlord.contactNotProvided": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question2[0].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "landlord.contactDetails": {
+      "pdf": "form1[0].page1[0].body[0].section3[0].question2[0].comment[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenancy.startDate": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question1[0].date[0]",
+      "type": "text"
+    },
+    "tenancy.isFixedTerm": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question2[0].choice1[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "tenancy.endDate": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question2[0].date[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "tenancy.isMonthly": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question2[0].choice2[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "tenancy.isOther": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question2[0].choice3[0]",
+      "type": "checkbox",
+      "on": "3"
+    },
+    "tenancy.otherText": {
+      "pdf": "form1[0].page1[0].body[0].section4[0].question2[0].specify[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "rent.dueDay": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].text[0]",
+      "type": "text"
+    },
+    "rent.periodIsMonth": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].month[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "rent.periodIsOther": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].other[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "rent.periodOtherText": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].specify[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "rent.baseAmount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row1[0].cost[0]",
+      "type": "text"
+    },
+    "rent.parkingAmount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row2[0].cost[0]",
+      "type": "text"
+    },
+    "rent.other1Text": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[0].specify[0]",
+      "type": "text"
+    },
+    "rent.other1Amount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[0].cost[0]",
+      "type": "text"
+    },
+    "rent.other2Text": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[1].specify[0]",
+      "type": "text"
+    },
+    "rent.other2Amount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[1].cost[0]",
+      "type": "text"
+    },
+    "rent.other3Text": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[2].specify[0]",
+      "type": "text"
+    },
+    "rent.other3Amount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row4[2].cost[0]",
+      "type": "text"
+    },
+    "rent.totalAmount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].Table1[0].Row6[0].totalcost[0]",
+      "type": "text",
+      "readonly": true
+    },
+    "form.addRentRowButton": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].navigBtns[0].add[0]",
+      "type": "button"
+    },
+    "rent.payableTo": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].#subform[2].questionc[0]",
+      "type": "text"
+    },
+    "rent.paymentMethods": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].#subform[3].questiond[0]",
+      "type": "text"
+    },
+    "rent.partial.amount": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].questione[0].day[0]",
+      "type": "text"
+    },
+    "rent.partial.paymentDate": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].questione[0].date[0]",
+      "type": "text"
+    },
+    "rent.partial.periodFrom": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].questione[0].RWFrom[0]",
+      "type": "text"
+    },
+    "rent.partial.periodTo": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].questione[0].RWTO[0]",
+      "type": "text"
+    },
+    "rent.nsfCharge": {
+      "pdf": "form1[0].page1[0].body[0].section5[0].questionf[0].day[0]",
+      "type": "text"
+    },
+    "services.gas.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.gas.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.airConditioning.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].yes[1]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.airConditioning.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].no[1]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.storage.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].yes[2]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.storage.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].no[2]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.laundry.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].yes[3]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.laundry.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].no[3]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.laundry.noCharge": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].charge1[0]",
+      "type": "checkbox",
+      "on": "1",
+      "readonly": true
+    },
+    "services.laundry.payPerUse": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].payperuse1[0]",
+      "type": "checkbox",
+      "on": "2",
+      "readonly": true
+    },
+    "services.guestParking.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].yes[4]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.guestParking.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].no[4]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.guestParking.noCharge": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].charge2[0]",
+      "type": "checkbox",
+      "on": "1",
+      "readonly": true
+    },
+    "services.guestParking.payPerUse": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].payperuse2[0]",
+      "type": "checkbox",
+      "on": "2",
+      "readonly": true
+    },
+    "services.other1.text": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[0].specify[0]",
+      "type": "text"
+    },
+    "services.other1.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.other1.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[0].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.other2.text": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[1].specify[0]",
+      "type": "text"
+    },
+    "services.other2.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[1].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.other2.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[1].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "services.other3.text": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[2].specify[0]",
+      "type": "text"
+    },
+    "services.other3.yes": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[2].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "services.other3.no": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].other[2].no[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "form.addServiceButton": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].suggestions[0].service[0].navigBtns[0].add[0]",
+      "type": "button"
+    },
+    "services.details": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].comment[0]",
+      "type": "text"
+    },
+    "utilities.electricity.landlord": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].Landlord[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "utilities.electricity.tenant": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].tenant[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "utilities.heat.landlord": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].Landlord[1]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "utilities.heat.tenant": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].tenant[1]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "utilities.water.landlord": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].Landlord[2]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "utilities.water.tenant": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].utilities[0].tenant[2]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "utilities.details": {
+      "pdf": "form1[0].page1[0].body[0].section6[0].comment2[0]",
+      "type": "text"
+    },
+    "discount.none": {
+      "pdf": "form1[0].page1[0].body[0].section7[0].question2[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "discount.applies": {
+      "pdf": "form1[0].page1[0].body[0].section7[0].question2[0].c[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "discount.description": {
+      "pdf": "form1[0].page1[0].body[0].section7[0].comment[0]",
+      "type": "text"
+    },
+    "rentDeposit.none": {
+      "pdf": "form1[0].page1[0].body[0].section8[0].question2[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "rentDeposit.required": {
+      "pdf": "form1[0].page1[0].body[0].section8[0].question2[0].c[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "rentDeposit.amount": {
+      "pdf": "form1[0].page1[0].body[0].section8[0].question2[0].deposit[0]",
+      "type": "text"
+    },
+    "keyDeposit.none": {
+      "pdf": "form1[0].page1[0].body[0].section9[0].question2[0].yes[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "keyDeposit.required": {
+      "pdf": "form1[0].page1[0].body[0].section9[0].question2[0].c[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "keyDeposit.amount": {
+      "pdf": "form1[0].page1[0].body[0].section9[0].question2[0].deposit[0]",
+      "type": "text"
+    },
+    "keyDeposit.description": {
+      "pdf": "form1[0].page1[0].body[0].section9[0].comment[0]",
+      "type": "text"
+    },
+    "smoking.noRules": {
+      "pdf": "form1[0].page1[0].body[0].section10[0].question2[0].None[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "smoking.hasRules": {
+      "pdf": "form1[0].page1[0].body[0].section10[0].question2[0].Smokingrules[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "smoking.rules": {
+      "pdf": "form1[0].page1[0].body[0].section10[0].comment[0]",
+      "type": "text"
+    },
+    "insurance.notRequired": {
+      "pdf": "form1[0].page1[0].body[0].section11[0].question2[0].choice1[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "insurance.required": {
+      "pdf": "form1[0].page1[0].body[0].section11[0].question2[0].choice2[0]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "additionalTerms.none": {
+      "pdf": "form1[0].page1[0].body[0].section15[0].choice1[0]",
+      "type": "checkbox",
+      "on": "1"
+    },
+    "additionalTerms.attached": {
+      "pdf": "form1[0].page1[0].body[0].section15[0].choice1[1]",
+      "type": "checkbox",
+      "on": "2"
+    },
+    "signatures.landlord.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature1[0].name[0]",
+      "type": "text"
+    },
+    "signatures.landlord.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature1[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.landlord.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature1[0].date[0]",
+      "type": "text"
+    },
+    "signatures.landlord2.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature2[0].name[0]",
+      "type": "text"
+    },
+    "signatures.landlord2.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature2[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.landlord2.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature2[0].date[0]",
+      "type": "text"
+    },
+    "signatures.landlord3.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature3[0].name[0]",
+      "type": "text"
+    },
+    "signatures.landlord3.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature3[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.landlord3.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature3[0].date[0]",
+      "type": "text"
+    },
+    "signatures.landlord4.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature4[0].name[0]",
+      "type": "text"
+    },
+    "signatures.landlord4.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature4[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.landlord4.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].signature4[0].date[0]",
+      "type": "text"
+    },
+    "form.addLandlordSignatureButton": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].navigationBtns2[0].add[0]",
+      "type": "button"
+    },
+    "form.removeLandlordSignatureButton": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].landlords[0].navigationBtns2[0].remove[0]",
+      "type": "button"
+    },
+    "signatures.tenant.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature1[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature1[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature1[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant2.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature2[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant2.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature2[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant2.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature2[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant3.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature3[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant3.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature3[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant3.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature3[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant4.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature4[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant4.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature4[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant4.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature4[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant5.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature5[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant5.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature5[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant5.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature5[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant6.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature6[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant6.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature6[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant6.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature6[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant7.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature7[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant7.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature7[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant7.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature7[0].date[0]",
+      "type": "text"
+    },
+    "signatures.tenant8.name": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature8[0].name[0]",
+      "type": "text"
+    },
+    "signatures.tenant8.signature": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature8[0].signature[0]",
+      "type": "signature"
+    },
+    "signatures.tenant8.date": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].signature8[0].date[0]",
+      "type": "text"
+    },
+    "form.addTenantSignatureButton": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].navigationBtns2[0].add[0]",
+      "type": "button"
+    },
+    "form.removeTenantSignatureButton": {
+      "pdf": "form1[0].page1[0].body[0].section17[0].tenants[0].navigationBtns2[0].remove[0]",
+      "type": "button"
+    },
+    "form.saveButton": {
+      "pdf": "form1[0].page1[0].body[0].navigationBtns[0].saveForm[0]",
+      "type": "button"
+    },
+    "form.printButton": {
+      "pdf": "form1[0].page1[0].body[0].navigationBtns[0].Print[0]",
+      "type": "button"
+    },
+    "form.resetButton": {
+      "pdf": "form1[0].page1[0].body[0].navigationBtns[0].Reset[0]",
+      "type": "button"
+    }
+  }
+}

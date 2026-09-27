@@ -24,10 +24,8 @@ export function jurisdictions(codes = []) {
   }))
 }
 
-// Leading args that name a jurisdiction directory select it; the rest pass through.
+// Args that name a jurisdiction directory select it, wherever they sit; the rest pass through.
 export function splitArgs(argv) {
   const known = new Set(jurisdictions().map((j) => j.code))
-  const codes = []
-  while (argv.length && known.has(argv[0])) codes.push(argv.shift())
-  return { codes, rest: argv }
+  return { codes: argv.filter((a) => known.has(a)), rest: argv.filter((a) => !known.has(a)) }
 }

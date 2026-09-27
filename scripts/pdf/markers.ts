@@ -4,7 +4,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { PDF } from "@libpdf/core";
 import { loadLayout } from "./layout";
-import type { FormMap } from "./fill-core";
+import { fillFromMap, type FormMap } from "./fill-core";
 
 const mapPath = process.argv[2] ?? "maps/bc/RTB-1.map.json";
 // a map under maps/<code>/ finds its PDF under forms/<code>/; an out/ candidate has no code, so name the PDF
@@ -30,7 +30,7 @@ for (const [key, e] of Object.entries(map.fields)) {
   raw[e.pdf] = f.w >= 110 ? `${tag} ${key}` : tag;
   legend.push(`p${f.page + 1} ${tag} x=${f.x} y=${f.y} w=${f.w}  ${key}   <- ${e.pdf}`);
 }
-const { filled, skipped } = pdf.getForm()!.fill(raw);
+const { filled, skipped } = fillFromMap(pdf.getForm()!, map, Object.fromEntries(Object.entries(map.fields).filter(([, e]) => e.pdf in raw).map(([k, e]) => [k, raw[e.pdf]!])));
 console.log(`filled ${filled.length} skipped ${skipped.length}`, skipped.slice(0, 10));
 await mkdir("out", { recursive: true });
 await writeFile(`out/${base}-allfields.pdf`, await pdf.save());
