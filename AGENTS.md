@@ -63,6 +63,13 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   Brunswick catalogue number pulled from its filename. Its `prefix` is an array of
   the two hosts its PDFs are split across (`pxw1.snb.ca` and `www2.snb.ca`);
   `detect-source-changes.mjs` accepts either a string or an array there.
+- Newfoundland and Labrador ids every form by the `RT-2018-NNNNN` number its own PDF
+  prints, read by hand into `scripts/sources/nl.mjs` since the filenames never carry
+  it; the two PDFs that print no such number (the condition report and the witness
+  affidavit) keep a short uppercase slug instead. None of its PDFs print a revision
+  date, so `current_version` is null throughout, and the lease's map sets
+  `revision_printed: false` with `revision: null`; the `pdf_sha256` alone pins
+  the file. File metadata dates are never used as a version.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
   in `schema/forms.schema.json` first.
@@ -90,9 +97,10 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 - A map's `revision` and `pdf_sha256` describe the one government PDF the map
   was verified against, so they are updated together, never one without the
   other, and only after re-verifying the form. A form whose PDF prints no
-  revision anywhere may set `"revision_printed": false`: `revision` and
-  `pdf_sha256` are still required, but the guard test skips searching the
-  PDF's extracted text for the revision string.
+  revision anywhere may set `"revision_printed": false`: the guard test then
+  skips searching the PDF's text for the revision string, and `revision` may be
+  a dated statement from the regulation or page that publishes the form, or
+  null when there is none. `pdf_sha256` is always required.
 
 ## Where things live
 

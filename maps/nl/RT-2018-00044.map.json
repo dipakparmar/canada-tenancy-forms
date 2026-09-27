@@ -1,0 +1,565 @@
+{
+  "form": "RT-2018-00044",
+  "revision": null,
+  "revision_printed": false,
+  "source": "https://www.gov.nl.ca/gs/files/landlord-rental-agreement.pdf",
+  "pdf_sha256": "7c5daeda55073049d97f73f7af9c2fbdab70f1e18d93a347316e3c5c217ee832",
+  "fields": {
+    "landlord.nameAndCompany": {
+      "pdf": "Landlord company name and owner name",
+      "type": "text"
+    },
+    "landlord.street": {
+      "pdf": "Street Number and Name for service",
+      "type": "text"
+    },
+    "landlord.apartment": {
+      "pdf": "Apartment Number",
+      "type": "text"
+    },
+    "landlord.city": {
+      "pdf": "City or Town",
+      "type": "text"
+    },
+    "landlord.province": {
+      "pdf": "Province",
+      "type": "text"
+    },
+    "landlord.postalCode": {
+      "pdf": "Postal Code",
+      "type": "text"
+    },
+    "landlord.email": {
+      "pdf": "Email",
+      "type": "text"
+    },
+    "landlord.phone": {
+      "pdf": "Telephone",
+      "type": "text"
+    },
+    "landlord.cell": {
+      "pdf": "Cellular",
+      "type": "text"
+    },
+    "tenant1.name": {
+      "pdf": "Tenant 1 Name",
+      "type": "text"
+    },
+    "tenant1.email": {
+      "pdf": "Email_2",
+      "type": "text"
+    },
+    "tenant1.phoneCell": {
+      "pdf": "TelephoneCellular",
+      "type": "text"
+    },
+    "tenant2.name": {
+      "pdf": "Tenant 2 Name",
+      "type": "text"
+    },
+    "tenant2.email": {
+      "pdf": "Email_3",
+      "type": "text"
+    },
+    "tenant2.phoneCell": {
+      "pdf": "TelephoneCellular_2",
+      "type": "text"
+    },
+    "agent.nameAndCompany": {
+      "pdf": "Agent Name company name and owner name",
+      "type": "text"
+    },
+    "agent.street": {
+      "pdf": "Street Number and Name",
+      "type": "text"
+    },
+    "agent.apartment": {
+      "pdf": "Apartment Number_2",
+      "type": "text"
+    },
+    "agent.city": {
+      "pdf": "City or Town_2",
+      "type": "text"
+    },
+    "agent.province": {
+      "pdf": "Province_2",
+      "type": "text"
+    },
+    "agent.postalCode": {
+      "pdf": "Postal Code_2",
+      "type": "text"
+    },
+    "agent.email": {
+      "pdf": "Email_4",
+      "type": "text"
+    },
+    "agent.phone": {
+      "pdf": "Telephone_2",
+      "type": "text"
+    },
+    "agent.cell": {
+      "pdf": "Cellular_2",
+      "type": "text"
+    },
+    "occupants.name1": {
+      "pdf": "1",
+      "type": "text"
+    },
+    "occupants.name4": {
+      "pdf": "4",
+      "type": "text"
+    },
+    "occupants.name2": {
+      "pdf": "2",
+      "type": "text"
+    },
+    "occupants.name5": {
+      "pdf": "5",
+      "type": "text"
+    },
+    "occupants.name3": {
+      "pdf": "3",
+      "type": "text"
+    },
+    "occupants.name6": {
+      "pdf": "6",
+      "type": "text"
+    },
+    "agreement.writtenDuplicate": {
+      "pdf": "Check Box1",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "agreement.oralOrImpliedWrittenNotice": {
+      "pdf": "Check Box2",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "premises.street": {
+      "pdf": "Text3",
+      "type": "text"
+    },
+    "premises.apartment": {
+      "pdf": "Text4",
+      "type": "text"
+    },
+    "premises.city": {
+      "pdf": "City or Town_3",
+      "type": "text"
+    },
+    "premises.postalCode": {
+      "pdf": "Postal Code_3",
+      "type": "text"
+    },
+    "premises.type.roomInBoardingHouse": {
+      "pdf": "room in a boarding house",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "premises.type.apartmentIn2ApartmentHouse": {
+      "pdf": "apartment in a 2apartment house",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "premises.type.mobileHome": {
+      "pdf": "mobile home",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "premises.type.singleFamilyHome": {
+      "pdf": "single family home",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "premises.type.apartmentInMultiApartmentBuilding": {
+      "pdf": "apartment in multi apartment building",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "premises.type.mobileHomeSite": {
+      "pdf": "mobile home site",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "lease.startDate": {
+      "pdf": "Text5",
+      "type": "text"
+    },
+    "lease.termType.weekToWeek": {
+      "pdf": "weektoweek",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "lease.termType.monthToMonth": {
+      "pdf": "monthtomonth",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "lease.termType.fixedTerm": {
+      "pdf": "fixed term ending on",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "lease.fixedTerm.endDate": {
+      "pdf": "undefined",
+      "type": "text"
+    },
+    "rent.amount": {
+      "pdf": "The tenant will pay rent in the amount of",
+      "type": "text"
+    },
+    "rent.dayOfWeek": {
+      "pdf": "day of each week",
+      "type": "text"
+    },
+    "rent.period.perWeek": {
+      "pdf": "per week on the",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.period.perMonth": {
+      "pdf": "per month on the",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rent.dayOfMonth": {
+      "pdf": "day of each month",
+      "type": "text"
+    },
+    "securityDeposit.notRequired": {
+      "pdf": "Security deposit is not required",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "securityDeposit.paid": {
+      "pdf": "Security deposit has been paid in the amount of",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "securityDeposit.amount": {
+      "pdf": "undefined_2",
+      "type": "text"
+    },
+    "securityDeposit.datePaid": {
+      "pdf": "on",
+      "type": "text"
+    },
+    "rentIncludes.utilities": {
+      "pdf": "Utilities",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.internet": {
+      "pdf": "Internet",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.cable": {
+      "pdf": "Cable",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.parking": {
+      "pdf": "Parking",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.snowClearing": {
+      "pdf": "Snow clearing",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.lawnCare": {
+      "pdf": "Lawn care",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.stove": {
+      "pdf": "Stove",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.refrigerator": {
+      "pdf": "Refrigerator",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.dishwasher": {
+      "pdf": "Dishwasher",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.microwave": {
+      "pdf": "Microwave",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.washer": {
+      "pdf": "Washer",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.dryer": {
+      "pdf": "Dryer",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "rentIncludes.other1": {
+      "pdf": "Check Box6",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rentIncludes.other1Description": {
+      "pdf": "undefined_3",
+      "type": "text"
+    },
+    "rentIncludes.other2": {
+      "pdf": "Check Box7",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rentIncludes.other2Description": {
+      "pdf": "undefined_4",
+      "type": "text"
+    },
+    "rentIncludes.other3": {
+      "pdf": "Check Box8",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rentIncludes.other3Description": {
+      "pdf": "undefined_5",
+      "type": "text"
+    },
+    "rentIncludes.other4": {
+      "pdf": "Check Box9",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "rentIncludes.other4Description": {
+      "pdf": "undefined_6",
+      "type": "text"
+    },
+    "obligations.noSmokingTobacco": {
+      "pdf": "No smoking tobacco as defined",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.noAnimalsOrPets": {
+      "pdf": "No animals or pets",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.utilities": {
+      "pdf": "Utilities_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.noSmokingCannabis": {
+      "pdf": "No smoking cannabis as defined",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.snowClearing": {
+      "pdf": "Snow clearing_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.noCannabisCultivation": {
+      "pdf": "No cultivation propagation or",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.tenantInsurance": {
+      "pdf": "Tenant insurance",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.lawnCare": {
+      "pdf": "Lawn care_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "obligations.other1": {
+      "pdf": "Check Box10",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "obligations.other1Description": {
+      "pdf": "undefined_7",
+      "type": "text"
+    },
+    "obligations.other2": {
+      "pdf": "Check Box11",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "obligations.other2Description": {
+      "pdf": "undefined_8",
+      "type": "text"
+    },
+    "obligations.other3": {
+      "pdf": "Check Box12",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "obligations.other3Description": {
+      "pdf": "1_2",
+      "type": "text"
+    },
+    "obligations.other4": {
+      "pdf": "Check Box13",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "obligations.other4Description": {
+      "pdf": "2_2",
+      "type": "text"
+    },
+    "obligations.other5": {
+      "pdf": "Check Box14",
+      "type": "checkbox",
+      "on": "Yes"
+    },
+    "obligations.other5Description": {
+      "pdf": "3_2",
+      "type": "text"
+    },
+    "terminationNotice.weekToWeek.tenant": {
+      "pdf": "At least 7 days before the end of",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.weekToWeek.landlord": {
+      "pdf": "Week to Week",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.monthToMonth.tenant": {
+      "pdf": "At least 1 month before the end of",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.monthToMonth.landlord": {
+      "pdf": "Month to Month",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.fixedTerm.tenant": {
+      "pdf": "At least 2 months before the end of",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.fixedTerm.landlord": {
+      "pdf": "Fixed Term",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.mobileHomeSite.tenant": {
+      "pdf": "At least 1 month before the end of_2",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "terminationNotice.mobileHomeSite.landlord": {
+      "pdf": "Mobile Home Site",
+      "type": "checkbox",
+      "on": "On"
+    },
+    "landlordEmergencyContact.name": {
+      "pdf": "In the event of an emergency I authorize the tenants to contact the following Name",
+      "type": "text"
+    },
+    "landlordEmergencyContact.street": {
+      "pdf": "Street Number and Name_2",
+      "type": "text"
+    },
+    "landlordEmergencyContact.apartment": {
+      "pdf": "Apartment Number_3",
+      "type": "text"
+    },
+    "landlordEmergencyContact.city": {
+      "pdf": "City or Town_4",
+      "type": "text"
+    },
+    "landlordEmergencyContact.province": {
+      "pdf": "Province_3",
+      "type": "text"
+    },
+    "landlordEmergencyContact.postalCode": {
+      "pdf": "Postal Code_4",
+      "type": "text"
+    },
+    "landlordEmergencyContact.email": {
+      "pdf": "Email_5",
+      "type": "text"
+    },
+    "landlordEmergencyContact.phone": {
+      "pdf": "Telephone_3",
+      "type": "text"
+    },
+    "landlordEmergencyContact.cell": {
+      "pdf": "Cellular_3",
+      "type": "text"
+    },
+    "tenantEmergencyContact.name": {
+      "pdf": "In the event of an emergency I authorize the landlord to contact the following Name",
+      "type": "text"
+    },
+    "tenantEmergencyContact.street": {
+      "pdf": "Street Number and Name_3",
+      "type": "text"
+    },
+    "tenantEmergencyContact.apartment": {
+      "pdf": "Apartment Number_4",
+      "type": "text"
+    },
+    "tenantEmergencyContact.city": {
+      "pdf": "City or Town_5",
+      "type": "text"
+    },
+    "tenantEmergencyContact.province": {
+      "pdf": "Province_4",
+      "type": "text"
+    },
+    "tenantEmergencyContact.postalCode": {
+      "pdf": "Postal Code_5",
+      "type": "text"
+    },
+    "tenantEmergencyContact.email": {
+      "pdf": "Email_6",
+      "type": "text"
+    },
+    "tenantEmergencyContact.phone": {
+      "pdf": "Telephone_4",
+      "type": "text"
+    },
+    "tenantEmergencyContact.cell": {
+      "pdf": "Cellular_4",
+      "type": "text"
+    },
+    "landlord.signature": {
+      "pdf": "Signature15",
+      "type": "signature"
+    },
+    "landlord.signDate": {
+      "pdf": "Text18",
+      "type": "text"
+    },
+    "tenant1.signature": {
+      "pdf": "Signature16",
+      "type": "signature"
+    },
+    "tenant1.signDate": {
+      "pdf": "Text19",
+      "type": "text"
+    },
+    "tenant2.signature": {
+      "pdf": "Signature17",
+      "type": "signature"
+    },
+    "tenant2.signDate": {
+      "pdf": "Text20",
+      "type": "text"
+    }
+  }
+}

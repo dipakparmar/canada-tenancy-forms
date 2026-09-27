@@ -21,7 +21,9 @@ for (const { code, mapsDir, formsDir, mapFile } of maps) {
 
   test(`${id}: map header names the form and its source`, () => {
     expect(map.form).toBe(id.split("/")[1]);
-    expect(map.revision).toMatch(/^\d{4}\/\d{2}$/);
+    // revision is the stamp the PDF prints; null only when revision_printed is false and no dated statement exists
+    if (map.revision === null) expect(map.revision_printed).toBe(false);
+    else expect(map.revision).toMatch(/^\d{4}\/\d{2}$/);
     expect(map.source).toMatch(/^https:\/\//);
     expect(map.pdf_sha256).toMatch(/^[0-9a-f]{64}$/);
   });

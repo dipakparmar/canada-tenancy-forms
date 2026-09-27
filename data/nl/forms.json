@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27",
+  "source": {
+    "publisher": "Residential Tenancies Office, Government Services, Government of Newfoundland and Labrador",
+    "index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+    "snapshot_sha256": "f9724c8f0afd2ce51b4aeff5a7318922b46d38ccaebb15df1b57c5c97cb944cc"
+  },
+  "dataset": {
+    "id": "nl-rto-forms-catalog",
+    "jurisdiction": "Newfoundland and Labrador, Canada",
+    "authority": "Residential Tenancies Office",
+    "id_pattern": "^(RT-2018-[0-9]{5}|CONDITION-REPORT|WITNESS-AFFIDAVIT)$",
+    "last_verified": "2026-09-27",
+    "official_forms_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+    "official_forms_numbered_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "id rule: every catalogued PDF except two prints a form number in its own footer or header, \"RT-2018-NNNNN\", tied to the Residential Tenancies Act, 2018; that printed number is the id. The two exceptions print no form number anywhere in their text: the Rental Premises Condition Report (id CONDITION-REPORT) and the Witness Affidavit (id WITNESS-AFFIDAVIT), both given a short uppercase slug instead. The PDF filenames do not carry the printed number, so scripts/sources/nl.mjs keys each by filename in a table read by hand against every PDF's own text.",
+      "None of the catalogued PDFs print a revision date, edition number, or \"last updated\" line anywhere in their text (checked by hand across all 22, including the standard lease); current_version is null for every record.",
+      "The index page (gov.nl.ca/gs/landlord-tenant/residential-tenancies/) links these forms directly from an \"Applications\" and a \"Forms\" list inside the page's own content; it also carries unrelated site-template links (a fee schedule, LMAC selection criteria, an occupational health medical audit) that the updater excludes by only scanning the page's entry-content block. The Complaint Form Instructions PDF, linked next to the Complaint Form, is an instruction sheet rather than a form and is skipped entirely.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or the Act states otherwise. The Standard Rental Agreement's Part 2 (Landlord Agent) is the only place the forms themselves name an agent role directly.",
+      "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; the Residential Tenancies Act, 2018 and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "landlord_or_tenant",
+      "witness",
+      "office"
+    ],
+    "matter_types": [
+      "agreement",
+      "rent",
+      "ending_tenancy",
+      "abandonment",
+      "abandoned_property",
+      "repairs",
+      "entry",
+      "condition_inspection",
+      "dispute_resolution",
+      "service_of_documents",
+      "representation",
+      "complaint"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the rental agreement. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority the landlord has given, and may be named as the Landlord Agent in Part 2 of the Standard Rental Agreement.",
+      "tenant": "The person or persons named as tenant under the rental agreement. A tenant signs tenant-originated forms and receives landlord notices.",
+      "practical_rule": "Identify the legal landlord in Part 1 of the Standard Rental Agreement and name an agent, if any, in Part 2. Keep written proof of any agent's authority to act for the landlord."
+    },
+    "document_controls": [
+      "Record the form id, completion date, service date, serving person, recipient, service method, and proof of service.",
+      "Use the official Residential Tenancies Office form rather than reproducing a private form when the Act requires a prescribed form.",
+      "An Affidavit of Service must be submitted to the Residential Tenancies Office for each respondent served, before the hearing date.",
+      "Keep the signed rental agreement, the Rental Premises Condition Report, any notice served, and proof of service together for any later application to the Residential Tenancies Office."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:nl-1",
+      "title": "Applications and Forms - Residential Tenancies Office",
+      "url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "last_updated_as_found": "2026-09-27",
+      "coverage": "Index page listing residential tenancy PDF forms directly by name, under Applications and Forms headings; no version dates on the index page itself."
+    }
+  ],
+  "forms": [
+    {
+      "id": "RT-2018-00044",
+      "form_name": "Standard Rental Agreement",
+      "status": "active",
+      "category": "lease",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-rental-agreement.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "May be named as the Landlord Agent in Part 2 and complete or sign on the landlord's behalf where the agreement indicates an agent, but the landlord's legal name goes in Part 1 and the landlord signs Part 19.",
+      "use_when": "Starting a residential tenancy in Newfoundland and Labrador, whether the agreement is written and signed in duplicate or is written notice of an oral or implied agreement.",
+      "related_forms": ["CONDITION-REPORT"],
+      "legal_effect": "Sets the binding terms of the tenancy; any added term that contravenes the Residential Tenancies Act, 2018 is void and has no effect.",
+      "source_basis": [
+        "\"This document is: Agreement written in duplicate and signed by the parties / Written notice of an oral or implied agreement between the parties\" (Standard Rental Agreement, Part 4)",
+        "\"Any term or condition added to this agreement that contravenes any of the provisions of the Residential Tenancies Act, 2018 is void and has no effect\" (Standard Rental Agreement, Part 18)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00039",
+      "form_name": "Landlord's Notice to Terminate - Standard",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-landlords-notice-to-terminate-standard.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord wants to terminate a week-to-week, month-to-month, fixed term, or mobile home site rental agreement at the regular end of its term or period, without alleging cause.",
+      "related_forms": ["RT-2018-00040"],
+      "legal_effect": "Requires the tenant to move out on the stated date; the notice period depends on tenancy type (4 weeks to 6 months) and must include a full rental period.",
+      "source_basis": [
+        "\"Section 18(2)(b) Month to month rental agreement - the landlord must provide the tenant with notice of not less than 3 months before the end of the rental period\" (Landlord's Notice to Terminate - Standard)",
+        "\"The notice period must include a full rental period\" (Landlord's Notice to Terminate - Standard)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00040",
+      "form_name": "Landlord's Notice to Terminate Early - Cause",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-landlords-notice-to-terminate-early-cause.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord wants to terminate the rental agreement early for non-payment of rent, breach of a material term, an uninhabitable premises, an unmet tenant obligation, or interference with peaceful enjoyment.",
+      "do_not_use_when": ["Terminating at the regular end of the tenancy without alleging cause (use RT-2018-00039)."],
+      "related_forms": ["RT-2018-00039"],
+      "legal_effect": "Requires the tenant to move out, with notice periods and preconditions that vary by ground, ranging from immediate to 10 days after service.",
+      "source_basis": [
+        "\"In a week to week rental agreement, rent must be overdue for 3 days or more before the landlord can give a notice to move out not less than 3 days after the notice is served\" (Landlord's Notice to Terminate Early - Cause)",
+        "\"Where a tenant makes a residential premises unfit for habitation ... the landlord may give the tenant notice ... required to move out immediately\" (Landlord's Notice to Terminate Early - Cause)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00041",
+      "form_name": "Tenant's Notice to Terminate Early - Cause",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/8Tentants-Notice-to-Terminate-Early-Cause00041.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "The tenant wants to terminate the rental agreement early because the landlord breached a material term, the premises became uninhabitable, or the landlord interfered with the tenant's peaceful enjoyment.",
+      "related_forms": ["RT-2018-00045"],
+      "legal_effect": "Ends the tenancy on the date the notice specifies; notice periods vary by ground, from immediate termination to 5-14 days after service.",
+      "source_basis": [
+        "\"Where a landlord fails to maintain the residential premises in a good state of repair, fit for habitation ... the tenant may give the landlord notice that the rental agreement is terminated immediately\" (Tenant's Notice to Terminate Early - Cause)",
+        "\"the tenant may give the landlord notice that the rental agreement is terminated on a specified date not less than 5 days, but not more than 14 days, after the notice has been served\" (Tenant's Notice to Terminate Early - Cause)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00042",
+      "form_name": "Tenant's Notice to Terminate Early - Special",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-tenants-notice-to-terminate-early-special.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "The tenant needs to terminate a fixed term rental agreement early because of the tenant's own ill health, a supporter's ill health, admission to a care home, or the tenant's death, with supporting evidence.",
+      "related_forms": [],
+      "legal_effect": "Ends a fixed term rental agreement early on at least one month's notice, once the required evidence accompanies the notice.",
+      "source_basis": [
+        "\"Where the tenant's income is reduced as a result of ill health and evidence is provided ... the tenant may terminate a rental agreement by giving notice of not less than one month's rental period\" (Tenant's Notice to Terminate - Special Circumstance)",
+        "\"Where the tenant dies and the notice to the landlord is accompanied by evidence of the tenant's death, the assigned representative of the tenant may terminate the rental agreement\" (Tenant's Notice to Terminate - Special Circumstance)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00045",
+      "form_name": "Tenant's Notice to Terminate - Standard",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/5Tenants-Notice-to-Terminate-Standard00045.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "The tenant wants to terminate a week-to-week, month-to-month, fixed term, or mobile home site rental agreement at the regular end of its term or period.",
+      "related_forms": ["RT-2018-00041"],
+      "legal_effect": "Ends the tenancy on the stated date; the notice period depends on tenancy type (7 days to 2 months) and must include a full rental period.",
+      "source_basis": [
+        "\"Section 18(1)(c) Fixed term rental agreement - the tenant must provide the landlord with termination notice of not less than 2 months before the end of the fixed term\" (Tenant's Notice to Terminate - Standard)",
+        "\"The termination date must be the same date as the last date of the rental period\" (Tenant's Notice to Terminate - Standard)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00046",
+      "form_name": "Application to Dispose of Personal Property",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-application-to-dispose-of-abandoned-property.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A tenant abandoned personal property when the rental agreement ended, and the landlord believes the property has no monetary value, is unsanitary or unsafe to store, or would cost more to remove and sell than it would earn.",
+      "do_not_use_when": ["The property could instead be sold for more than the cost to remove, store and sell it (use RT-2018-00048)."],
+      "related_forms": ["RT-2018-00048"],
+      "legal_effect": "Authorizes the landlord to immediately dispose of the property inventoried in the application, once the Director approves.",
+      "source_basis": [
+        "\"The property inventoried in Part 7 is of no monetary value, unsanitary or unsafe to store; or would cost more to remove, store and sell than proceeds from selling it\" (Application to Dispose of Abandoned Personal Property)",
+        "\"I request approval to immediately dispose of the property identified in Part 7\" (Application to Dispose of Abandoned Personal Property)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00048",
+      "form_name": "Application to Sell Personal Property",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "abandoned_property",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-application-to-sell-abandoned-property.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A tenant abandoned personal property when the rental agreement ended, and selling it would bring in more than the cost to remove, store and sell it.",
+      "do_not_use_when": ["The property has no monetary value or would cost more to sell than it would earn (use RT-2018-00046)."],
+      "related_forms": ["RT-2018-00046"],
+      "legal_effect": "Authorizes the landlord, once the Director approves, to sell the abandoned property if the tenant does not reclaim it after 30 days of storage.",
+      "source_basis": [
+        "\"The proceeds from selling the property inventoried in Part 7 would be more than the cost to remove, store and sell\" (Application to Sell Abandoned Personal Property)",
+        "\"I request approval to sell the abandoned property inventories in Part 7 if after storing for 30 days, the tenant does not take possession\" (Application to Sell Abandoned Personal Property)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00050",
+      "form_name": "Landlord's Notice to Increase Rent",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "rent",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-notice-to-increase-rent-fillable.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord wants to increase the rent, outside a fixed term and not more than once in a 12-month period, and not within the first 12 months of the tenancy.",
+      "related_forms": [],
+      "legal_effect": "Increases the rent from the stated effective date, once given at least 8 weeks' notice (week to week) or 6 months' notice (month to month or fixed term).",
+      "source_basis": [
+        "\"a landlord may not increase the rent ... more than once in a 12 month period where the residential premises is rented from week to week or month to month\" (Landlord's Notice to Increase Rent)",
+        "\"not less than 6 months before the effective date of the increase where the residential premises is rented from month to month or for a fixed term\" (Landlord's Notice to Increase Rent)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00051",
+      "form_name": "Landlord's Request for Repairs",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "repairs",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-notice-tentant-repairs.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The tenant has not kept the premises clean or repaired damage they caused, and the landlord wants the tenant to complete repairs within a reasonable time.",
+      "related_forms": [],
+      "legal_effect": "Requests specific repairs by a stated date; if the tenant does not comply, the landlord may apply for an order requiring repairs or compensation for damages.",
+      "source_basis": [
+        "\"a landlord has a right to request the tenant to make repairs within a time period not less than 3 days\" (Landlord's Request for Repairs)",
+        "\"an Order directing a tenant to pay the landlord an amount of as compensation for damages\" (Landlord's Request for Repairs)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00052",
+      "form_name": "Tenant's Request for Repairs",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "repairs",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-request-for-repairs.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "The landlord has not maintained the premises in a good state of repair or complied with health, safety or housing laws, and the tenant wants repairs completed within a reasonable time.",
+      "related_forms": [],
+      "legal_effect": "A precondition for the Residential Tenancies Office to accept a dispute resolution application seeking repairs: the tenant must show this form was served and repairs were not made.",
+      "source_basis": [
+        "\"a tenant has a right to request the landlord to make repairs within a reasonable period of time\" (Tenant's Request for Repairs)",
+        "\"a copy of the Tenant's Request for Repairs has been served on the landlord and the landlord has failed to make the repairs within a reasonable amount of time\" (Tenant's Request for Repairs)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00053",
+      "form_name": "Application for Dispute Resolution",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-dispute-resolution.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A landlord or tenant wants the Residential Tenancies Office to decide a dispute, such as validity of a termination notice, a security deposit or rent refund, compensation, or repairs.",
+      "related_forms": ["RT-2018-00057", "RT-2018-00055"],
+      "legal_effect": "Starts the dispute resolution process and, once mediation consent is given, offers mediation before the hearing date.",
+      "source_basis": [
+        "\"The applicant wants: Validity of termination notice determined ... Security deposit refunded ... Rent refunded\" (Application for Dispute Resolution)",
+        "\"Upon receiving consent from both parties, a Residential Tenancies Officer will be assigned to work with the parties to reach a mutually agreed solution\" (Application for Dispute Resolution)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00054",
+      "form_name": "Landlord's Notice of Abandonment",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "abandonment",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-landlords-notice-of-abandonment.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord believes the tenant has vacated the premises, the rental agreement was not properly terminated, and rent is overdue, before the landlord enters to take possession.",
+      "related_forms": [],
+      "legal_effect": "Gives the landlord authority to enter and take possession at the stated date and time, unless the tenant notifies the landlord beforehand that the premises has not been abandoned.",
+      "source_basis": [
+        "\"Before entering a residential premises for the purpose of taking possession, the landlord must post a notice ... not less than 24 hours before entering\" (Landlord's Notice of Abandonment)",
+        "\"Where the tenant notifies the landlord that the residential premises has not been abandoned, the landlord may not enter\" (Landlord's Notice of Abandonment)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00055",
+      "form_name": "Application for Substituted Service",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "service_of_documents",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-application-for-substituted-service-dec2013.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The applicant has attempted the standard methods of service on the respondent without success and needs the Residential Tenancies Office to authorize another way of serving documents.",
+      "related_forms": ["RT-2018-00053"],
+      "legal_effect": "Requests an alternate, authorized method of serving an application, notice of hearing, order, decision, or certified order on the respondent.",
+      "source_basis": [
+        "\"Declare that I have made attempts to serve the respondent\" (Application for Substituted Service)",
+        "field labels: \"Application / Notice of Hearing\", \"Order and Decision\", \"Notice of Rescheduled Hearing\", \"Certified Order\" (Application for Substituted Service)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00056",
+      "form_name": "Tenant's Application to Terminate - Family Violence",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-tenants-application-to-terminate.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "office", "landlord"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "A tenant's or their child's safety is at risk from family violence if the tenancy continues, and the tenant wants a certificate to terminate a month-to-month or fixed term rental agreement early.",
+      "related_forms": [],
+      "legal_effect": "If the Director issues a certificate, the tenant may terminate the rental agreement on at least 30 days' notice and is responsible for rent only until the end of that notice period.",
+      "source_basis": [
+        "\"believes that because of family violence his or her own safety or the safety of a child residing with the tenant is at risk if he or she continues to reside\" (Tenant's Application to Terminate - Family Violence)",
+        "\"the tenant may terminate a rental agreement by giving at least 30 days' notice to the landlord ... responsible for the payment of rent only until the end of the notice period\" (Tenant's Application to Terminate - Family Violence)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00057",
+      "form_name": "Affidavit of Service",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "service_of_documents",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-affidavit-of-service.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "An applicant has served a dispute resolution application and notice of hearing on a respondent and must confirm to the Residential Tenancies Office that service was completed before the hearing.",
+      "related_forms": ["RT-2018-00053", "RT-2018-00055"],
+      "legal_effect": "Provides sworn proof of service the Residential Tenancies Office requires before the hearing date for each respondent served.",
+      "source_basis": [
+        "\"Each respondent named in the application must be served individually with the copy of the application at least 10 days before the date of the hearing\" (Affidavit of Service)",
+        "\"The affidavit must state the name of the person served, the address of service, as well as the date and time of service\" (Affidavit of Service)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00058",
+      "form_name": "Application for Certification",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-application-for-certification.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The other party did not comply with a Director's Order or a Mediated Agreement, and the applicant wants the Order or Agreement certified before filing it in court.",
+      "related_forms": [],
+      "legal_effect": "Certifies the Order or Mediated Agreement so it can be filed in court; certification requires that a copy of the Order was already received by the parties.",
+      "source_basis": [
+        "\"Use this form only when the parties do not comply with the Order of the Director or the terms of a Mediated Agreement\" (Application for Certification)",
+        "\"Orders will not be certified unless a copy of the Order has been received by the parties to the Order\" (Application for Certification)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00059",
+      "form_name": "Authorized Representative",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "representation",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-authorized-representative.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "not_applicable",
+      "use_when": "An applicant wants to authorize another person to represent them in a Residential Tenancies Office proceeding and to see the applicant's case file.",
+      "do_not_use_when": ["The applicant wants to give the representative power of attorney or authority to sign documents or make decisions on the applicant's behalf; this form does not do that."],
+      "related_forms": [],
+      "legal_effect": "Authorizes the named person to represent the applicant and receive the case file information for that proceeding only.",
+      "source_basis": [
+        "\"This form is to be completed by the applicant to authorize another person to represent the applicant in a proceeding and to disclose the applicant's case file to the authorized person\" (Authorized Representative)",
+        "\"This form is not a power of attorney and does not delegate authority allowing the applicant's representative to make decisions or sign documents\" (Authorized Representative)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00063",
+      "form_name": "Landlord's Notice to Enter Premises",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "entry",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/Landlords-Notice-to-Enter-Premises00063.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord wants to enter the residential premises for a stated reason and needs to give the tenant the required written notice.",
+      "do_not_use_when": ["Entering to show the premises after a termination notice has been given, which only needs a reasonable effort to give at least 4 hours' notice."],
+      "related_forms": [],
+      "legal_effect": "Authorizes the landlord to enter at the stated date and time for the stated purpose, once at least 24 hours' written notice has been given.",
+      "source_basis": [
+        "\"the entry is made at a reasonable time and written notice of the time of the entry has been given to the tenant at least 24 hours in advance\" (Landlord's Notice to Enter Premises)",
+        "\"If the landlord does not meet the responsibility to provide proper notice ... the tenant has a right to terminate the tenancy for interference with peaceful enjoyment\" (Landlord's Notice to Enter Premises)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RT-2018-00099",
+      "form_name": "Complaint Form",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "complaint",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/Complaint-Form.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A landlord or tenant wants to formally complain that the other party contravened a specific provision of the Residential Tenancies Act, 2018, such as the rental agreement, security deposit, or payment record requirements.",
+      "related_forms": [],
+      "legal_effect": "Places the complaint on record with the Residential Tenancies section for review of the identified contravention.",
+      "source_basis": [
+        "\"Identify the section(s) of the Residential Tenancies Act, 2018 that relates to the complaint\" (Complaint Form)",
+        "\"Section 7: Provision of Rental Agreement and Information ... Section 14(1-8): Security Deposit ... Section 17(3): Record of Tenants Payments\" (Complaint Form)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "CONDITION-REPORT",
+      "form_name": "Rental Premises Condition Report",
+      "status": "active",
+      "category": "condition_inspection",
+      "matter_type": "condition_inspection",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-condition-report.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_sign_as_authorized_agent",
+      "use_when": "Recording the condition of a rental unit at the start and end of a tenancy, room by room, for later comparison.",
+      "related_forms": ["RT-2018-00044"],
+      "legal_effect": "Creates a signed record of the premises' condition on move-in and move-out that both parties keep as a permanent record.",
+      "source_basis": [
+        "\"We, the below signed, do hereby acknowledge the condition of the above noted rental premises as indicated by our signature on the incoming and outgoing inspection reports\" (Rental Premises Condition Report)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "WITNESS-AFFIDAVIT",
+      "form_name": "Witness Affidavit",
+      "status": "active",
+      "category": "dispute_resolution",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.gov.nl.ca/gs/files/landlord-witness-affidavit.pdf",
+      "official_index_url": "https://www.gov.nl.ca/gs/landlord-tenant/residential-tenancies/",
+      "initiating_party": "witness",
+      "parties": ["witness", "office"],
+      "property_manager_role": "not_applicable",
+      "use_when": "A witness with personal knowledge of the facts of a dispute resolution application wants to submit sworn evidence rather than, or in addition to, testifying at the hearing.",
+      "related_forms": ["RT-2018-00053"],
+      "legal_effect": "Becomes sworn evidence in the application once affirmed before a Justice of the Peace, Notary Public, or Commissioner for Oaths.",
+      "source_basis": [
+        "\"I have personal knowledge of the facts related to the application which are true to the best of my knowledge, information and belief\" (Witness Affidavit)",
+        "\"SWORN OR AFFIRMED before me at (location) ... Justice of the Peace, Notary Public, Commissioner for Oaths\" (Witness Affidavit)"
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}
