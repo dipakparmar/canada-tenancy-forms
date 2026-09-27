@@ -1,8 +1,8 @@
 # AGENTS.md
 
-Machine-readable catalog of residential tenancy forms, one directory per
-jurisdiction (`data/<code>/forms.json`, BC first as `bc`), plus a scheduled
-updater that opens a PR when an official forms page changes.
+Machine-readable catalog of Canadian residential tenancy forms, one directory
+per jurisdiction (`data/<code>/forms.json`: `bc`, `on`), plus a scheduled
+updater that opens a PR per jurisdiction when an official forms page changes.
 
 **The one rule:** never edit human-maintained fields (`category`, `matter_type`,
 `initiating_party`, `parties`, `property_manager_role`, `use_when`,
@@ -54,9 +54,16 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   in `schema/forms.schema.json` first.
 - A map's `form` must equal the catalog id and its file must be
   `maps/<code>/<ID>.map.json`.
-- Adding a jurisdiction means a `data/<code>/forms.json` and a
-  `scripts/sources/<code>.mjs` exporting `prefix` and `extract(html)`;
-  everything else picks the directory up by itself.
+- Adding a jurisdiction means a `data/<code>/forms.json`, a
+  `scripts/sources/<code>.mjs` exporting `prefix` and `extract(html)`, and the
+  code added to the matrix in `.github/workflows/update-forms.yml`; everything
+  else picks the directory up by itself.
+- A form the updater cannot see (Ontario's 2229E lives on a different site) is
+  catalogued by hand with an `official_url` outside the source `prefix`; the
+  updater then never touches it.
+- A map entry may carry `readonly: true` for a field the PDF flags read-only at
+  rest (2229E unlocks those with its own scripts); `fillFromMap` clears the flag
+  when asked to write one.
 - Map semantic keys are hand-verified against a rendered page, not derived from
   the PDF field names, which Acrobat auto-generated and which frequently name
   the label before the widget. Change a key only with a marker render check

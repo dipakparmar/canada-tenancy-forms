@@ -1,18 +1,22 @@
-# bc-rtb-forms
+# canada-tenancy-forms
 
-A machine-readable catalog of the forms published by the British Columbia Residential
-Tenancy Branch (RTB), plus a scheduled job that notices when the official forms page
-changes and opens a pull request for a human to review. The repo is standalone: consume
-[`data/bc/forms.json`](data/bc/forms.json) directly, or pin a release.
+A machine-readable catalog of the residential tenancy forms published by Canadian
+provinces, plus a scheduled job that notices when an official forms page changes and opens
+a pull request for a human to review. The repo is standalone: consume
+`data/<code>/forms.json` directly, or pin a release.
 
-Everything is laid out per jurisdiction so other provinces can be added alongside BC: one
-directory code (`bc`) selects the catalog, its field maps, its snapshot and its page
-extractor. Scripts take jurisdiction codes as leading arguments and default to all of them.
+| Code | Jurisdiction | Authority | Forms | Field maps |
+|---|---|---|---|---|
+| `bc` | British Columbia | Residential Tenancy Branch | 72, classified | RTB-1, RTB-27 |
+| `on` | Ontario | Landlord and Tenant Board, plus the Ministry's standard lease | 35, only 2229E classified | 2229E |
+
+One directory code selects a jurisdiction's catalog, field maps, snapshot and page
+extractor. Scripts take jurisdiction codes as arguments and default to all of them.
 
 ## Layout
 
 ```
-data/<code>/forms.json               the catalog, one per jurisdiction (bc)
+data/<code>/forms.json               the catalog, one per jurisdiction (bc, on)
 schema/forms.schema.json             JSON Schema (draft-07) shared by every catalog
 maps/<code>/<ID>.map.json            field maps: semantic key -> AcroForm field
 scripts/jurisdictions.mjs            lists the jurisdiction directories for the other scripts
@@ -60,7 +64,8 @@ The record shape is defined in
 ## Updater behaviour
 
 - Runs weekly (Mondays 15:00 UTC) and on manual trigger.
-- Opens or updates one PR on the fixed branch `chore/rtb-forms-update`.
+- Runs once per jurisdiction and opens or updates one PR each, on the fixed branch
+  `chore/forms-update-<code>`.
 - Only touches source-controlled fields, never human-maintained ones.
 - Never retires a form on its own; a `historical_or_replaced` status change is a human edit.
 - A catalogued form absent from the index page is reported as informational only, not
@@ -190,15 +195,17 @@ valid for your situation. A source change always needs human review before it is
 ## Copyright and licence
 
 Form numbers, names, and PDF links in this catalog are drawn from forms published by the
-Government of British Columbia's Residential Tenancy Branch. We link to the government's
-PDFs; we never redistribute them, and we do not store a copy of the government's forms
-page (`scripts/detect-source-changes.mjs` keeps only a hash of the fetched page plus our
-own extracted inventory in `snapshots/<code>/latest.json`, for change detection). That government
-content remains copyright Government of British Columbia. This repository's own code and
-human-written metadata (categorization, `use_when`, `related_forms`, and similar fields)
-are MIT licensed, as below. The Open Government Licence - British Columbia does not apply
-here, since none of this data is published in the BC Data Catalogue.
+Government of British Columbia's Residential Tenancy Branch and by the Government of
+Ontario (the Landlord and Tenant Board and the Ministry of Municipal Affairs and Housing).
+We link to the governments' PDFs; we never redistribute them, and we do not store a copy of
+any government forms page (`scripts/detect-source-changes.mjs` keeps only a hash of the
+fetched page plus our own extracted inventory in `snapshots/<code>/latest.json`, for change
+detection). That government content remains copyright of the respective Crown. This
+repository's own code and human-written metadata (categorization, `use_when`,
+`related_forms`, and similar fields) are MIT licensed, as below. The Open Government
+Licence - British Columbia does not apply here, since none of this data is published in the
+BC Data Catalogue.
 
 ## License
 
-MIT, see [LICENSE](LICENSE). The forms themselves belong to the Province of British Columbia.
+MIT, see [LICENSE](LICENSE). The forms themselves belong to the respective provinces.

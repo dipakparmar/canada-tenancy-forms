@@ -1,9 +1,9 @@
 {
-  "name": "bc-rtb-forms",
+  "name": "canada-tenancy-forms",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Machine-readable catalog of British Columbia Residential Tenancy Branch forms",
+  "description": "Machine-readable catalog of Canadian residential tenancy forms, one jurisdiction per directory",
   "license": "MIT",
   "packageManager": "bun@1.4.2",
   "scripts": {
