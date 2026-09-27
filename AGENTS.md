@@ -57,6 +57,12 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
   and 9 (Parts 1 to 8 of the Residential Tenancies Regulation, and Part 9); a Part 9
   form's id keeps a `P9-` prefix (`P9-2`) to stay unique, while a Parts 1-8 form keeps
   its bare number.
+- New Brunswick ids the small number of PDFs that print a regulation form number
+  (`FORM 6 STANDARD FORM OF LEASE`) by that bare number even when the number never
+  appears in the index page's own link text; every other form keeps the Service New
+  Brunswick catalogue number pulled from its filename. Its `prefix` is an array of
+  the two hosts its PDFs are split across (`pxw1.snb.ca` and `www2.snb.ca`);
+  `detect-source-changes.mjs` accepts either a string or an array there.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
   in `schema/forms.schema.json` first.

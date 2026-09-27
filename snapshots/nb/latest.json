@@ -1,0 +1,117 @@
+{
+  "fetched_at": "2026-09-27",
+  "index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+  "sha256": "597666d7183b8e25da385a86641bcf6a5ce2a6e51ed6860e051d6f69b70744c5",
+  "forms": [
+    {
+      "id": "3",
+      "form_name": "Application to the Residential Tenancies Officer",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3628B.pdf"
+    },
+    {
+      "id": "5",
+      "form_name": "Security Deposit Transfer to New Premises",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3630B.pdf"
+    },
+    {
+      "id": "6",
+      "form_name": "Standard Form of Lease",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/e/1000/CSS-FOL-SNB-45-0065E.pdf"
+    },
+    {
+      "id": "7",
+      "form_name": "Request for Consent to Assign Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3631B.pdf"
+    },
+    {
+      "id": "8",
+      "form_name": "Notice of Transfer",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3632B.pdf"
+    },
+    {
+      "id": "10",
+      "form_name": "Third-Party Declaration",
+      "official_url": "https://www2.snb.ca/content/dam/snb/tribunal/Form10.pdf"
+    },
+    {
+      "id": "45-0001",
+      "form_name": "Security Deposit Transfer Tenant to Tenant",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0001B.pdf"
+    },
+    {
+      "id": "45-0063",
+      "form_name": "Notice to Vacate Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0063B.pdf"
+    },
+    {
+      "id": "45-0064",
+      "form_name": "Final Notice to Vacate Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0064B.pdf"
+    },
+    {
+      "id": "45-0101",
+      "form_name": "Security Deposit Claim Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0101B.pdf"
+    },
+    {
+      "id": "45-0102",
+      "form_name": "Application for the Return of the Security Deposit",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0102B.pdf"
+    },
+    {
+      "id": "45-0113",
+      "form_name": "Notice of Complaint Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0113B.pdf"
+    },
+    {
+      "id": "45-3617",
+      "form_name": "Accommodation Inspection Report",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/e/1000/CSS-FOL-45-3617E.pdf"
+    },
+    {
+      "id": "45-7000",
+      "form_name": "Authorization to Release Confidential Information",
+      "official_url": "https://www2.snb.ca/content/dam/snb/CSS-FOL-45-7000B.pdf"
+    },
+    {
+      "id": "45-7023",
+      "form_name": "Security Deposit Refund Agreement Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-7023B.pdf"
+    },
+    {
+      "id": "RA",
+      "form_name": "Roommate Agreement Form",
+      "official_url": "https://www2.snb.ca/content/dam/snb/tribunal/RAForm_E.pdf"
+    },
+    {
+      "id": "SN-0008",
+      "form_name": "Submit your Security Deposit Form",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SN-0008B.pdf"
+    },
+    {
+      "id": "SN-7018",
+      "form_name": "Landlord Application for Assistance",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7018B.pdf"
+    },
+    {
+      "id": "SN-7019",
+      "form_name": "Tenant Application for Assistance",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7019B.pdf"
+    },
+    {
+      "id": "SN-7020",
+      "form_name": "Notice of Termination to Landlord",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7020B.pdf"
+    },
+    {
+      "id": "SN-7021",
+      "form_name": "Notice of Termination to Tenant",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7021B.pdf"
+    },
+    {
+      "id": "SN-7022",
+      "form_name": "Landlord Release of Security Deposit",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7022B.pdf"
+    }
+  ]
+}

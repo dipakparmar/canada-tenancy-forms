@@ -26,7 +26,10 @@ async function update({ code, catalog, dataPath, snapshotPath, sourceModule }) {
   // ponytail: the updater only owns records whose official_url is a PDF under the forms directory.
   // Portal-generated and specialized records (and anything pointing elsewhere) are left alone entirely:
   // they never appear on the index page, so diffing them would mark them historical every week.
-  const managed = catalog.forms.filter((f) => f.official_url.startsWith(PREFIX) && f.status !== 'historical_or_replaced')
+  // `prefix` is a single string for every jurisdiction except New Brunswick, whose PDFs are split
+  // across two hosts; `[].concat(PREFIX)` normalizes both shapes to an array.
+  const prefixes = [].concat(PREFIX)
+  const managed = catalog.forms.filter((f) => prefixes.some((p) => f.official_url.startsWith(p)) && f.status !== 'historical_or_replaced')
   // Guard against a broken page or parser marking the whole catalog historical.
   if (found.length < managed.length / 2) throw new Error(`only ${found.length} forms found vs ${managed.length} managed; refusing to diff`)
 

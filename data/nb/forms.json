@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-26",
+  "source": {
+    "publisher": "Government of New Brunswick — Tenant and Landlord Relations Office, Service New Brunswick",
+    "index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+    "snapshot_sha256": "597666d7183b8e25da385a86641bcf6a5ce2a6e51ed6860e051d6f69b70744c5"
+  },
+  "dataset": {
+    "id": "nb-tlro-forms-catalog",
+    "jurisdiction": "New Brunswick, Canada",
+    "authority": "Tenant and Landlord Relations Office, formerly the Residential Tenancies Tribunal (Service New Brunswick)",
+    "id_pattern": "^([0-9]{1,2}|[0-9]{2}-[0-9]{4}|SN-[0-9]{4}|RA)$",
+    "last_verified": "2026-09-26",
+    "official_forms_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+    "official_forms_numbered_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+    "notes": [
+      "Use the current official form version. Form versions and URLs may change.",
+      "The PDFs sit on two hosts: pxw1.snb.ca/snb7001/ (filenames like CSS-FOL-SNB-45-0065E.pdf, a trailing E for English, B for bilingual) and www2.snb.ca/content/dam/snb/. The updater's source module exports both as an array.",
+      "id rule: where the PDF's own text carries a regulation form number (\"FORM 6 STANDARD FORM OF LEASE\", \"FORM 3\", \"FORM 5\", \"FORM 7\", \"FORM 8\", \"FORM 10\"), the id is that bare number. Only two of those six PDFs print the number in the index page's own link text (Form 3, Form 8); the other four (5, 6, 7, 10) were confirmed by reading each PDF. Every other form keeps the Service New Brunswick catalogue number taken from its filename, stripped of the language suffix and uppercased (45-0065 becomes id 6 instead, since it is one of the six; 45-0001, SN-7021, 45-3617 and the rest keep their catalogue numbers as-is).",
+      "The index page lists the Request for Consent to Assign twice (once for landlords, once for tenants); both links point at the same PDF, catalogued once as id 7.",
+      "The Roommate Agreement Form (RA) and the two forms whose filenames carry no catalogue-number pattern (Form10.pdf, RAForm_E.pdf) are matched by name rather than by the CSS-FOL-* naming scheme.",
+      "Two documents the index page links are skipped entirely: a rental unit condition report link that 404s (the Accommodation Inspection Report PDF is catalogued instead, under the government's Standard Forms of Lease Regulation) and no others were found missing a stable id.",
+      "None of the PDFs in this dataset print a page footer revision stamp the way Ontario's do; four forms print an \"SN nnnn MM/YYYY nnnnn\" print-run stamp instead (id 6, SN-7021, 45-0063, 45-0064), read by hand into current_version; the rest print no date anywhere and current_version is null.",
+      "A property manager may prepare or serve a form as an authorized agent, but the legal party remains the landlord or tenant unless the form or law states otherwise.",
+      "A form does not itself create authority to end a tenancy, increase rent, enter a unit, or recover money; The Residential Tenancies Act (New Brunswick) and the required process control."
+    ]
+  },
+  "enums": {
+    "party_roles": [
+      "landlord",
+      "tenant",
+      "landlord_or_tenant",
+      "landlord_and_tenant",
+      "new_owner",
+      "third_party_verifier",
+      "office"
+    ],
+    "matter_types": [
+      "agreement",
+      "rent",
+      "security_deposit",
+      "ending_tenancy",
+      "assignment",
+      "landlord_change",
+      "condition_inspection",
+      "dispute_resolution",
+      "privacy"
+    ],
+    "availability": [
+      "active",
+      "specialized",
+      "historical_or_replaced",
+      "portal_generated",
+      "not_a_landlord_tenant_form"
+    ]
+  },
+  "operational_rules": {
+    "landlord_vs_property_manager": {
+      "landlord": "The owner or legal entity that is the landlord under the lease. The landlord remains responsible for statutory obligations even when an agent performs administrative tasks.",
+      "property_manager_or_authorized_agent": "A person or company authorized to act for the landlord. The manager may complete, sign, serve, receive, file, or respond to forms only within the authority the landlord has given, and may be named in Section 7 of the Standard Form of Lease.",
+      "tenant": "The person or persons named as tenant under the lease. A tenant signs tenant-originated forms and receives landlord notices.",
+      "practical_rule": "Identify the legal landlord in Section 1 of the Standard Form of Lease (Form 6) and name an agent or representative, if any, in Section 7. Keep written proof of any agent's authority to act for the landlord."
+    },
+    "document_controls": [
+      "Record the form id, print-run date if any, completion date, service date, serving person, recipient, service method, and proof of service.",
+      "Use the official Tenant and Landlord Relations Office form rather than reproducing a private form when the Act requires a prescribed form.",
+      "Each landlord must provide two duplicate originals of the Standard Form of Lease for the landlord and the tenant to sign.",
+      "Keep the signed lease, the Accommodation Inspection Report, any notice served, proof of service, and the security deposit's Certificate of Deposit together for any later application to the Tribunal."
+    ]
+  },
+  "source_records": [
+    {
+      "source_id": "web:nb-1",
+      "title": "Find a form - Government of New Brunswick",
+      "url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "last_updated_as_found": "2026-09-26",
+      "coverage": "Index page listing residential tenancy PDF forms directly by name and file size, split across two Service New Brunswick hosts; no version dates on the index page itself."
+    }
+  ],
+  "forms": [
+    {
+      "id": "3",
+      "form_name": "Application to the Residential Tenancies Officer",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3628B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The landlord wants the Residential Tenancies Officer to serve a notice to quit on a tenant, for a reason such as destruction of the premises, and to name a requested termination date.",
+      "related_forms": [],
+      "legal_effect": "Requests the Residential Tenancies Officer serve a notice to quit terminating the tenancy for the stated reason and requested date, under section 6(8) of the Act.",
+      "source_basis": [
+        "\"I hereby apply to have you serve on ... a notice to quit the following premises ... thereby terminating the tenancy for the following reason(s)\" (Form 3)",
+        "\"The Residential Tenancies Act, Acts of New Brunswick, 1975, c. R-10.2, s. 6(8)\" (Form 3)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "5",
+      "form_name": "Security Deposit Transfer to New Premises",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3630B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord", "office"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "A tenant with a security deposit, or the unused balance of one, already on deposit with the Residential Tenancies Officer wants all or part of it applied toward the deposit required under a new tenancy agreement, and asks the Officer to certify that it is held in satisfaction of that new obligation.",
+      "related_forms": [],
+      "legal_effect": "Results in a certificate from the Residential Tenancies Officer declaring that all or part of the tenant's existing deposit is now held in satisfaction of the security deposit obligation under the new tenancy agreement.",
+      "source_basis": [
+        "\"I HEREBY request that you issue a certificate declaring that the deposit (OR a portion of the deposit) is now held by you in satisfaction of my obligation to provide a security deposit under a tenancy agreement entered into between me and\" (Form 5)",
+        "\"The Residential Tenancies Act, Acts of New Brunswick, 1975, c. R-10.2, S.8(9)\" (Form 5)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "6",
+      "form_name": "Standard Form of Lease",
+      "status": "active",
+      "category": "lease",
+      "matter_type": "agreement",
+      "current_version": "2021-12",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/e/1000/CSS-FOL-SNB-45-0065E.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "May be named as the landlord's agent or representative in Section 7 and complete or sign on the landlord's behalf where the lease indicates an agent, but the landlord's legal name goes in Section 1 and the landlord signs Section 7.",
+      "use_when": "Starting a residential tenancy in New Brunswick; each landlord of residential premises must provide two duplicate originals of this Standard Form of Lease for the landlord and the tenant to sign.",
+      "related_forms": [],
+      "legal_effect": "Sets the binding terms of the tenancy. Any alteration or deletion is void other than an alteration made under Part 7 of Attachment A, or an addition that does not alter a right or duty under The Residential Tenancies Act or the lease; additions must appear on both duplicate originals.",
+      "source_basis": [
+        "\"Each landlord of residential premises must provide two (2) duplicate originals of this Standard Form of Lease for the Landlord and the Tenant to sign.\" (Form 6)",
+        "\"Any alteration of or deletion from this Standard Form of Lease is void other than an alteration made in accordance with Part 7 of Attachment A of this lease, or an addition agreed to by the Landlord and Tenant that does not alter any right or duty\" (Form 6)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "7",
+      "form_name": "Request for Consent to Assign Form",
+      "status": "active",
+      "category": "assignment",
+      "matter_type": "assignment",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3631B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "may_receive_or_respond_as_authorized_agent",
+      "use_when": "A tenant wants to assign their rights under the lease to a named person and needs the landlord's consent, for the remaining term of the lease, a portion of it, or until a stated date.",
+      "related_forms": [],
+      "legal_effect": "Requests the landlord's written consent to assign the tenant's rights under the lease to the named person, effective on a stated date.",
+      "source_basis": [
+        "\"I hereby request consent to assign my rights as tenant to the following premises ... by virtue of the lease entered into between us\" (Form 7)",
+        "\"The Residential Tenancies Act, Acts of New Brunswick, 1975, c. R-10.2, s. 13(4)\" (Form 7)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "8",
+      "form_name": "Notice of Transfer",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "landlord_change",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-45-3632B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "new_owner", "office"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "A landlord has transferred ownership of the leased premises and must notify the tenant and the Residential Tenancies Officer of the new owner's (and new agent's, if any) contact information.",
+      "related_forms": [],
+      "legal_effect": "Notifies the tenant and the Tribunal of the change of ownership and gives the new owner's (and agent's) contact information for future service.",
+      "source_basis": [
+        "\"I transferred my ownership of the leased premises ... and the new owner of the premises is\" (Form 8)",
+        "\"The Residential Tenancies Act, Acts of New Brunswick, 1975, c. R-10.2, s. 13(8)\" (Form 8)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "10",
+      "form_name": "Third-Party Declaration",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www2.snb.ca/content/dam/snb/tribunal/Form10.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "third_party_verifier"],
+      "property_manager_role": "not_applicable",
+      "use_when": "A tenant who is the victim of domestic violence, intimate partner violence, sexual violence, or criminal harassment wants to end a fixed-term or year-to-year lease early under section 24.01 of the Act, and needs an authorized third-party verifier to confirm eligibility.",
+      "related_forms": [],
+      "legal_effect": "The third-party verifier's declaration confirms the tenant's eligibility for early termination under section 24.01; misinformation provided in the form may result in a decision that the tenant's early termination is not valid.",
+      "source_basis": [
+        "\"The Residential Tenancies Act allows for the early termination of a lease by a tenant who is the victim of domestic violence, intimate partner violence, sexual violence or criminal harassment.\" (Form 10)",
+        "\"Misinformation provided in the completion of this form may result in a decision under The Residential Tenancies Act that the tenant's early termination is not valid.\" (Form 10)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0001",
+      "form_name": "Security Deposit Transfer Tenant to Tenant",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0001B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "may_complete_and_sign_as_authorized_agent",
+      "use_when": "A tenant wants to transfer their security deposit to another tenant remaining at the same premises; must be completed jointly by the landlord and the tenant requesting the transfer.",
+      "related_forms": [],
+      "legal_effect": "Transfers the security deposit held in trust from the requesting tenant to the named remaining tenant; a new Certificate of Deposit is then issued to the landlord and the tenants remaining at the premises.",
+      "source_basis": [
+        "\"This form MUST be completed jointly by the landlord and the tenant requesting the transfer of his/her security deposit.\" (Form SN 7006 instructions)",
+        "\"Once the security deposit has been transferred to the other tenant, a new Certificate of Deposit will be generated and issued to the Landlord and all tenants remaining at the premises.\" (Form SN 7006 instructions)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0063",
+      "form_name": "Notice to Vacate Form",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2021-12",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0063B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The tenant's rent is unpaid and the landlord wants to require the tenant to vacate, unless the tenant pays the total rent owed within seven days of service.",
+      "related_forms": ["45-0064"],
+      "legal_effect": "Requires the tenant to vacate by a date at least 15 days after service (18 days if served by mail), unless the tenant pays the total rent owed within seven days of service; failure to vacate may result in an order for the Sheriff to evict.",
+      "source_basis": [
+        "\"unless you pay the TOTAL RENT OWED within seven days of service of this notice ... The date to vacate must be at least 15 days from date of service on the tenant\" (Form SN 7016)",
+        "\"Failure by the tenant to vacate the premises as required by the Notice to Vacate, may result in an order requiring the Sheriff to evict the tenant\" (Form SN 7016)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0064",
+      "form_name": "Final Notice to Vacate Form",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2021-12",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0064B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord may issue this notice for a second occurrence of late rent payment only after a Notice to Vacate was already served for a previous late payment (three previous notices for a mobile home site).",
+      "do_not_use_when": ["No Notice to Vacate has already been served on the tenant for a previous late payment."],
+      "related_forms": ["45-0063"],
+      "legal_effect": "Requires the tenant to vacate by a date at least 15 days after service; unlike the Notice to Vacate, payment of the total rent owed will NOT cancel this notice.",
+      "source_basis": [
+        "\"The landlord may issue a Final Notice to Vacate for a second occurrence of late payment only when a Notice to Vacate was served for a previous late payment.\" (Form SN 7017)",
+        "\"Payment of total rent owed will NOT cancel this notice\" (Form SN 7017)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0101",
+      "form_name": "Security Deposit Claim Form",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0101B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "The landlord wants to make a claim against the tenant's security deposit for cleaning or repairs, unpaid rent, utilities, or unpaid late payment fees, within seven days of the end of tenancy date.",
+      "related_forms": ["45-7023"],
+      "legal_effect": "Starts the Tribunal's duty to investigate the claim; the tenant(s) will be notified of the claim and given an opportunity to dispute or defend against it. A revised claim must also be filed within seven days of the end of tenancy and cancels any previous claim.",
+      "source_basis": [
+        "\"Landlords have seven (7) days, from the end of tenancy date, to submit a security deposit claim.\" (Form SN 7009 instructions)",
+        "\"The Residential Tenancies Tribunal has a duty to investigate a claim against a security deposit. Your tenant(s) will be notified of your claim and provided an opportunity to dispute or defend against it.\" (Form SN 7009 instructions)",
+        "\"you and your tenants can jointly complete the PDF form entitled \\\"Security Deposit Refund Agreement\\\"\" (Form SN 7009 instructions)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0102",
+      "form_name": "Application for the Return of the Security Deposit",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0102B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord", "office"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "The tenant's tenancy has ended and the tenant wants their share of the security deposit returned; each tenant must complete their own application.",
+      "do_not_use_when": ["Before the end of the tenancy; the Tribunal must confirm with the landlord that the tenancy is over before releasing any part of the deposit."],
+      "related_forms": ["45-7023"],
+      "legal_effect": "Requests release of the tenant's share of the security deposit to a forwarding address, once the Tribunal confirms with the landlord that the tenancy has ended.",
+      "source_basis": [
+        "\"Do not apply for the return of your security deposit with this form before the end of your tenancy.\" (Form SN 7008 instructions)",
+        "\"The Residential Tenancies Tribunal must also confirm with the landlord that the tenancy is over before releasing part or all of the security deposit\" (Form SN 7008 instructions)",
+        "\"you can contact your landlord and jointly complete the PDF form entitled \\\"Security Deposit Refund Agreement\\\"\" (Form SN 7008 instructions)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-0113",
+      "form_name": "Notice of Complaint Form",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-0113B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_prepare_and_send_as_authorized_agent",
+      "use_when": "A landlord or tenant wants to formally notify the other party of an issue that needs to be resolved regarding the rental property, before pursuing further action.",
+      "related_forms": [],
+      "legal_effect": "Puts the recipient on notice to resolve the stated issue(s) by a given date; for non-urgent matters, the sender must give at least seven days, plus three more if the notice is mailed.",
+      "source_basis": [
+        "\"I/we are requesting that the following issue(s) be resolved in regards to the property located at\" (Notice of Complaint)",
+        "\"For non-urgent matters, you must provide a minimum of seven days for the recipient to resolve the issue(s). If you are mailing the letter, you must provide an additional three days\" (Notice of Complaint)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-3617",
+      "form_name": "Accommodation Inspection Report",
+      "status": "active",
+      "category": "condition_inspection",
+      "matter_type": "condition_inspection",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/e/1000/CSS-FOL-45-3617E.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_sign_as_authorized_agent",
+      "use_when": "Recording the condition of the rented property from the start of the tenancy until its termination; signed by both the tenant and the landlord or an authorized agent, in duplicate.",
+      "related_forms": [],
+      "legal_effect": "Creates the record of the premises' condition relied on for move-in and move-out comparison; each party keeps one signed copy as a permanent record.",
+      "source_basis": [
+        "\"This form is to provide an accurate record of the condition of the rented property from the date the tenancy begins until termination. This form should be signed by both the tenant and the landlord or authorized agent.\" (Accommodation Inspection Report)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-7000",
+      "form_name": "Authorization to Release Confidential Information",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "privacy",
+      "current_version": null,
+      "official_url": "https://www2.snb.ca/content/dam/snb/CSS-FOL-45-7000B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord_or_tenant",
+      "parties": ["landlord_or_tenant", "office"],
+      "property_manager_role": "not_applicable",
+      "use_when": "A current or former applicant or client of the Tribunal wants to authorize the Chief Residential Tenancies Officer to disclose their personal information to a named person or organization, for example to help them deal with the Tribunal.",
+      "related_forms": [],
+      "legal_effect": "Authorizes disclosure of the client's personal information within three months of signing, in whatever manner the Chief Residential Tenancies Officer considers appropriate, to allow the named person to assist the client with the Tribunal.",
+      "source_basis": [
+        "\"I ... hereby authorize the Chief Residential Tenancies Officer and his or her employees or officials to disclose to ... any or all personal information ... pertaining to my status as an applicant, client or former client with the Residential Tenancies Tribunal\" (Authorization to Release Confidential Information)",
+        "\"such disclosure ... shall be done within three months from signing of this Consent\" (Authorization to Release Confidential Information)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "45-7023",
+      "form_name": "Security Deposit Refund Agreement Form",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-45-7023B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord_and_tenant",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_sign_only_with_written_authority_from_the_landlord",
+      "use_when": "The landlord and tenant(s) have reached an agreement on the refund of the security deposit and payment of any claim, and want a faster refund than the standard claim process.",
+      "related_forms": ["45-0101", "45-0102"],
+      "legal_effect": "Directs the Residential Tenancies Officer to pay the landlord and/or refund the tenant(s) the agreed amounts from the security deposit; once refunded, the Officer will not assist with any further claim.",
+      "source_basis": [
+        "\"This form should be used when tenants and their landlord have reached an agreement regarding the refund of the security deposit and payment of claim.\" (Security Deposit Refund Agreement instructions)",
+        "\"By completing this form, the landlord understands that once the security deposit has been refunded, the Residential Tenancies Officer will not be able to assist with any further claims.\" (Security Deposit Refund Agreement instructions)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "RA",
+      "form_name": "Roommate Agreement Form",
+      "status": "specialized",
+      "category": "agreements",
+      "matter_type": "agreement",
+      "current_version": null,
+      "official_url": "https://www2.snb.ca/content/dam/snb/tribunal/RAForm_E.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant"],
+      "property_manager_role": "not_applicable",
+      "use_when": "Roommates sharing a rental unit want a private written agreement covering shared bills, chores and house rules, as a starting point to negotiate issues the Standard Form of Lease does not cover.",
+      "do_not_use_when": ["The agreement would conflict with any right or obligation under the Residential Lease Agreement or a provincial Act; the lease and the Act prevail in that case."],
+      "related_forms": ["6"],
+      "legal_effect": "A private agreement between roommates only; where it conflicts with the tenants' rights and obligations under the Residential Lease Agreement or a provincial Act, the lease and the Act prevail in all respects.",
+      "source_basis": [
+        "\"The purpose of this form is to provide you and your roommate(s) with a starting point to negotiate a variety of issues.\" (Roommate Agreement Form)",
+        "\"We agree that if this agreement conflicts with any of our rights and obligations under the Residential Lease Agreement dated ... or with the provisions of any Provincial Acts, said Tenancy Agreement and the Provincial Act will prevail in all respects.\" (Roommate Agreement Form)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-0008",
+      "form_name": "Submit your Security Deposit Form",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SN-0008B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_submit_as_authorized_agent",
+      "use_when": "A landlord is remitting a new tenancy's security deposit, or a top-up to an existing one, to the Residential Tenancies Tribunal by cheque, money order, or debit.",
+      "related_forms": [],
+      "legal_effect": "Deposits the security deposit in trust with the Residential Tenancies Officer for the named tenancy, payable to Service New Brunswick.",
+      "source_basis": [
+        "\"New Tenancy ... OR ... Top-up Existing Tenancy\" (Security Deposit Remittance, Form SN 7001/7002)",
+        "\"Payable to/à Service New Brunswick / Service Nouveau-Brunswick\" (Security Deposit Remittance, Form SN 7001/7002)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-7018",
+      "form_name": "Landlord Application for Assistance",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7018B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant", "office"],
+      "property_manager_role": "may_prepare_and_file_as_authorized_agent",
+      "use_when": "A landlord needs the Tribunal's intervention, for example over tenant repairs and cleaning, non-respect of health and safety or building standards, tenant misconduct, non-payment of rent, revision of a tenant's notice of termination, a tenant offence under the Act, tenant eviction, disposition of a tenant's abandoned chattels, or another failed tenant obligation.",
+      "related_forms": [],
+      "legal_effect": "Starts the Tribunal's process of assisting the landlord with the stated issue.",
+      "source_basis": [
+        "\"REASON FOR APPLICATION OF ASSISTANCE ... Request for tenant repairs and cleaning ... Tenant's failure to pay rent ... Revision of a tenant's Notice of Termination ... Tenant eviction ... Disposition of tenant's abandoned chattels\" (Landlord's Application for Assistance, Form SN 7018)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-7019",
+      "form_name": "Tenant Application for Assistance",
+      "status": "active",
+      "category": "applications",
+      "matter_type": "dispute_resolution",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7019B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord", "office"],
+      "property_manager_role": "receives_on_the_landlord_s_behalf_and_may_respond_as_authorized_agent",
+      "use_when": "A tenant needs the Tribunal's intervention, for example over revision of a rent increase notice, revision of a notice of termination, health, safety, housing or building standards, repairs, revision of an alteration to the tenancy agreement, or another failed landlord obligation.",
+      "related_forms": [],
+      "legal_effect": "Starts the Tribunal's process of assisting the tenant with the stated issue.",
+      "source_basis": [
+        "\"REASON FOR APPLICATION OF ASSISTANCE ... Revision of rent increase ... Revision of a notice of termination ... Health, safety, housing and building standards ... Repairs ... Revision of an alteration to the tenancy agreement\" (Tenant's Application for Assistance, Form SN 7019)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-7020",
+      "form_name": "Notice of Termination to Landlord",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7020B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "tenant",
+      "parties": ["tenant", "landlord"],
+      "property_manager_role": "may_receive_or_respond_as_authorized_agent",
+      "use_when": "A tenant wants to give the landlord notice of termination and advise that they will vacate the premises, under the notice period set out in the Residential Lease's Section 3 and Part 5, or, absent a signed lease, on a month-to-month basis.",
+      "related_forms": ["6"],
+      "legal_effect": "Notifies the landlord of the tenant's intended vacate date, under the notice-of-termination period the tenancy's lease sets out.",
+      "source_basis": [
+        "\"In the Residential Lease, refer to Section 3: 'Length of Tenancy' ... refer to Part 5: 'Notice of Termination' ... In the absence of a signed lease, the tenancy is considered month-to-month\" (Notice of Termination to Landlord, Form SN 7020)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-7021",
+      "form_name": "Notice of Termination to Tenant",
+      "status": "active",
+      "category": "notices",
+      "matter_type": "ending_tenancy",
+      "current_version": "2022-03",
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7021B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "tenant"],
+      "property_manager_role": "may_complete_and_serve_as_authorized_agent",
+      "use_when": "The landlord or their immediate family intends to live in the premises, the unit will be used for something other than residential purposes, the unit will be significantly renovated requiring vacant possession, or a tenant employed to maintain or manage the premises has that job end.",
+      "do_not_use_when": ["A mobile home site tenancy."],
+      "related_forms": [],
+      "legal_effect": "Requires the tenant to vacate on the stated date for the selected reason; a tenant who receives this notice may apply to the Tribunal within 15 days of receiving it to have the notice reviewed.",
+      "source_basis": [
+        "\"The landlord or their immediate family intends to live in the premises ... The tenant is working for the landlord maintaining or managing the rental premises, and the job ends\" (Notice of Termination to Tenant, Form SN 7021)",
+        "\"Do not use this form for mobile home site tenancies\" (Notice of Termination to Tenant, Form SN 7021)",
+        "\"A tenant in receipt of a notice of termination may request a revision of the notice. Tenants must apply to the Residential Tenancies Tribunal within 15 days of receipt\" (Notice of Termination to Tenant, Form SN 7021)"
+      ],
+      "last_verified": "2026-09-27"
+    },
+    {
+      "id": "SN-7022",
+      "form_name": "Landlord Release of Security Deposit",
+      "status": "active",
+      "category": "security_deposit",
+      "matter_type": "security_deposit",
+      "current_version": null,
+      "official_url": "https://www.pxw1.snb.ca/snb7001/b/1000/CSS-FOL-SNB-SN-7022B.pdf",
+      "official_index_url": "https://www.gnb.ca/en/topic/family-home-community/housing-property/find-form.html",
+      "initiating_party": "landlord",
+      "parties": ["landlord", "office"],
+      "property_manager_role": "may_sign_only_with_written_authority_from_the_landlord",
+      "use_when": "The landlord wants to relinquish their right to claim against the named tenant(s)' security deposit held by the Tribunal for the premises, without filing a claim.",
+      "related_forms": [],
+      "legal_effect": "Waives the landlord's right to claim against the security deposit held in trust for the named tenant(s) and premises.",
+      "source_basis": [
+        "\"I hereby relinquish my right to claim against the security deposit held by your office for\" (Landlord Release of Security Deposit, Form SN 7022)"
+      ],
+      "last_verified": "2026-09-27"
+    }
+  ]
+}
