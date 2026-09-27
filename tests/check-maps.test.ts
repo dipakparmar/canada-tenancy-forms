@@ -1,4 +1,4 @@
-// Guard test over every maps/*.map.json: the map must still describe the government PDF
+// Guard test over every maps/<code>/*.map.json: the map must still describe the government PDF
 // it was hand-verified against. Run `bun run fetch-forms` first; the PDFs are never
 // committed, so a map whose PDF is missing is skipped rather than failed.
 import { test, expect } from "bun:test";
@@ -6,17 +6,21 @@ import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { PDF } from "@libpdf/core";
+import { jurisdictions } from "../scripts/jurisdictions.mjs";
 
-const maps = (await readdir("maps")).filter((f) => f.endsWith(".map.json")).sort();
+const maps: { code: string; mapsDir: string; formsDir: string; mapFile: string }[] = [];
+for (const { code, mapsDir, formsDir } of jurisdictions())
+  for (const mapFile of (await readdir(mapsDir).catch(() => [] as string[])).filter((f) => f.endsWith(".map.json")).sort())
+    maps.push({ code, mapsDir, formsDir, mapFile });
 expect(maps.length).toBeGreaterThan(0);
 
-for (const mapFile of maps) {
-  const id = mapFile.replace(/\.map\.json$/, "");
-  const map = JSON.parse(await readFile(`maps/${mapFile}`, "utf8"));
-  const pdfPath = `forms/${id}.pdf`;
+for (const { code, mapsDir, formsDir, mapFile } of maps) {
+  const id = `${code}/${mapFile.replace(/\.map\.json$/, "")}`;
+  const map = JSON.parse(await readFile(`${mapsDir}${mapFile}`, "utf8"));
+  const pdfPath = `${formsDir}${mapFile.replace(/\.map\.json$/, ".pdf")}`;
 
   test(`${id}: map header names the form and its source`, () => {
-    expect(map.form).toBe(id);
+    expect(map.form).toBe(id.split("/")[1]);
     expect(map.revision).toMatch(/^\d{4}\/\d{2}$/);
     expect(map.source).toMatch(/^https:\/\//);
     expect(map.pdf_sha256).toMatch(/^[0-9a-f]{64}$/);

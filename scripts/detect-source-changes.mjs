@@ -1,58 +1,24 @@
-// Fetch the RTB forms index, diff it against data/, optionally write source-controlled fields.
-// Usage: node scripts/detect-source-changes.mjs [--write] [--summary <path>]
+// Fetch each jurisdiction's forms index, diff it against data/<code>/forms.json, optionally
+// write source-controlled fields. The page parsing lives in scripts/sources/<code>.mjs.
+// Usage: node scripts/detect-source-changes.mjs [bc on ...] [--write] [--summary <path>]
 // Exit: 0 no changes (or written), 2 changes found without --write, 1 error.
 import { createHash } from 'node:crypto'
-import { readFileSync, writeFileSync, appendFileSync } from 'node:fs'
+import { writeFileSync, appendFileSync, mkdirSync } from 'node:fs'
+import { dirname } from 'node:path'
+import { jurisdictions, splitArgs } from './jurisdictions.mjs'
 
-const DATA = new URL('../data/bc-rtb-forms.json', import.meta.url)
-const SNAPS = new URL('../snapshots/', import.meta.url)
-const PREFIX = 'https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/'
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const NEW_RECORD = {
   category: 'unclassified', matter_type: 'unclassified', initiating_party: 'other', parties: [],
   property_manager_role: 'unreviewed', use_when: 'Needs human classification.', related_forms: [],
 }
 
-const args = process.argv.slice(2)
+const { codes, rest: args } = splitArgs(process.argv.slice(2))
 const write = args.includes('--write')
 const summaryPath = args.includes('--summary') ? args[args.indexOf('--summary') + 1] : null
 const today = new Date().toISOString().slice(0, 10)
 
-const ENTITIES = { nbsp: ' ', amp: '&', ndash: '-', mdash: '-', rsquo: "'", lsquo: "'", quot: '"', '#39': "'" }
-const text = (html) => html
-  .replace(/<[^>]*>/g, ' ')
-  .replace(/&(#\d+|\w+);/g, (m, e) => ENTITIES[e] ?? (e[0] === '#' ? String.fromCharCode(+e.slice(1)) : m))
-  .replace(/[\s​]+/g, ' ').trim()
-
-// rtb12lct.pdf -> RTB-12L-CT, rtb53-p1d.pdf -> RTB-53-P1D, rtb-53-p3.pdf -> RTB-53-P3, rtb11a.pdf -> RTB-11A
-export const idFromFile = (file) => {
-  const m = file.toLowerCase().match(/^rtb-?(\d+)([a-z]?)(?:-?([a-z0-9-]+))?\.pdf$/)
-  return m && `RTB-${m[1]}${m[2]}${m[3] ? '-' + m[3] : ''}`.toUpperCase()
-}
-
-// ponytail: regex over the rendered HTML, not a DOM parser; breaks if the page stops using absolute hrefs.
-// Version is the latest "Month YYYY" printed right after any link to the form (the page lists some forms twice with different dates).
-export function extract(html) {
-  const forms = new Map()
-  const re = /<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>(?=([\s\S]{0,400}))/g
-  for (const [, href, inner, tail] of html.matchAll(re)) {
-    if (!href.startsWith(PREFIX)) continue
-    const id = idFromFile(href.slice(PREFIX.length))
-    if (!id) continue
-    const f = forms.get(id) ?? { id, official_url: href, form_name: null, version: null }
-    forms.set(id, f)
-    const name = text(inner).replace(/\(PDF[^)]*\)/gi, '').replace(/\bRTB-[\w-]+\s*$/, '').replace(/[\s.,:;-]+$/, '').trim()
-    if (name.length <= 3 || /^RTB-/i.test(name)) continue // inline "RTB-53-P1D" mentions and "(PDF, 1MB)" fragments
-    // The named listing link wins: inline mentions sometimes point at a dead variant filename (seen: rtb53-p3d vs rtb-53-p3d).
-    if (!f.form_name) Object.assign(f, { form_name: name, official_url: href })
-    const d = text(tail.split('</p>')[0]).match(new RegExp(`(${MONTHS.join('|')})\\s+(\\d{4})`))
-    if (d && (!f.version || +d[2] * 12 + MONTHS.indexOf(d[1]) > f.version.n)) f.version = { s: `${d[1]} ${d[2]}`, n: +d[2] * 12 + MONTHS.indexOf(d[1]) }
-  }
-  return [...forms.values()].map((f) => ({ ...f, form_name: f.form_name ?? f.id, version: f.version?.s ?? null }))
-}
-
-async function main() {
-  const catalog = JSON.parse(readFileSync(DATA, 'utf8'))
+async function update({ code, catalog, dataPath, snapshotPath, sourceModule }) {
+  const { prefix: PREFIX, extract } = await import(sourceModule)
   const res = await fetch(catalog.source.index_url)
   if (!res.ok) throw new Error(`index fetch failed: HTTP ${res.status}`)
   const html = await res.text()
@@ -89,29 +55,34 @@ async function main() {
   const note = absent.length ? `\nNot linked from the index page (informational, status unchanged): ${absent.map((r) => `\`${r.id}\``).join(', ')}\n` : ''
 
   const summary = lines.length
-    ? `## RTB forms source changes\n\nSource: ${catalog.source.index_url}\n\n${lines.join('\n')}\n${note}\nA source change needs human review before merge: check each form PDF and fix any human-maintained fields.\n`
-    : `## RTB forms source changes\n\nNo changes (${found.length} forms on the index page).\n${note}`
+    ? `## ${code} forms source changes\n\nSource: ${catalog.source.index_url}\n\n${lines.join('\n')}\n${note}\nA source change needs human review before merge: check each form PDF and fix any human-maintained fields.\n`
+    : `## ${code} forms source changes\n\nNo changes (${found.length} forms on the index page).\n${note}`
   console.log(summary)
   if (summaryPath) appendFileSync(summaryPath, summary)
   if (!write) return lines.length ? 2 : 0
 
   // ponytail: no HTML snapshot on purpose, Province copyright forbids redistributing the page; hash plus our own extracted inventory is enough for change detection
-  // latest.json and data/bc-rtb-forms.json (below) are only written when the extracted forms actually
+  // latest.json and forms.json (below) are only written when the extracted forms actually
   // changed, since the page bytes differ on every fetch regardless.
   const sha256 = createHash('sha256').update(html).digest('hex')
   if (!lines.length) return 0
 
   const inventory = found.map((f) => ({ id: f.id, form_name: f.form_name, official_url: f.official_url })).sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
-  writeFileSync(new URL('latest.json', SNAPS), JSON.stringify({ fetched_at: today, index_url: catalog.source.index_url, sha256, forms: inventory }, null, 2) + '\n')
+  mkdirSync(dirname(snapshotPath), { recursive: true })
+  writeFileSync(snapshotPath, JSON.stringify({ fetched_at: today, index_url: catalog.source.index_url, sha256, forms: inventory }, null, 2) + '\n')
 
   for (const r of catalog.forms) if (seen.has(r.id)) r.last_verified = today
   catalog.forms.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }))
   catalog.generated_at = today
   catalog.source.snapshot_sha256 = sha256
-  writeFileSync(DATA, JSON.stringify(catalog, null, 2) + '\n')
+  writeFileSync(dataPath, JSON.stringify(catalog, null, 2) + '\n')
   return 0
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main().then((code) => process.exit(code), (err) => { console.error(err.message); process.exit(1) })
+async function main() {
+  let code = 0
+  for (const j of jurisdictions(codes)) code = Math.max(code, await update(j))
+  return code
 }
+
+main().then((code) => process.exit(code), (err) => { console.error(err.message); process.exit(1) })

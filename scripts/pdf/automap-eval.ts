@@ -1,10 +1,11 @@
-// Usage: bun scripts/pdf/automap-eval.ts [RTB-1]
-// Compares out/<ID>.map.candidate.json against the hand-verified maps/<ID>.map.json
+// Usage: bun scripts/pdf/automap-eval.ts [bc/RTB-1]
+// Compares out/<ID>.map.candidate.json against the hand-verified maps/<code>/<ID>.map.json
 // and prints the hit rate by confidence bucket.
 import { readFile } from "node:fs/promises";
 
-const base = process.argv[2] ?? "RTB-1";
-const truth = JSON.parse(await readFile(`maps/${base}.map.json`, "utf8"));
+const ref = process.argv[2] ?? "bc/RTB-1"; // <code>/<ID>
+const base = ref.split("/").pop()!;
+const truth = JSON.parse(await readFile(`maps/${ref}.map.json`, "utf8"));
 const cand = JSON.parse(await readFile(`out/${base}.map.candidate.json`, "utf8"));
 
 const truthByPdf = new Map<string, string>();
@@ -36,7 +37,7 @@ const tot = { n: 0, exact: 0, suffix: 0, head: 0 };
 for (const b of Object.values(buckets)) { tot.n += b.n; tot.exact += b.exact; tot.suffix += b.suffix; tot.head += b.head; }
 const pct = (a: number, b: number) => (b ? ((100 * a) / b).toFixed(0) + "%" : "-");
 
-console.log(`\nautomap vs maps/${base}.map.json\n`);
+console.log(`\nautomap vs maps/${ref}.map.json\n`);
 console.log("confidence  fields   exact         ignoring row suffix   section+item");
 for (const [name, b] of Object.entries(buckets))
   console.log(`${name.padEnd(11)} ${String(b.n).padStart(5)}   ${String(b.exact).padStart(3)} ${pct(b.exact, b.n).padStart(5)}   ${String(b.suffix).padStart(3)} ${pct(b.suffix, b.n).padStart(5)}        ${String(b.head).padStart(3)} ${pct(b.head, b.n).padStart(5)}`);

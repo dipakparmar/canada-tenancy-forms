@@ -3,21 +3,27 @@
 A machine-readable catalog of the forms published by the British Columbia Residential
 Tenancy Branch (RTB), plus a scheduled job that notices when the official forms page
 changes and opens a pull request for a human to review. The repo is standalone: consume
-[`data/bc-rtb-forms.json`](data/bc-rtb-forms.json) directly, or pin a release.
+[`data/bc/forms.json`](data/bc/forms.json) directly, or pin a release.
+
+Everything is laid out per jurisdiction so other provinces can be added alongside BC: one
+directory code (`bc`) selects the catalog, its field maps, its snapshot and its page
+extractor. Scripts take jurisdiction codes as leading arguments and default to all of them.
 
 ## Layout
 
 ```
-data/bc-rtb-forms.json               the catalog
-schema/bc-rtb-forms.schema.json      JSON Schema (draft-07) for the catalog
-maps/<ID>.map.json                   field maps: semantic key -> AcroForm field
+data/<code>/forms.json               the catalog, one per jurisdiction (bc)
+schema/forms.schema.json             JSON Schema (draft-07) shared by every catalog
+maps/<code>/<ID>.map.json            field maps: semantic key -> AcroForm field
+scripts/jurisdictions.mjs            lists the jurisdiction directories for the other scripts
+scripts/sources/<code>.mjs           per-jurisdiction page extractor used by the updater
 scripts/validate.mjs                 schema + id checks
 scripts/check-links.mjs              link health checks
 scripts/detect-source-changes.mjs    the updater
-scripts/fetch-form.ts                downloads a form's PDF into the gitignored forms/
+scripts/fetch-form.ts                downloads a form's PDF into the gitignored forms/<code>/
 scripts/pdf/                         the PDF field tooling (inspect, automap, fill, serve)
 tests/check-maps.test.ts             checks every map against its PDF
-snapshots/latest.json                hash + extracted inventory from the last fetch (no HTML)
+snapshots/<code>/latest.json         hash + extracted inventory from the last fetch (no HTML)
 .github/workflows/                   CI and the weekly updater
 ```
 
@@ -25,10 +31,11 @@ snapshots/latest.json                hash + extracted inventory from the last fe
 
 ```sh
 bun install              # install dependencies
-bun run validate         # schema + unique ids + related_forms references
+bun run validate         # schema + id pattern + unique ids + related_forms references
 bun run check-links      # HEAD every official_url and the index url
 bun run update:check     # print the source diff; exit 2 if anything changed
 bun run update:sources   # apply source-owned changes and refresh the snapshot
+                         # each takes jurisdiction codes first: bun run validate bc
 
 bun run fetch-forms      # download the PDF for every form that has a map
 bun test                 # check every map against its PDF
@@ -43,7 +50,7 @@ bun run serve            # local test UI, one input per semantic key
 ## Field ownership
 
 The record shape is defined in
-[`schema/bc-rtb-forms.schema.json`](schema/bc-rtb-forms.schema.json).
+[`schema/forms.schema.json`](schema/forms.schema.json).
 
 | Owner | Fields |
 |---|---|
@@ -65,7 +72,7 @@ The catalog says which forms exist. A field map says what is *inside* one: the R
 real AcroForms, but Acrobat auto-generated their field names from nearby text, so the names
 are unreliable. On RTB-1 the checkbox named `landlord` is the landlord's *agent* box, the
 rent amount lives in a field named `The tenant will pay the rent of`, and nine fields are
-called `undefined` through `undefined_9`. A map in [`maps/`](maps) gives each of those a
+called `undefined` through `undefined_9`. A map in [`maps/bc/`](maps/bc) gives each of those a
 stable semantic key:
 
 ```json
@@ -108,9 +115,9 @@ skipped with a message rather than failed.
 
 ```sh
 bun run fetch-forms RTB-12L                    # download it
-bun run inspect forms/RTB-12L.pdf              # fields, rects and text layout into out/
-bun run automap forms/RTB-12L.pdf              # out/RTB-12L.map.candidate.json
-bun run markers out/RTB-12L.map.candidate.json forms/RTB-12L.pdf
+bun run inspect forms/bc/RTB-12L.pdf           # fields, rects and text layout into out/
+bun run automap forms/bc/RTB-12L.pdf           # out/RTB-12L.map.candidate.json
+bun run markers out/RTB-12L.map.candidate.json forms/bc/RTB-12L.pdf
 ```
 
 `automap` guesses a key per field from the labels near each widget, tagging every guess
@@ -186,7 +193,7 @@ Form numbers, names, and PDF links in this catalog are drawn from forms publishe
 Government of British Columbia's Residential Tenancy Branch. We link to the government's
 PDFs; we never redistribute them, and we do not store a copy of the government's forms
 page (`scripts/detect-source-changes.mjs` keeps only a hash of the fetched page plus our
-own extracted inventory in `snapshots/latest.json`, for change detection). That government
+own extracted inventory in `snapshots/<code>/latest.json`, for change detection). That government
 content remains copyright Government of British Columbia. This repository's own code and
 human-written metadata (categorization, `use_when`, `related_forms`, and similar fields)
 are MIT licensed, as below. The Open Government Licence - British Columbia does not apply

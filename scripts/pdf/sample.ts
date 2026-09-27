@@ -1,4 +1,4 @@
-// Sample data keyed by semantic name (see forms/rtb1.map.json). Checkboxes take
+// Sample data keyed by semantic name (see maps/bc/RTB-1.map.json). Checkboxes take
 // true/false; text fields take strings. Every one of the 122 mapped keys appears
 // here, so `bun run fill` exercises the whole form.
 //

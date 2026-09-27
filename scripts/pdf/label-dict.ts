@@ -1,5 +1,5 @@
 // Normalised label text -> semantic key stem, and section heading text -> key prefix.
-// Mined from the hand-verified forms/rtb1.map.json: for each key there, the label the
+// Mined from the hand-verified maps/bc/RTB-1.map.json: for each key there, the label the
 // position heuristic finds near its widget is the dictionary entry.
 
 // lower case, strip punctuation and collapse whitespace

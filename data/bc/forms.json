@@ -10,6 +10,7 @@
     "id": "bc-rtb-forms-catalog",
     "jurisdiction": "British Columbia, Canada",
     "authority": "Residential Tenancy Branch",
+    "id_pattern": "^RTB-[0-9]+[A-Z0-9-]*$",
     "last_verified": "2026-09-20",
     "official_forms_index_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms",
     "official_forms_numbered_url": "https://www2.gov.bc.ca/gov/content/housing-tenancy/residential-tenancies/calculators-and-resources/tenancy-forms/forms-listed-number",

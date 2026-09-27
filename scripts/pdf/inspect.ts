@@ -1,4 +1,4 @@
-// Usage: bun scripts/pdf/inspect.ts [forms/RTB-1.pdf]
+// Usage: bun scripts/pdf/inspect.ts [forms/bc/RTB-1.pdf]
 // Dumps everything a map author needs about one form: the summary line, every field with
 // its type, value, options and rect, and an interleaved layout of text spans and widgets
 // sorted top to bottom. Writes out/<ID>-fields.json, out/<ID>-positions.json,
@@ -7,7 +7,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { PDF } from "@libpdf/core";
 import { loadLayout } from "./layout";
 
-const pdfPath = process.argv[2] ?? "forms/RTB-1.pdf";
+const pdfPath = process.argv[2] ?? "forms/bc/RTB-1.pdf";
 const base = pdfPath.split("/").pop()!.replace(/\.pdf$/i, "");
 
 const pdf = await PDF.load(new Uint8Array(await readFile(pdfPath)));

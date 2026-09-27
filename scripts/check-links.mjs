@@ -1,11 +1,14 @@
-// HEAD every official_url plus the index url (GET with Range when HEAD is rejected). Exit 1 on any non-2xx/3xx.
-import { readFileSync } from 'node:fs'
+// HEAD every official_url plus each index url (GET with Range when HEAD is rejected). Exit 1 on any non-2xx/3xx.
+// Usage: bun scripts/check-links.mjs [bc on ...]
 import { setTimeout as sleep } from 'node:timers/promises'
+import { jurisdictions, splitArgs } from './jurisdictions.mjs'
 
 const CONCURRENCY = 4
 const DELAY_MS = 250 // per worker, between requests
-const data = JSON.parse(readFileSync(new URL('../data/bc-rtb-forms.json', import.meta.url), 'utf8'))
-const targets = [{ id: 'index', url: data.source.index_url }, ...data.forms.map((f) => ({ id: f.id, url: f.official_url }))]
+const targets = jurisdictions(splitArgs(process.argv.slice(2)).codes).flatMap(({ code, catalog }) => [
+  { id: `${code}:index`, url: catalog.source.index_url },
+  ...catalog.forms.map((f) => ({ id: `${code}:${f.id}`, url: f.official_url })),
+])
 
 async function check(url) {
   try {
@@ -29,7 +32,7 @@ await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
 const ok = (s) => typeof s === 'number' && s >= 200 && s < 400
 const order = new Map(targets.map((t, i) => [t.id, i]))
 results.sort((a, b) => order.get(a.id) - order.get(b.id))
-for (const r of results) console.log(`${r.id.padEnd(12)} ${r.status}${ok(r.status) ? '' : `  ${r.url}`}`)
+for (const r of results) console.log(`${r.id.padEnd(16)} ${r.status}${ok(r.status) ? '' : `  ${r.url}`}`)
 const bad = results.filter((r) => !ok(r.status))
 console.log(`\n${results.length - bad.length}/${results.length} ok`)
 process.exit(bad.length ? 1 : 0)

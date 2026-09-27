@@ -1,11 +1,11 @@
-// Usage: bun scripts/pdf/automap.ts forms/<ID>.pdf
-// Writes out/<ID>.map.candidate.json: the same shape as maps/<ID>.map.json, with a
+// Usage: bun scripts/pdf/automap.ts forms/<code>/<ID>.pdf
+// Writes out/<ID>.map.candidate.json: the same shape as maps/<code>/<ID>.map.json, with a
 // per-field `confidence` and the raw `label` the heuristic used.
 import { writeFile, mkdir } from "node:fs/promises";
 import { loadLayout, pdfText, type FieldPos, type Span } from "./layout";
 import { LABELS, SECTIONS, ADDRESS_STEMS, DATE_QUALIFIERS, SUBSECTIONS, norm, camel } from "./label-dict";
 
-const pdfPath = process.argv[2] ?? "forms/RTB-1.pdf";
+const pdfPath = process.argv[2] ?? "forms/bc/RTB-1.pdf";
 const base = pdfPath.split("/").pop()!.replace(/\.pdf$/i, "");
 
 // ---------------------------------------------------------------- sub-labels

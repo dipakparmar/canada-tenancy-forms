@@ -1,15 +1,16 @@
-// Usage: bun scripts/pdf/serve.ts [RTB-1]
+// Usage: bun scripts/pdf/serve.ts [bc/RTB-1]
 // A local test UI, one file, no framework: it builds an input per semantic key straight
-// from maps/<ID>.map.json and posts them back through fillFromMap. RTB-1 is pre-filled
+// from maps/<code>/<ID>.map.json and posts them back through fillFromMap. RTB-1 is pre-filled
 // with the sample data fill.ts uses; every other form starts empty.
 import { readFile } from "node:fs/promises";
 import { PDF } from "@libpdf/core";
 import { fillFromMap, type FormMap } from "./fill-core";
 import { sample } from "./sample";
 
-const formId = process.argv[2] ?? "RTB-1";
-const map: FormMap = JSON.parse(await readFile(`maps/${formId}.map.json`, "utf8"));
-const pdfPath = `forms/${formId}.pdf`;
+const ref = process.argv[2] ?? "bc/RTB-1"; // <code>/<ID>
+const formId = ref.split("/").pop()!;
+const map: FormMap = JSON.parse(await readFile(`maps/${ref}.map.json`, "utf8"));
+const pdfPath = `forms/${ref}.pdf`;
 const defaults: Record<string, string | boolean> = formId === "RTB-1" ? sample : {};
 
 function groupOf(key: string) {

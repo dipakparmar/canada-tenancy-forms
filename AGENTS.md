@@ -1,8 +1,8 @@
 # AGENTS.md
 
-Machine-readable catalog of BC Residential Tenancy Branch forms
-(`data/bc-rtb-forms.json`) plus a scheduled updater that opens a PR when the
-official forms page changes.
+Machine-readable catalog of residential tenancy forms, one directory per
+jurisdiction (`data/<code>/forms.json`, BC first as `bc`), plus a scheduled
+updater that opens a PR when an official forms page changes.
 
 **The one rule:** never edit human-maintained fields (`category`, `matter_type`,
 `initiating_party`, `parties`, `property_manager_role`, `use_when`,
@@ -23,13 +23,14 @@ GitHub Actions.
 ## Commands
 
 ```sh
-bun run validate         # schema + unique ids + related_forms references
+bun run validate         # schema + id pattern + unique ids + related_forms references
+                         # every catalog script takes jurisdiction codes first (bun run validate bc)
 bun run check-links      # HEAD every official_url and the index url
 bun run update:check     # print the source diff; exit 2 if anything changed
 bun run update:sources   # apply source-owned changes and refresh the snapshot
 
 bun run fetch-forms      # download the PDF for every form that has a map
-bun test                 # check every map in maps/ against its PDF
+bun test                 # check every map in maps/<code>/ against its PDF
 bun run inspect          # dump a PDF's fields, positions and text layout
 bun run automap          # guess a map for an unmapped form
 bun run automap:eval     # score that guess against the verified map
@@ -44,14 +45,18 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 
 ## Data rules
 
-- `id` is the stable RTB form number (`RTB-1`, `RTB-12L-DR`), uppercase, never
-  a PDF filename.
+- `id` is the stable official form number (`RTB-1`, `RTB-12L-DR`), uppercase,
+  never a PDF filename. Each catalog's `dataset.id_pattern` says what its ids
+  look like and `validate` enforces it.
 - Never delete a record. Retire it by setting `status: "historical_or_replaced"`.
 - `related_forms` must reference ids that already exist in the catalog.
 - Schema is `additionalProperties: false`; a new field needs a schema change
-  in `schema/bc-rtb-forms.schema.json` first.
+  in `schema/forms.schema.json` first.
 - A map's `form` must equal the catalog id and its file must be
-  `maps/<ID>.map.json`.
+  `maps/<code>/<ID>.map.json`.
+- Adding a jurisdiction means a `data/<code>/forms.json` and a
+  `scripts/sources/<code>.mjs` exporting `prefix` and `extract(html)`;
+  everything else picks the directory up by itself.
 - Map semantic keys are hand-verified against a rendered page, not derived from
   the PDF field names, which Acrobat auto-generated and which frequently name
   the label before the widget. Change a key only with a marker render check
@@ -62,14 +67,15 @@ Before any commit: `validate`, `check-links`, and `update:check` twice
 
 ## Where things live
 
-- `data/` the catalog
-- `schema/` JSON Schema for the catalog
-- `maps/` `<ID>.map.json`: semantic key to AcroForm field name, per form
+- `data/<code>/` the catalog for one jurisdiction
+- `schema/` JSON Schema shared by every catalog
+- `maps/<code>/` `<ID>.map.json`: semantic key to AcroForm field name, per form
 - `scripts/` validate, check-links, the updater, the form fetcher
+- `scripts/sources/` one page extractor per jurisdiction
 - `scripts/pdf/` the PDF field tooling: inspect, automap, markers, fill, serve
-- `tests/` the guard test over `maps/`
+- `tests/` the guard test over `maps/<code>/`
 - `forms/` and `out/` gitignored scratch: downloaded PDFs and generated dumps
-- `snapshots/` `latest.json`: hash + extracted inventory from the last fetch, no HTML
+- `snapshots/<code>/` `latest.json`: hash + extracted inventory from the last fetch, no HTML
 - `.github/` CI and the weekly updater workflow
 
 ## Conventions

@@ -1,4 +1,4 @@
-// Usage: bun scripts/pdf/markers.ts [maps/<ID>.map.json] [forms/<ID>.pdf]
+// Usage: bun scripts/pdf/markers.ts [maps/<code>/<ID>.map.json] [forms/<code>/<ID>.pdf]
 // Fills every text field with its own semantic key (or a short tag) and ticks every box,
 // so the rendered pages can be read back to confirm the map.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
@@ -6,8 +6,10 @@ import { PDF } from "@libpdf/core";
 import { loadLayout } from "./layout";
 import type { FormMap } from "./fill-core";
 
-const mapPath = process.argv[2] ?? "maps/RTB-1.map.json";
-const pdfPath = process.argv[3] ?? mapPath.replace(/\.map\.(candidate\.)?json$/, ".pdf").replace(/^(out|maps)\//, "forms/");
+const mapPath = process.argv[2] ?? "maps/bc/RTB-1.map.json";
+// a map under maps/<code>/ finds its PDF under forms/<code>/; an out/ candidate has no code, so name the PDF
+const pdfPath = process.argv[3] ?? (mapPath.startsWith("maps/") ? mapPath.replace(/\.map\.json$/, ".pdf").replace(/^maps\//, "forms/") : null);
+if (!pdfPath) throw new Error("give the PDF path as the second argument for a candidate map");
 const base = pdfPath.split("/").pop()!.replace(/\.pdf$/i, "");
 
 const map: FormMap = JSON.parse(await readFile(mapPath, "utf8"));
