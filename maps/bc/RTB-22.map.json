@@ -1,0 +1,25 @@
+{
+  "form": "RTB-22",
+  "revision": "2021/03",
+  "source": "https://www2.gov.bc.ca/assets/gov/housing-and-tenancy/residential-tenancies/forms/rtb22.pdf",
+  "pdf_sha256": "1731c14f4cd3dee3ccec5bd314dbd9ee9a288ea93b969e8be5f9edb754c60354",
+  "fields": {
+    "tenant.firstName": { "pdf": "First and middle names", "type": "text" },
+    "tenant.lastName": { "pdf": "Last name s", "type": "text" },
+    "tenant2.firstName": { "pdf": "First and middle names_2", "type": "text" },
+    "tenant2.lastName": { "pdf": "Last name s_2", "type": "text" },
+    "premises.unitNumber": { "pdf": "siteunit", "type": "text" },
+    "premises.street": { "pdf": "street  and name", "type": "text" },
+    "premises.city": { "pdf": "city", "type": "text" },
+    "premises.province": { "pdf": "province", "type": "text" },
+    "premises.postalCode": { "pdf": "postal code", "type": "text" },
+    "tenant.phone": { "pdf": "main phone", "type": "text" },
+    "tenant.otherPhone": { "pdf": "other phone", "type": "text" },
+    "landlord.firstName": { "pdf": "I propose the condition inspection be conducted on", "type": "text" },
+    "landlord.businessName": { "pdf": "Last name s_3", "type": "text" },
+    "inspection.date": { "pdf": "Date1_af_date", "type": "text" },
+    "inspection.time": { "pdf": "Text2", "type": "text" },
+    "inspection.timeMeridiem": { "pdf": "time?", "type": "radio", "options": ["AM", "PM"] },
+    "signatures.landlord.signature": { "pdf": "Signature3", "type": "signature", "page": 0, "rect": [312, 134, 597, 173] }
+  }
+}

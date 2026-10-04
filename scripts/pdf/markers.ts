@@ -23,7 +23,8 @@ let n = 0;
 for (const [key, e] of Object.entries(map.fields)) {
   const f = byName.get(e.pdf);
   if (!f) continue;
-  if (e.type === "checkbox" || e.type === "radio") { raw[e.pdf] = true; continue; }
+  if (e.type === "checkbox") { raw[e.pdf] = true; continue; }
+  if (e.type === "radio") { raw[e.pdf] = (e as { options?: string[] }).options?.[0] ?? true; continue; }
   if (e.type !== "text") continue; // signature fields cannot be set
   n++;
   const tag = `T${String(n).padStart(3, "0")}`;
