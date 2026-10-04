@@ -107,9 +107,12 @@ stable semantic key:
 }
 ```
 
-`type` is `text`, `checkbox` or `signature`. Checkboxes carry `on`, the export value that
-means checked (RTB-1 uses both `On` and `Yes` depending on the section). Two forms are
-mapped so far: RTB-1 (122 fields) and RTB-27 (468 fields, mostly inspection grid cells keyed
+`type` is `text`, `checkbox`, `radio` or `signature`. Checkboxes carry `on`, the export value that
+means checked (RTB-1 uses both `On` and `Yes` depending on the section). A radio group carries
+`options`, its export values, and is filled with one of them as a string. A signature field
+cannot be filled, so its entry may carry `page` (0-based) and `rect` (`[x1, y1, x2, y2]` in PDF
+points, origin bottom-left): the box a consumer stamps a signature image into. Three forms are
+mapped so far: RTB-1 (122 fields), RTB-22 (17 fields) and RTB-27 (468 fields, mostly inspection grid cells keyed
 `<room>.<item>.<moveIn|moveOut>.<comment|code>`).
 
 **The PDFs are never committed.** `bun run fetch-forms` downloads them from the government

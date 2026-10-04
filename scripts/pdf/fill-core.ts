@@ -5,7 +5,18 @@ import { PdfNumber } from "@libpdf/core";
 // form leaves behind. `readonly` marks a field the PDF flags read-only at rest: on 2229E the
 // form's own scripts unlock those when a sibling box is ticked, so fill clears the flag when
 // asked to write one.
-export type MapEntry = { pdf: string; type: "text" | "checkbox" | "signature" | "button"; readonly?: boolean; on?: string };
+// A "radio" entry lists its export values in `options` and is filled with one of them as a string.
+// A "signature" entry may carry `page` (0-based) and `rect` ([x1, y1, x2, y2] in PDF points, origin
+// bottom-left): the placement box a consumer stamps a signature image into, since libpdf cannot sign.
+export type MapEntry = {
+  pdf: string;
+  type: "text" | "checkbox" | "radio" | "signature" | "button";
+  readonly?: boolean;
+  on?: string;
+  options?: string[];
+  page?: number;
+  rect?: [number, number, number, number];
+};
 export type FormMap = {
   form: string;
   revision: string;

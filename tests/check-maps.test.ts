@@ -75,6 +75,21 @@ for (const { code, mapsDir, formsDir, mapFile } of maps) {
     }
   });
 
+  test(`${id}: radio options and signature placement rects match the PDF`, () => {
+    for (const [, entry] of entries) {
+      const f: any = fieldsByName.get(entry.pdf);
+      if (entry.type === "radio" && entry.options) expect(f.getOptions()).toEqual(entry.options);
+      if (entry.type === "signature" && entry.rect) {
+        // the placement rect is where a consumer stamps a signature image: it must be the widget's own box
+        const pages = pdf.getPages();
+        const widget = f.getWidgets()[0];
+        const [x1, y1, x2, y2] = widget.rect ?? widget.getRect();
+        expect(entry.rect.map(Math.round)).toEqual([x1, y1, x2, y2].map(Math.round));
+        expect(entry.page).toBeLessThan(pages.length);
+      }
+    }
+  });
+
   test(`${id}: no two semantic keys share a pdf field`, () => {
     const seen = new Map<string, string>();
     for (const [key, entry] of entries) {
