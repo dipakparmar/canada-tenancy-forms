@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27",
+  "generated_at": "2026-10-05",
   "source": {
     "publisher": "Tribunal administratif du logement, Gouvernement du Québec",
     "index_url": "https://www.tal.gouv.qc.ca/en/forms",
-    "snapshot_sha256": "fb6222126dfd488214b22a70f23cea9c200a057b8a64f54f33eb9db61f2d3056"
+    "snapshot_sha256": "ffc5c28e81fac4b8a675f2a3382f87e47bcba70d4241ca2dd2ee10e644294f39"
   },
   "dataset": {
     "id": "qc-tal-forms-catalog",
@@ -117,7 +117,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "ADJ-ETUDES",
@@ -143,7 +143,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "ADJ-LOGEMENT",
@@ -169,7 +169,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "ADJ-LOYER-MODIQUE",
@@ -195,7 +195,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "ADJ-MAISON-MOBILE",
@@ -221,7 +221,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "ADJ-VERBAL",
@@ -247,7 +247,7 @@
         "\"This document incorporates legal and regulatory updates related to your lease.\" (adjustment-lease PDF)",
         "\"END OF MANDATORY PARTICULARS\" (adjustment-lease PDF)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "AV-041",
@@ -273,7 +273,7 @@
       "source_basis": [
         "\"This notice is given in accordance with section 52 of the Act respecting the Administrative Housing Tribunal. It must be sent individually to each lessee and to the Tribunal administratif du logement, with proof of receipt.\" (AV-041)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "AV-051",
@@ -299,7 +299,7 @@
         "\"This offer to sell is made in accordance with section 54.7 of the Act respecting the Administrative Housing Tribunal.\" (AV-051)",
         "\"You have one month after receiving this offer to inform me in writing of your decision to purchase or not purchase the dwelling. A lack of response on your part shall be considered as a refusal to purchase.\" (AV-051)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "BAIL",
@@ -350,7 +350,7 @@
         "\"OBJECT OF THE APPLICATION (conclusion sought)\" / \"GROUNDS FOR THE APPLICATION\" (TAL-001A)",
         "\"I understand that my application is deemed to have been made under oath.\" (TAL-001A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-002A",
@@ -378,7 +378,7 @@
       "source_basis": [
         "\"1947 F 1947 FF 1947 FM 1947 M 1950 LF  Other\" recourse codes (TAL-002A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-003A",
@@ -404,7 +404,7 @@
       "source_basis": [
         "\"Pursuant to the provisions of the decision authorizing me to deposit my rent, I am depositing $\" (TAL-003A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-004A",
@@ -459,7 +459,7 @@
       "source_basis": [
         "\"Application to evict the lessee after the end of the lease\" title and plaintiff/defendant lessor-lessee fields (TAL-005A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-013A",
@@ -485,7 +485,7 @@
         "\"A discontinuance closes the record with the Tribunal.\" (TAL-013A)",
         "\"The Tribunal may ratify it, provided it is in accordance with law, in which case it has the same effects as a decision.\" (TAL-013A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-046A",
@@ -493,7 +493,7 @@
       "status": "active",
       "category": "tribunal_administration",
       "matter_type": "administrative",
-      "current_version": "2025-11",
+      "current_version": "2026-09",
       "official_url": "https://www.tal.gouv.qc.ca/sites/default/files/TAL_046A_I.pdf",
       "official_index_url": "https://www.tal.gouv.qc.ca/en/forms",
       "initiating_party": "lessor_or_lessee",
@@ -509,7 +509,7 @@
         "\"I agree to pay on delivery the actual costs incurred by the Tribunal administratif du logement for the reproduction and transmission of documents.\" (TAL-046A)",
         "\"The playing of a recording of a hearing in a public place or for the purposes of a public broadcast is forbidden.\" (TAL-046A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-047A",
@@ -532,7 +532,7 @@
       "source_basis": [
         "\"Correction of contact information for: Lessor Lessee Other (specify)\" (TAL-047A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-048A",
@@ -556,7 +556,7 @@
       "source_basis": [
         "\"Fill in this form if your case has been stricken from the roll by the administrative judge due to the absence of all of the parties at the hearing and you wish that it be replaced on the roll.\" (TAL-048A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-049A",
@@ -584,7 +584,7 @@
       "source_basis": [
         "\"OBJECT OF THE AMENDMENT\" / \"GROUNDS FOR THE AMENDMENT\" / \"Filing date of original application\" (TAL-049A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-065A",
@@ -610,7 +610,7 @@
       "source_basis": [
         "\"Your application pertains to non-payment of rent by a lessee, and you want to recuperate the amount of rent ant to obtain the resiliation of the lease and eviction of the lessee.\" (TAL-065A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-066A",
@@ -637,7 +637,7 @@
       "source_basis": [
         "\"Application relating to abandonment\" recourse codes \"1863 RA 1863 DD 1863 D\" (TAL-066A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-072A",
@@ -662,7 +662,7 @@
       "source_basis": [
         "\"So, this appendix cannot be used alone. It must be attached to this form: Application\" (TAL-072A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-100A",
@@ -687,7 +687,7 @@
       "source_basis": [
         "\"For an application to set the rent, the plaintiff does not have to notify exhibits or a list of exh[ibits]\" (TAL-100A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-101A",
@@ -711,7 +711,7 @@
       "source_basis": [
         "\"Application for revocation\" plaintiff/defendant fields against a prior decision (TAL-101A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-102A",
@@ -738,7 +738,7 @@
       "source_basis": [
         "\"Application to repossess a dwelling\" recourse code \"1963REP\" (TAL-102A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-103A",
@@ -764,7 +764,7 @@
       "source_basis": [
         "\"Amendment regarding unpaid rent\" / \"Filing date of original application\" (TAL-103A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-104A",
@@ -790,7 +790,7 @@
       "source_basis": [
         "\"Amendment regarding abandonment\" / \"Filing date of original application\" (TAL-104A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-105A",
@@ -816,7 +816,7 @@
       "source_basis": [
         "\"Application to convert a rental property to divided co-ownership\" plaintiff/defendant fields (TAL-105A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-126A",
@@ -839,7 +839,7 @@
       "source_basis": [
         "\"Please indicate the dates on which you are unavailable for the hearing of the above-mentioned file(s) and explain the reasons.\" (TAL-126A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-129A",
@@ -862,7 +862,7 @@
       "source_basis": [
         "\"DECISION TO BE TRANSLATED French to English ... English to French\" (TAL-129A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-145A",
@@ -889,7 +889,7 @@
       "source_basis": [
         "\"Application to evict the lessee for subdivision, enlargement or change of destination of the dwelling – eviction notice sent as of February 21, 2024\" (TAL-145A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-801A",
@@ -915,7 +915,7 @@
         "\"This notice is given in accordance with article 1915 of the Civil Code of Québec.\" (TAL-801A)",
         "\"I hereby notify you that the dwelling is unfit for habitation because:\" (TAL-801A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-802A",
@@ -941,7 +941,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article1871 and 1978.2 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-802A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-803A",
@@ -965,7 +965,7 @@
         "\"This notice is given in accordance with article 1938 of the Civil Code of Québec. It must be sent to the lessor(s) within two months of the cessation of cohabitation.\" (TAL-803A)",
         "\"I hereby notify you that the lessee left the dwelling on\" (TAL-803A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-804A",
@@ -989,7 +989,7 @@
         "\"This notice is given in accordance with articles 1938 and 1939 of the Civil Code of Québec.\" (TAL-804A)",
         "\"I hereby notify you that the lessee passed away on\" (TAL-804A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-805A",
@@ -1016,7 +1016,7 @@
         "\"This notice is given in accordance with article 1907 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-805A)",
         "\"You are hereby notified that I will apply for authorization to deposit my rent with the\" (TAL-805A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-806A",
@@ -1046,7 +1046,7 @@
       "source_basis": [
         "\"This notice is given in accordance with articles 1942 and 1943 of the Civil Code of Québec, as well as with the Regulation respecting the mandatory content of a notice of modification of the lease of a dwelling.\" (TAL-806A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-807A",
@@ -1073,7 +1073,7 @@
         "\"This notice is given in accordance with article 1946 of the Civil Code of Québec.\" (TAL-807A)",
         "\"You are hereby notified that the lease will not be renewed.\" (TAL-807A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-808A",
@@ -1098,7 +1098,7 @@
       "source_basis": [
         "\"This notice is given in accordance with articles 1922 and 1923 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-808A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-809A",
@@ -1125,7 +1125,7 @@
         "\"This notice is given in accordance with article 1960 of the Civil Code of Québec.\" (TAL-809A)",
         "\"You are hereby notified that, as the owner/lessor, I intend to repossess your dwelling:\" (TAL-809A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-810A",
@@ -1152,7 +1152,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1945 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-810A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-811A",
@@ -1179,7 +1179,7 @@
         "\"This notice is given in accordance with article 1962 of the Civil Code of Québec.\" (TAL-811A)",
         "\"In response to your notice of repossession, you are hereby informed that:\" (TAL-811A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-812A",
@@ -1203,7 +1203,7 @@
         "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-812A)",
         "\"The lessee has been allocated a dwelling in low-rental housing. The attestation required by law is enclosed.\" (TAL-812A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-813A",
@@ -1226,7 +1226,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-813A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-814A",
@@ -1250,7 +1250,7 @@
         "\"This notice is given in accordance with article 1870 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-814A)",
         "\"You are hereby notified that I intend to sublet my dwelling to:\" (TAL-814A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-815A",
@@ -1277,7 +1277,7 @@
         "\"This notice is given in accordance with article 1960 of the Civil Code of Québec.\" (TAL-815A)",
         "\"As of June 6, 2024, no lessee may be evicted for the enlargement, subdivision or change of destination of a dwelling for a period of thr[ee years]\" (TAL-815A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-816A",
@@ -1302,7 +1302,7 @@
       "source_basis": [
         "\"This written notice is given in accordance with article 1895 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-816A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-817A",
@@ -1328,7 +1328,7 @@
       "source_basis": [
         "\"The assignor assigns the lease for the dwelling, a copy of which is attached to the Agreement, to the assignee, who accepts.\" (TAL-817A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-818A",
@@ -1351,7 +1351,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1974.1 of the Civil Code of Québec. It must be sent to the lessor(s).\" (TAL-818A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-819A",
@@ -1380,7 +1380,7 @@
       "source_basis": [
         "\"This notice is given in accordance with articles 1942 and 1943 of the Civil Code of Québec, as well as with the Regulation respecting the mandatory content of a notice of modification of the lease of a dwelling.\" (TAL-819A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-821A",
@@ -1403,7 +1403,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1974 of the Civil Code of Québec.\" (TAL-821A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-823A",
@@ -1426,7 +1426,7 @@
       "source_basis": [
         "\"This notice is given pursuant to article 1896 of the Civil Code of Québec. When no rent has been paid during the twelve months prior to the beginning of the new lease, the lessor must notify the lessee(s) of the date and amount of the last rent paid.\" (TAL-823A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-824A",
@@ -1449,7 +1449,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1955.1 of the Civil Code of Québec. It must be given to the lessee(s) concerned at the time the first lease following the change of destination is entered into.\" (TAL-824A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-826A",
@@ -1475,7 +1475,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1962 of the Civil Code of Québec. It must be sent to each of the lessors individually applies to notices given after February 20, 2024.\" (TAL-826A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-827A",
@@ -1499,7 +1499,7 @@
         "\"This notice is given in accordance with article 1955 of the Civil Code of Québec (See section F of your lease).\" (TAL-827A)",
         "\"If the lease was entered into on or after February 21, 2024, AND the immovable was ready for its intended use as of that date, the lessor must, in order to invoke the restriction on the right to have the rent fix[ed]\" (TAL-827A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     },
     {
       "id": "TAL-828A",
@@ -1525,7 +1525,7 @@
       "source_basis": [
         "\"This notice is given in accordance with article 1871 and 1978.2 of the Civil Code of Québec. It must be sent to each of the lessees individually.\" (TAL-828A)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-05"
     }
   ]
 }
