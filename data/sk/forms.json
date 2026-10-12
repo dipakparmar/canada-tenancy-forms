@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27",
+  "generated_at": "2026-10-12",
   "source": {
     "publisher": "Government of Saskatchewan — Office of Residential Tenancies, Ministry of Justice and Attorney General",
     "index_url": "https://publications.saskatchewan.ca/api/v1/categories/5415/products?limit=100",
-    "snapshot_sha256": "6977619708d6466fe31f77f65b3f914685933e33762b00500e1e4aad7a356c2f"
+    "snapshot_sha256": "f21292b05cf4ed45e1da9b00c6b3387e4683ef51fe571d5f53a5173619ab89a6"
   },
   "dataset": {
     "id": "sk-ort-forms-catalog",
@@ -110,7 +110,7 @@
         "\"The Residential Tenancies Act, 2006 [section 76]\" (Form 11)",
         "\"A request must be made within 15 days of the date of the decision or order.\" (Form 11)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "CERTIFICATE-OF-SERVICE",
@@ -136,7 +136,7 @@
         "\"The Residential Tenancies Act, 2006 (sections 82(2)(a), (b), (c))\" (Certificate of Service)",
         "\"It is an offence contrary to section 79(1)(b) of The Residential Tenancies Act, 2006 to knowingly make an untrue statement of fact\" (Certificate of Service)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "IMMEDIATE-NOTICE-VACATE-ARREARS",
@@ -164,7 +164,7 @@
         "\"The amount of rent over 15 days in arrears at the date of sending this notice\" (Immediate Notice to Vacate and Notice of Arrears)",
         "\"The Residential Tenancies Act, 2006 [Sections 57 & 70(6)(c)]\" (Immediate Notice to Vacate and Notice of Arrears)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-CLAIM-SECURITY-DEPOSIT",
@@ -172,7 +172,7 @@
       "status": "active",
       "category": "security_deposit",
       "matter_type": "security_deposit",
-      "current_version": "2026-02",
+      "current_version": "2026-10",
       "official_url": "https://publications.saskatchewan.ca/api/v1/products/120571/formats/139442/download",
       "official_index_url": "https://publications.saskatchewan.ca/#/categories/5415",
       "initiating_party": "landlord",
@@ -193,7 +193,7 @@
         "\"The Residential Tenancies Act, 2006 [s. 32]\" (Notice of Landlord's Claim for Security Deposit)",
         "\"submit both pages 1 and 2 to the Office of Residential Tenancies (ORT) ... within 60 days of the tenancy end date\" (Notice of Landlord's Claim for Security Deposit)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-OF-ENTRY",
@@ -221,7 +221,7 @@
         "\"A landlord may only provide a maximum four-hour period between 8 a.m. and 8 p.m. to enter the unit.\" (Notice of Entry)",
         "\"The Residential Tenancies Act, 2006 [Section 45], The Residential Tenancies Regulations, 2007 [Section 7]\" (Notice of Entry)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-RENT-INCREASE",
@@ -251,7 +251,7 @@
         "\"Landlords must give one year notice of any rent increase.\" (Notice of Rent Increase)",
         "\"The Residential Tenancies Act, 2006 [Section 54]\" (Notice of Rent Increase)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-RENT-INCREASE-ASSOCIATION",
@@ -281,7 +281,7 @@
         "\"Landlords who are members in good standing of a prescribed landlord association ... may give six months' notice\" (Notice of Rent Increase for Prescribed Landlord Association Members)",
         "\"The Residential Tenancies Act, 2006 [Section 54]\" (Notice of Rent Increase for Prescribed Landlord Association Members)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-TERMINATE-PERIODIC-TENANCY",
@@ -305,7 +305,7 @@
         "\"I hereby give you notice that I am terminating my tenancy and giving up possession of the premises\" (Notice to Landlord to Terminate a Periodic Tenancy)",
         "\"The Residential Tenancies Act, 2006 [Section 56]\" (Notice to Landlord to Terminate a Periodic Tenancy)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-UTILITY-ARREARS",
@@ -332,7 +332,7 @@
         "\"If any utility charges are still unpaid 15 days after the serving of this notice, you will be served with an Immediate Notice to Vacate and Notice of Arrears\" (Notice of Utility Arrears)",
         "\"The Residential Tenancies Act, 2006 [Sections 57(5)(b)]\" (Notice of Utility Arrears)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-CAUSE",
@@ -357,7 +357,7 @@
         "\"To dispute this notice, complete the dispute notice below and return it to the landlord within 15 days of receiving this notice.\" (Notice to Vacate: Cause)",
         "\"The Residential Tenancies Act, 2006 [Section 58]\" (Notice to Vacate: Cause)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-EARLY-CAUSE",
@@ -381,7 +381,7 @@
         "\"I am/We are terminating the tenancy agreement early by reason of the following material breach of the tenancy agreement\" (Notice to Landlord to Vacate Early for Cause)",
         "\"The Residential Tenancies Act, 2006 [Subsection 56(2)]\" (Notice to Landlord to Vacate Early for Cause)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-EMPLOYEE",
@@ -408,7 +408,7 @@
         "\"This notice is given because the rental unit was rented or provided to you for the term of your employment, and your employment has ended.\" (Notice to Vacate: Employee)",
         "\"The Residential Tenancies Act, 2006 [Section 59]\" (Notice to Vacate: Employee)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-HOUSING-PROGRAM",
@@ -432,7 +432,7 @@
         "\"the landlord intends to convert the rental unit for use in a housing program\" (Notice to Vacate: Housing Program Purposes)",
         "\"The Residential Tenancies Act, 2006 [Subsection 60(7.1)]\" (Notice to Vacate: Housing Program Purposes)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-OWNER-OCCUPY",
@@ -457,7 +457,7 @@
         "\"you may end the tenancy earlier by giving 10 days notice and by paying the portion of rent due\" (Notice to Vacate: Owner Occupy)",
         "\"The Residential Tenancies Act, 2006 [Subsections 60(4) & (5)]\" (Notice to Vacate: Owner Occupy)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-PURCHASER-OCCUPY",
@@ -481,7 +481,7 @@
         "\"the landlord has, in good faith, sold the rental unit\" ... \"the purchaser has asked the landlord, in writing, to give notice to end the tenancy\" (Notice to Vacate: Purchaser Occupy)",
         "\"The Residential Tenancies Act, 2006 [Subsection 60(6)]\" (Notice to Vacate: Purchaser Occupy)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "NOTICE-VACATE-SPECIFIED-USES",
@@ -505,7 +505,7 @@
         "\"A landlord may end a periodic tenancy respecting a rental unit if the landlord has all the necessary permits and approvals required by law\" (Notice to Vacate: Specified Uses)",
         "\"The Residential Tenancies Act, 2006 [Subsections 60(7)]\" (Notice to Vacate: Specified Uses)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "SCHEDULE-1",
@@ -533,7 +533,7 @@
         "\"A term or condition of a tenancy agreement that contradicts or changes such a right, obligation or standard condition is void and cannot be enforced.\" (Schedule 1 - Standard Conditions of a Tenancy Agreement)",
         "\"PART 2 Schedule 1 [Section 4] Standard Conditions of a Tenancy Agreement\" (Schedule 1 - Standard Conditions of a Tenancy Agreement)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     },
     {
       "id": "TERM-LEASE-NOTICE-INTENTION",
@@ -557,7 +557,7 @@
         "\"I offer to renew the lease as a periodic tenancy\" / \"A new lease will not be offered. You are to vacate at the end of the term\" (Term Lease - Two Month Notice of Intention Form)",
         "\"The Residential Tenancies Act, 2006 [Subsection 55(2)] and The Residential Tenancies Regulations, 2007 [Section 8.2]\" (Term Lease - Two Month Notice of Intention Form)"
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-12"
     }
   ]
 }
