@@ -21,7 +21,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "@libpdf/core": "0.4.2"
+    "@libpdf/core": "0.5.2"
   },
   "devDependencies": {
     "ajv": "8.20.0"
