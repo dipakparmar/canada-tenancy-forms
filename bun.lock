@@ -5,7 +5,7 @@
     "": {
       "name": "bc-rtb-forms",
       "dependencies": {
-        "@libpdf/core": "0.4.2",
+        "@libpdf/core": "0.5.2",
       },
       "devDependencies": {
         "ajv": "8.20.0",
@@ -13,7 +13,7 @@
     },
   },
   "packages": {
-    "@libpdf/core": ["@libpdf/core@0.4.2", "", { "dependencies": { "@noble/ciphers": "^2.2.0", "@noble/hashes": "^2.2.0", "@scure/base": "^2.2.0", "asn1js": "^3.0.10", "lru-cache": "^11.5.1", "pako": "^2.1.0", "pkijs": "^3.4.0" }, "peerDependencies": { "@google-cloud/kms": "^5.0.0", "@google-cloud/secret-manager": "^6.0.0" }, "optionalPeers": ["@google-cloud/kms", "@google-cloud/secret-manager"] }, "sha512-lbkIqLDZCCxjLpiC+8/Xvaru/ME7iVVoihl9tLqbp/CDUWZNF0q3u7s2tBJB9wRW/SzUWID6YPFvBWws770hrQ=="],
+    "@libpdf/core": ["@libpdf/core@0.5.2", "", { "dependencies": { "@noble/ciphers": "^2.2.0", "@noble/hashes": "^2.2.0", "@scure/base": "^2.2.0", "asn1js": "^3.0.10", "lru-cache": "^11.5.1", "pako": "^2.1.0", "pkijs": "^3.4.0" }, "peerDependencies": { "@google-cloud/kms": "^5.0.0", "@google-cloud/secret-manager": "^6.0.0" }, "optionalPeers": ["@google-cloud/kms", "@google-cloud/secret-manager"] }, "sha512-tJygxS+S/md19ysK/AcgOGzZ1TnmnwY1a0xWdzN5Y/JtC2PsL7LJWTXcLrIdxXuPEPq5+sPW19Dz9YpZJePMig=="],
 
     "@noble/ciphers": ["@noble/ciphers@2.4.0", "", {}, "sha512-AnjFn0Jv92laAkvMrghlFZq4qQCIN/4DxFV/eooqtC2YTjB7kBeLMS2T9KJX4Dn+ZVXLOwK0lSgqDtx9gvxtiw=="],
 
