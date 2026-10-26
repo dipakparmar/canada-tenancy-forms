@@ -1,7 +1,7 @@
 {
-  "fetched_at": "2026-09-27",
+  "fetched_at": "2026-10-26",
   "index_url": "https://www.alberta.ca/rtdrs-forms-documents",
-  "sha256": "1573e28b8d3ff738fae6f198ceb35efd3cb290e6b3a8a2f6fe2b7b3ac528c1ed",
+  "sha256": "539ba364497639fb6dec2c1b599e2f58af310b3e5bf8e074205fe739142fa107",
   "forms": [
     {
       "id": "CTS3884",
@@ -79,14 +79,14 @@
       "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12112"
     },
     {
+      "id": "RTDR12875",
+      "form_name": "RTDRS Fee Waiver Form",
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12875"
+    },
+    {
       "id": "RTDR13290",
       "form_name": "Add/Change a Hearing Representative",
       "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR13290"
-    },
-    {
-      "id": "RTDRS12875",
-      "form_name": "RTDRS Fee Waiver Form",
-      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDRS12875"
     }
   ]
 }

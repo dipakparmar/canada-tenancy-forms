@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27",
+  "generated_at": "2026-10-26",
   "source": {
     "publisher": "Government of Alberta — Residential Tenancy Dispute Resolution Service (RTDRS)",
     "index_url": "https://www.alberta.ca/rtdrs-forms-documents",
-    "snapshot_sha256": "1573e28b8d3ff738fae6f198ceb35efd3cb290e6b3a8a2f6fe2b7b3ac528c1ed"
+    "snapshot_sha256": "539ba364497639fb6dec2c1b599e2f58af310b3e5bf8e074205fe739142fa107"
   },
   "dataset": {
     "id": "ab-rtdrs-forms-catalog",
@@ -101,7 +101,7 @@
         "CTS3884 XFA template text (Rev. 2023-03): \"Residential Tenancies Act Sections 34.1 and 35 - Your residential tenancy is terminated as per the attached Order, filed at the Court of King's Bench.\"",
         "CTS3884: \"If you do not vacate the rental premises as ordered, a civil enforcement agency has the authority to immediately evict all occupants.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "CTS3885",
@@ -130,7 +130,7 @@
         "CTS3885 XFA template text (Rev. 2023-04): \"Mobile Home Sites Tenancies Act Sections 37.1 and 38 - Your tenancy is terminated as per the attached Order.\"",
         "CTS3885: \"If you do not vacate the mobile home site as ordered, a civil enforcement agency has the authority to immediately evict all occupants.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0001",
@@ -161,7 +161,7 @@
         "RTDR0001: \"(a) where the tenant has done or permitted significant damage... (b) where the tenant has physically assaulted or threatened to physically assault the landlord or another tenant.\"",
         "RTDR0001: \"If eligible, submit this form and supporting records at the same time as the Landlord's Application for Termination of Tenancy and Unpaid Rent.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0002",
@@ -190,7 +190,7 @@
         "RTDR0002: lists service methods including personally, by leaving copies at the premises, by posting, by email, and by registered mail.",
         "RTDR0007 instructions: \"Complete a Declaration of Service by Landlord form stating how and when you served the application package(s) on the respondent(s).\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0003",
@@ -218,7 +218,7 @@
         "RTDR0003: lists service methods including personally, at a corporation's registered office, on a director/manager/officer, by email, and by registered mail.",
         "RTDR0008 instructions: \"Complete a Declaration of Service by Tenant form stating how and when you served the application package(s) on the respondent(s).\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0004",
@@ -243,7 +243,7 @@
         "RTDR0004 XFA template text (Rev. 2025-08): \"THAT I am applying to issue a Notice to Attend to [Full name] for the following reasons:\"",
         "RTDR0004: \"The personal information collected through the online Declaration in Support of a Notice to Attend form is for the purpose of establishing the identity of the person or entity applying for a Notice to Attend.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0005",
@@ -270,7 +270,7 @@
         "RTDR0005 XFA template text (Rev. 2025-08): \"THAT I have attempted to serve the Application Package on the Respondent(s), without success, by these methods... THAT I make this application to serve the Application Package by this method...\"",
         "RTDR0005: \"THAT I believe that the Respondent(s) will receive the Application Package if served by this method because:\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0006",
@@ -305,7 +305,7 @@
         "RTDR0006 instructions: \"The RTDRS filing fee is $75.00, and is payable at the time of filing.\"",
         "RTDR0006: \"Applications can be made to the RTDRS within 2 years from the date the claim is discovered.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0007",
@@ -340,7 +340,7 @@
         "RTDR0007 instructions: \"You must serve the application package on the respondent(s) at least 3 clear business days before the hearing date.\"",
         "RTDR0007 note: \"After the tenant has vacated, the landlord may apply for damages using the Landlord's Application for Damages form.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR0008",
@@ -370,7 +370,7 @@
         "RTDR0008 instructions: \"The RTDRS filing fee is: $75 – for claims or counterclaims of $7,500 or less...*Fees may be waived for low-income Albertans.\"",
         "RTDR0008: \"Applications can be made to the RTDRS within 2 years from the date the claim is discovered.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR11148",
@@ -400,7 +400,7 @@
         "RTDR11148 XFA template text (Rev. 2025-10): \"I withdraw my application against the respondent... My application has been completely satisfied.\"",
         "RTDR0007 instructions: \"If you settle your dispute before the hearing, or decide not to proceed, file a Notice of Withdrawal with the RTDRS and notify the respondents. Filing fees are not refunded for withdrawn applications.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR11149",
@@ -430,7 +430,7 @@
         "RTDR11149: \"Audio requests will only be provided to the requestor once the final hearing has been concluded.\"",
         "RTDR11149: \"An appellant must hire a transcription company to convert the RTDRS audio recording into an official transcript.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR11229",
@@ -461,7 +461,7 @@
         "RTDR11229: \"an order of a Tenancy Dispute Officer is final and binding unless it is set aside or varied by the Tenancy Dispute Officer, or varied on appeal.\"",
         "RTDR11229: \"A party who is subject to an order of a Tenancy Dispute Officer may appeal the order on a question of law or of jurisdiction within 30 days after the order is filed with the Court of King's Bench.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR12006",
@@ -486,7 +486,7 @@
         "RTDR12006 XFA template text (Rev. 2025-08): \"When submitting more than 30 pages of evidence in total, even if in one PDF, complete and submit this Table of Contents form to describe the evidence submitted and the corresponding page numbers.\"",
         "RTDR12006: \"When submitting additional evidence, use this same Table of Contents form as an extension on what was submitted previously.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR12112",
@@ -515,7 +515,23 @@
         "RTDR12112: \"This Amended Application form must be completed then provided to the RTDRS and the respondent at least 24 hours (must include one business day) prior to the hearing date.\"",
         "This form is served by the government's cfr.forms.gov.ab.ca/Form/RTDR12112 URL as an in-browser LC Forms (Adobe AEM Forms) viewer, not a downloadable static PDF; there is no fixed PDF file to fetch or hash."
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "RTDR12875",
+      "form_name": "RTDRS Fee Waiver Form",
+      "status": "active",
+      "category": "unclassified",
+      "matter_type": "unclassified",
+      "current_version": null,
+      "official_url": "https://cfr.forms.gov.ab.ca/Form/RTDR12875",
+      "official_index_url": "https://www.alberta.ca/rtdrs-forms-documents",
+      "initiating_party": "other",
+      "parties": [],
+      "property_manager_role": "unreviewed",
+      "use_when": "Needs human classification.",
+      "related_forms": [],
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDR13290",
@@ -545,7 +561,7 @@
         "RTDR13290: \"When updating/changing the representative details fewer than 2 days prior to the hearing, leave a message at 403-297-8550 at least 24 hours before the hearing and include all of the details required below.\"",
         "RTDR0007 instructions: \"Access to your case file will not be granted without your prior authorization.\""
       ],
-      "last_verified": "2026-09-27"
+      "last_verified": "2026-10-26"
     },
     {
       "id": "RTDRS12875",
